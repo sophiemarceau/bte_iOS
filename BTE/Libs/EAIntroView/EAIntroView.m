@@ -141,7 +141,7 @@
     [self.pageBgFront setImage:[self bgForPage:0]];
 }
 - (void)tap{
-    [self skipIntroduction];
+//    [self skipIntroduction];
 }
 - (UIView *)viewForPage:(EAIntroPage *)page atXIndex:(CGFloat *)xIndex {
     
@@ -225,7 +225,7 @@
 }
 
 - (void)buildFooterView {
-    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.frame.size.height - self.pageControlY+40, self.frame.size.width, 20)];
+    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.frame.size.height - self.pageControlY+30, self.frame.size.width, 20)];
     [self.pageControl setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
     [self.pageControl addTarget:self action:@selector(showPanelAtPageControl) forControlEvents:UIControlEventValueChanged];
     //设置当前选中
@@ -238,12 +238,11 @@
     self.pageControl.numberOfPages = _pages.count;
     [self addSubview:self.pageControl];
     
-//    self.skipButton = [[UIButton alloc] initWithFrame:CGRectMake(self.scrollView.frame.size.width - 80, self.pageControl.frame.origin.y, 80, self.pageControl.frame.size.height)];
-//    
-//    [self.skipButton setAutoresizingMask: UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin];
-//    [self.skipButton setTitle:NSLocalizedString(@"Skip", @"跳过介绍") forState:UIControlStateNormal];
-//    [self.skipButton addTarget:self action:@selector(skipIntroduction) forControlEvents:UIControlEventTouchUpInside];
-//    [self addSubview:self.skipButton];
+    self.skipButton = [[UIButton alloc] initWithFrame:CGRectMake((self.scrollView.frame.size.width - 168) / 2, self.scrollView.frame.size.height - 58 - 40, 168, 40)];
+    [self.skipButton setBackgroundImage:[UIImage imageNamed:@"Immediate_experience"] forState:UIControlStateNormal];
+    [self.skipButton setAutoresizingMask: UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin];
+    [self.skipButton setTitle:@"立即体验" forState:UIControlStateNormal];
+    [self addSubview:self.skipButton];
 }
 
 #pragma mark - UIScrollView Delegate
