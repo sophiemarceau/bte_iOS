@@ -68,6 +68,11 @@
 		8179AED820089D43001678D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AED720089D43001678D2 /* AppDelegate.m */; };
 		8179AEDB20089DA3001678D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8179AEDA20089DA3001678D2 /* Assets.xcassets */; };
 		8179AEDD20089DB5001678D2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8179AEDC20089DB4001678D2 /* Info.plist */; };
+		8179AF0B2008A08C001678D2 /* BHGuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AEFB2008A08C001678D2 /* BHGuideVC.m */; };
+		8179AF0C2008A08C001678D2 /* BHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AEFF2008A08C001678D2 /* BHNavigationController.m */; };
+		8179AF0E2008A08C001678D2 /* BHBaseWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AF052008A08C001678D2 /* BHBaseWebViewVC.m */; };
+		8179AF0F2008A08C001678D2 /* BHBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AF062008A08C001678D2 /* BHBaseController.m */; };
+		8179AF102008A08C001678D2 /* BHBaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AF0A2008A08C001678D2 /* BHBaseTableController.m */; };
 		A3C2D27DD5C7720F52180047 /* libPods-BTE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A790C91021B35BCE72495255 /* libPods-BTE.a */; };
 /* End PBXBuildFile section */
 
@@ -212,6 +217,16 @@
 		8179AED920089D8A001678D2 /* BTEPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTEPrefixHeader.pch; sourceTree = "<group>"; };
 		8179AEDA20089DA3001678D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8179AEDC20089DB4001678D2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8179AEFB2008A08C001678D2 /* BHGuideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHGuideVC.m; sourceTree = "<group>"; };
+		8179AEFC2008A08C001678D2 /* BHGuideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHGuideVC.h; sourceTree = "<group>"; };
+		8179AEFF2008A08C001678D2 /* BHNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHNavigationController.m; sourceTree = "<group>"; };
+		8179AF002008A08C001678D2 /* BHNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHNavigationController.h; sourceTree = "<group>"; };
+		8179AF052008A08C001678D2 /* BHBaseWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHBaseWebViewVC.m; sourceTree = "<group>"; };
+		8179AF062008A08C001678D2 /* BHBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHBaseController.m; sourceTree = "<group>"; };
+		8179AF072008A08C001678D2 /* BHBaseTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHBaseTableController.h; sourceTree = "<group>"; };
+		8179AF082008A08C001678D2 /* BHBaseWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHBaseWebViewVC.h; sourceTree = "<group>"; };
+		8179AF092008A08C001678D2 /* BHBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHBaseController.h; sourceTree = "<group>"; };
+		8179AF0A2008A08C001678D2 /* BHBaseTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHBaseTableController.m; sourceTree = "<group>"; };
 		A790C91021B35BCE72495255 /* libPods-BTE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BTE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -385,6 +400,7 @@
 		8179AD6720073BD0001678D2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8179AEF92008A08C001678D2 /* Main */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -512,6 +528,47 @@
 				8179AEA320087E53001678D2 /* BTERequestTools.m */,
 			);
 			path = NetRequest;
+			sourceTree = "<group>";
+		};
+		8179AEF92008A08C001678D2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8179AEFA2008A08C001678D2 /* Guide */,
+				8179AEFE2008A08C001678D2 /* Navigation */,
+				8179AF042008A08C001678D2 /* Base */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8179AEFA2008A08C001678D2 /* Guide */ = {
+			isa = PBXGroup;
+			children = (
+				8179AEFB2008A08C001678D2 /* BHGuideVC.m */,
+				8179AEFC2008A08C001678D2 /* BHGuideVC.h */,
+			);
+			path = Guide;
+			sourceTree = "<group>";
+		};
+		8179AEFE2008A08C001678D2 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				8179AEFF2008A08C001678D2 /* BHNavigationController.m */,
+				8179AF002008A08C001678D2 /* BHNavigationController.h */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		8179AF042008A08C001678D2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8179AF052008A08C001678D2 /* BHBaseWebViewVC.m */,
+				8179AF062008A08C001678D2 /* BHBaseController.m */,
+				8179AF072008A08C001678D2 /* BHBaseTableController.h */,
+				8179AF082008A08C001678D2 /* BHBaseWebViewVC.h */,
+				8179AF092008A08C001678D2 /* BHBaseController.h */,
+				8179AF0A2008A08C001678D2 /* BHBaseTableController.m */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		EB5C9D1AE46F2F99BE633CD9 /* Pods */ = {
@@ -725,10 +782,12 @@
 				8179AE5420085FAA001678D2 /* BHProgressHUD.m in Sources */,
 				8179AE3720085DB5001678D2 /* NSString+CommonFunc.m in Sources */,
 				8179AE2220085DB5001678D2 /* UIView+Animation.m in Sources */,
+				8179AF0E2008A08C001678D2 /* BHBaseWebViewVC.m in Sources */,
 				8179AE3920085DB5001678D2 /* UIImage+help.m in Sources */,
 				8179AE3420085DB5001678D2 /* UIView+Frame.m in Sources */,
 				8179AE2820085DB5001678D2 /* UIImage+category.m in Sources */,
 				8179AE2020085DB5001678D2 /* NSObject+entend.m in Sources */,
+				8179AF0B2008A08C001678D2 /* BHGuideVC.m in Sources */,
 				8179AE2B20085DB5001678D2 /* NSDictionary+safe.m in Sources */,
 				8179AE3E20085DB5001678D2 /* NSMutableAttributedString+extension.m in Sources */,
 				8179AE2720085DB5001678D2 /* NSString+MD5.m in Sources */,
@@ -738,11 +797,14 @@
 				8179AD44200736C4001678D2 /* main.m in Sources */,
 				8179AE8520086175001678D2 /* EAIntroView.m in Sources */,
 				8179AE8820086175001678D2 /* DSJSONRPC.m in Sources */,
+				8179AF0C2008A08C001678D2 /* BHNavigationController.m in Sources */,
+				8179AF102008A08C001678D2 /* BHBaseTableController.m in Sources */,
 				8179AE2120085DB5001678D2 /* UITextField+WLB.m in Sources */,
 				8179AE3120085DB5001678D2 /* CALayer+Additions.m in Sources */,
 				8179AE2A20085DB5001678D2 /* NullSafe.m in Sources */,
 				8179AE5A20085FAA001678D2 /* BHToast.m in Sources */,
 				8179AE4320085DB5001678D2 /* UIView+category.m in Sources */,
+				8179AF0F2008A08C001678D2 /* BHBaseController.m in Sources */,
 				8179AE3820085DB5001678D2 /* UIButton+EnlargeEdge.m in Sources */,
 				8179AE9C20086181001678D2 /* BHHexColor.m in Sources */,
 				8179AE3B20085DB5001678D2 /* UIImage+Scale.m in Sources */,
