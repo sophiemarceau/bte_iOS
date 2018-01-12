@@ -7,8 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "EAIntroView.h" //引导图
 #import "BTEHomePageViewController.h"
-@interface AppDelegate ()
+@interface AppDelegate ()<EAIntroDelegate>
 
 @end
 
@@ -22,7 +23,7 @@
     [self setupKeyWindow];
     
     // 引导图
-//    [self _showGuideView];
+    [self _showGuideView];
     
     
     return YES;
@@ -67,48 +68,47 @@
 }
 
 #pragma mark EAIntroDelegate 版本引导图
-//- (void)_showGuideView {
-//    // 功能简介图
-//    if ([self isFirstLoad]) {
-//        [self showIntroWithCrossDissolve];
-//    }
-//}
-//
-//
-//
-//- (BOOL)isFirstLoad {
-//    NSString *currentVersion = [[[NSBundle mainBundle] infoDictionary]
-//                                objectForKey:@"CFBundleShortVersionString"];
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//
-//    NSString *lastRunVersion = [defaults objectForKey:LAST_RUN_VERSION_KEY];
-//    if (!lastRunVersion) {
-//        [defaults setObject:currentVersion forKey:LAST_RUN_VERSION_KEY];
-//        return YES;
-//    } else if (![lastRunVersion isEqualToString:currentVersion]) {
-//        [defaults setObject:currentVersion forKey:LAST_RUN_VERSION_KEY];
-//        return YES;
-//    }
-//    return NO;
-//}
-//
-//-(void)introDidFinish {
-//    //no do somthing
-//}
-//
-//- (void)showIntroWithCrossDissolve {
-//
-//    NSMutableArray *pages = [NSMutableArray array];
-//    for (int i=1; i<=3; i++) {
-//        EAIntroPage *page = [EAIntroPage page];
-//        page.titleImage = [UIImage imageNamed:[NSString stringWithFormat:@"guide%d",i]];
-//        [pages addObject:page];
-//    }
-//
-//    EAIntroView *intro = [[EAIntroView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) andPages:pages];
-//    intro.delegate=self;
-//    [intro showInView:self.window.rootViewController.view animateDuration:0.0];
-//}
+- (void)_showGuideView {
+    // 功能简介图
+    if ([self isFirstLoad]) {
+        [self showIntroWithCrossDissolve];
+    }
+}
 
+
+
+- (BOOL)isFirstLoad {
+    NSString *currentVersion = [[[NSBundle mainBundle] infoDictionary]
+                                objectForKey:@"CFBundleShortVersionString"];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    NSString *lastRunVersion = [defaults objectForKey:LAST_RUN_VERSION_KEY];
+    if (!lastRunVersion) {
+        [defaults setObject:currentVersion forKey:LAST_RUN_VERSION_KEY];
+        return YES;
+    } else if (![lastRunVersion isEqualToString:currentVersion]) {
+        [defaults setObject:currentVersion forKey:LAST_RUN_VERSION_KEY];
+        return YES;
+    }
+    return NO;
+}
+
+-(void)introDidFinish {
+    //no do somthing
+}
+
+- (void)showIntroWithCrossDissolve {
+
+    NSMutableArray *pages = [NSMutableArray array];
+    for (int i=1; i<=4; i++) {
+        EAIntroPage *page = [EAIntroPage page];
+        page.titleImage = [UIImage imageNamed:[NSString stringWithFormat:@"show%d",i]];
+        [pages addObject:page];
+    }
+
+    EAIntroView *intro = [[EAIntroView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) andPages:pages];
+    intro.delegate=self;
+    [intro showInView:self.window.rootViewController.view animateDuration:0.0];
+}
 
 @end
