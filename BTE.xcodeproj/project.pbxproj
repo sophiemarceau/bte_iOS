@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		8179AD36200736C4001678D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AD35200736C4001678D2 /* AppDelegate.m */; };
-		8179AD39200736C4001678D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AD38200736C4001678D2 /* ViewController.m */; };
-		8179AD3C200736C4001678D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8179AD3A200736C4001678D2 /* Main.storyboard */; };
 		8179AD3E200736C4001678D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8179AD3D200736C4001678D2 /* Assets.xcassets */; };
-		8179AD41200736C4001678D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8179AD3F200736C4001678D2 /* LaunchScreen.storyboard */; };
 		8179AD44200736C4001678D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AD43200736C4001678D2 /* main.m */; };
 		8179AD4E200736C4001678D2 /* BTETests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AD4D200736C4001678D2 /* BTETests.m */; };
 		8179AD59200736C4001678D2 /* BTEUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AD58200736C4001678D2 /* BTEUITests.m */; };
+		A3C2D27DD5C7720F52180047 /* libPods-BTE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A790C91021B35BCE72495255 /* libPods-BTE.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,14 +33,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E4C8167B3C42BE19D5A72FB /* Pods-BTE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTE.release.xcconfig"; path = "Pods/Target Support Files/Pods-BTE/Pods-BTE.release.xcconfig"; sourceTree = "<group>"; };
+		29D8AD9E35E9375EF64E62DB /* Pods-BTE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BTE/Pods-BTE.debug.xcconfig"; sourceTree = "<group>"; };
 		8179AD31200736C4001678D2 /* BTE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8179AD34200736C4001678D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8179AD35200736C4001678D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8179AD37200736C4001678D2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8179AD38200736C4001678D2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		8179AD3B200736C4001678D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8179AD3D200736C4001678D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8179AD40200736C4001678D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8179AD42200736C4001678D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8179AD43200736C4001678D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8179AD49200736C4001678D2 /* BTETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BTETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +47,8 @@
 		8179AD54200736C4001678D2 /* BTEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BTEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8179AD58200736C4001678D2 /* BTEUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEUITests.m; sourceTree = "<group>"; };
 		8179AD5A200736C4001678D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8179ADD6200763C6001678D2 /* BTEPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEPrefixHeader.pch; sourceTree = "<group>"; };
+		A790C91021B35BCE72495255 /* libPods-BTE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BTE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3C2D27DD5C7720F52180047 /* libPods-BTE.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35B884D5F848B16C97487510 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A790C91021B35BCE72495255 /* libPods-BTE.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8179AD28200736C4001678D2 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +92,8 @@
 				8179AD4C200736C4001678D2 /* BTETests */,
 				8179AD57200736C4001678D2 /* BTEUITests */,
 				8179AD32200736C4001678D2 /* Products */,
+				EB5C9D1AE46F2F99BE633CD9 /* Pods */,
+				35B884D5F848B16C97487510 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,13 +110,14 @@
 		8179AD33200736C4001678D2 /* BTE */ = {
 			isa = PBXGroup;
 			children = (
+				8179AD6720073BD0001678D2 /* Classes */,
+				8179AD6620073BA4001678D2 /* Categories */,
+				8179ADD320073F6E001678D2 /* Common */,
+				8179ADD420074212001678D2 /* Custom */,
+				8179ADD5200761E2001678D2 /* Headers */,
 				8179AD34200736C4001678D2 /* AppDelegate.h */,
 				8179AD35200736C4001678D2 /* AppDelegate.m */,
-				8179AD37200736C4001678D2 /* ViewController.h */,
-				8179AD38200736C4001678D2 /* ViewController.m */,
-				8179AD3A200736C4001678D2 /* Main.storyboard */,
 				8179AD3D200736C4001678D2 /* Assets.xcassets */,
-				8179AD3F200736C4001678D2 /* LaunchScreen.storyboard */,
 				8179AD42200736C4001678D2 /* Info.plist */,
 				8179AD43200736C4001678D2 /* main.m */,
 			);
@@ -132,6 +142,51 @@
 			path = BTEUITests;
 			sourceTree = "<group>";
 		};
+		8179AD6620073BA4001678D2 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		8179AD6720073BD0001678D2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8179ADD320073F6E001678D2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8179ADD420074212001678D2 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		8179ADD5200761E2001678D2 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				8179ADD6200763C6001678D2 /* BTEPrefixHeader.pch */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		EB5C9D1AE46F2F99BE633CD9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				29D8AD9E35E9375EF64E62DB /* Pods-BTE.debug.xcconfig */,
+				0E4C8167B3C42BE19D5A72FB /* Pods-BTE.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +194,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8179AD5D200736C4001678D2 /* Build configuration list for PBXNativeTarget "BTE" */;
 			buildPhases = (
+				5A270A33B2A3DE1459FE69B6 /* [CP] Check Pods Manifest.lock */,
 				8179AD2D200736C4001678D2 /* Sources */,
 				8179AD2E200736C4001678D2 /* Frameworks */,
 				8179AD2F200736C4001678D2 /* Resources */,
+				AD3CC00DBF5F0827473A75B0 /* [CP] Embed Pods Frameworks */,
+				D77BAA7A84F3B1825A227459 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,9 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8179AD41200736C4001678D2 /* LaunchScreen.storyboard in Resources */,
 				8179AD3E200736C4001678D2 /* Assets.xcassets in Resources */,
-				8179AD3C200736C4001678D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,12 +316,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5A270A33B2A3DE1459FE69B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BTE-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD3CC00DBF5F0827473A75B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BTE/Pods-BTE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D77BAA7A84F3B1825A227459 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BTE/Pods-BTE-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SGQRCode/SGQRCode/SGQRCode.bundle",
+				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle",
+				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialUI/UMSocialSDKResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BTE/Pods-BTE-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8179AD2D200736C4001678D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8179AD39200736C4001678D2 /* ViewController.m in Sources */,
 				8179AD44200736C4001678D2 /* main.m in Sources */,
 				8179AD36200736C4001678D2 /* AppDelegate.m in Sources */,
 			);
@@ -301,25 +413,6 @@
 			targetProxy = 8179AD55200736C4001678D2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		8179AD3A200736C4001678D2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8179AD3B200736C4001678D2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8179AD3F200736C4001678D2 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8179AD40200736C4001678D2 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8179AD5B200736C4001678D2 /* Debug */ = {
@@ -428,27 +521,37 @@
 		};
 		8179AD5E200736C4001678D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29D8AD9E35E9375EF64E62DB /* Pods-BTE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BTE/Headers/BTEPrefixHeader.pch";
 				INFOPLIST_FILE = BTE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wangli.BTE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		8179AD5F200736C4001678D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E4C8167B3C42BE19D5A72FB /* Pods-BTE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BTE/Headers/BTEPrefixHeader.pch";
 				INFOPLIST_FILE = BTE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wangli.BTE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
