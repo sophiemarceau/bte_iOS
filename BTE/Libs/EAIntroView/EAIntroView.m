@@ -242,6 +242,7 @@
     [self.skipButton setBackgroundImage:[UIImage imageNamed:@"Immediate_experience"] forState:UIControlStateNormal];
     [self.skipButton setAutoresizingMask: UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin];
     [self.skipButton setTitle:@"立即体验" forState:UIControlStateNormal];
+    self.skipButton.hidden = YES;
     [self addSubview:self.skipButton];
 }
 
@@ -261,7 +262,12 @@
     } else {
         LastPageIndex = self.pageControl.currentPage;
         self.pageControl.currentPage = self.currentPageIndex;
-        
+        if (self.currentPageIndex == 3) {
+            self.skipButton.hidden = NO;
+        } else
+        {
+            self.skipButton.hidden = YES;
+        }
         [self makePanelVisibleAtIndex:(NSInteger)self.currentPageIndex];
     }
     
