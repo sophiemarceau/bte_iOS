@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="9HI-9X-8qR" customClass="BHNetworkErrorView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBC-8d-v1V">
+                    <rect key="frame" x="0.0" y="228" width="375" height="210.5"/>
+                    <subviews>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_default" translatesAutoresizingMaskIntoConstraints="NO" id="Inb-Rg-DDm">
+                            <rect key="frame" x="133" y="5" width="108" height="100"/>
+                        </imageView>
+                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="网络不给力，点击屏幕重试" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeM-fG-vIP">
+                            <rect key="frame" x="114" y="135" width="147.5" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.5296475887298584" green="0.52963173389434814" blue="0.52964073419570923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="GeM-fG-vIP" firstAttribute="centerX" secondItem="NBC-8d-v1V" secondAttribute="centerX" id="2H6-Rm-4w2"/>
+                        <constraint firstItem="Inb-Rg-DDm" firstAttribute="centerX" secondItem="NBC-8d-v1V" secondAttribute="centerX" id="97T-Tm-MvA"/>
+                        <constraint firstItem="GeM-fG-vIP" firstAttribute="top" secondItem="Inb-Rg-DDm" secondAttribute="bottom" constant="30" id="YvI-1D-tHB"/>
+                        <constraint firstAttribute="bottom" secondItem="GeM-fG-vIP" secondAttribute="bottom" constant="61" id="Zwn-l4-hPh"/>
+                        <constraint firstItem="Inb-Rg-DDm" firstAttribute="top" secondItem="NBC-8d-v1V" secondAttribute="top" constant="5" id="efO-Ap-U6Z"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="NBC-8d-v1V" firstAttribute="leading" secondItem="9HI-9X-8qR" secondAttribute="leading" id="1WU-P7-ZWg"/>
+                <constraint firstItem="NBC-8d-v1V" firstAttribute="centerY" secondItem="9HI-9X-8qR" secondAttribute="centerY" id="cFL-3g-iEl"/>
+                <constraint firstAttribute="trailing" secondItem="NBC-8d-v1V" secondAttribute="trailing" id="wtH-PY-LHG"/>
+            </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="fOA-qc-DBf" appends="YES" id="v1E-pO-rbR"/>
+            </connections>
+            <point key="canvasLocation" x="235.5" y="155.5"/>
+        </view>
+        <tapGestureRecognizer id="fOA-qc-DBf">
+            <connections>
+                <action selector="didClickReloadData:" destination="9HI-9X-8qR" id="B1w-xq-6ej"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="ic_default" width="108" height="100"/>
+    </resources>
+</document>

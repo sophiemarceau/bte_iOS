@@ -1,0 +1,71 @@
+/*
+ * DSJSONRPC.h
+ *
+ * Demiurgic JSON-RPC
+ * Created by Derek Bowen on 10/20/2011.
+ * 
+ * Copyright (c) 2011 Demiurgic Software, LLC
+ * All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 
+ * Redistributions of source code must retain the above copyright notice,
+ * this list of conditions and the following disclaimer.
+ * 
+ * Redistributions in binary form must reproduce the above copyright
+ * notice, this list of conditions and the following disclaimer in the
+ * documentation and/or other materials provided with the distribution.
+ * 
+ * Neither the name of the project's author nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+ * TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+
+#import <Foundation/Foundation.h>
+#import "DSARCHelpers.h"
+
+typedef enum {
+    jsontypeerror,
+}jsontype;
+
+typedef enum {
+    JSONRPCParseError = -32700,     // JSON解析错误
+    JSONRPCInvalidRequest = -32600,
+    JSONRPCMethodNotFound = -32601,
+    JSONRPCInvalidParams = -32602,  //参数无效
+    JSONRPCInternalError = -32603,
+    JSONRPCNetWorkError = -900000, // 无网情况
+} JSONRPCErrorType;
+
+
+@interface DSJSONRPCError : NSObject
+
+@property (nonatomic, readonly)             NSInteger   code;
+@property (nonatomic, DS_STRONG, readonly)  NSString    *message;
+@property (nonatomic, DS_STRONG, readonly)  id          data;
+
+
+@property (nonatomic, assign) JSONRPCErrorType type;
+
+- (id)initWithErrorData:(NSDictionary *)errorData;
++ (DSJSONRPCError *)errorWithData:(NSDictionary *)errorData;
+
++ (instancetype)networkError:(NSError *)error;
++ (instancetype)parseJsonError:(NSError *)error;
+
+@end

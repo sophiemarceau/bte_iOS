@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="osJ-Kb-akv" customClass="BHNoDataTipView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_default_none" translatesAutoresizingMaskIntoConstraints="NO" id="67f-fc-D02">
+                    <rect key="frame" x="133.5" y="273.5" width="108" height="100"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无内容" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blO-3Q-xca">
+                    <rect key="frame" x="20" y="383.5" width="335" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                    <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="blO-3Q-xca" firstAttribute="top" secondItem="67f-fc-D02" secondAttribute="bottom" constant="10" id="2PT-B3-Yf8"/>
+                <constraint firstItem="67f-fc-D02" firstAttribute="centerX" secondItem="osJ-Kb-akv" secondAttribute="centerX" id="PJc-9a-H6K"/>
+                <constraint firstAttribute="trailing" secondItem="blO-3Q-xca" secondAttribute="trailing" constant="20" id="Xhe-fy-Zur"/>
+                <constraint firstItem="67f-fc-D02" firstAttribute="centerY" secondItem="osJ-Kb-akv" secondAttribute="centerY" constant="-10" id="voa-OT-397"/>
+                <constraint firstItem="blO-3Q-xca" firstAttribute="leading" secondItem="osJ-Kb-akv" secondAttribute="leading" constant="20" id="weo-NX-y4l"/>
+            </constraints>
+            <connections>
+                <outlet property="imageView" destination="67f-fc-D02" id="thg-wa-gud"/>
+                <outlet property="tipLabel" destination="blO-3Q-xca" id="Hus-0j-Esb"/>
+            </connections>
+            <point key="canvasLocation" x="52.5" y="203.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_default_none" width="108" height="100"/>
+    </resources>
+</document>

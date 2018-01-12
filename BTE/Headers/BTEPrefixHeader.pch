@@ -9,7 +9,44 @@
 #ifndef BTEPrefixHeader_pch
 #define BTEPrefixHeader_pch
 
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+// MARK: --------Library---------
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <Masonry.h>
+#import <MJRefresh.h>
+#import <YYModel.h>
+#import <AFNetworking.h>
+#import <MBProgressHUD.h>
+#import <UIImageView+WebCache.h>
+#import "BHToast.h"
+
+// MARK: --------Headers---------
+#import "BHAppConfig.h"
+#import "BHHttpConstant.h"
+#import "BHDefineConstant.h"
+#import "BHNotificationConstant.h"
+#import "BHStaticConstant.h"
+
+//// MARK: --------Category---------
+#import "UIImage+help.h"
+#import "UIImage+gif.h"
+#import "NSString+category.h"
+#import "UIView+category.h"
+
+//// MARK: --------vv---------
+//#import "BHSeverEnvironment.h"
+//#import "WYCookiesTool.h"
+//#import "BHNavigationController.h"
+//#import "BHTabBarController.h"
+#import "BHHexColor.h"
+//#import "BHUser.h"
+//#import "WYRPCRequest.h"
+//#import "WYRequestManager.h"
+#import "DSJSONRPCError.h"
+//#import "BHBaseTableController.h"
+//#import "BHBaseWebViewVC.h"
+#import "BHToast.h"
+#import "BHProgressHUD.h"
+//#import "BHNightModeView.h"
 
 #endif /* BTEPrefixHeader_pch */
