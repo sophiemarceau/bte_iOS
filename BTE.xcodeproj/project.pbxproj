@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8179AD36200736C4001678D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AD35200736C4001678D2 /* AppDelegate.m */; };
-		8179AD3E200736C4001678D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8179AD3D200736C4001678D2 /* Assets.xcassets */; };
 		8179AD44200736C4001678D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AD43200736C4001678D2 /* main.m */; };
 		8179AD4E200736C4001678D2 /* BTETests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AD4D200736C4001678D2 /* BTETests.m */; };
 		8179AD59200736C4001678D2 /* BTEUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AD58200736C4001678D2 /* BTEUITests.m */; };
@@ -67,6 +65,9 @@
 		8179AE8C20086175001678D2 /* LLSegmentBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AE8020086175001678D2 /* LLSegmentBarVC.m */; };
 		8179AE9C20086181001678D2 /* BHHexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AE8E20086181001678D2 /* BHHexColor.m */; };
 		8179AEA420087E53001678D2 /* BTERequestTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AEA320087E53001678D2 /* BTERequestTools.m */; };
+		8179AED820089D43001678D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AED720089D43001678D2 /* AppDelegate.m */; };
+		8179AEDB20089DA3001678D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8179AEDA20089DA3001678D2 /* Assets.xcassets */; };
+		8179AEDD20089DB5001678D2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8179AEDC20089DB4001678D2 /* Info.plist */; };
 		A3C2D27DD5C7720F52180047 /* libPods-BTE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A790C91021B35BCE72495255 /* libPods-BTE.a */; };
 /* End PBXBuildFile section */
 
@@ -92,9 +93,6 @@
 		29D8AD9E35E9375EF64E62DB /* Pods-BTE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BTE/Pods-BTE.debug.xcconfig"; sourceTree = "<group>"; };
 		8179AD31200736C4001678D2 /* BTE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8179AD34200736C4001678D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		8179AD35200736C4001678D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8179AD3D200736C4001678D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8179AD42200736C4001678D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8179AD43200736C4001678D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8179AD49200736C4001678D2 /* BTETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BTETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8179AD4D200736C4001678D2 /* BTETests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTETests.m; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 		8179AD54200736C4001678D2 /* BTEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BTEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8179AD58200736C4001678D2 /* BTEUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEUITests.m; sourceTree = "<group>"; };
 		8179AD5A200736C4001678D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8179ADD6200763C6001678D2 /* BTEPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEPrefixHeader.pch; sourceTree = "<group>"; };
 		8179ADD920085DAA001678D2 /* UIBarButtonItem+XboyItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+XboyItem.h"; sourceTree = "<group>"; };
 		8179ADDA20085DAA001678D2 /* UIButton+EnlargeEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+EnlargeEdge.h"; sourceTree = "<group>"; };
 		8179ADDC20085DAB001678D2 /* UIImage+Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scale.h"; sourceTree = "<group>"; };
@@ -211,6 +208,10 @@
 		8179AE9B20086181001678D2 /* BHHexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHHexColor.h; sourceTree = "<group>"; };
 		8179AEA220087E53001678D2 /* BTERequestTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTERequestTools.h; sourceTree = "<group>"; };
 		8179AEA320087E53001678D2 /* BTERequestTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTERequestTools.m; sourceTree = "<group>"; };
+		8179AED720089D43001678D2 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8179AED920089D8A001678D2 /* BTEPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTEPrefixHeader.pch; sourceTree = "<group>"; };
+		8179AEDA20089DA3001678D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8179AEDC20089DB4001678D2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A790C91021B35BCE72495255 /* libPods-BTE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BTE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -281,9 +282,9 @@
 				8179AE6320086175001678D2 /* Libs */,
 				8179ADD5200761E2001678D2 /* Headers */,
 				8179AD34200736C4001678D2 /* AppDelegate.h */,
-				8179AD35200736C4001678D2 /* AppDelegate.m */,
-				8179AD3D200736C4001678D2 /* Assets.xcassets */,
-				8179AD42200736C4001678D2 /* Info.plist */,
+				8179AED720089D43001678D2 /* AppDelegate.m */,
+				8179AEDA20089DA3001678D2 /* Assets.xcassets */,
+				8179AEDC20089DB4001678D2 /* Info.plist */,
 				8179AD43200736C4001678D2 /* main.m */,
 			);
 			path = BTE;
@@ -415,7 +416,7 @@
 		8179ADD5200761E2001678D2 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				8179ADD6200763C6001678D2 /* BTEPrefixHeader.pch */,
+				8179AED920089D8A001678D2 /* BTEPrefixHeader.pch */,
 				8179AE5E2008601C001678D2 /* BHAppConfig.h */,
 				8179AE5D2008601C001678D2 /* BHDefineConstant.h */,
 				8179AE5C2008601C001678D2 /* BHHttpConstant.h */,
@@ -633,11 +634,12 @@
 			files = (
 				8179AE5620085FAA001678D2 /* BHAdvisoryShareView in Resources */,
 				8179AE5520085FAA001678D2 /* BHArticleShareVIew in Resources */,
-				8179AD3E200736C4001678D2 /* Assets.xcassets in Resources */,
+				8179AEDD20089DB5001678D2 /* Info.plist in Resources */,
 				8179AE5820085FAA001678D2 /* ScreenBlurry in Resources */,
 				8179AE8120086175001678D2 /* SSKeychain.strings in Resources */,
 				8179AE5920085FAA001678D2 /* BHNoDataTipVIew in Resources */,
 				8179AE5B20085FAA001678D2 /* BHNightModeView in Resources */,
+				8179AEDB20089DA3001678D2 /* Assets.xcassets in Resources */,
 				8179AE5720085FAA001678D2 /* BHNetworkErrorView in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -734,7 +736,6 @@
 				8179AEA420087E53001678D2 /* BTERequestTools.m in Sources */,
 				8179AE8320086175001678D2 /* SSKeychainQuery.m in Sources */,
 				8179AD44200736C4001678D2 /* main.m in Sources */,
-				8179AD36200736C4001678D2 /* AppDelegate.m in Sources */,
 				8179AE8520086175001678D2 /* EAIntroView.m in Sources */,
 				8179AE8820086175001678D2 /* DSJSONRPC.m in Sources */,
 				8179AE2120085DB5001678D2 /* UITextField+WLB.m in Sources */,
@@ -765,6 +766,7 @@
 				8179AE2F20085DB5001678D2 /* UIBarButtonItem+XboyItem.m in Sources */,
 				8179AE8B20086175001678D2 /* LLSegmentBar.m in Sources */,
 				8179AE8920086175001678D2 /* UIView+LLSegmentBar.m in Sources */,
+				8179AED820089D43001678D2 /* AppDelegate.m in Sources */,
 				8179AE8720086175001678D2 /* DSJSONRPCError.m in Sources */,
 				8179AE2C20085DB5001678D2 /* UIButton+avoidMultiTouch.m in Sources */,
 				8179AE2D20085DB5001678D2 /* NSArray+description.m in Sources */,
