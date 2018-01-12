@@ -229,10 +229,10 @@
     [self.pageControl setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
     [self.pageControl addTarget:self action:@selector(showPanelAtPageControl) forControlEvents:UIControlEventValueChanged];
     //设置当前选中
-    self.pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+    self.pageControl.currentPageIndicatorTintColor = BHHexColor(@"308CDD");
 //    COLOR_GADE_PAGE_SELECT;
     //设置nomal颜色
-    self.pageControl.pageIndicatorTintColor = [UIColor colorWithWhite:1.0 alpha:0.7];
+    self.pageControl.pageIndicatorTintColor = BHHexColor(@"D8D8D8");
 //    COLOR_GADE_PAGE_NOMAL;
     
     self.pageControl.numberOfPages = _pages.count;
