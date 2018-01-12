@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "BTEHomePageViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -19,7 +19,7 @@
     // 启动图片延时: 1秒
     [NSThread sleepForTimeInterval:3];
     
-//    [self setupKeyWindow];
+    [self setupKeyWindow];
     
     // 引导图
 //    [self _showGuideView];
@@ -56,10 +56,10 @@
 }
 
 - (void)setupKeyWindow {
-    
-//    BHTabBarController *tabBarVC = [BHTabBarController new];
+    BTEHomePageViewController *homePageVc= [[BTEHomePageViewController alloc] init];
+    BHNavigationController *NavVC = [[BHNavigationController alloc] initWithRootViewController:homePageVc];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    self.window.rootViewController = tabBarVC;
+    self.window.rootViewController = NavVC;
     self.window.backgroundColor= [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     //请求版本更细 （注意一定要在初始化网络之后加载）

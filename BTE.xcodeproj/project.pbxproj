@@ -73,6 +73,7 @@
 		8179AF0E2008A08C001678D2 /* BHBaseWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AF052008A08C001678D2 /* BHBaseWebViewVC.m */; };
 		8179AF0F2008A08C001678D2 /* BHBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AF062008A08C001678D2 /* BHBaseController.m */; };
 		8179AF102008A08C001678D2 /* BHBaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AF0A2008A08C001678D2 /* BHBaseTableController.m */; };
+		8179AF142008A3BA001678D2 /* BTEHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AF132008A3BA001678D2 /* BTEHomePageViewController.m */; };
 		A3C2D27DD5C7720F52180047 /* libPods-BTE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A790C91021B35BCE72495255 /* libPods-BTE.a */; };
 /* End PBXBuildFile section */
 
@@ -227,6 +228,8 @@
 		8179AF082008A08C001678D2 /* BHBaseWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHBaseWebViewVC.h; sourceTree = "<group>"; };
 		8179AF092008A08C001678D2 /* BHBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHBaseController.h; sourceTree = "<group>"; };
 		8179AF0A2008A08C001678D2 /* BHBaseTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHBaseTableController.m; sourceTree = "<group>"; };
+		8179AF122008A3BA001678D2 /* BTEHomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEHomePageViewController.h; sourceTree = "<group>"; };
+		8179AF132008A3BA001678D2 /* BTEHomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEHomePageViewController.m; sourceTree = "<group>"; };
 		A790C91021B35BCE72495255 /* libPods-BTE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BTE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -400,6 +403,7 @@
 		8179AD6720073BD0001678D2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8179AF112008A2F0001678D2 /* HomePageVC */,
 				8179AEF92008A08C001678D2 /* Main */,
 			);
 			path = Classes;
@@ -569,6 +573,15 @@
 				8179AF0A2008A08C001678D2 /* BHBaseTableController.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		8179AF112008A2F0001678D2 /* HomePageVC */ = {
+			isa = PBXGroup;
+			children = (
+				8179AF122008A3BA001678D2 /* BTEHomePageViewController.h */,
+				8179AF132008A3BA001678D2 /* BTEHomePageViewController.m */,
+			);
+			path = HomePageVC;
 			sourceTree = "<group>";
 		};
 		EB5C9D1AE46F2F99BE633CD9 /* Pods */ = {
@@ -809,6 +822,7 @@
 				8179AE9C20086181001678D2 /* BHHexColor.m in Sources */,
 				8179AE3B20085DB5001678D2 /* UIImage+Scale.m in Sources */,
 				8179AE8620086175001678D2 /* EAIntroPage.m in Sources */,
+				8179AF142008A3BA001678D2 /* BTEHomePageViewController.m in Sources */,
 				8179AE8220086175001678D2 /* SSKeychain.m in Sources */,
 				8179AE3220085DB5001678D2 /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
 				8179AE8A20086175001678D2 /* LLSegmentBarConfig.m in Sources */,
