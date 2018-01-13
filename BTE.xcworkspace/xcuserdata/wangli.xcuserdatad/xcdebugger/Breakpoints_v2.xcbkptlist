@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/HomePageVC/BTEHomeWebViewController.m"
-            timestampString = "537530389.4790339"
+            timestampString = "537530998.8522871"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/Main/Upgrade/BTEUpgradeViewController.m"
-            timestampString = "537530389.479187"
+            timestampString = "537530998.852437"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "-updateNow"
             landmarkType = "7">
          </BreakpointContent>

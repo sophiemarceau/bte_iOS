@@ -21,6 +21,8 @@
     
     UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(35 / 2, 131, (SCREEN_WIDTH - 35), (872 * (SCREEN_WIDTH - 35) / 680))];
     bgImageView.image = [UIImage imageNamed:@"upgrad_image"];
+    bgImageView.layer.masksToBounds = YES;
+    bgImageView.layer.cornerRadius = 10;
     bgImageView.userInteractionEnabled = YES;
     [self.view addSubview:bgImageView];
     
