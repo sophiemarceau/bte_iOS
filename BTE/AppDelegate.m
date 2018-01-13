@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "EAIntroView.h" //引导图
+#import "BHVersionTool.h" //版本升级
 #import "BTEHomeWebViewController.h"
 @interface AppDelegate ()<EAIntroDelegate>
 
@@ -67,7 +68,7 @@
     self.window.backgroundColor= [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     //请求版本更细 （注意一定要在初始化网络之后加载）
-//    [BHVersionTool requestAppVersion:tabBarVC];
+    [BHVersionTool requestAppVersion:NavVC];
 }
 
 #pragma mark EAIntroDelegate 版本引导图

@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/HomePageVC/BTEHomeWebViewController.m"
-            timestampString = "537520265.525785"
+            timestampString = "537528860.9385231"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -112,6 +112,22 @@
             startingLineNumber = "176"
             endingLineNumber = "176"
             landmarkName = "-webView"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Classes/Main/Upgrade/BTEUpgradeViewController.m"
+            timestampString = "537528860.938617"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-updateNow"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
