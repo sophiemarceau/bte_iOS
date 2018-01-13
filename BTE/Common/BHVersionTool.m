@@ -11,6 +11,18 @@
 
 @implementation BHVersionTool
 + (void)requestAppVersion:(UIViewController *)viewController {
+    
+//    [BTERequestTools requestWithURLString:nil parameters:nil type:1 success:^(id responseObject) {
+//        BHVersionItem * appItem = [BHVersionItem yy_modelWithDictionary:responseObject[@"data"]];
+//        if (appItem) {
+//            
+//        }
+//    } failure:^(NSError *error) {
+//
+//    }];
+    
+    
+    
     BTEUpgradeViewController *alterViewVC = [[BTEUpgradeViewController alloc] init];
     alterViewVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     //把当前控制器作为背景
