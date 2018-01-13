@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "EAIntroView.h" //引导图
-#import "BTEHomePageViewController.h"
+#import "BTEHomeWebViewController.h"
 @interface AppDelegate ()<EAIntroDelegate>
 
 @end
@@ -57,7 +57,10 @@
 }
 
 - (void)setupKeyWindow {
-    BTEHomePageViewController *homePageVc= [[BTEHomePageViewController alloc] init];
+    BTEHomeWebViewController *homePageVc= [[BTEHomeWebViewController alloc] init];
+    homePageVc.urlString = @"http://www.baidu.com";
+    homePageVc.isHiddenLeft = YES;
+    homePageVc.isHiddenBottom = YES;
     BHNavigationController *NavVC = [[BHNavigationController alloc] initWithRootViewController:homePageVc];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = NavVC;

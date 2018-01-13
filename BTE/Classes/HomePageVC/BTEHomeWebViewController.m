@@ -1,26 +1,26 @@
 //
-//  BTEHomePageViewController.m
+//  BTEHomeWebViewController.m
 //  BTE
 //
-//  Created by wangli on 2018/1/12.
+//  Created by wangli on 2018/1/13.
 //  Copyright © 2018年 wangli. All rights reserved.
 //
 
-#import "BTEHomePageViewController.h"
+#import "BTEHomeWebViewController.h"
 
-@interface BTEHomePageViewController ()
+@interface BTEHomeWebViewController ()
 
 @end
 
-@implementation BTEHomePageViewController
+@implementation BTEHomeWebViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"比特易";
-    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

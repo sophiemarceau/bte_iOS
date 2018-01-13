@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Libs/EAIntroView/EAIntroView.m"
-            timestampString = "537447107.254106"
+            timestampString = "537520265.52549"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "218"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Libs/EAIntroView/EAIntroView.m"
-            timestampString = "537447107.25424"
+            timestampString = "537520265.5255671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "322"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Libs/EAIntroView/EAIntroView.m"
-            timestampString = "537447107.254359"
+            timestampString = "537520265.525627"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "347"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Libs/EAIntroView/EAIntroView.m"
-            timestampString = "537447107.254465"
+            timestampString = "537520265.525683"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "364"
@@ -74,12 +74,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Libs/EAIntroView/EAIntroView.m"
-            timestampString = "537447107.254576"
+            timestampString = "537520265.525737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "148"
             endingLineNumber = "148"
             landmarkName = "-viewForPage:atXIndex:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Classes/HomePageVC/BTEHomeWebViewController.m"
+            timestampString = "537520265.525785"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Classes/Main/Base/BHBaseWebViewVC.m"
+            timestampString = "537520338.348038"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "-webView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
