@@ -60,17 +60,14 @@
 - (void)setupKeyWindow {
     BTEHomeWebViewController *homePageVc= [[BTEHomeWebViewController alloc] init];
     homePageVc.urlString = kAppBTEH5Address;
-    homePageVc.isHiddenLeft = YES;
+    homePageVc.isHiddenLeft = NO;
     homePageVc.isHiddenBottom = YES;
     BHNavigationController *NavVC = [[BHNavigationController alloc] initWithRootViewController:homePageVc];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = NavVC;
     self.window.backgroundColor= [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    //请求版本更细 （注意一定要在初始化网络之后加载）
-    
-    
-    ///test
+    //请求版本更新 （注意一定要在初始化网络之后加载）
     [BHVersionTool requestAppVersion:NavVC];
 }
 

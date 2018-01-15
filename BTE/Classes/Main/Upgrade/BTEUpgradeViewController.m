@@ -9,7 +9,7 @@
 #import "BTEUpgradeViewController.h"
 
 @interface BTEUpgradeViewController ()
-
+@property (nonatomic, strong) UITextView *textUpdateTips1;
 @end
 
 @implementation BTEUpgradeViewController
@@ -25,6 +25,28 @@
     bgImageView.layer.cornerRadius = 10;
     bgImageView.userInteractionEnabled = YES;
     [self.view addSubview:bgImageView];
+    
+    //titleLabel
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(61, 198, bgImageView.width - 61 * 2, 20)];
+    titleLabel.text = @"68%的用户正在使用最新版本V2.0";
+    titleLabel.font = [UIFont systemFontOfSize:14];
+    titleLabel.textColor = BHHexColor(@"000000");
+    [bgImageView addSubview:titleLabel];
+    
+    _textUpdateTips1 = [[UITextView alloc] initWithFrame:CGRectMake(titleLabel.left, titleLabel.bottom, titleLabel.width, 120)];
+    _textUpdateTips1.editable = NO;
+    _textUpdateTips1.textColor = BHHexColor(@"333333");
+    [bgImageView addSubview:_textUpdateTips1];
+    
+    NSString *tips = [@"1.修复了部分bug。2.新增了播放功能。3.完善了部分页面。4.优化了推荐速度。" stringByReplacingOccurrencesOfString:@"。" withString:@"\n"];
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:tips];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    //调整行间距
+    [paragraphStyle setLineSpacing:10];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [tips length])];
+    self.textUpdateTips1.attributedText = attributedString;
+    _textUpdateTips1.font = [UIFont systemFontOfSize:14];
     
     UIButton *onButton = [UIButton buttonWithType:UIButtonTypeCustom];
     onButton.frame = CGRectMake((bgImageView.width - 510 / 2) / 2, bgImageView.height - 30 - 44, 510 / 2, 88 / 2);
