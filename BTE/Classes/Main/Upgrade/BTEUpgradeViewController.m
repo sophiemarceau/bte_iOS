@@ -45,9 +45,13 @@
 - (void)updateNow
 {
     [self dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"立即更新跳转AppStore");
+    
     dispatch_async(dispatch_get_main_queue(), ^{
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kAppStoreAddress]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:STRISEMPTY(self.url) ? kAppStoreAddress : self.url]];
+        if (self.force.integerValue == 1) {
+            //强制升级退出程序
+            exit(0);
+        }
     });
 }
 

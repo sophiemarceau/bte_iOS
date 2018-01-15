@@ -19,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 启动图片延时: 1秒
-    [NSThread sleepForTimeInterval:3];
+//    [NSThread sleepForTimeInterval:3];
     
     [self setupKeyWindow];
     
@@ -59,7 +59,7 @@
 
 - (void)setupKeyWindow {
     BTEHomeWebViewController *homePageVc= [[BTEHomeWebViewController alloc] init];
-    homePageVc.urlString = @"http://www.baidu.com";
+    homePageVc.urlString = kAppBTEH5Address;
     homePageVc.isHiddenLeft = YES;
     homePageVc.isHiddenBottom = YES;
     BHNavigationController *NavVC = [[BHNavigationController alloc] initWithRootViewController:homePageVc];

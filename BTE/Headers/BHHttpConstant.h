@@ -37,7 +37,7 @@ static NSString *const kCollection = @"collection"; //文章收藏
 static NSString *const kCancelCollection = @"cancelCollection"; //文章取消收藏
 
 //MARK:版本更新
-static NSString *const kAppVersion = @"appMessage";//版本更新
+static NSString *const kAppVersion = @"http://47.94.217.12:18081/app/api/config/update";//版本更新
 static NSString *const kFeedback = @"feedback";//用户反馈
 static NSString *const kAttention = @"attention";//关注作者
 static NSString *const kCancelAttention = @"cancelAttention";//关注作者
