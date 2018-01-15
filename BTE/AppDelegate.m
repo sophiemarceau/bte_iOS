@@ -68,6 +68,9 @@
     self.window.backgroundColor= [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     //请求版本更细 （注意一定要在初始化网络之后加载）
+    
+    
+    ///test
     [BHVersionTool requestAppVersion:NavVC];
 }
 
