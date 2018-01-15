@@ -568,8 +568,8 @@
 		8179AEFA2008A08C001678D2 /* Guide */ = {
 			isa = PBXGroup;
 			children = (
-				8179AEFB2008A08C001678D2 /* BHGuideVC.m */,
 				8179AEFC2008A08C001678D2 /* BHGuideVC.h */,
+				8179AEFB2008A08C001678D2 /* BHGuideVC.m */,
 			);
 			path = Guide;
 			sourceTree = "<group>";
