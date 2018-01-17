@@ -23,6 +23,8 @@
             alterViewVC.modalPresentationStyle = UIModalPresentationOverFullScreen;
             alterViewVC.url = appItem.url;
             alterViewVC.force = appItem.force;
+            alterViewVC.name = appItem.name;
+            alterViewVC.desc = appItem.desc;
             [viewController presentViewController:alterViewVC animated:YES completion:nil];
         }
     } failure:^(NSError *error) {

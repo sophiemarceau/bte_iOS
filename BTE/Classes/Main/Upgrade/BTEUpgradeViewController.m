@@ -28,7 +28,7 @@
     
     //titleLabel
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(61, 198, bgImageView.width - 61 * 2, 20)];
-    titleLabel.text = @"68%的用户正在使用最新版本V2.0";
+    titleLabel.text = self.name;
     titleLabel.font = [UIFont systemFontOfSize:14];
     titleLabel.textColor = BHHexColor(@"000000");
     [bgImageView addSubview:titleLabel];
@@ -38,7 +38,7 @@
     _textUpdateTips1.textColor = BHHexColor(@"333333");
     [bgImageView addSubview:_textUpdateTips1];
     
-    NSString *tips = [@"1.修复了部分bug。2.新增了播放功能。3.完善了部分页面。4.优化了推荐速度。" stringByReplacingOccurrencesOfString:@"。" withString:@"\n"];
+    NSString *tips = [self.desc stringByReplacingOccurrencesOfString:@"|" withString:@"\n"];
     
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:tips];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];

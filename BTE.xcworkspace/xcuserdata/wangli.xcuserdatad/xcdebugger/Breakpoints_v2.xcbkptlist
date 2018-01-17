@@ -89,29 +89,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BTE/Classes/HomePageVC/BTEHomeWebViewController.m"
-            timestampString = "537530998.8522871"
+            filePath = "BTE/Classes/Main/Base/BHBaseWebViewVC.m"
+            timestampString = "537851043.713448"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "-webView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BTE/Classes/Main/Base/BHBaseWebViewVC.m"
-            timestampString = "537520338.348038"
+            filePath = "BTE/Common/BHVersionTool.m"
+            timestampString = "537856407.756472"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
-            landmarkName = "-webView"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "+requestAppVersion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
