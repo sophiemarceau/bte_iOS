@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "ic_beijing.png",
+      "filename" : "tanchuang.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "ic_beijing-1.png",
+      "filename" : "tanchuang@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "ic_beijing-2.png",
+      "filename" : "tanchuang@3x.png",
       "scale" : "3x"
     }
   ],

@@ -19,7 +19,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
     
-    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(35 / 2, 131, (SCREEN_WIDTH - 35), (872 * (SCREEN_WIDTH - 35) / 680))];
+    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 300) / 2, (SCREEN_HEIGHT - 360) / 2 + 20, 300, 360)];
     bgImageView.image = [UIImage imageNamed:@"upgrad_image"];
     bgImageView.layer.masksToBounds = YES;
     bgImageView.layer.cornerRadius = 10;
@@ -27,13 +27,13 @@
     [self.view addSubview:bgImageView];
     
     //titleLabel
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(61, 198, bgImageView.width - 61 * 2, 20)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(41, 148, bgImageView.width - 41 * 2, 20)];
     titleLabel.text = self.name;
     titleLabel.font = [UIFont systemFontOfSize:14];
     titleLabel.textColor = BHHexColor(@"000000");
     [bgImageView addSubview:titleLabel];
     
-    _textUpdateTips1 = [[UITextView alloc] initWithFrame:CGRectMake(titleLabel.left, titleLabel.bottom, titleLabel.width, 120)];
+    _textUpdateTips1 = [[UITextView alloc] initWithFrame:CGRectMake(titleLabel.left, titleLabel.bottom + 7, titleLabel.width, 70)];
     _textUpdateTips1.editable = NO;
     _textUpdateTips1.textColor = BHHexColor(@"333333");
     [bgImageView addSubview:_textUpdateTips1];
@@ -49,7 +49,7 @@
     _textUpdateTips1.font = [UIFont systemFontOfSize:14];
     
     UIButton *onButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    onButton.frame = CGRectMake((bgImageView.width - 510 / 2) / 2, bgImageView.height - 30 - 44, 510 / 2, 88 / 2);
+    onButton.frame = CGRectMake((bgImageView.width - 510 / 2) / 2, bgImageView.height - 60 - 44, 510 / 2, 88 / 2);
     [onButton setBackgroundImage:[UIImage imageNamed:@"upgrad_button_on"] forState:UIControlStateNormal];
     [onButton setTitle:@"立即更新" forState:UIControlStateNormal];
     [onButton setTitleColor:BHHexColor(@"ffffff") forState:UIControlStateNormal];
@@ -58,10 +58,12 @@
     [bgImageView addSubview:onButton];
     
     UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    closeButton.frame = CGRectMake((SCREEN_WIDTH - 41) / 2, bgImageView.bottom + 15, 41, 41);
-    [closeButton setBackgroundImage:[UIImage imageNamed:@"upgrad_button_off"] forState:UIControlStateNormal];
+    closeButton.frame = CGRectMake((bgImageView.width - 90) / 2, bgImageView.height - 18 - 25, 90, 25);
+    [closeButton setTitle:@"稍后更新" forState:UIControlStateNormal];
+    [closeButton setTitleColor:BHHexColor(@"65B0F3") forState:UIControlStateNormal];
+    closeButton.titleLabel.font = [UIFont systemFontOfSize:18];
     [closeButton addTarget:self action:@selector(closeNow) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:closeButton];
+    [bgImageView addSubview:closeButton];
 }
 
 - (void)updateNow
