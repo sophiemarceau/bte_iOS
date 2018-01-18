@@ -10,6 +10,7 @@
 #import "EAIntroView.h" //引导图
 #import "BHVersionTool.h" //版本升级
 #import "BTEHomeWebViewController.h"
+#import <Bugly/Bugly.h> //腾讯Bugly
 @interface AppDelegate ()<EAIntroDelegate>
 
 @end
@@ -25,8 +26,8 @@
     
     // 引导图
     [self _showGuideView];
-    
-    
+    //腾讯Bugly
+    [Bugly startWithAppId:BuglyAppId];
     return YES;
 }
 

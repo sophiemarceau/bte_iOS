@@ -21,7 +21,7 @@
 #define JPushTestKEY @"08512c5c2150b34cdb48e585"
 
 //腾讯Bugly
-#define BuglyAppId @"ca4e69b438"
+#define BuglyAppId @"02d2f32836"
 
 
 #endif /* BHAppConfig_h */
