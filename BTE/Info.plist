@@ -57,6 +57,16 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>如果不允许，您将无法使用自定义头像的功能。</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>如果不允许，您将无法获取精准的推荐内容。</string>
+	<key>NSLocationUsageDescription</key>
+	<string>如果不允许，您将无法获取精准的推荐内容。</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>如果不允许，您将无法获取精准的推荐内容。</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>如果不允许，您将无法使用自定义头像的功能。</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
