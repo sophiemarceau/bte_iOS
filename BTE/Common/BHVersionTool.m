@@ -13,6 +13,7 @@
 + (void)requestAppVersion:(UIViewController *)viewController {
     
     [BTERequestTools requestWithURLString:kAppVersion parameters:@{@"type":@"1",@"version":kCurrentVersion} type:1 success:^(id responseObject) {
+        NSLog(@"--------%@",responseObject);
         BHVersionItem * appItem = [BHVersionItem yy_modelWithDictionary:responseObject[@"data"]];
         if (appItem && !STRISEMPTY(appItem.update) && [appItem.update integerValue] == 1) {
             BTEUpgradeViewController *alterViewVC = [[BTEUpgradeViewController alloc] init];
