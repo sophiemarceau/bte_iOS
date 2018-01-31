@@ -686,7 +686,7 @@
 				TargetAttributes = {
 					8179AD30200736C4001678D2 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					8179AD48200736C4001678D2 = {
 						CreatedOnToolsVersion = 9.2;
@@ -1019,15 +1019,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 975DMXYR6T;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 696JEW54Q7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BTE/Headers/BTEPrefixHeader.pch";
 				INFOPLIST_FILE = BTE/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bitcoinheadlines.iosapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BTE.iosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d125a077-5f05-428d-8069-51d4bbda2604";
+				PROVISIONING_PROFILE_SPECIFIER = Develop_profile_bte;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1038,15 +1040,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 975DMXYR6T;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 696JEW54Q7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BTE/Headers/BTEPrefixHeader.pch";
 				INFOPLIST_FILE = BTE/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bitcoinheadlines.iosapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BTE.iosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d125a077-5f05-428d-8069-51d4bbda2604";
+				PROVISIONING_PROFILE_SPECIFIER = Develop_profile_bte;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

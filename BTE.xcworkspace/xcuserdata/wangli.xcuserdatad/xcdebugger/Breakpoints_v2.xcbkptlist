@@ -106,11 +106,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Common/BHVersionTool.m"
-            timestampString = "538043233.1593879"
+            timestampString = "539070975.559782"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
             endingLineNumber = "16"
+            landmarkName = "+requestAppVersion:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Common/BHVersionTool.m"
+            timestampString = "539070975.56012"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "+requestAppVersion:"
             landmarkType = "7">
          </BreakpointContent>
