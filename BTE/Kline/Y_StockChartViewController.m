@@ -132,12 +132,33 @@
 - (void)reloadData
 {
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    param[@"period"] = self.type;
-    param[@"symbol"] = @"btcusdt";
-    param[@"size"] = @"300";
+//    param[@"period"] = self.type;
+//    param[@"symbol"] = @"btcusdt";
+//    param[@"size"] = @"300";
     
-    [NetWorking requestWithApi:@"https://api.huobi.pro/market/history/kline" param:param thenSuccess:^(NSDictionary *responseObject) {
-        if ([responseObject[@"status"] isEqualToString:@"ok"]) {
+    
+    param[@"start"] = @"2018-01-31";
+    param[@"end"] = @"2018-02-1";
+    param[@"type"] = self.type;
+    param[@"client"] = @"ios";
+    
+    [NetWorking requestWithApi:@"http://m.bte.top/app/api/okData/line" param:param thenSuccess:^(NSDictionary *responseObject)
+     {
+//    [NetWorking requestWithApi:@"https://api.huobi.pro/market/history/kline" param:param thenSuccess:^(NSDictionary *responseObject) {
+//        if ([responseObject[@"status"] isEqualToString:@"ok"]) {
+         if (responseObject[@"data"]) {
+             if ([responseObject[@"data"] isKindOfClass:[NSArray class]]) {
+                 NSArray *tempArr = (NSArray *)responseObject[@"data"];
+                 if (tempArr.count > 7) {
+                     
+                 }else
+                 {
+                     return;
+                 }
+             } else
+             {
+                 return;
+             }
             Y_KLineGroupModel *groupModel = [Y_KLineGroupModel objectWithArray:responseObject[@"data"]];
             
             self.groupModel = groupModel;
