@@ -11,6 +11,10 @@
 #import "BHVersionTool.h" //版本升级
 #import "BTEHomeWebViewController.h"
 #import <Bugly/Bugly.h> //腾讯Bugly
+
+#import "ViewController.h"
+
+
 @interface AppDelegate ()<EAIntroDelegate>
 
 @end
@@ -58,11 +62,27 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+        if(self.isEable) {
+            return UIInterfaceOrientationMaskLandscape;
+        } else {
+    return UIInterfaceOrientationMaskPortrait;
+        }
+}
+
 - (void)setupKeyWindow {
-    BTEHomeWebViewController *homePageVc= [[BTEHomeWebViewController alloc] init];
-    homePageVc.urlString = kAppBTEH5Address;
-    homePageVc.isHiddenLeft = NO;
-    homePageVc.isHiddenBottom = YES;
+//    BTEHomeWebViewController *homePageVc= [[BTEHomeWebViewController alloc] init];
+//
+//
+//
+//
+//
+//    homePageVc.urlString = kAppBTEH5Address;
+//    homePageVc.isHiddenLeft = NO;
+//    homePageVc.isHiddenBottom = YES;
+    
+    ViewController *homePageVc= [[ViewController alloc] init];
     BHNavigationController *NavVC = [[BHNavigationController alloc] initWithRootViewController:homePageVc];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = NavVC;

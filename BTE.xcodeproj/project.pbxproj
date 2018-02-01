@@ -77,6 +77,32 @@
 		8179AF102008A08C001678D2 /* BHBaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AF0A2008A08C001678D2 /* BHBaseTableController.m */; };
 		8179AF142008A3BA001678D2 /* BTEHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AF132008A3BA001678D2 /* BTEHomePageViewController.m */; };
 		8179AF172009E0A3001678D2 /* BTEHomeWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AF162009E0A3001678D2 /* BTEHomeWebViewController.m */; };
+		8179D2EA2021D73600C13447 /* Y_StockChartGlobalVariable.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D2B02021D73600C13447 /* Y_StockChartGlobalVariable.m */; };
+		8179D2EB2021D73600C13447 /* UIColor+Y_StockChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D2B52021D73600C13447 /* UIColor+Y_StockChart.m */; };
+		8179D2EC2021D73600C13447 /* Y_StockChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D2B62021D73600C13447 /* Y_StockChartView.m */; };
+		8179D2ED2021D73600C13447 /* Y_KLineMAView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D2BA2021D73600C13447 /* Y_KLineMAView.m */; };
+		8179D2EE2021D73600C13447 /* Y_KLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D2BB2021D73600C13447 /* Y_KLineView.m */; };
+		8179D2EF2021D73600C13447 /* Y_StockChartRightYView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D2BD2021D73600C13447 /* Y_StockChartRightYView.m */; };
+		8179D2F02021D73600C13447 /* Y_VolumeMAView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D2C12021D73600C13447 /* Y_VolumeMAView.m */; };
+		8179D2F12021D73600C13447 /* Y_KLineAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D2C32021D73600C13447 /* Y_KLineAccessoryView.m */; };
+		8179D2F22021D73600C13447 /* Y_KLineAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D2C62021D73600C13447 /* Y_KLineAccessory.m */; };
+		8179D2F32021D73600C13447 /* Y_AccessoryMAView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D2C92021D73600C13447 /* Y_AccessoryMAView.m */; };
+		8179D2F42021D73600C13447 /* Y_KLinePositionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D2CD2021D73600C13447 /* Y_KLinePositionModel.m */; };
+		8179D2F52021D73600C13447 /* MA-EMA-MACD介绍.md in Resources */ = {isa = PBXBuildFile; fileRef = 8179D2CE2021D73600C13447 /* MA-EMA-MACD介绍.md */; };
+		8179D2F62021D73600C13447 /* Y_KLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D2D32021D73600C13447 /* Y_KLineModel.m */; };
+		8179D2F72021D73600C13447 /* 指标公式.md in Resources */ = {isa = PBXBuildFile; fileRef = 8179D2D42021D73600C13447 /* 指标公式.md */; };
+		8179D2F82021D73600C13447 /* Y_KLineGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D2D52021D73600C13447 /* Y_KLineGroupModel.m */; };
+		8179D2F92021D73600C13447 /* KDJ介绍.md in Resources */ = {isa = PBXBuildFile; fileRef = 8179D2D62021D73600C13447 /* KDJ介绍.md */; };
+		8179D2FA2021D73600C13447 /* Y_KLineVolumePositionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D2D72021D73600C13447 /* Y_KLineVolumePositionModel.m */; };
+		8179D2FB2021D73600C13447 /* Y_KLineVolumeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D2DA2021D73600C13447 /* Y_KLineVolumeView.m */; };
+		8179D2FC2021D73600C13447 /* Y_KLineVolume.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D2DC2021D73600C13447 /* Y_KLineVolume.m */; };
+		8179D2FD2021D73600C13447 /* Y_KLineMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D2E02021D73600C13447 /* Y_KLineMainView.m */; };
+		8179D2FE2021D73600C13447 /* Y_MALine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D2E42021D73600C13447 /* Y_MALine.m */; };
+		8179D2FF2021D73600C13447 /* Y_KLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D2E52021D73600C13447 /* Y_KLine.m */; };
+		8179D3002021D73600C13447 /* Y_StockChartSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D2E82021D73600C13447 /* Y_StockChartSegmentView.m */; };
+		8179D3042021D76B00C13447 /* NetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D3022021D76B00C13447 /* NetWorking.m */; };
+		8179D3092021D82800C13447 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D3052021D82700C13447 /* ViewController.m */; };
+		8179D30A2021D82800C13447 /* Y_StockChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D3072021D82800C13447 /* Y_StockChartViewController.m */; };
 		A3C2D27DD5C7720F52180047 /* libPods-BTE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A790C91021B35BCE72495255 /* libPods-BTE.a */; };
 /* End PBXBuildFile section */
 
@@ -239,6 +265,56 @@
 		8179AF132008A3BA001678D2 /* BTEHomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEHomePageViewController.m; sourceTree = "<group>"; };
 		8179AF152009E0A3001678D2 /* BTEHomeWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEHomeWebViewController.h; sourceTree = "<group>"; };
 		8179AF162009E0A3001678D2 /* BTEHomeWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEHomeWebViewController.m; sourceTree = "<group>"; };
+		8179D2AC2021D73600C13447 /* Y_StockChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartView.h; sourceTree = "<group>"; };
+		8179D2AF2021D73600C13447 /* Y_StockChartGlobalVariable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartGlobalVariable.h; sourceTree = "<group>"; };
+		8179D2B02021D73600C13447 /* Y_StockChartGlobalVariable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartGlobalVariable.m; sourceTree = "<group>"; };
+		8179D2B22021D73600C13447 /* Y_StockChartConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartConstant.h; sourceTree = "<group>"; };
+		8179D2B42021D73600C13447 /* UIColor+Y_StockChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Y_StockChart.h"; sourceTree = "<group>"; };
+		8179D2B52021D73600C13447 /* UIColor+Y_StockChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Y_StockChart.m"; sourceTree = "<group>"; };
+		8179D2B62021D73600C13447 /* Y_StockChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartView.m; sourceTree = "<group>"; };
+		8179D2B92021D73600C13447 /* Y_KLineMAView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineMAView.h; sourceTree = "<group>"; };
+		8179D2BA2021D73600C13447 /* Y_KLineMAView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineMAView.m; sourceTree = "<group>"; };
+		8179D2BB2021D73600C13447 /* Y_KLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineView.m; sourceTree = "<group>"; };
+		8179D2BD2021D73600C13447 /* Y_StockChartRightYView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartRightYView.m; sourceTree = "<group>"; };
+		8179D2BE2021D73600C13447 /* Y_StockChartRightYView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartRightYView.h; sourceTree = "<group>"; };
+		8179D2C02021D73600C13447 /* Y_VolumeMAView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_VolumeMAView.h; sourceTree = "<group>"; };
+		8179D2C12021D73600C13447 /* Y_VolumeMAView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_VolumeMAView.m; sourceTree = "<group>"; };
+		8179D2C32021D73600C13447 /* Y_KLineAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineAccessoryView.m; sourceTree = "<group>"; };
+		8179D2C52021D73600C13447 /* Y_KLineAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineAccessory.h; sourceTree = "<group>"; };
+		8179D2C62021D73600C13447 /* Y_KLineAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineAccessory.m; sourceTree = "<group>"; };
+		8179D2C72021D73600C13447 /* Y_KLineAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineAccessoryView.h; sourceTree = "<group>"; };
+		8179D2C92021D73600C13447 /* Y_AccessoryMAView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_AccessoryMAView.m; sourceTree = "<group>"; };
+		8179D2CA2021D73600C13447 /* Y_AccessoryMAView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_AccessoryMAView.h; sourceTree = "<group>"; };
+		8179D2CD2021D73600C13447 /* Y_KLinePositionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLinePositionModel.m; sourceTree = "<group>"; };
+		8179D2CE2021D73600C13447 /* MA-EMA-MACD介绍.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "MA-EMA-MACD介绍.md"; sourceTree = "<group>"; };
+		8179D2CF2021D73600C13447 /* Y_KLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineModel.h; sourceTree = "<group>"; };
+		8179D2D02021D73600C13447 /* Y_KLineGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineGroupModel.h; sourceTree = "<group>"; };
+		8179D2D12021D73600C13447 /* Y_KLineVolumePositionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineVolumePositionModel.h; sourceTree = "<group>"; };
+		8179D2D22021D73600C13447 /* Y_KLinePositionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLinePositionModel.h; sourceTree = "<group>"; };
+		8179D2D32021D73600C13447 /* Y_KLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineModel.m; sourceTree = "<group>"; };
+		8179D2D42021D73600C13447 /* 指标公式.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "指标公式.md"; sourceTree = "<group>"; };
+		8179D2D52021D73600C13447 /* Y_KLineGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineGroupModel.m; sourceTree = "<group>"; };
+		8179D2D62021D73600C13447 /* KDJ介绍.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "KDJ介绍.md"; sourceTree = "<group>"; };
+		8179D2D72021D73600C13447 /* Y_KLineVolumePositionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineVolumePositionModel.m; sourceTree = "<group>"; };
+		8179D2D82021D73600C13447 /* Y_KLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineView.h; sourceTree = "<group>"; };
+		8179D2DA2021D73600C13447 /* Y_KLineVolumeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineVolumeView.m; sourceTree = "<group>"; };
+		8179D2DC2021D73600C13447 /* Y_KLineVolume.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineVolume.m; sourceTree = "<group>"; };
+		8179D2DD2021D73600C13447 /* Y_KLineVolume.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineVolume.h; sourceTree = "<group>"; };
+		8179D2DE2021D73600C13447 /* Y_KLineVolumeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineVolumeView.h; sourceTree = "<group>"; };
+		8179D2E02021D73600C13447 /* Y_KLineMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineMainView.m; sourceTree = "<group>"; };
+		8179D2E22021D73600C13447 /* Y_MALine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_MALine.h; sourceTree = "<group>"; };
+		8179D2E32021D73600C13447 /* Y_KLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLine.h; sourceTree = "<group>"; };
+		8179D2E42021D73600C13447 /* Y_MALine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_MALine.m; sourceTree = "<group>"; };
+		8179D2E52021D73600C13447 /* Y_KLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLine.m; sourceTree = "<group>"; };
+		8179D2E62021D73600C13447 /* Y_KLineMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineMainView.h; sourceTree = "<group>"; };
+		8179D2E82021D73600C13447 /* Y_StockChartSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartSegmentView.m; sourceTree = "<group>"; };
+		8179D2E92021D73600C13447 /* Y_StockChartSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartSegmentView.h; sourceTree = "<group>"; };
+		8179D3022021D76B00C13447 /* NetWorking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorking.m; sourceTree = "<group>"; };
+		8179D3032021D76B00C13447 /* NetWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorking.h; sourceTree = "<group>"; };
+		8179D3052021D82700C13447 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8179D3062021D82700C13447 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8179D3072021D82800C13447 /* Y_StockChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartViewController.m; sourceTree = "<group>"; };
+		8179D3082021D82800C13447 /* Y_StockChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartViewController.h; sourceTree = "<group>"; };
 		A790C91021B35BCE72495255 /* libPods-BTE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BTE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -310,6 +386,7 @@
 		8179AD33200736C4001678D2 /* BTE */ = {
 			isa = PBXGroup;
 			children = (
+				8179D2772021D6B500C13447 /* Kline */,
 				8179AD6720073BD0001678D2 /* Classes */,
 				8179AD6620073BA4001678D2 /* Categories */,
 				8179ADD320073F6E001678D2 /* Common */,
@@ -607,6 +684,223 @@
 			path = HomePageVC;
 			sourceTree = "<group>";
 		};
+		8179D2772021D6B500C13447 /* Kline */ = {
+			isa = PBXGroup;
+			children = (
+				8179D3062021D82700C13447 /* ViewController.h */,
+				8179D3052021D82700C13447 /* ViewController.m */,
+				8179D3082021D82800C13447 /* Y_StockChartViewController.h */,
+				8179D3072021D82800C13447 /* Y_StockChartViewController.m */,
+				8179D2AB2021D73600C13447 /* BTC_K线图 */,
+				8179D3012021D76B00C13447 /* NetWorking */,
+			);
+			path = Kline;
+			sourceTree = "<group>";
+		};
+		8179D2AB2021D73600C13447 /* BTC_K线图 */ = {
+			isa = PBXGroup;
+			children = (
+				8179D2AC2021D73600C13447 /* Y_StockChartView.h */,
+				8179D2B62021D73600C13447 /* Y_StockChartView.m */,
+				8179D2AD2021D73600C13447 /* Config */,
+				8179D2B72021D73600C13447 /* KLine */,
+			);
+			path = "BTC_K线图";
+			sourceTree = "<group>";
+		};
+		8179D2AD2021D73600C13447 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				8179D2AE2021D73600C13447 /* GlobalVariable */,
+				8179D2B12021D73600C13447 /* Constant */,
+				8179D2B32021D73600C13447 /* Theme */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		8179D2AE2021D73600C13447 /* GlobalVariable */ = {
+			isa = PBXGroup;
+			children = (
+				8179D2AF2021D73600C13447 /* Y_StockChartGlobalVariable.h */,
+				8179D2B02021D73600C13447 /* Y_StockChartGlobalVariable.m */,
+			);
+			path = GlobalVariable;
+			sourceTree = "<group>";
+		};
+		8179D2B12021D73600C13447 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				8179D2B22021D73600C13447 /* Y_StockChartConstant.h */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		8179D2B32021D73600C13447 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				8179D2B42021D73600C13447 /* UIColor+Y_StockChart.h */,
+				8179D2B52021D73600C13447 /* UIColor+Y_StockChart.m */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		8179D2B72021D73600C13447 /* KLine */ = {
+			isa = PBXGroup;
+			children = (
+				8179D2B82021D73600C13447 /* KLine_MAView */,
+				8179D2D82021D73600C13447 /* Y_KLineView.h */,
+				8179D2BB2021D73600C13447 /* Y_KLineView.m */,
+				8179D2BC2021D73600C13447 /* PriceView */,
+				8179D2BF2021D73600C13447 /* Volume_MAView */,
+				8179D2C22021D73600C13447 /* AccessoryView */,
+				8179D2C82021D73600C13447 /* Accessory_MAView */,
+				8179D2CB2021D73600C13447 /* Model */,
+				8179D2D92021D73600C13447 /* VolumeView */,
+				8179D2DF2021D73600C13447 /* MainKLineView */,
+				8179D2E72021D73600C13447 /* SegmentView */,
+			);
+			path = KLine;
+			sourceTree = "<group>";
+		};
+		8179D2B82021D73600C13447 /* KLine_MAView */ = {
+			isa = PBXGroup;
+			children = (
+				8179D2B92021D73600C13447 /* Y_KLineMAView.h */,
+				8179D2BA2021D73600C13447 /* Y_KLineMAView.m */,
+			);
+			path = KLine_MAView;
+			sourceTree = "<group>";
+		};
+		8179D2BC2021D73600C13447 /* PriceView */ = {
+			isa = PBXGroup;
+			children = (
+				8179D2BD2021D73600C13447 /* Y_StockChartRightYView.m */,
+				8179D2BE2021D73600C13447 /* Y_StockChartRightYView.h */,
+			);
+			path = PriceView;
+			sourceTree = "<group>";
+		};
+		8179D2BF2021D73600C13447 /* Volume_MAView */ = {
+			isa = PBXGroup;
+			children = (
+				8179D2C02021D73600C13447 /* Y_VolumeMAView.h */,
+				8179D2C12021D73600C13447 /* Y_VolumeMAView.m */,
+			);
+			path = Volume_MAView;
+			sourceTree = "<group>";
+		};
+		8179D2C22021D73600C13447 /* AccessoryView */ = {
+			isa = PBXGroup;
+			children = (
+				8179D2C32021D73600C13447 /* Y_KLineAccessoryView.m */,
+				8179D2C42021D73600C13447 /* Line */,
+				8179D2C72021D73600C13447 /* Y_KLineAccessoryView.h */,
+			);
+			path = AccessoryView;
+			sourceTree = "<group>";
+		};
+		8179D2C42021D73600C13447 /* Line */ = {
+			isa = PBXGroup;
+			children = (
+				8179D2C52021D73600C13447 /* Y_KLineAccessory.h */,
+				8179D2C62021D73600C13447 /* Y_KLineAccessory.m */,
+			);
+			path = Line;
+			sourceTree = "<group>";
+		};
+		8179D2C82021D73600C13447 /* Accessory_MAView */ = {
+			isa = PBXGroup;
+			children = (
+				8179D2C92021D73600C13447 /* Y_AccessoryMAView.m */,
+				8179D2CA2021D73600C13447 /* Y_AccessoryMAView.h */,
+			);
+			path = Accessory_MAView;
+			sourceTree = "<group>";
+		};
+		8179D2CB2021D73600C13447 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8179D2CC2021D73600C13447 /* KLineModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8179D2CC2021D73600C13447 /* KLineModel */ = {
+			isa = PBXGroup;
+			children = (
+				8179D2CD2021D73600C13447 /* Y_KLinePositionModel.m */,
+				8179D2CE2021D73600C13447 /* MA-EMA-MACD介绍.md */,
+				8179D2CF2021D73600C13447 /* Y_KLineModel.h */,
+				8179D2D02021D73600C13447 /* Y_KLineGroupModel.h */,
+				8179D2D12021D73600C13447 /* Y_KLineVolumePositionModel.h */,
+				8179D2D22021D73600C13447 /* Y_KLinePositionModel.h */,
+				8179D2D32021D73600C13447 /* Y_KLineModel.m */,
+				8179D2D42021D73600C13447 /* 指标公式.md */,
+				8179D2D52021D73600C13447 /* Y_KLineGroupModel.m */,
+				8179D2D62021D73600C13447 /* KDJ介绍.md */,
+				8179D2D72021D73600C13447 /* Y_KLineVolumePositionModel.m */,
+			);
+			path = KLineModel;
+			sourceTree = "<group>";
+		};
+		8179D2D92021D73600C13447 /* VolumeView */ = {
+			isa = PBXGroup;
+			children = (
+				8179D2DA2021D73600C13447 /* Y_KLineVolumeView.m */,
+				8179D2DB2021D73600C13447 /* Line */,
+				8179D2DE2021D73600C13447 /* Y_KLineVolumeView.h */,
+			);
+			path = VolumeView;
+			sourceTree = "<group>";
+		};
+		8179D2DB2021D73600C13447 /* Line */ = {
+			isa = PBXGroup;
+			children = (
+				8179D2DC2021D73600C13447 /* Y_KLineVolume.m */,
+				8179D2DD2021D73600C13447 /* Y_KLineVolume.h */,
+			);
+			path = Line;
+			sourceTree = "<group>";
+		};
+		8179D2DF2021D73600C13447 /* MainKLineView */ = {
+			isa = PBXGroup;
+			children = (
+				8179D2E02021D73600C13447 /* Y_KLineMainView.m */,
+				8179D2E12021D73600C13447 /* Line */,
+				8179D2E62021D73600C13447 /* Y_KLineMainView.h */,
+			);
+			path = MainKLineView;
+			sourceTree = "<group>";
+		};
+		8179D2E12021D73600C13447 /* Line */ = {
+			isa = PBXGroup;
+			children = (
+				8179D2E22021D73600C13447 /* Y_MALine.h */,
+				8179D2E32021D73600C13447 /* Y_KLine.h */,
+				8179D2E42021D73600C13447 /* Y_MALine.m */,
+				8179D2E52021D73600C13447 /* Y_KLine.m */,
+			);
+			path = Line;
+			sourceTree = "<group>";
+		};
+		8179D2E72021D73600C13447 /* SegmentView */ = {
+			isa = PBXGroup;
+			children = (
+				8179D2E82021D73600C13447 /* Y_StockChartSegmentView.m */,
+				8179D2E92021D73600C13447 /* Y_StockChartSegmentView.h */,
+			);
+			path = SegmentView;
+			sourceTree = "<group>";
+		};
+		8179D3012021D76B00C13447 /* NetWorking */ = {
+			isa = PBXGroup;
+			children = (
+				8179D3022021D76B00C13447 /* NetWorking.m */,
+				8179D3032021D76B00C13447 /* NetWorking.h */,
+			);
+			path = NetWorking;
+			sourceTree = "<group>";
+		};
 		EB5C9D1AE46F2F99BE633CD9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -729,11 +1023,14 @@
 				8179AE5520085FAA001678D2 /* BHArticleShareVIew in Resources */,
 				8179AEDD20089DB5001678D2 /* Info.plist in Resources */,
 				8179AE5820085FAA001678D2 /* ScreenBlurry in Resources */,
+				8179D2F92021D73600C13447 /* KDJ介绍.md in Resources */,
 				8179AE8120086175001678D2 /* SSKeychain.strings in Resources */,
 				8179AE5920085FAA001678D2 /* BHNoDataTipVIew in Resources */,
 				8179AE5B20085FAA001678D2 /* BHNightModeView in Resources */,
 				8179AEDB20089DA3001678D2 /* Assets.xcassets in Resources */,
 				8179AE5720085FAA001678D2 /* BHNetworkErrorView in Resources */,
+				8179D2F52021D73600C13447 /* MA-EMA-MACD介绍.md in Resources */,
+				8179D2F72021D73600C13447 /* 指标公式.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -816,12 +1113,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				8179AE5420085FAA001678D2 /* BHProgressHUD.m in Sources */,
+				8179D2F22021D73600C13447 /* Y_KLineAccessory.m in Sources */,
+				8179D2F02021D73600C13447 /* Y_VolumeMAView.m in Sources */,
 				8179AE3720085DB5001678D2 /* NSString+CommonFunc.m in Sources */,
 				8179AE2220085DB5001678D2 /* UIView+Animation.m in Sources */,
 				8179AF0E2008A08C001678D2 /* BHBaseWebViewVC.m in Sources */,
 				8179AE3920085DB5001678D2 /* UIImage+help.m in Sources */,
+				8179D2ED2021D73600C13447 /* Y_KLineMAView.m in Sources */,
+				8179D2F32021D73600C13447 /* Y_AccessoryMAView.m in Sources */,
+				8179D2FD2021D73600C13447 /* Y_KLineMainView.m in Sources */,
+				8179D2FB2021D73600C13447 /* Y_KLineVolumeView.m in Sources */,
+				8179D2F82021D73600C13447 /* Y_KLineGroupModel.m in Sources */,
 				8179AE3420085DB5001678D2 /* UIView+Frame.m in Sources */,
 				8179AE2820085DB5001678D2 /* UIImage+category.m in Sources */,
+				8179D2F62021D73600C13447 /* Y_KLineModel.m in Sources */,
 				8179AE2020085DB5001678D2 /* NSObject+entend.m in Sources */,
 				8179AF0B2008A08C001678D2 /* BHGuideVC.m in Sources */,
 				8179AE2B20085DB5001678D2 /* NSDictionary+safe.m in Sources */,
@@ -833,14 +1138,18 @@
 				8179AE8320086175001678D2 /* SSKeychainQuery.m in Sources */,
 				8179AD44200736C4001678D2 /* main.m in Sources */,
 				8179AE8520086175001678D2 /* EAIntroView.m in Sources */,
+				8179D3002021D73600C13447 /* Y_StockChartSegmentView.m in Sources */,
 				8179AE8820086175001678D2 /* DSJSONRPC.m in Sources */,
 				8179AF0C2008A08C001678D2 /* BHNavigationController.m in Sources */,
 				8179AF102008A08C001678D2 /* BHBaseTableController.m in Sources */,
 				8179AE2120085DB5001678D2 /* UITextField+WLB.m in Sources */,
 				8179AE3120085DB5001678D2 /* CALayer+Additions.m in Sources */,
 				8179AE2A20085DB5001678D2 /* NullSafe.m in Sources */,
+				8179D3042021D76B00C13447 /* NetWorking.m in Sources */,
 				8179AE5A20085FAA001678D2 /* BHToast.m in Sources */,
 				8179AF172009E0A3001678D2 /* BTEHomeWebViewController.m in Sources */,
+				8179D2FE2021D73600C13447 /* Y_MALine.m in Sources */,
+				8179D3092021D82800C13447 /* ViewController.m in Sources */,
 				8179AE4320085DB5001678D2 /* UIView+category.m in Sources */,
 				8179AF0F2008A08C001678D2 /* BHBaseController.m in Sources */,
 				8179AE3820085DB5001678D2 /* UIButton+EnlargeEdge.m in Sources */,
@@ -851,28 +1160,39 @@
 				8179AE8220086175001678D2 /* SSKeychain.m in Sources */,
 				8179AE3220085DB5001678D2 /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
 				8179AE8A20086175001678D2 /* LLSegmentBarConfig.m in Sources */,
+				8179D2FA2021D73600C13447 /* Y_KLineVolumePositionModel.m in Sources */,
+				8179D2EC2021D73600C13447 /* Y_StockChartView.m in Sources */,
 				8179AE3020085DB5001678D2 /* NSString+Size.m in Sources */,
 				8179AE2420085DB5001678D2 /* WLScaleLayoutConstrain.m in Sources */,
 				8179AE3D20085DB5001678D2 /* UILabel+category.m in Sources */,
 				8179AE4220085DB5001678D2 /* UIView+UIStatusBar.m in Sources */,
+				8179D30A2021D82800C13447 /* Y_StockChartViewController.m in Sources */,
+				8179D2EF2021D73600C13447 /* Y_StockChartRightYView.m in Sources */,
 				8179AE2620085DB5001678D2 /* NSMutableArray+safe.m in Sources */,
 				8179AE2920085DB5001678D2 /* UIView+Extend.m in Sources */,
+				8179D2F42021D73600C13447 /* Y_KLinePositionModel.m in Sources */,
 				816CCD202009F06A009E03D2 /* BTEUpgradeViewController.m in Sources */,
+				8179D2EE2021D73600C13447 /* Y_KLineView.m in Sources */,
 				8179AE3C20085DB5001678D2 /* NSString+category.m in Sources */,
 				8179AE4020085DB5001678D2 /* NSDate+Categoey.m in Sources */,
 				8179AE3320085DB5001678D2 /* UIViewController+extend.m in Sources */,
+				8179D2EA2021D73600C13447 /* Y_StockChartGlobalVariable.m in Sources */,
 				8179AE2E20085DB5001678D2 /* NSObject+JSONParse.m in Sources */,
+				8179D2FF2021D73600C13447 /* Y_KLine.m in Sources */,
 				8179AE2320085DB5001678D2 /* NSObject+swizzling.m in Sources */,
 				8179AE3F20085DB5001678D2 /* NSTimer+addition.m in Sources */,
 				8179AE4120085DB5001678D2 /* NSNull+safe.m in Sources */,
 				8179AE2F20085DB5001678D2 /* UIBarButtonItem+XboyItem.m in Sources */,
 				8179AE8B20086175001678D2 /* LLSegmentBar.m in Sources */,
+				8179D2EB2021D73600C13447 /* UIColor+Y_StockChart.m in Sources */,
 				8179AE8920086175001678D2 /* UIView+LLSegmentBar.m in Sources */,
 				8179AED820089D43001678D2 /* AppDelegate.m in Sources */,
+				8179D2F12021D73600C13447 /* Y_KLineAccessoryView.m in Sources */,
 				8179AE8720086175001678D2 /* DSJSONRPCError.m in Sources */,
 				8179AE2C20085DB5001678D2 /* UIButton+avoidMultiTouch.m in Sources */,
 				8179AE2D20085DB5001678D2 /* NSArray+description.m in Sources */,
 				8179AE8C20086175001678D2 /* LLSegmentBarVC.m in Sources */,
+				8179D2FC2021D73600C13447 /* Y_KLineVolume.m in Sources */,
 				8179AE3A20085DB5001678D2 /* UIColor+Externsion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
