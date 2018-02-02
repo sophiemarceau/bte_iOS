@@ -32,7 +32,7 @@
 @property (nonatomic, assign) NSInteger currentIndex;
 
 @property (nonatomic, copy) NSString *type;
-
+@property (nonatomic, assign) BOOL Landscape;//是否横屏
 @end
 
 @implementation Y_StockChartViewController
@@ -54,6 +54,10 @@
     // Do any additional setup after loading the view.
     self.currentIndex = -1;
     self.stockChartView.backgroundColor = [UIColor backgroundColor];
+//    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange) name:UIDeviceOrientationDidChangeNotification object:nil];
+    _Landscape = NO;
+    [self dismiss];
 }
 
 - (NSMutableDictionary<NSString *,Y_KLineGroupModel *> *)modelsDict
@@ -204,14 +208,94 @@
 }
 - (void)dismiss
 {
-    AppDelegate *appdelegate = [UIApplication sharedApplication].delegate;
-    appdelegate.isEable = NO;
-    [self dismissViewControllerAnimated:YES completion:nil];
+//    AppDelegate *appdelegate = [UIApplication sharedApplication].delegate;
+//    appdelegate.isEable = NO;
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self portraitAction:nil];
+    
+    if (_Landscape == NO) {
+        NSNumber *orientation = [NSNumber numberWithInt:UIDeviceOrientationPortrait];
+        if ([UIDevice currentDevice].orientation!=[orientation integerValue]) {
+            [[UIDevice currentDevice] setValue:orientation forKey:@"orientation"];
+        }
+        _Landscape = YES;
+    }
+    else
+    {
+        NSNumber *orientation = [NSNumber numberWithInt:UIDeviceOrientationLandscapeLeft];
+        if ([UIDevice currentDevice].orientation!=[orientation integerValue]) {
+            [[UIDevice currentDevice] setValue:orientation forKey:@"orientation"];
+        }
+        _Landscape = NO;
+    }
+    
+    [self deviceOrientationDidChange];
 }
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+
+
+
+//// 横屏
+//- (void)landscapAction:(id)sender {
+//    [self interfaceOrientation:UIInterfaceOrientationLandscapeRight];
+//}
+//
+//// 竖屏
+//- (void)portraitAction:(id)sender {
+//    [self interfaceOrientation:UIInterfaceOrientationPortrait];
+//}
+//
+//- (void)interfaceOrientation:(UIInterfaceOrientation)orientation
+//{
+//    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+//        SEL selector             = NSSelectorFromString(@"setOrientation:");
+//        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+//        [invocation setSelector:selector];
+//        [invocation setTarget:[UIDevice currentDevice]];
+//        int val                  = orientation;
+//        [invocation setArgument:&val atIndex:2];
+//        [invocation invoke];
+//    }
+//}
+
+
+- (void)deviceOrientationDidChange
 {
-    return UIInterfaceOrientationMaskLandscape;
+    NSLog(@"deviceOrientationDidChange:%ld",(long)[UIDevice currentDevice].orientation);
+    if([UIDevice currentDevice].orientation == UIDeviceOrientationPortrait) {
+        [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait];
+        [self orientationChange:NO];
+        //注意： UIDeviceOrientationLandscapeLeft 与 UIInterfaceOrientationLandscapeRight
+    } else if ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft) {
+        [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationLandscapeRight];
+        [self orientationChange:YES];
+    }
 }
+
+- (void)orientationChange:(BOOL)landscapeRight
+{
+    if (landscapeRight) {
+        [UIView animateWithDuration:0.2f animations:^{
+//            self.view.transform = CGAffineTransformMakeRotation(M_PI_2);
+//            self.view.bounds = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+            self.view.transform = CGAffineTransformMakeRotation(0);
+            self.view.bounds = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+        }];
+    } else {
+        [UIView animateWithDuration:0.2f animations:^{
+//            self.view.transform = CGAffineTransformMakeRotation(0);
+//            self.view.bounds = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+            self.view.transform = CGAffineTransformMakeRotation(-M_PI_2);
+            self.view.bounds = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+        }];
+    }
+}
+
+
+//
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+//{
+//    return UIInterfaceOrientationMaskLandscape | UIInterfaceOrientationMaskPortrait;
+//}
 - (BOOL)shouldAutorotate
 {
     return NO;
