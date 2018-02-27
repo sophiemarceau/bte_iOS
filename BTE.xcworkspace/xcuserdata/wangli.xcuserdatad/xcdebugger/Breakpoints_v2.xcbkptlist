@@ -121,13 +121,13 @@
                   symbolName = "+[Y_KLineGroupModel objectWithArray:]"
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wangli/Desktop/BTE%E7%9A%84k%E7%BA%BF/BTE/Kline/BTC_K%E7%BA%BF%E5%9B%BE/KLine/Model/KLineModel/Y_KLineGroupModel.m"
-                  timestampString = "539251368.9343719"
+                  urlString = "file:///Users/wangli/Desktop/BTE%E7%9A%84%E5%89%AF%E6%9C%AC/BTE/Kline/BTC_K%E7%BA%BF%E5%9B%BE/KLine/Model/KLineModel/Y_KLineGroupModel.m"
+                  timestampString = "541413181.8623199"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "96">
+                  offsetFromSymbolStart = "71">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -136,13 +136,13 @@
                   symbolName = "+[Y_KLineGroupModel objectWithArray:]"
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wangli/Desktop/BTE%E7%9A%84k%E7%BA%BF/BTE/Kline/BTC_K%E7%BA%BF%E5%9B%BE/KLine/Model/KLineModel/Y_KLineGroupModel.m"
-                  timestampString = "539251368.9364721"
+                  urlString = "file:///Users/wangli/Desktop/BTE%E7%9A%84%E5%89%AF%E6%9C%AC/BTE/Kline/BTC_K%E7%BA%BF%E5%9B%BE/KLine/Model/KLineModel/Y_KLineGroupModel.m"
+                  timestampString = "541413181.8646539"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "196">
+                  offsetFromSymbolStart = "160">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -408,6 +408,86 @@
             startingLineNumber = "216"
             endingLineNumber = "216"
             landmarkName = "-dismiss"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Tools/HttpTool/YQNetworking/YQNetworking.m"
+            timestampString = "541413581.273702"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "+getWithUrl:refreshRequest:cache:params:progressBlock:successBlock:failBlock:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Tools/HttpTool/YQNetworking/YQNetworking.m"
+            timestampString = "541413581.27378"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "+getWithUrl:refreshRequest:cache:params:progressBlock:successBlock:failBlock:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Common/BHVersionTool.m"
+            timestampString = "541413581.2738431"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "+requestAppVersion:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Common/BHVersionTool.m"
+            timestampString = "541413581.274296"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "+requestAppVersion:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Tools/HttpTool/YQNetworking/YQNetworking.m"
+            timestampString = "541413581.274533"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "+getWithUrl:refreshRequest:cache:params:progressBlock:successBlock:failBlock:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

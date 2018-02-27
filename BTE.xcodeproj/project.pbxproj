@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8112E3B3204541AE00419BC9 /* YQLRUManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8112E383204541AE00419BC9 /* YQLRUManager.m */; };
+		8112E3B4204541AE00419BC9 /* YQDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8112E384204541AE00419BC9 /* YQDiskCache.m */; };
+		8112E3B5204541AE00419BC9 /* YQMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8112E385204541AE00419BC9 /* YQMemoryCache.m */; };
+		8112E3B6204541AE00419BC9 /* YQCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8112E389204541AE00419BC9 /* YQCacheManager.m */; };
+		8112E3B7204541AE00419BC9 /* YQNetworking+RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8112E38D204541AE00419BC9 /* YQNetworking+RequestManager.m */; };
+		8112E3B8204541AE00419BC9 /* YQNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8112E38E204541AE00419BC9 /* YQNetworking.m */; };
 		816CCD1D2009ED24009E03D2 /* BHVersionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 816CCD1B2009ED24009E03D2 /* BHVersionTool.m */; };
 		816CCD202009F06A009E03D2 /* BTEUpgradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 816CCD1F2009F06A009E03D2 /* BTEUpgradeViewController.m */; };
 		8179AD44200736C4001678D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AD43200736C4001678D2 /* main.m */; };
@@ -126,6 +132,18 @@
 /* Begin PBXFileReference section */
 		0E4C8167B3C42BE19D5A72FB /* Pods-BTE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTE.release.xcconfig"; path = "Pods/Target Support Files/Pods-BTE/Pods-BTE.release.xcconfig"; sourceTree = "<group>"; };
 		29D8AD9E35E9375EF64E62DB /* Pods-BTE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BTE/Pods-BTE.debug.xcconfig"; sourceTree = "<group>"; };
+		8112E381204541AE00419BC9 /* YQNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQNetworking.h; sourceTree = "<group>"; };
+		8112E383204541AE00419BC9 /* YQLRUManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQLRUManager.m; sourceTree = "<group>"; };
+		8112E384204541AE00419BC9 /* YQDiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQDiskCache.m; sourceTree = "<group>"; };
+		8112E385204541AE00419BC9 /* YQMemoryCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQMemoryCache.m; sourceTree = "<group>"; };
+		8112E386204541AE00419BC9 /* YQCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQCacheManager.h; sourceTree = "<group>"; };
+		8112E387204541AE00419BC9 /* YQDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQDiskCache.h; sourceTree = "<group>"; };
+		8112E388204541AE00419BC9 /* YQLRUManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQLRUManager.h; sourceTree = "<group>"; };
+		8112E389204541AE00419BC9 /* YQCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQCacheManager.m; sourceTree = "<group>"; };
+		8112E38A204541AE00419BC9 /* YQMemoryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQMemoryCache.h; sourceTree = "<group>"; };
+		8112E38C204541AE00419BC9 /* YQNetworking+RequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YQNetworking+RequestManager.h"; sourceTree = "<group>"; };
+		8112E38D204541AE00419BC9 /* YQNetworking+RequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YQNetworking+RequestManager.m"; sourceTree = "<group>"; };
+		8112E38E204541AE00419BC9 /* YQNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQNetworking.m; sourceTree = "<group>"; };
 		816CCD1B2009ED24009E03D2 /* BHVersionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHVersionTool.m; sourceTree = "<group>"; };
 		816CCD1C2009ED24009E03D2 /* BHVersionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHVersionTool.h; sourceTree = "<group>"; };
 		816CCD1E2009F06A009E03D2 /* BTEUpgradeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEUpgradeViewController.h; sourceTree = "<group>"; };
@@ -350,6 +368,41 @@
 				A790C91021B35BCE72495255 /* libPods-BTE.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8112E380204541AE00419BC9 /* YQNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				8112E381204541AE00419BC9 /* YQNetworking.h */,
+				8112E38E204541AE00419BC9 /* YQNetworking.m */,
+				8112E382204541AE00419BC9 /* Cache */,
+				8112E38B204541AE00419BC9 /* RequestManager */,
+			);
+			path = YQNetworking;
+			sourceTree = "<group>";
+		};
+		8112E382204541AE00419BC9 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				8112E383204541AE00419BC9 /* YQLRUManager.m */,
+				8112E384204541AE00419BC9 /* YQDiskCache.m */,
+				8112E385204541AE00419BC9 /* YQMemoryCache.m */,
+				8112E386204541AE00419BC9 /* YQCacheManager.h */,
+				8112E387204541AE00419BC9 /* YQDiskCache.h */,
+				8112E388204541AE00419BC9 /* YQLRUManager.h */,
+				8112E389204541AE00419BC9 /* YQCacheManager.m */,
+				8112E38A204541AE00419BC9 /* YQMemoryCache.h */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		8112E38B204541AE00419BC9 /* RequestManager */ = {
+			isa = PBXGroup;
+			children = (
+				8112E38C204541AE00419BC9 /* YQNetworking+RequestManager.h */,
+				8112E38D204541AE00419BC9 /* YQNetworking+RequestManager.m */,
+			);
+			path = RequestManager;
 			sourceTree = "<group>";
 		};
 		816CCD212009F085009E03D2 /* Upgrade */ = {
@@ -617,6 +670,7 @@
 		8179AE8F20086181001678D2 /* HttpTool */ = {
 			isa = PBXGroup;
 			children = (
+				8112E380204541AE00419BC9 /* YQNetworking */,
 				8179AE9020086181001678D2 /* NetRequest */,
 			);
 			path = HttpTool;
@@ -1127,12 +1181,14 @@
 				8179AE3420085DB5001678D2 /* UIView+Frame.m in Sources */,
 				8179AE2820085DB5001678D2 /* UIImage+category.m in Sources */,
 				8179D2F62021D73600C13447 /* Y_KLineModel.m in Sources */,
+				8112E3B5204541AE00419BC9 /* YQMemoryCache.m in Sources */,
 				8179AE2020085DB5001678D2 /* NSObject+entend.m in Sources */,
 				8179AF0B2008A08C001678D2 /* BHGuideVC.m in Sources */,
 				8179AE2B20085DB5001678D2 /* NSDictionary+safe.m in Sources */,
 				8179AE3E20085DB5001678D2 /* NSMutableAttributedString+extension.m in Sources */,
 				8179AE2720085DB5001678D2 /* NSString+MD5.m in Sources */,
 				816CCD1D2009ED24009E03D2 /* BHVersionTool.m in Sources */,
+				8112E3B4204541AE00419BC9 /* YQDiskCache.m in Sources */,
 				8179AE2520085DB5001678D2 /* UIFont+extension.m in Sources */,
 				8179AEA420087E53001678D2 /* BTERequestTools.m in Sources */,
 				8179AE8320086175001678D2 /* SSKeychainQuery.m in Sources */,
@@ -1152,6 +1208,7 @@
 				8179D3092021D82800C13447 /* ViewController.m in Sources */,
 				8179AE4320085DB5001678D2 /* UIView+category.m in Sources */,
 				8179AF0F2008A08C001678D2 /* BHBaseController.m in Sources */,
+				8112E3B6204541AE00419BC9 /* YQCacheManager.m in Sources */,
 				8179AE3820085DB5001678D2 /* UIButton+EnlargeEdge.m in Sources */,
 				8179AE9C20086181001678D2 /* BHHexColor.m in Sources */,
 				8179AE3B20085DB5001678D2 /* UIImage+Scale.m in Sources */,
@@ -1165,6 +1222,7 @@
 				8179AE3020085DB5001678D2 /* NSString+Size.m in Sources */,
 				8179AE2420085DB5001678D2 /* WLScaleLayoutConstrain.m in Sources */,
 				8179AE3D20085DB5001678D2 /* UILabel+category.m in Sources */,
+				8112E3B3204541AE00419BC9 /* YQLRUManager.m in Sources */,
 				8179AE4220085DB5001678D2 /* UIView+UIStatusBar.m in Sources */,
 				8179D30A2021D82800C13447 /* Y_StockChartViewController.m in Sources */,
 				8179D2EF2021D73600C13447 /* Y_StockChartRightYView.m in Sources */,
@@ -1175,6 +1233,7 @@
 				8179D2EE2021D73600C13447 /* Y_KLineView.m in Sources */,
 				8179AE3C20085DB5001678D2 /* NSString+category.m in Sources */,
 				8179AE4020085DB5001678D2 /* NSDate+Categoey.m in Sources */,
+				8112E3B8204541AE00419BC9 /* YQNetworking.m in Sources */,
 				8179AE3320085DB5001678D2 /* UIViewController+extend.m in Sources */,
 				8179D2EA2021D73600C13447 /* Y_StockChartGlobalVariable.m in Sources */,
 				8179AE2E20085DB5001678D2 /* NSObject+JSONParse.m in Sources */,
@@ -1191,6 +1250,7 @@
 				8179AE8720086175001678D2 /* DSJSONRPCError.m in Sources */,
 				8179AE2C20085DB5001678D2 /* UIButton+avoidMultiTouch.m in Sources */,
 				8179AE2D20085DB5001678D2 /* NSArray+description.m in Sources */,
+				8112E3B7204541AE00419BC9 /* YQNetworking+RequestManager.m in Sources */,
 				8179AE8C20086175001678D2 /* LLSegmentBarVC.m in Sources */,
 				8179D2FC2021D73600C13447 /* Y_KLineVolume.m in Sources */,
 				8179AE3A20085DB5001678D2 /* UIColor+Externsion.m in Sources */,
