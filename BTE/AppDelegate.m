@@ -72,17 +72,12 @@
 }
 
 - (void)setupKeyWindow {
-//    BTEHomeWebViewController *homePageVc= [[BTEHomeWebViewController alloc] init];
-//
-//
-//
-//
-//
-//    homePageVc.urlString = kAppBTEH5Address;
-//    homePageVc.isHiddenLeft = NO;
-//    homePageVc.isHiddenBottom = YES;
+    BTEHomeWebViewController *homePageVc= [[BTEHomeWebViewController alloc] init];
+    homePageVc.urlString = kAppBTEH5Address;
+    homePageVc.isHiddenLeft = NO;
+    homePageVc.isHiddenBottom = YES;
     
-    ViewController *homePageVc= [[ViewController alloc] init];
+//    ViewController *homePageVc= [[ViewController alloc] init];
     BHNavigationController *NavVC = [[BHNavigationController alloc] initWithRootViewController:homePageVc];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = NavVC;
