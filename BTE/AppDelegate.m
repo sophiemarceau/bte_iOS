@@ -11,6 +11,7 @@
 #import "BHVersionTool.h" //版本升级
 #import "BTEHomeWebViewController.h"
 #import <Bugly/Bugly.h> //腾讯Bugly
+#import "UMMobClick/MobClick.h"
 
 #import "ViewController.h"
 
@@ -32,6 +33,7 @@
     [self _showGuideView];
     //腾讯Bugly
     [Bugly startWithAppId:BuglyAppId];
+    [self setUMengAnalytics];
     return YES;
 }
 
@@ -87,7 +89,14 @@
     //请求版本更新 （注意一定要在初始化网络之后加载）
     [BHVersionTool requestAppVersion:NavVC];
 }
-
+#pragma mark - UMeng统计
+- (void)setUMengAnalytics {
+    UMConfigInstance.appKey = UMENGKEY;
+    UMConfigInstance.channelId = @"App Store";
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    [MobClick setAppVersion:version];
+    [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
+}
 #pragma mark EAIntroDelegate 版本引导图
 - (void)_showGuideView {
     // 功能简介图

@@ -13,7 +13,7 @@
 
 
 //友盟
-#define UMENGKEY @"592fea0e1061d2290b000a1a"
+#define UMENGKEY @"5a9615c5a40fa30df400000c"
 
 //极光推送
 #define JPushKEY @"a2b34b3cff30d370316b34a7"
