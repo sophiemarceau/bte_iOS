@@ -45,6 +45,7 @@
 //#import "WYRPCRequest.h"
 //#import "WYRequestManager.h"
 #import "BTERequestTools.h"
+#import "YQNetworking.h"
 #import "DSJSONRPCError.h"
 //#import "BHBaseTableController.h"
 //#import "BHBaseWebViewVC.h"
