@@ -32,11 +32,13 @@
 #import "UIImage+gif.h"
 #import "NSString+category.h"
 #import "UIView+category.h"
+#import "UIView+Animation.h"
 
 //// MARK: --------vv---------
 //#import "BHSeverEnvironment.h"
 //#import "WYCookiesTool.h"
 #import "BHNavigationController.h"
+#import "BTEUserInfo.h"
 //#import "BHTabBarController.h"
 #import "BHHexColor.h"
 //#import "BHUser.h"
@@ -48,6 +50,7 @@
 //#import "BHBaseWebViewVC.h"
 #import "BHToast.h"
 #import "BHProgressHUD.h"
+#import "BHTextField.h"
 //#import "BHNightModeView.h"
 
 #endif /* BTEPrefixHeader_pch */

@@ -104,6 +104,12 @@
 		8179D3092021D82800C13447 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D3052021D82700C13447 /* ViewController.m */; };
 		8179D30A2021D82800C13447 /* Y_StockChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D3072021D82800C13447 /* Y_StockChartViewController.m */; };
 		A3C2D27DD5C7720F52180047 /* libPods-BTE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A790C91021B35BCE72495255 /* libPods-BTE.a */; };
+		B90071BD2044FC6500431065 /* BTELoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90071BB2044FC6500431065 /* BTELoginVC.xib */; };
+		B90071C02045344A00431065 /* BHGradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B90071BE2045344900431065 /* BHGradientButton.m */; };
+		B90071C42045382000431065 /* CircularProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B90071C32045381F00431065 /* CircularProgressBar.m */; };
+		B90071C7204549C000431065 /* BHTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B90071C6204549C000431065 /* BHTextField.m */; };
+		B90071CA20456EEE00431065 /* BTEUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B90071C920456EEE00431065 /* BTEUserInfo.m */; };
+		B90071CC20456F0D00431065 /* BTELoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B90071CB20456F0D00431065 /* BTELoginVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -316,6 +322,17 @@
 		8179D3072021D82800C13447 /* Y_StockChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartViewController.m; sourceTree = "<group>"; };
 		8179D3082021D82800C13447 /* Y_StockChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartViewController.h; sourceTree = "<group>"; };
 		A790C91021B35BCE72495255 /* libPods-BTE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BTE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B90071B92044FC6500431065 /* BTELoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTELoginVC.h; sourceTree = "<group>"; };
+		B90071BB2044FC6500431065 /* BTELoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BTELoginVC.xib; sourceTree = "<group>"; };
+		B90071BE2045344900431065 /* BHGradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHGradientButton.m; sourceTree = "<group>"; };
+		B90071BF2045344900431065 /* BHGradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHGradientButton.h; sourceTree = "<group>"; };
+		B90071C22045381F00431065 /* CircularProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularProgressBar.h; sourceTree = "<group>"; };
+		B90071C32045381F00431065 /* CircularProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularProgressBar.m; sourceTree = "<group>"; };
+		B90071C5204549C000431065 /* BHTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHTextField.h; sourceTree = "<group>"; };
+		B90071C6204549C000431065 /* BHTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHTextField.m; sourceTree = "<group>"; };
+		B90071C820456EEE00431065 /* BTEUserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEUserInfo.h; sourceTree = "<group>"; };
+		B90071C920456EEE00431065 /* BTEUserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEUserInfo.m; sourceTree = "<group>"; };
+		B90071CB20456F0D00431065 /* BTELoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTELoginVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -498,6 +515,7 @@
 		8179AD6720073BD0001678D2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B90071B82044FBFC00431065 /* Login(登录) */,
 				8179AF112008A2F0001678D2 /* HomePageVC */,
 				8179AEF92008A08C001678D2 /* Main */,
 			);
@@ -509,6 +527,8 @@
 			children = (
 				816CCD1C2009ED24009E03D2 /* BHVersionTool.h */,
 				816CCD1B2009ED24009E03D2 /* BHVersionTool.m */,
+				B90071C820456EEE00431065 /* BTEUserInfo.h */,
+				B90071C920456EEE00431065 /* BTEUserInfo.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -516,6 +536,11 @@
 		8179ADD420074212001678D2 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				B90071C5204549C000431065 /* BHTextField.h */,
+				B90071C6204549C000431065 /* BHTextField.m */,
+				B90071C12045381F00431065 /* CircularProgressBar */,
+				B90071BF2045344900431065 /* BHGradientButton.h */,
+				B90071BE2045344900431065 /* BHGradientButton.m */,
 				8179AE4C20085FA9001678D2 /* BHAdvisoryShareView */,
 				8179AE4B20085FA8001678D2 /* BHArticleShareVIew */,
 				8179AE4D20085FA9001678D2 /* BHNetworkErrorView */,
@@ -654,8 +679,8 @@
 		8179AEFE2008A08C001678D2 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				8179AEFF2008A08C001678D2 /* BHNavigationController.m */,
 				8179AF002008A08C001678D2 /* BHNavigationController.h */,
+				8179AEFF2008A08C001678D2 /* BHNavigationController.m */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -901,6 +926,26 @@
 			path = NetWorking;
 			sourceTree = "<group>";
 		};
+		B90071B82044FBFC00431065 /* Login(登录) */ = {
+			isa = PBXGroup;
+			children = (
+				B90071B92044FC6500431065 /* BTELoginVC.h */,
+				B90071CB20456F0D00431065 /* BTELoginVC.m */,
+				B90071BB2044FC6500431065 /* BTELoginVC.xib */,
+			);
+			name = "Login(登录)";
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B90071C12045381F00431065 /* CircularProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				B90071C22045381F00431065 /* CircularProgressBar.h */,
+				B90071C32045381F00431065 /* CircularProgressBar.m */,
+			);
+			path = CircularProgressBar;
+			sourceTree = "<group>";
+		};
 		EB5C9D1AE46F2F99BE633CD9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1031,6 +1076,7 @@
 				8179AE5720085FAA001678D2 /* BHNetworkErrorView in Resources */,
 				8179D2F52021D73600C13447 /* MA-EMA-MACD介绍.md in Resources */,
 				8179D2F72021D73600C13447 /* 指标公式.md in Resources */,
+				B90071BD2044FC6500431065 /* BTELoginVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1122,6 +1168,8 @@
 				8179D2ED2021D73600C13447 /* Y_KLineMAView.m in Sources */,
 				8179D2F32021D73600C13447 /* Y_AccessoryMAView.m in Sources */,
 				8179D2FD2021D73600C13447 /* Y_KLineMainView.m in Sources */,
+				B90071C02045344A00431065 /* BHGradientButton.m in Sources */,
+				B90071CA20456EEE00431065 /* BTEUserInfo.m in Sources */,
 				8179D2FB2021D73600C13447 /* Y_KLineVolumeView.m in Sources */,
 				8179D2F82021D73600C13447 /* Y_KLineGroupModel.m in Sources */,
 				8179AE3420085DB5001678D2 /* UIView+Frame.m in Sources */,
@@ -1134,6 +1182,7 @@
 				8179AE2720085DB5001678D2 /* NSString+MD5.m in Sources */,
 				816CCD1D2009ED24009E03D2 /* BHVersionTool.m in Sources */,
 				8179AE2520085DB5001678D2 /* UIFont+extension.m in Sources */,
+				B90071C42045382000431065 /* CircularProgressBar.m in Sources */,
 				8179AEA420087E53001678D2 /* BTERequestTools.m in Sources */,
 				8179AE8320086175001678D2 /* SSKeychainQuery.m in Sources */,
 				8179AD44200736C4001678D2 /* main.m in Sources */,
@@ -1149,10 +1198,12 @@
 				8179AE5A20085FAA001678D2 /* BHToast.m in Sources */,
 				8179AF172009E0A3001678D2 /* BTEHomeWebViewController.m in Sources */,
 				8179D2FE2021D73600C13447 /* Y_MALine.m in Sources */,
+				B90071CC20456F0D00431065 /* BTELoginVC.m in Sources */,
 				8179D3092021D82800C13447 /* ViewController.m in Sources */,
 				8179AE4320085DB5001678D2 /* UIView+category.m in Sources */,
 				8179AF0F2008A08C001678D2 /* BHBaseController.m in Sources */,
 				8179AE3820085DB5001678D2 /* UIButton+EnlargeEdge.m in Sources */,
+				B90071C7204549C000431065 /* BHTextField.m in Sources */,
 				8179AE9C20086181001678D2 /* BHHexColor.m in Sources */,
 				8179AE3B20085DB5001678D2 /* UIImage+Scale.m in Sources */,
 				8179AE8620086175001678D2 /* EAIntroPage.m in Sources */,

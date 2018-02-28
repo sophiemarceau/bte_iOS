@@ -27,10 +27,18 @@
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 
-                if (success) {
-                    id jsons = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers  error:nil];
-                    success(jsons);
+                id jsons = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers  error:nil];
+                NSError * error = [BTERequestTools checkIsSuccess:jsons];
+                if (!error) {
+                    if (success) {
+                        success(jsons);
+                    }
+                }else {
+                    if (failure) {
+                        failure(error);
+                    }
                 }
+                
                 
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 if (failure) {
@@ -47,9 +55,16 @@
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 
-                if (success) {
-                    id jsons = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers  error:nil];
-                    success(jsons);
+                id jsons = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers  error:nil];
+                NSError * error = [BTERequestTools checkIsSuccess:jsons];
+                if (!error) {
+                    if (success) {
+                        success(jsons);
+                    }
+                }else {
+                    if (failure) {
+                        failure(error);
+                    }
                 }
                 
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -65,8 +80,29 @@
         default:
             break;
     }
-    
-    
+}
+
+//检查是否有是正确参数返回
++ (id) checkIsSuccess:(id)responseObject
+{
+    if(responseObject==nil) {
+        NSString *str = [NSString stringWithFormat:@"返回数据为空"];
+        return [NSError errorWithDomain:str code:0 userInfo:responseObject];
+    }
+    NSString * code = [responseObject objectForKey:@"code"];
+    if (code == nil) {
+        NSString *str = [NSString stringWithFormat:@"%@ 没有返回正常标识！", responseObject];
+        return [NSError errorWithDomain:str code:0 userInfo:responseObject];
+    }
+    //失败
+    if (![code isEqualToString:@"0000"]) {
+        NSString * error = [responseObject objectForKey:@"message"];
+        if (error == nil) {
+            return [NSError errorWithDomain:@"暂无错误数据" code:0 userInfo:responseObject];
+        }
+        return [NSError errorWithDomain:error code:code.integerValue userInfo:responseObject];
+    }
+    return nil;
 }
 
 @end

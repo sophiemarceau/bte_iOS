@@ -21,7 +21,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     if (!self.isHiddenLeft) {
-        UIImage *buttonNormal = [[UIImage imageNamed:@"ic_global_return"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UIImage *buttonNormal = [[UIImage imageNamed:@"nav_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         UIBarButtonItem * leftItem = [[UIBarButtonItem alloc]initWithImage:buttonNormal style:UIBarButtonItemStylePlain target:self action:@selector(goback)];
 //        [self.navigationItem setBackBarButtonItem:leftItem];
         self.navigationItem.leftBarButtonItem = leftItem;

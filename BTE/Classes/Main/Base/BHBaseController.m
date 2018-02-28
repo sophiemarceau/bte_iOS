@@ -46,5 +46,15 @@
     }
 }
 
+/**
+自定义 titleview
+ */
+- (void)customtitleView {
+    UIImage * image = [UIImage imageNamed:@"titleImage"];
+    UIImageView * imageView = [[UIImageView alloc]initWithImage:image];
+    imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
+    self.navigationItem.titleView = imageView;
+}
+
 
 @end

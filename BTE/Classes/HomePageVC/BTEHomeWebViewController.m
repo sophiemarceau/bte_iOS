@@ -7,6 +7,7 @@
 //
 
 #import "BTEHomeWebViewController.h"
+#import "BTELoginVC.h"
 
 @interface BTEHomeWebViewController ()
 
@@ -18,9 +19,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"比特易";
+    [self customtitleView];
+    
+    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.backgroundColor = [UIColor redColor];
+    btn.frame = CGRectMake(100, 100, 100, 100);
+    [btn addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
 }
-
+- (void)click {
+    [BTELoginVC OpenLogin:self callback:nil];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

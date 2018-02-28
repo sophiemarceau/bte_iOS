@@ -23,5 +23,8 @@
  eg:[self hudclose]
  */
 - (void)hudClose;
-
+/**
+ 自定义 titleview
+ */
+- (void)customtitleView;
 @end

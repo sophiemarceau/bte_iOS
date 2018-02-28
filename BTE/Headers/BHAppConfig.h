@@ -10,8 +10,7 @@
 #ifndef BHAppConfig_h
 #define BHAppConfig_h
 
-// 1表示发布App Store, 0表示adHoc或develop
-#define ONLINE  0   // 1表示App Store，0代表develop
+
 
 //友盟
 #define UMENGKEY @"592fea0e1061d2290b000a1a"

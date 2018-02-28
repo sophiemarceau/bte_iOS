@@ -28,6 +28,8 @@
 - (BOOL)isValidateMobile;
 /*车牌号验证 MODIFIED BY HELENSONG*/
 - (BOOL)validateCarNo;
+/*密码验证 字母跟数字组合*/
+- (BOOL)isValidatePassword;
 
 //获取当前的时间字符串
 + (NSString *)getCurrentDateString;

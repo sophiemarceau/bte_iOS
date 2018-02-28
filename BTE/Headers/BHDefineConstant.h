@@ -30,21 +30,22 @@ __REF = nil;\
 //请求错误 提示
 #define RequestError(error) \
 if (error.code != -900000) { \
-[BHToast showMessage:error.message];\
-} else { \
-if (![WYUserRequestManager sharedManager].isNetworkReachable) {\
-[BHToast showMessage:kNotReachableTipMessage];\
-} else { \
-[BHToast showMessage:kNetworkBusyTipMessage];\
-}\
+[BHToast showMessage:error.domain];\
 }
+//else { \
+//    if (![WYUserRequestManager sharedManager].isNetworkReachable) {\
+//        [BHToast showMessage:kNotReachableTipMessage];\
+//    } else { \
+//        [BHToast showMessage:kNetworkBusyTipMessage];\
+//    }\
+//}
 
 /* BHUserDefault*/
 #define BHUserDefaults [NSUserDefaults standardUserDefaults]
 
 
 /** 用户BHUser */
-#define User [BHUser getUser]
+#define User [BTEUserInfo shareInstance]
 
 
 //获取埋点设备信息
@@ -84,7 +85,7 @@ if (![WYUserRequestManager sharedManager].isNetworkReachable) {\
 /* App导航条颜色*/
 #define BHColornavigationBar         [BHHexColor navigationBarColor]
 /** App中主蓝色 */
-#define BHColorBlue BHHexColor(@"2573E5")
+#define BHColorBlue BHHexColor(@"308CDD")
 
 #define BHColorGray         BHHexColor(@"999999")
 /* App中全局文本颜色 */
