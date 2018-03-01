@@ -7,10 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
-#define kOldProtocolScheme @"wvjbscheme"
-#define kNewProtocolScheme @"https"
-#define kQueueHasMessage   @"__wvjb_queue_message__"
-#define kBridgeLoaded      @"__bridge_loaded__"
+#define kCustomProtocolScheme @"wvjbscheme"
+#define kQueueHasMessage      @"__WVJB_QUEUE_MESSAGE__"
 
 typedef void (^WVJBResponseCallback)(id responseData);
 typedef void (^WVJBHandler)(id data, WVJBResponseCallback responseCallback);
@@ -23,24 +21,24 @@ typedef NSDictionary WVJBMessage;
 @interface WebViewJavascriptBridgeBase : NSObject
 
 
-@property (weak, nonatomic) id <WebViewJavascriptBridgeBaseDelegate> delegate;
+@property (assign) id <WebViewJavascriptBridgeBaseDelegate> delegate;
 @property (strong, nonatomic) NSMutableArray* startupMessageQueue;
 @property (strong, nonatomic) NSMutableDictionary* responseCallbacks;
 @property (strong, nonatomic) NSMutableDictionary* messageHandlers;
 @property (strong, nonatomic) WVJBHandler messageHandler;
+@property NSUInteger numRequestsLoading;
 
 + (void)enableLogging;
-+ (void)setLogMaxLength:(int)length;
+- (id)initWithHandler:(WVJBHandler)messageHandler resourceBundle:(NSBundle*)bundle;
 - (void)reset;
 - (void)sendData:(id)data responseCallback:(WVJBResponseCallback)responseCallback handlerName:(NSString*)handlerName;
 - (void)flushMessageQueue:(NSString *)messageQueueString;
-- (void)injectJavascriptFile;
-- (BOOL)isWebViewJavascriptBridgeURL:(NSURL*)url;
-- (BOOL)isQueueMessageURL:(NSURL*)urll;
-- (BOOL)isBridgeLoadedURL:(NSURL*)urll;
+- (void)injectJavascriptFile:(BOOL)shouldInject;
+- (BOOL)isCorrectProcotocolScheme:(NSURL*)url;
+- (BOOL)isCorrectHost:(NSURL*)urll;
 - (void)logUnkownMessage:(NSURL*)url;
+- (void)dispatchStartUpMessageQueue;
 - (NSString *)webViewJavascriptCheckCommand;
 - (NSString *)webViewJavascriptFetchQueyCommand;
-- (void)disableJavscriptAlertBoxSafetyTimeout;
 
 @end

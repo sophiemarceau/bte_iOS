@@ -6,8 +6,8 @@
 //  Copyright © 2018年 wangli. All rights reserved.
 //
 
-#import "BHBaseWebViewVC.h"
+#import "BTEBaseWebVC.h"
 
-@interface BTEHomeWebViewController : BHBaseWebViewVC
+@interface BTEHomeWebViewController : BTEBaseWebVC
 
 @end

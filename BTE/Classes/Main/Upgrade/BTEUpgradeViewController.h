@@ -6,7 +6,7 @@
 //  Copyright © 2018年 wangli. All rights reserved.
 //
 
-#import "BHBaseWebViewVC.h"
+#import "BHBaseController.h"
 
 @interface BTEUpgradeViewController : BHBaseController
 @property (nonatomic, copy) NSString * url; //下载地址

@@ -35,7 +35,6 @@ PODS:
     - UMengUShare/Core
   - UMengUShare/UI (6.4.8):
     - UMengUShare/Core
-  - WebViewJavascriptBridge (6.0.3)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
@@ -51,7 +50,6 @@ DEPENDENCIES:
   - UMengUShare/Social/ReducedQQ
   - UMengUShare/Social/ReducedWeChat
   - UMengUShare/UI
-  - WebViewJavascriptBridge (~> 6.0.3)
   - YYModel (~> 1.0.4)
 
 SPEC CHECKSUMS:
@@ -66,9 +64,8 @@ SPEC CHECKSUMS:
   SGQRCode: 989df341fb231fc7bf7e82316de2fc8de2961e10
   UMengAnalytics-NO-IDFA: 16666e32edce5be44ae5b14aaaa7f3582e09d6ab
   UMengUShare: 7a0ab762ccd445ccfcf11bde8e7f81b29b9f5e1c
-  WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: fb4f434da7ea252ced2d61e90cb7e5197e7786ce
+PODFILE CHECKSUM: 9bb49b0a9846a77a4e37d1ebacbe177f42cfdd85
 
 COCOAPODS: 1.3.1

@@ -45,10 +45,7 @@ static NSString *const SERVICE_HOT_LINE = @"400-965-0866";
 
 static NSString *const kAppStoreAddress = @" https://www.btctoutiao.info/app/download";
 
-// 比特易h5入口地址
-//static NSString *const kAppBTEH5Address = @"http://192.168.11.218:3001/wechat/index";//测试环境
-static NSString *const kAppBTEH5Address = @"http://m.biteye.org/wechat/index";//正式环境
-static NSString * const kAppBTEProtcol = @"http://m.biteye.org/wechat/protocol/"; //协议地址
+
 
 
 #endif /* BHStaticConstant_h */

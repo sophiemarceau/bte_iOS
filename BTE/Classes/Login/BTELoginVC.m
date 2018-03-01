@@ -9,7 +9,7 @@
 #import "BTELoginVC.h"
 #import "BHGradientButton.h"
 #import "CircularProgressBar.h"
-#import "BHBaseWebViewVC.h"
+#import "BTEBaseWebVC.h"
 
 
 typedef NS_ENUM(NSInteger, LoginType) {
@@ -234,7 +234,7 @@ typedef NS_ENUM(NSInteger, LoginType) {
 }
 //点击协议
 - (IBAction)protocolAction:(UIButton *)sender {
-    BHBaseWebViewVC * webVC = [BHBaseWebViewVC new];
+    BTEBaseWebVC * webVC = [BTEBaseWebVC new];
     webVC.urlString = kAppBTEProtcol;
     webVC.title = @"用户协议";
     webVC.isHiddenLeft = NO;

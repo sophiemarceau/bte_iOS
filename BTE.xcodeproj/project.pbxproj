@@ -78,7 +78,6 @@
 		8179AEDD20089DB5001678D2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8179AEDC20089DB4001678D2 /* Info.plist */; };
 		8179AF0B2008A08C001678D2 /* BHGuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AEFB2008A08C001678D2 /* BHGuideVC.m */; };
 		8179AF0C2008A08C001678D2 /* BHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AEFF2008A08C001678D2 /* BHNavigationController.m */; };
-		8179AF0E2008A08C001678D2 /* BHBaseWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AF052008A08C001678D2 /* BHBaseWebViewVC.m */; };
 		8179AF0F2008A08C001678D2 /* BHBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AF062008A08C001678D2 /* BHBaseController.m */; };
 		8179AF102008A08C001678D2 /* BHBaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AF0A2008A08C001678D2 /* BHBaseTableController.m */; };
 		8179AF142008A3BA001678D2 /* BTEHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AF132008A3BA001678D2 /* BTEHomePageViewController.m */; };
@@ -116,6 +115,11 @@
 		B90071C7204549C000431065 /* BHTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B90071C6204549C000431065 /* BHTextField.m */; };
 		B90071CA20456EEE00431065 /* BTEUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B90071C920456EEE00431065 /* BTEUserInfo.m */; };
 		B90071CC20456F0D00431065 /* BTELoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B90071CB20456F0D00431065 /* BTELoginVC.m */; };
+		B9A559792047ED2A009CC3BA /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A559722047ED2A009CC3BA /* WebViewJavascriptBridgeBase.m */; };
+		B9A5597A2047ED2A009CC3BA /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A559732047ED2A009CC3BA /* WKWebViewJavascriptBridge.m */; };
+		B9A5597B2047ED2A009CC3BA /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A559742047ED2A009CC3BA /* WebViewJavascriptBridge.m */; };
+		B9A5597C2047ED2A009CC3BA /* WebViewJavascriptBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = B9A559762047ED2A009CC3BA /* WebViewJavascriptBridge.js.txt */; };
+		B9A5598B20480194009CC3BA /* BTEBaseWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A5598A20480194009CC3BA /* BTEBaseWebVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -279,10 +283,8 @@
 		8179AEFC2008A08C001678D2 /* BHGuideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHGuideVC.h; sourceTree = "<group>"; };
 		8179AEFF2008A08C001678D2 /* BHNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHNavigationController.m; sourceTree = "<group>"; };
 		8179AF002008A08C001678D2 /* BHNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHNavigationController.h; sourceTree = "<group>"; };
-		8179AF052008A08C001678D2 /* BHBaseWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHBaseWebViewVC.m; sourceTree = "<group>"; };
 		8179AF062008A08C001678D2 /* BHBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHBaseController.m; sourceTree = "<group>"; };
 		8179AF072008A08C001678D2 /* BHBaseTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHBaseTableController.h; sourceTree = "<group>"; };
-		8179AF082008A08C001678D2 /* BHBaseWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHBaseWebViewVC.h; sourceTree = "<group>"; };
 		8179AF092008A08C001678D2 /* BHBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHBaseController.h; sourceTree = "<group>"; };
 		8179AF0A2008A08C001678D2 /* BHBaseTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHBaseTableController.m; sourceTree = "<group>"; };
 		8179AF122008A3BA001678D2 /* BTEHomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEHomePageViewController.h; sourceTree = "<group>"; };
@@ -351,6 +353,15 @@
 		B90071C820456EEE00431065 /* BTEUserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEUserInfo.h; sourceTree = "<group>"; };
 		B90071C920456EEE00431065 /* BTEUserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEUserInfo.m; sourceTree = "<group>"; };
 		B90071CB20456F0D00431065 /* BTELoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTELoginVC.m; sourceTree = "<group>"; };
+		B9A559722047ED2A009CC3BA /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
+		B9A559732047ED2A009CC3BA /* WKWebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		B9A559742047ED2A009CC3BA /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		B9A559752047ED2A009CC3BA /* WebViewJavascriptBridgeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridgeBase.h; sourceTree = "<group>"; };
+		B9A559762047ED2A009CC3BA /* WebViewJavascriptBridge.js.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebViewJavascriptBridge.js.txt; sourceTree = "<group>"; };
+		B9A559772047ED2A009CC3BA /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		B9A559782047ED2A009CC3BA /* WKWebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		B9A5598920480194009CC3BA /* BTEBaseWebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEBaseWebVC.h; sourceTree = "<group>"; };
+		B9A5598A20480194009CC3BA /* BTEBaseWebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEBaseWebVC.m; sourceTree = "<group>"; };
 		B9FF2E812047A7A0009A840B /* BTE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BTE.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -626,6 +637,7 @@
 		8179AE6320086175001678D2 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				B9A559712047ED2A009CC3BA /* WebViewJavascriptBridge */,
 				8179AE6420086175001678D2 /* SSKeychain */,
 				8179AE6D20086175001678D2 /* EAIntroView */,
 				8179AE7220086175001678D2 /* DSJSONRPC */,
@@ -746,10 +758,10 @@
 			children = (
 				8179AF072008A08C001678D2 /* BHBaseTableController.h */,
 				8179AF0A2008A08C001678D2 /* BHBaseTableController.m */,
-				8179AF082008A08C001678D2 /* BHBaseWebViewVC.h */,
-				8179AF052008A08C001678D2 /* BHBaseWebViewVC.m */,
 				8179AF092008A08C001678D2 /* BHBaseController.h */,
 				8179AF062008A08C001678D2 /* BHBaseController.m */,
+				B9A5598920480194009CC3BA /* BTEBaseWebVC.h */,
+				B9A5598A20480194009CC3BA /* BTEBaseWebVC.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1002,6 +1014,20 @@
 			path = CircularProgressBar;
 			sourceTree = "<group>";
 		};
+		B9A559712047ED2A009CC3BA /* WebViewJavascriptBridge */ = {
+			isa = PBXGroup;
+			children = (
+				B9A559722047ED2A009CC3BA /* WebViewJavascriptBridgeBase.m */,
+				B9A559732047ED2A009CC3BA /* WKWebViewJavascriptBridge.m */,
+				B9A559742047ED2A009CC3BA /* WebViewJavascriptBridge.m */,
+				B9A559752047ED2A009CC3BA /* WebViewJavascriptBridgeBase.h */,
+				B9A559762047ED2A009CC3BA /* WebViewJavascriptBridge.js.txt */,
+				B9A559772047ED2A009CC3BA /* WebViewJavascriptBridge.h */,
+				B9A559782047ED2A009CC3BA /* WKWebViewJavascriptBridge.h */,
+			);
+			path = WebViewJavascriptBridge;
+			sourceTree = "<group>";
+		};
 		EB5C9D1AE46F2F99BE633CD9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1133,6 +1159,7 @@
 				8179AEDD20089DB5001678D2 /* Info.plist in Resources */,
 				8179AE5820085FAA001678D2 /* ScreenBlurry in Resources */,
 				8179D2F92021D73600C13447 /* KDJ介绍.md in Resources */,
+				B9A5597C2047ED2A009CC3BA /* WebViewJavascriptBridge.js.txt in Resources */,
 				8179AE8120086175001678D2 /* SSKeychain.strings in Resources */,
 				8179AE5920085FAA001678D2 /* BHNoDataTipVIew in Resources */,
 				8179AE5B20085FAA001678D2 /* BHNightModeView in Resources */,
@@ -1227,7 +1254,6 @@
 				8179D2F02021D73600C13447 /* Y_VolumeMAView.m in Sources */,
 				8179AE3720085DB5001678D2 /* NSString+CommonFunc.m in Sources */,
 				8179AE2220085DB5001678D2 /* UIView+Animation.m in Sources */,
-				8179AF0E2008A08C001678D2 /* BHBaseWebViewVC.m in Sources */,
 				8179AE3920085DB5001678D2 /* UIImage+help.m in Sources */,
 				8179D2ED2021D73600C13447 /* Y_KLineMAView.m in Sources */,
 				8179D2F32021D73600C13447 /* Y_AccessoryMAView.m in Sources */,
@@ -1274,6 +1300,8 @@
 				8179AE9C20086181001678D2 /* BHHexColor.m in Sources */,
 				8179AE3B20085DB5001678D2 /* UIImage+Scale.m in Sources */,
 				8179AE8620086175001678D2 /* EAIntroPage.m in Sources */,
+				B9A5597A2047ED2A009CC3BA /* WKWebViewJavascriptBridge.m in Sources */,
+				B9A5597B2047ED2A009CC3BA /* WebViewJavascriptBridge.m in Sources */,
 				8179AF142008A3BA001678D2 /* BTEHomePageViewController.m in Sources */,
 				8179AE8220086175001678D2 /* SSKeychain.m in Sources */,
 				8179AE3220085DB5001678D2 /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
@@ -1295,12 +1323,14 @@
 				8179AE3C20085DB5001678D2 /* NSString+category.m in Sources */,
 				8179AE4020085DB5001678D2 /* NSDate+Categoey.m in Sources */,
 				8112E3B8204541AE00419BC9 /* YQNetworking.m in Sources */,
+				B9A559792047ED2A009CC3BA /* WebViewJavascriptBridgeBase.m in Sources */,
 				8179AE3320085DB5001678D2 /* UIViewController+extend.m in Sources */,
 				8179D2EA2021D73600C13447 /* Y_StockChartGlobalVariable.m in Sources */,
 				8179AE2E20085DB5001678D2 /* NSObject+JSONParse.m in Sources */,
 				8179D2FF2021D73600C13447 /* Y_KLine.m in Sources */,
 				8179AE2320085DB5001678D2 /* NSObject+swizzling.m in Sources */,
 				8179AE3F20085DB5001678D2 /* NSTimer+addition.m in Sources */,
+				B9A5598B20480194009CC3BA /* BTEBaseWebVC.m in Sources */,
 				8179AE4120085DB5001678D2 /* NSNull+safe.m in Sources */,
 				8179AE2F20085DB5001678D2 /* UIBarButtonItem+XboyItem.m in Sources */,
 				8179AE8B20086175001678D2 /* LLSegmentBar.m in Sources */,

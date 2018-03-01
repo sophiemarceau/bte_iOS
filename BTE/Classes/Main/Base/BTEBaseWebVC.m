@@ -1,21 +1,20 @@
 //
-//  CTWebViewVC.m
-//  CreditTreasury
+//  BTEBaseWebVC.m
+//  BTE
 //
-//  Created by zhangyuanzhe on 2017/8/3.
-//  Copyright © 2017年 YinSheng Technology Co. Ltd. All rights reserved.
+//  Created by 张竟巍 on 2018/3/1.
+//  Copyright © 2018年 wangli. All rights reserved.
 //
 
-#import "BHBaseWebViewVC.h"
+#import "BTEBaseWebVC.h"
 
 #define iOS9_OR_LATER ([[[UIDevice currentDevice] systemVersion]floatValue] >= 9.0)
 
-@interface BHBaseWebViewVC ()
+@interface BTEBaseWebVC ()
 
 @end
 
-@implementation BHBaseWebViewVC
-
+@implementation BTEBaseWebVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,25 +22,22 @@
     if (!self.isHiddenLeft) {
         UIImage *buttonNormal = [[UIImage imageNamed:@"nav_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         UIBarButtonItem * leftItem = [[UIBarButtonItem alloc]initWithImage:buttonNormal style:UIBarButtonItemStylePlain target:self action:@selector(goback)];
-//        [self.navigationItem setBackBarButtonItem:leftItem];
         self.navigationItem.leftBarButtonItem = leftItem;
     }
     [self loadWebView];
     [self initBridge];
     
 }
-
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self handlerNetworkUnReachableStatus];
-    if (_bridge) {
-        [_bridge setWebViewDelegate:self];
-    }
+    //    if (_bridge) {
+    //        [_bridge setWebViewDelegate:self];
+    //    }
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.bridge setWebViewDelegate:nil];
+    //    [self.bridge setWebViewDelegate:nil];
 }
 #pragma mark - 加载本地HTML
 - (void)loadLocalHTMLString:(NSString *)fileName {
@@ -57,100 +53,42 @@
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
-
 #pragma mark - initBridge Moedth
 - (void)initBridge {
-    self.bridge = [WKWebViewJavascriptBridge bridgeForWebView:self.webView];
-    [self.bridge setWebViewDelegate:self];
+    _bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView webViewDelegate:self handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSLog(@"我是一滴来自远方孤星的泪水");
+    }];
     [self observeH5BridgeHandler];
+}
+- (void)loadWebView {
+    //清理缓存
+    NSString *cachePath = [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingString:@"/Cookies"];
+    [[NSFileManager defaultManager] removeItemAtPath:cachePath error:nil];
+    [self.view addSubview:self.webView];
 }
 
 
 - (void)observeH5BridgeHandler {
     //do something
 }
-- (void)loadWebView {
-    //清理缓存
-    if (iOS9_OR_LATER) {
-        NSSet *websiteDataTypes = [NSSet setWithArray:@[WKWebsiteDataTypeDiskCache,WKWebsiteDataTypeMemoryCache]];
-        //日期
-        NSDate * dateFrom = [NSDate dateWithTimeIntervalSince1970:0];
-        ////执行
-        [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^ {
-            NSLog(@"清除缓存成功");
-        }];
-    }else {
-        NSString *cachePath = [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingString:@"/Cookies"];
-        [[NSFileManager defaultManager] removeItemAtPath:cachePath error:nil];
-    }
-    [self.view addSubview:self.webView];
+
+#pragma mark - UIWebView delegate
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = true;
+    [BHProgressHUD showLoading];
+    return YES;
+}
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
+    [BHProgressHUD hideLoading];
+}
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
 }
 
-#define mark - WKNavigationDelegate
-//webView 请求开始定向加载  在此处可以屏蔽 不需要加载的url 类似于 shouldStartLoadWithRequest
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-    [BHProgressHUD showLoading];
-    decisionHandler(WKNavigationActionPolicyAllow);
-}
-//webView 请求开始定向加载。返回相应
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
-    [BHProgressHUD hideLoading];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = true;
-    decisionHandler(WKNavigationResponsePolicyAllow);
-}
-//webView开始加载内容时调用
-- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
-}
-//webView内容开始返回的时候调用
--(void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
-}
-//webView加载完成调用
--(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
-    [BHProgressHUD hideLoading];
-}
-//webView加载失败
--(void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(nonnull NSError *)error {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
-    [BHProgressHUD hideLoading];
-}
-#pragma mark - WKUIDelegate
-/* 在JS端调用alert函数时，会触发此代理方法。JS端调用alert时所传的数据可以通过message拿到 在原生得到结果后，需要回调JS，是通过completionHandler回调 */
-- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message
-initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
-    [BHProgressHUD hideLoading];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"alert" message:message preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        completionHandler();
-    }]];
-    
-    [self presentViewController:alert animated:YES completion:NULL];
-}
-- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler {
-    [BHProgressHUD hideLoading];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
-    //  js 里面的alert实现，如果不实现，网页的alert函数无效  ,
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:message
-                                                                   message:nil
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定"
-                                              style:UIAlertActionStyleDefault
-                                            handler:^(UIAlertAction *action) {
-                                                completionHandler(YES);
-                                            }]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消"
-                                              style:UIAlertActionStyleCancel
-                                            handler:^(UIAlertAction *action){
-                                                completionHandler(NO);
-                                            }]];
-    [self presentViewController:alert animated:YES completion:^{}];
-}
-- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString *))completionHandler {
-    [BHProgressHUD hideLoading];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
-    completionHandler(@"Client Not handler");
-}
 #pragma mark - getCookie
 //此处可以获取当前用户的token值  用来传给H5
 - (NSString *)getCookieValue {
@@ -172,14 +110,9 @@ initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completi
 }
 
 #pragma mark - webView
-- (WKWebView *)webView {
+- (UIWebView *)webView {
     if (!_webView) {
-        WKWebViewConfiguration *conf = [[WKWebViewConfiguration alloc] init];
-        conf.userContentController = [WKUserContentController new];
-
-        _webView = [[WKWebView alloc]initWithFrame:CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT  - (_isHiddenBottom ? HOME_INDICATOR_HEIGHT : TAB_BAR_HEIGHT)) configuration:conf];
-        _webView.navigationDelegate = self;
-        _webView.UIDelegate = self;
+        _webView = [[UIWebView alloc]initWithFrame:CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT  - (_isHiddenBottom ? HOME_INDICATOR_HEIGHT : TAB_BAR_HEIGHT))];
         //添加观察者
         if (self.isAllowTitle) {
             [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
@@ -191,15 +124,11 @@ initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completi
             [_webView loadRequest:request];
         }
         if (!self.longPressGestureEnabled) {
-            NSMutableString *javascript = [NSMutableString string];
-            [javascript appendString:@"document.documentElement.style.webkitUserSelect='none';"];//禁止选择
-            [javascript appendString:@"document.documentElement.style.webkitTouchCallout='none';"];//禁止长按
-            //javascript 注入
-            WKUserScript *noneSelectScript = [[WKUserScript alloc] initWithSource:javascript
-                                                                    injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
-                                                                 forMainFrameOnly:YES];
-            [_webView.configuration.userContentController addUserScript:noneSelectScript];
+            [_webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitUserSelect='none';"];
+            [_webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitTouchCallout='none';"];
         }
+        //获取当前页面的title
+//        self.title ＝ [webViewstringByEvaluatingJavaScriptFromString:@”document.title”];
     }
     return _webView;
 }
@@ -208,7 +137,8 @@ initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completi
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"title"]) {
         if (object == self.webView) {
-            self.title = self.webView.title;
+            
+//            self.title = self.webView.title;
         }else{
             [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
         }
@@ -277,5 +207,6 @@ initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completi
 }
 
 
-@end
 
+
+@end

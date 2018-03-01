@@ -7,6 +7,7 @@
 //
 
 #import "BTERequestTools.h"
+#import "YQNetworking.h"
 
 @implementation BTERequestTools
 
@@ -51,10 +52,11 @@
             break;
         case HttpRequestTypePost:
         {
+            
             [manager POST:URLString parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
-                
+
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                
+
                 id jsons = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers  error:nil];
                 NSError * error = [BTERequestTools checkIsSuccess:jsons];
                 if (!error) {
@@ -66,13 +68,13 @@
                         failure(error);
                     }
                 }
-                
+
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                
+
                 if (failure) {
                     failure(error);
                 }
-                
+
             }];
             
         }

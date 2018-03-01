@@ -27,8 +27,16 @@
 //    [btn addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
 //    [self.view addSubview:btn];
 }
+-(void)observeH5BridgeHandler {
+    // 1.登录
+    [self.bridge registerHandler:@"loginApp" handler:^(id data, WVJBResponseCallback responseCallback) {
+        [BTELoginVC OpenLogin:self callback:nil];
+    }];
+}
 - (void)click {
-    [BTELoginVC OpenLogin:self callback:nil];
+//    [BTELoginVC OpenLogin:self callback:nil];
+//    self.navigationController pushViewController:[BTEBaseWebVC ] animated:<#(BOOL)#>
+//    [self.view addSubview:[BTEBaseWebVC webViewWithURL:@"http://192.168.24.135:3001/wechat/index"]];
 }
 
 - (void)didReceiveMemoryWarning {

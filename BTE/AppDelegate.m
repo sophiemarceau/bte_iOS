@@ -41,6 +41,8 @@
     [Bugly startWithAppId:BuglyAppId];
     [self setUMengAnalytics]; //友盟统计
     [self setJPush:launchOptions]; //Jpush
+    // 修改 网页user-agent
+    [self sendUserAgent];
     return YES;
 }
 
@@ -79,6 +81,31 @@
     return UIInterfaceOrientationMaskPortrait;
         }
 }
+#pragma mark - Actions
+#pragma mark - webview与H5交互
+
+/**
+ 发送safari user-agent信息
+ */
+-(void)sendUserAgent{
+    
+    UIWebView *webView = [[UIWebView alloc] init];
+    
+    //区分客户端与其它端
+    NSString *TERMINAL = @"bteAPP";
+    NSString *oldAgent = [webView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+    
+    if (![oldAgent hasSuffix:TERMINAL]) {
+        
+        NSString *version =  [[[NSBundle mainBundle] infoDictionary]
+                              objectForKey:@"CFBundleShortVersionString"];
+        NSString *str = [NSString stringWithFormat:@" %@/%@",TERMINAL,version];
+        NSString *newAgent = [oldAgent stringByAppendingString:str];
+        NSDictionary *dictionnary = @{@"UserAgent":newAgent};
+        [[NSUserDefaults standardUserDefaults] registerDefaults:dictionnary];
+    }
+}
+
 
 - (void)setupKeyWindow {
     BTEHomeWebViewController *homePageVc= [[BTEHomeWebViewController alloc] init];
