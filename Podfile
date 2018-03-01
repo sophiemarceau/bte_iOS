@@ -14,5 +14,5 @@ pod 'UMengAnalytics-NO-IDFA'
 pod 'UMengUShare/UI'
 pod 'UMengUShare/Social/ReducedWeChat'
 pod 'UMengUShare/Social/ReducedQQ'
-
+pod 'JPush'
 end

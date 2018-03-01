@@ -67,6 +67,10 @@
 	<string>如果不允许，您将无法获取精准的推荐内容。</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>如果不允许，您将无法使用自定义头像的功能。</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

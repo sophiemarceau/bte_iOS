@@ -75,6 +75,7 @@
         if (self.force.integerValue == 1) {
             //强制升级退出程序
             exit(0);
+//            abort();
         }
     });
 }
