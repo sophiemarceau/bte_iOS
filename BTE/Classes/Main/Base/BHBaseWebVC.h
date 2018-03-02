@@ -9,7 +9,7 @@
 #import "BHBaseController.h"
 #import "WebViewJavascriptBridge.h"
 
-@interface BTEBaseWebVC : BHBaseController <UIWebViewDelegate>
+@interface BHBaseWebVC : BHBaseController <UIWebViewDelegate>
 
 /**
  加载的webView
@@ -49,7 +49,13 @@
  !!! 与H5交互接口  交互写在此方法里
  */
 - (void)observeH5BridgeHandler;
+#pragma mark - 重新加载webview
+/**
+ 重新加载webview
 
+ @param url <#url description#>
+ */
+- (void)reloadWebView:(NSString *)url;
 /**
  加载本地html
  

@@ -20,23 +20,49 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self customtitleView];
-    
 //    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
 //    btn.backgroundColor = [UIColor redColor];
 //    btn.frame = CGRectMake(100, 100, 100, 100);
 //    [btn addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
 //    [self.view addSubview:btn];
 }
--(void)observeH5BridgeHandler {
-    // 1.登录
-    [self.bridge registerHandler:@"loginApp" handler:^(id data, WVJBResponseCallback responseCallback) {
-        [BTELoginVC OpenLogin:self callback:nil];
-    }];
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (!User.isLogin) {
+        [self reloadWebView:self.urlString];
+    }
 }
 - (void)click {
-//    [BTELoginVC OpenLogin:self callback:nil];
-//    self.navigationController pushViewController:[BTEBaseWebVC ] animated:<#(BOOL)#>
-//    [self.view addSubview:[BTEBaseWebVC webViewWithURL:@"http://192.168.24.135:3001/wechat/index"]];
+    //    [BTELoginVC OpenLogin:self callback:nil];
+    //    self.navigationController pushViewController:[BTEBaseWebVC ] animated:<#(BOOL)#>
+    //    [self.view addSubview:[BTEBaseWebVC webViewWithURL:@"http://192.168.24.135:3001/wechat/index"]];
+}
+
+-(void)observeH5BridgeHandler {
+    WS(weakSelf)
+    // 1.登录
+    [self.bridge registerHandler:@"loginApp" handler:^(id data, WVJBResponseCallback responseCallback) {
+        if (!STRISEMPTY(data[@"url"])) {
+            [BTELoginVC OpenLogin:self callback:^{
+                [weakSelf sendUserToken];
+                [weakSelf reloadWebView:data[@"url"]];
+            }];
+        }
+    }];
+    //.发送token给H5
+    [self sendUserToken];
+    //退出登录
+    [self.bridge registerHandler:@"loginOut" handler:^(id data, WVJBResponseCallback responseCallback) {
+        [User removeLoginData];
+        [weakSelf reloadWebView:self.urlString];
+    }];
+    
+}
+- (void)sendUserToken {
+    [self.bridge registerHandler:@"sendUserInfo" handler:^(id data, WVJBResponseCallback responseCallback) {
+        responseCallback(@{@"sessionId": User.userToken});
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {

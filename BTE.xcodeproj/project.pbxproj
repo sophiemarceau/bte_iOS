@@ -115,11 +115,11 @@
 		B90071C7204549C000431065 /* BHTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B90071C6204549C000431065 /* BHTextField.m */; };
 		B90071CA20456EEE00431065 /* BTEUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B90071C920456EEE00431065 /* BTEUserInfo.m */; };
 		B90071CC20456F0D00431065 /* BTELoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B90071CB20456F0D00431065 /* BTELoginVC.m */; };
+		B923CFF52048FEAA008A9302 /* BHBaseWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B923CFF42048FEAA008A9302 /* BHBaseWebVC.m */; };
 		B9A559792047ED2A009CC3BA /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A559722047ED2A009CC3BA /* WebViewJavascriptBridgeBase.m */; };
 		B9A5597A2047ED2A009CC3BA /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A559732047ED2A009CC3BA /* WKWebViewJavascriptBridge.m */; };
 		B9A5597B2047ED2A009CC3BA /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A559742047ED2A009CC3BA /* WebViewJavascriptBridge.m */; };
 		B9A5597C2047ED2A009CC3BA /* WebViewJavascriptBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = B9A559762047ED2A009CC3BA /* WebViewJavascriptBridge.js.txt */; };
-		B9A5598B20480194009CC3BA /* BTEBaseWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A5598A20480194009CC3BA /* BTEBaseWebVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -353,6 +353,8 @@
 		B90071C820456EEE00431065 /* BTEUserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEUserInfo.h; sourceTree = "<group>"; };
 		B90071C920456EEE00431065 /* BTEUserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEUserInfo.m; sourceTree = "<group>"; };
 		B90071CB20456F0D00431065 /* BTELoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTELoginVC.m; sourceTree = "<group>"; };
+		B923CFF42048FEAA008A9302 /* BHBaseWebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHBaseWebVC.m; sourceTree = "<group>"; };
+		B923CFFA20494E39008A9302 /* BHBaseWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHBaseWebVC.h; sourceTree = "<group>"; };
 		B9A559722047ED2A009CC3BA /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
 		B9A559732047ED2A009CC3BA /* WKWebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewJavascriptBridge.m; sourceTree = "<group>"; };
 		B9A559742047ED2A009CC3BA /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
@@ -360,8 +362,6 @@
 		B9A559762047ED2A009CC3BA /* WebViewJavascriptBridge.js.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebViewJavascriptBridge.js.txt; sourceTree = "<group>"; };
 		B9A559772047ED2A009CC3BA /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
 		B9A559782047ED2A009CC3BA /* WKWebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewJavascriptBridge.h; sourceTree = "<group>"; };
-		B9A5598920480194009CC3BA /* BTEBaseWebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEBaseWebVC.h; sourceTree = "<group>"; };
-		B9A5598A20480194009CC3BA /* BTEBaseWebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEBaseWebVC.m; sourceTree = "<group>"; };
 		B9FF2E812047A7A0009A840B /* BTE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BTE.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -760,8 +760,8 @@
 				8179AF0A2008A08C001678D2 /* BHBaseTableController.m */,
 				8179AF092008A08C001678D2 /* BHBaseController.h */,
 				8179AF062008A08C001678D2 /* BHBaseController.m */,
-				B9A5598920480194009CC3BA /* BTEBaseWebVC.h */,
-				B9A5598A20480194009CC3BA /* BTEBaseWebVC.m */,
+				B923CFFA20494E39008A9302 /* BHBaseWebVC.h */,
+				B923CFF42048FEAA008A9302 /* BHBaseWebVC.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1330,12 +1330,12 @@
 				8179D2FF2021D73600C13447 /* Y_KLine.m in Sources */,
 				8179AE2320085DB5001678D2 /* NSObject+swizzling.m in Sources */,
 				8179AE3F20085DB5001678D2 /* NSTimer+addition.m in Sources */,
-				B9A5598B20480194009CC3BA /* BTEBaseWebVC.m in Sources */,
 				8179AE4120085DB5001678D2 /* NSNull+safe.m in Sources */,
 				8179AE2F20085DB5001678D2 /* UIBarButtonItem+XboyItem.m in Sources */,
 				8179AE8B20086175001678D2 /* LLSegmentBar.m in Sources */,
 				8179D2EB2021D73600C13447 /* UIColor+Y_StockChart.m in Sources */,
 				8179AE8920086175001678D2 /* UIView+LLSegmentBar.m in Sources */,
+				B923CFF52048FEAA008A9302 /* BHBaseWebVC.m in Sources */,
 				8179AED820089D43001678D2 /* AppDelegate.m in Sources */,
 				8179D2F12021D73600C13447 /* Y_KLineAccessoryView.m in Sources */,
 				8179AE8720086175001678D2 /* DSJSONRPCError.m in Sources */,

@@ -9,7 +9,7 @@
 #import "BTELoginVC.h"
 #import "BHGradientButton.h"
 #import "CircularProgressBar.h"
-#import "BTEBaseWebVC.h"
+#import "BHBaseWebVC.h"
 
 
 typedef NS_ENUM(NSInteger, LoginType) {
@@ -186,7 +186,7 @@ typedef NS_ENUM(NSInteger, LoginType) {
     self.codeTextField.text = @"";
     self.accountTextField.text = @"";
     self.codeTextField.secureTextEntry = self.loginType;
-    self.codeTextField.lengthLimit = self.loginType ? 12 : 4;
+    self.codeTextField.lengthLimit = self.loginType ? 12 : 6;
     self.codeTextField.placeholder = self.loginType ? @"请输入密码" : @"请输入验证码";
     self.codeTextField.keyboardType = self.loginType ? UIKeyboardTypeDefault : UIKeyboardTypePhonePad;
     self.accountWidthContrstraint.constant = self.loginType == LoginCodeType ? 0 : -72;
@@ -234,7 +234,7 @@ typedef NS_ENUM(NSInteger, LoginType) {
 }
 //点击协议
 - (IBAction)protocolAction:(UIButton *)sender {
-    BTEBaseWebVC * webVC = [BTEBaseWebVC new];
+    BHBaseWebVC * webVC = [BHBaseWebVC new];
     webVC.urlString = kAppBTEProtcol;
     webVC.title = @"用户协议";
     webVC.isHiddenLeft = NO;

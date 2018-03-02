@@ -24,59 +24,42 @@
     switch (type) {
         case HttpRequestTypeGet:
         {
-            [manager GET:URLString parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
-                
-            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                
-                id jsons = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers  error:nil];
-                NSError * error = [BTERequestTools checkIsSuccess:jsons];
+            [YQNetworking getWithUrl:URLString refreshRequest:NO cache:NO params:parameters progressBlock:nil successBlock:^(id response) {
+                NSError * error = [BTERequestTools checkIsSuccess:response];
                 if (!error) {
                     if (success) {
-                        success(jsons);
+                        success(response);
                     }
                 }else {
                     if (failure) {
                         failure(error);
                     }
                 }
-                
-                
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            } failBlock:^(NSError *error) {
                 if (failure) {
                     failure(error);
                 }
             }];
-            
-            
         }
             break;
         case HttpRequestTypePost:
         {
-            
-            [manager POST:URLString parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
-
-            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-
-                id jsons = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers  error:nil];
-                NSError * error = [BTERequestTools checkIsSuccess:jsons];
+            [YQNetworking postWithUrl:URLString refreshRequest:NO cache:NO params:parameters progressBlock:nil successBlock:^(id response) {
+                NSError * error = [BTERequestTools checkIsSuccess:response];
                 if (!error) {
                     if (success) {
-                        success(jsons);
+                        success(response);
                     }
                 }else {
                     if (failure) {
                         failure(error);
                     }
                 }
-
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-
+            } failBlock:^(NSError *error) {
                 if (failure) {
                     failure(error);
                 }
-
             }];
-            
         }
             break;
         default:

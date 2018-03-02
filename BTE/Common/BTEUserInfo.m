@@ -41,6 +41,7 @@ static BTEUserInfo * info = nil;
 
 -(void)removeLoginData {
     info = [BTEUserInfo new];
+    info.userToken =@"";
     _isLogin =NO;
     [self remove];
 }

@@ -6,15 +6,15 @@
 //  Copyright © 2018年 wangli. All rights reserved.
 //
 
-#import "BTEBaseWebVC.h"
+#import "BHBaseWebVC.h"
 
 #define iOS9_OR_LATER ([[[UIDevice currentDevice] systemVersion]floatValue] >= 9.0)
 
-@interface BTEBaseWebVC ()
+@interface BHBaseWebVC ()
 
 @end
 
-@implementation BTEBaseWebVC
+@implementation BHBaseWebVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,6 +31,9 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self handlerNetworkUnReachableStatus];
+    if (!User.isLogin) {
+        [self reloadWebView:self.urlString];
+    }
     //    if (_bridge) {
     //        [_bridge setWebViewDelegate:self];
     //    }
@@ -70,6 +73,15 @@
 
 - (void)observeH5BridgeHandler {
     //do something
+}
+#pragma mark - 重新加载webview
+- (void)reloadWebView:(NSString *)url{
+    if (STRISEMPTY(url)) {
+        return;
+    }
+    NSURL *URL = [NSURL URLWithString:url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30];
+    [_webView loadRequest:request];
 }
 
 #pragma mark - UIWebView delegate
