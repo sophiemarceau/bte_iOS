@@ -148,7 +148,7 @@ typedef NS_ENUM(NSInteger, LoginType) {
             [self setResetpwdType];
         }
     }else {
-        //更新密码成功
+        //更新密码成功 返回首页
         [self succsess:responseObject];
     }
 }
@@ -156,10 +156,10 @@ typedef NS_ENUM(NSInteger, LoginType) {
     BTEUserInfo * yy = [BTEUserInfo yy_modelWithDictionary:responseObject];
     [yy save];
     if (self.loginCompletion) {
-        self.loginCompletion();
+        self.loginCompletion(self.loginType != LoginResetpwdType);
     }
     [[NSNotificationCenter defaultCenter]postNotificationName:NotificationUserLoginSuccess object:nil];
-    [self backAction:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 #pragma mark - 切换登录方式
 - (IBAction)changeLoginAction:(UIButton *)sender {
@@ -266,7 +266,7 @@ typedef NS_ENUM(NSInteger, LoginType) {
     [self changeSendCodeEnabled:[account isValidateMobile]];
     if (self.loginType != LoginResetpwdType) {
         if ([account isValidateMobile] &&
-            (self.loginType ? code.length >= 6 : code.length > 0)) {
+            (self.loginType ? code.length > 0 : code.length > 0)) {
             [self changeLoginEnabled:YES];
         }else {
             [self changeLoginEnabled:NO];
@@ -319,6 +319,9 @@ typedef NS_ENUM(NSInteger, LoginType) {
 }
 //返回
 -(void)backAction:(UIBarButtonItem *)sender {
+    if (self.loginCompletion) {
+        self.loginCompletion(NO);
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

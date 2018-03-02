@@ -26,12 +26,6 @@
 //    [btn addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
 //    [self.view addSubview:btn];
 }
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    if (!User.isLogin) {
-        [self reloadWebView:self.urlString];
-    }
-}
 - (void)click {
     //    [BTELoginVC OpenLogin:self callback:nil];
     //    self.navigationController pushViewController:[BTEBaseWebVC ] animated:<#(BOOL)#>
@@ -43,9 +37,13 @@
     // 1.登录
     [self.bridge registerHandler:@"loginApp" handler:^(id data, WVJBResponseCallback responseCallback) {
         if (!STRISEMPTY(data[@"url"])) {
-            [BTELoginVC OpenLogin:self callback:^{
-                [weakSelf sendUserToken];
-                [weakSelf reloadWebView:data[@"url"]];
+            [BTELoginVC OpenLogin:self callback:^(BOOL isComplete) {
+                if (isComplete) {
+                    [weakSelf sendUserToken];
+                    [weakSelf reloadWebView:data[@"url"]];
+                }else {
+                    [weakSelf reloadWebView:self.urlString];
+                }
             }];
         }
     }];
@@ -63,6 +61,19 @@
         responseCallback(@{@"sessionId": User.userToken});
     }];
     
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    [super webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
+    
+    NSString * url = [request.URL absoluteString];
+    
+    NSLog(@"load url ----:%@",url);
+    
+    
+    
+    
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {

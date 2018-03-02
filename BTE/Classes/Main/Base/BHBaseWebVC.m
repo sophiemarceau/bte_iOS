@@ -34,13 +34,6 @@
     if (!User.isLogin) {
         [self reloadWebView:self.urlString];
     }
-    //    if (_bridge) {
-    //        [_bridge setWebViewDelegate:self];
-    //    }
-}
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    //    [self.bridge setWebViewDelegate:nil];
 }
 #pragma mark - 加载本地HTML
 - (void)loadLocalHTMLString:(NSString *)fileName {
@@ -52,9 +45,10 @@
 - (void)goback {
     if ([self.webView canGoBack]) {
         [self.webView goBack];
-    }else {
-        [self.navigationController popViewControllerAnimated:YES];
     }
+//    else {
+//        [self.navigationController popViewControllerAnimated:YES];
+//    }
 }
 #pragma mark - initBridge Moedth
 - (void)initBridge {

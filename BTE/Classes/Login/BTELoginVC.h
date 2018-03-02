@@ -7,8 +7,12 @@
 //
 
 #import "BHBaseController.h"
+/**
+ 登录回调
 
-typedef void (^BHLoginCompletion)(void);
+ @param isComplete 是否完成登录
+ */
+typedef void (^BHLoginCompletion)(BOOL isComplete);
 
 @interface BTELoginVC : BHBaseController
 
