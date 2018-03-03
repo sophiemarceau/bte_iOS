@@ -39,7 +39,7 @@ static NSString * const kHeader = @"http://192.168.24.135:3001/";
 //MARK:版本更新
 #define kAppVersion [NSString stringWithFormat:@"%@%@",kDomain,@"app/api/config/update"]
 //协议地址
-#define kAppBTEProtcol [NSString stringWithFormat:@"%@%@",kDomain,@"wechat/protocol/"]
+#define kAppBTEProtcol [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/protocol/"]
 
 // 比特易h5入口地址
 #define kAppBTEH5Address [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/index"]

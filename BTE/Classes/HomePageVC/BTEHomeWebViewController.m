@@ -20,6 +20,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self customtitleView];
+    [self addNotification];
 //    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
 //    btn.backgroundColor = [UIColor redColor];
 //    btn.frame = CGRectMake(100, 100, 100, 100);
@@ -31,7 +32,12 @@
     //    self.navigationController pushViewController:[BTEBaseWebVC ] animated:<#(BOOL)#>
     //    [self.view addSubview:[BTEBaseWebVC webViewWithURL:@"http://192.168.24.135:3001/wechat/index"]];
 }
-
+- (void)update {
+    [self reloadWebView:self.urlString];
+}
+- (void)addNotification {
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(update) name:@"reSetPasswordSuccess" object:nil];
+}
 -(void)observeH5BridgeHandler {
     WS(weakSelf)
     // 1.登录
@@ -41,8 +47,6 @@
                 if (isComplete) {
                     [weakSelf sendUserToken];
                     [weakSelf reloadWebView:data[@"url"]];
-                }else {
-                    [weakSelf reloadWebView:self.urlString];
                 }
             }];
         }
@@ -66,6 +70,7 @@
     
 }
 - (void)sendUserToken {
+    NSLog(@"i send userToken ---%@",User.userToken);
     [self.bridge registerHandler:@"sendUserInfo" handler:^(id data, WVJBResponseCallback responseCallback) {
         responseCallback(@{@"sessionId": User.userToken});
     }];
@@ -81,7 +86,9 @@
 
     return YES;
 }
-
+-(void)dealloc {
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -94,7 +94,14 @@
     }
     return result;
 }
-
+- (BOOL)isValidateAccount {
+    BOOL result = false;
+    // 仅支持输入数字
+    NSString * regex = @"^?[0-9]+$";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    result = [pred evaluateWithObject:self];
+    return result;
+}
 - (BOOL)validateCarNo
 {
     NSString *carRegex = @"^[A-Za-z]{1}[A-Za-z_0-9]{5}$";

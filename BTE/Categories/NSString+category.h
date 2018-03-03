@@ -30,6 +30,8 @@
 - (BOOL)validateCarNo;
 /*密码验证 字母跟数字组合*/
 - (BOOL)isValidatePassword;
+//仅支持输入数字
+- (BOOL)isValidateAccount;
 
 //获取当前的时间字符串
 + (NSString *)getCurrentDateString;

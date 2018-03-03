@@ -120,7 +120,7 @@ typedef NS_ENUM(NSInteger, LoginType) {
             return;
         }
         if (![account isEqualToString:code]) {
-            [BHToast showMessage:@"两次密码不一致!"];
+            [BHToast showMessage:@"两次密码不一致，请重新输入!"];
             return;
         }
         WS(weakSelf)
@@ -134,6 +134,7 @@ typedef NS_ENUM(NSInteger, LoginType) {
         }];
     }
 }
+//登录成功
 - (void)loginSuccess:(id)responseObject {
     if (self.loginType == LoginCodeType) {
         [self succsess:responseObject];
@@ -143,20 +144,32 @@ typedef NS_ENUM(NSInteger, LoginType) {
         if (reset.integerValue == 0) {
             [self succsess:responseObject];
         }else {
-            //设置新密码界面
+            //设置新密码界面 其实已经登录成功 但是需要在此处保存token 因为设置新密码没有返回token
             self.loginType = LoginResetpwdType;
             [self setResetpwdType];
+            BTEUserInfo * yy = [BTEUserInfo yy_modelWithDictionary:responseObject];
+            yy.userToken = responseObject[@"data"][@"token"];
+            [yy save];
         }
     }else {
         //更新密码成功 返回首页
-        [self succsess:responseObject];
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"reSetPasswordSuccess" object:nil];
+        if (self.loginCompletion) {
+            self.loginCompletion(YES);
+        }
+        //设置新密码成功 页面dissmiss
+        [[NSNotificationCenter defaultCenter]postNotificationName:NotificationUserLoginSuccess object:nil];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 - (void)succsess:(id)responseObject {
     BTEUserInfo * yy = [BTEUserInfo yy_modelWithDictionary:responseObject];
+    if (self.loginType != LoginCodeType) {
+        yy.userToken = responseObject[@"data"][@"token"];
+    }
     [yy save];
     if (self.loginCompletion) {
-        self.loginCompletion(self.loginType != LoginResetpwdType);
+        self.loginCompletion(YES);
     }
     [[NSNotificationCenter defaultCenter]postNotificationName:NotificationUserLoginSuccess object:nil];
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -167,6 +180,7 @@ typedef NS_ENUM(NSInteger, LoginType) {
     sender.selected = !sender.selected;
     self.loginType = sender.isSelected;
     [self changeLoginTypeStatus];
+    [self changeLoginEnabled:NO];
     
 }
 - (void)changeLoginTypeStatus {
@@ -247,6 +261,10 @@ typedef NS_ENUM(NSInteger, LoginType) {
     NSString * account,*code;
     //账号
     if ([textField isEqual:self.accountTextField]){
+        //仅支持数字输入
+        if (self.loginType != LoginResetpwdType && beString.length > 0 && ![beString isValidateAccount]) {
+            return NO;
+        }
         if (beString.length > (self.loginType != LoginResetpwdType ? 11 : 12)) {
             return NO;
         }
@@ -262,18 +280,18 @@ typedef NS_ENUM(NSInteger, LoginType) {
         account = self.accountTextField.text;
         code = beString;
     }
-    //改变按钮颜色
-    [self changeSendCodeEnabled:[account isValidateMobile]];
+    //改变发送验证按钮颜色
+    [self changeSendCodeEnabled:account.length == 11];
     if (self.loginType != LoginResetpwdType) {
-        if ([account isValidateMobile] &&
+        if (account.length == 11 &&
             (self.loginType ? code.length > 0 : code.length > 0)) {
             [self changeLoginEnabled:YES];
         }else {
             [self changeLoginEnabled:NO];
         }
     }else {
-        //密码校验
-        if (account.length >= 6 && code.length >= 6) {
+        //密码校验 密码确认都大于0的时候再亮起
+        if (account.length > 0 && code.length > 0) {
             [self changeLoginEnabled:YES];
         }else {
             [self changeLoginEnabled:NO];
@@ -319,9 +337,9 @@ typedef NS_ENUM(NSInteger, LoginType) {
 }
 //返回
 -(void)backAction:(UIBarButtonItem *)sender {
-    if (self.loginCompletion) {
-        self.loginCompletion(NO);
-    }
+//    if (self.loginCompletion) {
+//        self.loginCompletion(NO);
+//    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

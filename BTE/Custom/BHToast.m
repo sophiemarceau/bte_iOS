@@ -69,7 +69,7 @@
     
     CGRect rect = [message boundingRectWithSize:CGSizeMake(kMD_ScreenWidth - 60, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:kToastFontSize]} context:nil];
     label.frame = CGRectMake(0, 0, rect.size.width+10, rect.size.height + 10);
-    label.center = CGPointMake(kMD_ScreenWidth/2.0, kMD_ScreenHeight*0.8);
+    label.center = CGPointMake(kMD_ScreenWidth/2.0, kMD_ScreenHeight*0.5);
     [self.window addSubview:label];
     label.alpha = 0;
     [UIView animateWithDuration:0.2 animations:^{

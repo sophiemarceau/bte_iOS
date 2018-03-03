@@ -31,9 +31,9 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self handlerNetworkUnReachableStatus];
-    if (!User.isLogin) {
-        [self reloadWebView:self.urlString];
-    }
+//    if (!User.isLogin) {
+//        [self reloadWebView:self.urlString];
+//    }
 }
 //监听左返回键盘
 -(void)setIsHiddenLeft:(BOOL)isHiddenLeft {
@@ -50,6 +50,8 @@
 - (void)goback {
     if ([self.webView canGoBack]) {
         [self.webView goBack];
+    }else {
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 #pragma mark - initBridge Moedth
