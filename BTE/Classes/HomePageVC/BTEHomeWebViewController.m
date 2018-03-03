@@ -55,6 +55,15 @@
         [weakSelf reloadWebView:self.urlString];
     }];
     
+    //标识是否是index页面 隐藏左返回键
+    [self.bridge registerHandler:@"oneClass" handler:^(id data, WVJBResponseCallback responseCallback) {
+        weakSelf.isHiddenLeft = YES;
+    }];
+    //标识是否是index页面 显示左返回键
+    [self.bridge registerHandler:@"twoIndex" handler:^(id data, WVJBResponseCallback responseCallback) {
+        weakSelf.isHiddenLeft = NO;
+    }];
+    
 }
 - (void)sendUserToken {
     [self.bridge registerHandler:@"sendUserInfo" handler:^(id data, WVJBResponseCallback responseCallback) {
@@ -69,10 +78,7 @@
     NSString * url = [request.URL absoluteString];
     
     NSLog(@"load url ----:%@",url);
-    
-    
-    
-    
+
     return YES;
 }
 

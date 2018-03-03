@@ -19,11 +19,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    if (!self.isHiddenLeft) {
-        UIImage *buttonNormal = [[UIImage imageNamed:@"nav_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        UIBarButtonItem * leftItem = [[UIBarButtonItem alloc]initWithImage:buttonNormal style:UIBarButtonItemStylePlain target:self action:@selector(goback)];
-        self.navigationItem.leftBarButtonItem = leftItem;
-    }
+    
+//    if (!self.isHiddenLeft) {
+//        self.navigationItem.leftBarButtonItem = [self creatLeftBarItem];
+//    }
+    
     [self loadWebView];
     [self initBridge];
     
@@ -34,6 +34,11 @@
     if (!User.isLogin) {
         [self reloadWebView:self.urlString];
     }
+}
+//监听左返回键盘
+-(void)setIsHiddenLeft:(BOOL)isHiddenLeft {
+    self.navigationItem.leftBarButtonItem = isHiddenLeft ? nil : [self creatLeftBarItem];
+    
 }
 #pragma mark - 加载本地HTML
 - (void)loadLocalHTMLString:(NSString *)fileName {
@@ -46,9 +51,6 @@
     if ([self.webView canGoBack]) {
         [self.webView goBack];
     }
-//    else {
-//        [self.navigationController popViewControllerAnimated:YES];
-//    }
 }
 #pragma mark - initBridge Moedth
 - (void)initBridge {
@@ -171,6 +173,11 @@
     [self clearCache];
     [BHProgressHUD hideLoading];
     
+}
+- (UIBarButtonItem *)creatLeftBarItem {
+    UIImage *buttonNormal = [[UIImage imageNamed:@"nav_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIBarButtonItem * leftItem = [[UIBarButtonItem alloc]initWithImage:buttonNormal style:UIBarButtonItemStylePlain target:self action:@selector(goback)];
+    return leftItem;
 }
 /** 清理缓存的方法，这个方法会清除缓存类型为HTML类型的文件*/
 - (void)clearCache {
