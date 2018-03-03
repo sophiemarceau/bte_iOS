@@ -13,6 +13,7 @@ static NSString *const NotificationCouponFromUserCenter      = @"CouponFromUserC
 static NSString *const NotificationUserLoginInvalid = @"UserLoginInvalid";  ///< 用户登录失效
 static NSString *const NotificationUserSignout      = @"UserSignOut";       ///< 退出登录
 static NSString *const NotificationUserLoginSuccess = @"UserLoginInSuccess";///< 用户登录成功
+static NSString *const NotificationReSetPassword = @"reSetPasswordSuccess";///< 用户登录成功
 static NSString *const NotificationUserLoginH5Success = @"UserLoginInH5Success";///< 用户登录H5成功  区别是否去往首页
 static NSString *const NotificationUserLoginCancel  = @"UserLoginCancel";   ///< 用户取消登录
 

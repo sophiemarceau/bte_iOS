@@ -36,7 +36,7 @@
     [self reloadWebView:self.urlString];
 }
 - (void)addNotification {
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(update) name:@"reSetPasswordSuccess" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(update) name:NotificationReSetPassword object:nil];
 }
 -(void)observeH5BridgeHandler {
     WS(weakSelf)

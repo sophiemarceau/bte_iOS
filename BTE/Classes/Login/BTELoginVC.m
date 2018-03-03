@@ -87,11 +87,11 @@ typedef NS_ENUM(NSInteger, LoginType) {
     NSString * code = self.codeTextField.text.trimString;
     if (self.loginType != LoginResetpwdType) {
         if (!account.isValidateMobile) {
-            [BHToast showMessage:@"请输入正确的手机号!"];
+            [BHToast showMessage:@"请输入正确的手机号"];
             return;
         }
         if (self.loginType == LoginCodeType &&  code.length < 4) {
-            [BHToast showMessage:@"请输入正确的验证码!"];
+            [BHToast showMessage:@"请输入正确的验证码"];
             return;
         }
         NSMutableDictionary * pramaDic = @{}.mutableCopy;
@@ -111,16 +111,16 @@ typedef NS_ENUM(NSInteger, LoginType) {
         }];
     }else {
         //更新密码
-        if (account.length < 6 || account.length > 12 || code.length < 6 || account.length > 12) {
-            [BHToast showMessage:@"请输入6-12位正确密码!"];
+        if (account.length < 6 || account.length > 12) {
+            [BHToast showMessage:@"请输入6-12位正确密码"];
             return;
         }
-        if (![account isValidatePassword] || ![code isValidatePassword]) {
-            [BHToast showMessage:@"请输入6-12位字母和数字组合密码!"];
+        if (![account isValidatePassword]) {
+            [BHToast showMessage:@"请输入6-12位字母和数字组合密码"];
             return;
         }
         if (![account isEqualToString:code]) {
-            [BHToast showMessage:@"两次密码不一致，请重新输入!"];
+            [BHToast showMessage:@"两次密码不一致，请重新输入"];
             return;
         }
         WS(weakSelf)
@@ -153,10 +153,8 @@ typedef NS_ENUM(NSInteger, LoginType) {
         }
     }else {
         //更新密码成功 返回首页
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"reSetPasswordSuccess" object:nil];
-        if (self.loginCompletion) {
-            self.loginCompletion(YES);
-        }
+        [[NSNotificationCenter defaultCenter]postNotificationName:NotificationReSetPassword object:nil];
+        
         //设置新密码成功 页面dissmiss
         [[NSNotificationCenter defaultCenter]postNotificationName:NotificationUserLoginSuccess object:nil];
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -232,7 +230,7 @@ typedef NS_ENUM(NSInteger, LoginType) {
 - (IBAction)sendCodeAction:(UIButton *)sender {
     NSString * account = self.accountTextField.text.trimString;
     if (!account.isValidateMobile) {
-        [BHToast showMessage:@"请输入正确的手机号!"];
+        [BHToast showMessage:@"请输入正确的手机号"];
         return;
     }
     WS(weakSelf)
@@ -241,7 +239,7 @@ typedef NS_ENUM(NSInteger, LoginType) {
         [weakSelf hudClose];
         [BHToast showMessage:@"验证码已发送至手机"];
         [weakSelf circleProgressStart];
-    } failure:^(NSError *error) {
+    } failure:^(NSError *error)  {
         [weakSelf hudClose];
         RequestError(error);
     }];
@@ -299,6 +297,49 @@ typedef NS_ENUM(NSInteger, LoginType) {
     }
     
     return YES;
+}
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.view endEditing:YES];
+    [self checkButtonStatus:textField];
+    return YES;
+}
+-(BOOL)textFieldShouldClear:(UITextField *)textField {
+    [self changeLoginEnabled:NO];
+    if (self.loginType == LoginCodeType && [textField isEqual:self.accountTextField]){
+        [self changeSendCodeEnabled:NO];
+    }
+    return YES;
+}
+- (void)checkButtonStatus:(UITextField *)textField {
+    NSString * account,*code;
+    //账号
+    if ([textField isEqual:self.accountTextField]){
+        account = textField.text;
+        code = self.codeTextField.text;
+    }
+    //密码 验证码
+    else if ([textField isEqual:self.codeTextField]) {
+        //验证码最多6位
+        account = self.accountTextField.text;
+        code = textField.text;
+    }
+    //改变发送验证按钮颜色
+    [self changeSendCodeEnabled:account.length == 11];
+    if (self.loginType != LoginResetpwdType) {
+        if (account.length == 11 &&
+            (self.loginType ? code.length > 0 : code.length > 0)) {
+            [self changeLoginEnabled:YES];
+        }else {
+            [self changeLoginEnabled:NO];
+        }
+    }else {
+        //密码校验 密码确认都大于0的时候再亮起
+        if (account.length > 0 && code.length > 0) {
+            [self changeLoginEnabled:YES];
+        }else {
+            [self changeLoginEnabled:NO];
+        }
+    }
 }
 #pragma mark - 改变按钮颜色
 - (void)changeLoginEnabled:(BOOL)enabled {
