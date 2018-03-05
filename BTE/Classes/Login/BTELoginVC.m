@@ -83,6 +83,7 @@ typedef NS_ENUM(NSInteger, LoginType) {
 
 #pragma mark - 登录
 - (IBAction)loginAction:(BHGradientButton *)sender {
+    [self.view endEditing:YES];
     NSString * account = self.accountTextField.text.trimString;
     NSString * code = self.codeTextField.text.trimString;
     if (self.loginType != LoginResetpwdType) {
