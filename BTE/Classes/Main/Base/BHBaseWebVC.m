@@ -7,6 +7,7 @@
 //
 
 #import "BHBaseWebVC.h"
+#import <JavaScriptCore/JavaScriptCore.h>
 
 #define iOS9_OR_LATER ([[[UIDevice currentDevice] systemVersion]floatValue] >= 9.0)
 
@@ -26,6 +27,7 @@
     
     [self loadWebView];
     [self initBridge];
+    [self catchJsLog];
     
 }
 - (void)viewWillAppear:(BOOL)animated {
@@ -220,8 +222,21 @@
         }
     }
 }
-
-
+//打印log
+- (void)catchJsLog{
+    if(DEBUG){
+        JSContext *ctx = [self.webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+        ctx[@"console"][@"log"] = ^(JSValue * msg) {
+            NSLog(@"H5  log : %@", msg);
+        };
+        ctx[@"console"][@"warn"] = ^(JSValue * msg) {
+            NSLog(@"H5  warn : %@", msg);
+        };
+        ctx[@"console"][@"error"] = ^(JSValue * msg) {
+            NSLog(@"H5  error : %@", msg);
+        };
+    }
+}
 
 
 @end
