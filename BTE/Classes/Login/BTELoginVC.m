@@ -95,6 +95,11 @@ typedef NS_ENUM(NSInteger, LoginType) {
             [BHToast showMessage:@"请输入正确的验证码"];
             return;
         }
+        if (self.loginType == LoginAccountType && (code.length < 6 || code.length > 12)) {
+            [BHToast showMessage:@"请输入6-12位正确密码"];
+            return;
+        }
+        
         NSMutableDictionary * pramaDic = @{}.mutableCopy;
         NSString * methodName = @"";
         [pramaDic setObject:account forKey:@"mobile"];
@@ -209,6 +214,7 @@ typedef NS_ENUM(NSInteger, LoginType) {
 }
 - (void)setResetpwdType {
     if (self.loginType == LoginResetpwdType) {
+        self.navigationItem.leftBarButtonItem = nil;
         self.accountTextField.placeholder = @"请设置新密码（6-12位字母和数字组合）";
         self.codeTextField.placeholder = @"请确定新密码";
         self.accountTextField.text = self.codeTextField.text =  @"";
