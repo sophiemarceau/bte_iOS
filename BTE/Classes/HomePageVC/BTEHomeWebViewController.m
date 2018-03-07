@@ -69,10 +69,21 @@
             {
                self.navigationItem.title = [data objectForKey:@"title"];
             }
+            if ([[data objectForKey:@"title"] isEqualToString:@"我的账户"]) {
+                [self.navigationController setNavigationBarHidden:YES animated:NO];
+                self.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT - (self.isHiddenBottom ? HOME_INDICATOR_HEIGHT : TAB_BAR_HEIGHT));
+                
+            } else
+            {
+               [self.navigationController setNavigationBarHidden:NO animated:NO];
+                self.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT  - (self.isHiddenBottom ? HOME_INDICATOR_HEIGHT : TAB_BAR_HEIGHT));
+            }
         }
     }];
     //标识是否是index页面 显示左返回键
     [self.bridge registerHandler:@"twoIndex" handler:^(id data, WVJBResponseCallback responseCallback) {
+        [self.navigationController setNavigationBarHidden:NO animated:NO];
+        self.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT  - (self.isHiddenBottom ? HOME_INDICATOR_HEIGHT : TAB_BAR_HEIGHT));
         weakSelf.isHiddenLeft = NO;
         if (data && [data objectForKey:@"title"]) {
             self.navigationItem.title = [data objectForKey:@"title"];
