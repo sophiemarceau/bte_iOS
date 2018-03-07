@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    [self customtitleView];
+//    [self customtitleView];
     [self addNotification];
 //    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
 //    btn.backgroundColor = [UIColor redColor];
@@ -62,10 +62,21 @@
     //标识是否是index页面 隐藏左返回键
     [self.bridge registerHandler:@"oneClass" handler:^(id data, WVJBResponseCallback responseCallback) {
         weakSelf.isHiddenLeft = YES;
+        if (data && [data objectForKey:@"title"]) {
+            if ([[data objectForKey:@"title"] isEqualToString:@"比特易-玩转比特币 多看比特易"]) {
+                self.navigationItem.title = @"比特易";
+            } else
+            {
+               self.navigationItem.title = [data objectForKey:@"title"];
+            }
+        }
     }];
     //标识是否是index页面 显示左返回键
     [self.bridge registerHandler:@"twoIndex" handler:^(id data, WVJBResponseCallback responseCallback) {
         weakSelf.isHiddenLeft = NO;
+        if (data && [data objectForKey:@"title"]) {
+            self.navigationItem.title = [data objectForKey:@"title"];
+        }
     }];
     
 }
