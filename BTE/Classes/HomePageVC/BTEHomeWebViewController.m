@@ -73,8 +73,14 @@
                 [self.navigationController setNavigationBarHidden:YES animated:NO];
                 self.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT - (self.isHiddenBottom ? HOME_INDICATOR_HEIGHT : TAB_BAR_HEIGHT));
                 
+                //设置状态栏颜色
+                _statusBarView = [[UIView alloc]   initWithFrame:CGRectMake(0, 0,    self.view.bounds.size.width, 20)];
+                _statusBarView.backgroundColor = [BHHexColor hexColor:@"63B0F3"];
+                [self.view addSubview:_statusBarView];
+                
             } else
             {
+                [_statusBarView removeFromSuperview];
                [self.navigationController setNavigationBarHidden:NO animated:NO];
                 self.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT  - (self.isHiddenBottom ? HOME_INDICATOR_HEIGHT : TAB_BAR_HEIGHT));
             }
@@ -82,6 +88,7 @@
     }];
     //标识是否是index页面 显示左返回键
     [self.bridge registerHandler:@"twoIndex" handler:^(id data, WVJBResponseCallback responseCallback) {
+        [_statusBarView removeFromSuperview];
         [self.navigationController setNavigationBarHidden:NO animated:NO];
         self.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT  - (self.isHiddenBottom ? HOME_INDICATOR_HEIGHT : TAB_BAR_HEIGHT));
         weakSelf.isHiddenLeft = NO;

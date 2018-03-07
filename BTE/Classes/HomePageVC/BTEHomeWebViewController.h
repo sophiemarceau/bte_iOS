@@ -10,5 +10,8 @@
 #import "BHBaseWebVC.h"
 
 @interface BTEHomeWebViewController : BHBaseWebVC
-
+{
+    //设置状态栏颜色
+    UIView *_statusBarView;
+}
 @end
