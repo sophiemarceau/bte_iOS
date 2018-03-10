@@ -8,7 +8,7 @@
 
 #import "BTEHomeWebViewController.h"
 #import "BTELoginVC.h"
-
+#import "MyAccountViewController.h"
 @interface BTEHomeWebViewController ()
 
 @end
@@ -47,6 +47,12 @@
                 if (isComplete) {
                     [weakSelf sendUserToken];
                     [weakSelf reloadWebView:data[@"url"]];
+                    //登录成功跳转原生我的账户页面
+                    MyAccountViewController *accountVc = [[MyAccountViewController alloc] init];
+                    accountVc.callRefreshBlock = ^{
+                        [weakSelf reloadWebView:self.urlString];
+                    };
+                    [self.navigationController pushViewController:accountVc animated:YES];
                 }
             }];
         }
@@ -59,6 +65,19 @@
         [weakSelf reloadWebView:self.urlString];
     }];
     
+    
+    //我的账户已登录点击监听
+    [self.bridge registerHandler:@"jumpToAccount" handler:^(id data, WVJBResponseCallback responseCallback) {
+        //登录成功跳转原生我的账户页面
+        MyAccountViewController *accountVc = [[MyAccountViewController alloc] init];
+        accountVc.callRefreshBlock = ^{
+            [weakSelf reloadWebView:self.urlString];
+        };
+        [self.navigationController pushViewController:accountVc animated:YES];
+    }];
+    
+    
+    
     //标识是否是index页面 隐藏左返回键
     [self.bridge registerHandler:@"oneClass" handler:^(id data, WVJBResponseCallback responseCallback) {
         weakSelf.isHiddenLeft = YES;
@@ -70,7 +89,7 @@
                self.navigationItem.title = [data objectForKey:@"title"];
             }
             if ([[data objectForKey:@"title"] isEqualToString:@"我的账户"]) {
-                [self.navigationController setNavigationBarHidden:YES animated:NO];
+//                [self.navigationController setNavigationBarHidden:YES animated:NO];
                 self.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT - (self.isHiddenBottom ? HOME_INDICATOR_HEIGHT : TAB_BAR_HEIGHT));
                 
                 //设置状态栏颜色

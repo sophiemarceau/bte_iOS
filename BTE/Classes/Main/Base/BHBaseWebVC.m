@@ -99,6 +99,7 @@
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
+    [BHProgressHUD hideLoading];
 }
 
 #pragma mark - getCookie

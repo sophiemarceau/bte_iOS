@@ -35,7 +35,8 @@ CGRect  CGRectMoveToCenter(CGRect rect, CGPoint center);
 
 @property CGFloat bottom;//获得视图的底部y
 @property CGFloat right;//获得视图的右部x
-
+@property (nonatomic, assign) CGFloat centerX;
+@property (nonatomic, assign) CGFloat centerY;
 
 - (void) moveBy: (CGPoint) delta;
 - (void) scaleBy: (CGFloat) scaleFactor;

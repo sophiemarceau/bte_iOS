@@ -110,6 +110,16 @@ if (error.code != -900000) { \
 /* 部分浅灰文字颜色 */
 #define BHColorLightGray_text BHHexColor(@"9B9B9B")
 
+
+//新增
+//背景色
+#define KBGColor BHHexColor(@"f4f5fa")
+#pragma mark - 颜色相关
+
+#define kColorRgb(r,g,b)               [UIColor colorWithRed:(r/255.0f) green:(g/255.0f) blue:(b/255.0f) alpha:1]
+#define kColorRgba(r,g,b,a)            [UIColor colorWithRed:(r/255.0f) green:(g/255.0f) blue:(b/255.0f) alpha:a]
+
+
 // MARK: 设备相关
 #define IS_IPHONE4 [[UIScreen mainScreen] bounds].size.height == 480.0
 #define IS_IPHONE5 [[UIScreen mainScreen] bounds].size.height == 568.0
@@ -127,10 +137,19 @@ if (error.code != -900000) { \
 // home indicator
 #define HOME_INDICATOR_HEIGHT (IS_IPHONEX ? 34.f : 0.f)
 
-// MARK: 字体相关(PingFangSC-Light)
-#define UIFontLightOfSize(fontSize) (([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.2) ? [UIFont systemFontOfSize:fontSize weight:UIFontWeightLight] : [UIFont systemFontOfSize:fontSize])
 // 出借助手header使用
+#pragma mark - Font
+
+#define UIFontLightOfSize(fontSize)  (IS_IOS_9 ? [UIFont fontWithName:@"PingFangSC-Light" size:fontSize] : [UIFont systemFontOfSize:fontSize])
 #define UIFontRegularOfSize(fontSize)  (IS_IOS_9 ? [UIFont fontWithName:@"PingFangSC-Regular" size:fontSize] : [UIFont systemFontOfSize:fontSize])
+#define UIFontMediumOfSize(fontSize)  (IS_IOS_9 ? [UIFont fontWithName:@"PingFangSC-Medium" size:fontSize] : [UIFont systemFontOfSize:fontSize])
+
+#define FontName [UIFont systemFontOfSize:[UIFont systemFontSize]].fontName // 系统字体
+#define  KfontNormal(a) [UIFont fontWithName:FontName size:(a)]
+
+
+
+
 
 
 // MARK: 系统相关

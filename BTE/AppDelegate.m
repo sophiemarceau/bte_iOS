@@ -20,7 +20,7 @@
 #endif
 
 #import "ViewController.h"
-
+#import "MyAccountViewController.h"
 
 @interface AppDelegate ()<EAIntroDelegate,JPUSHRegisterDelegate>
 
@@ -115,6 +115,11 @@
     homePageVc.isHiddenBottom = YES;
     
 //    ViewController *homePageVc= [[ViewController alloc] init];
+    
+    //登录成功跳转原生我的账户页面
+//    MyAccountViewController *homePageVc = [[MyAccountViewController alloc] init];
+    
+    
     BHNavigationController *NavVC = [[BHNavigationController alloc] initWithRootViewController:homePageVc];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = NavVC;
@@ -122,6 +127,8 @@
     [self.window makeKeyAndVisible];
     //请求版本更新 （注意一定要在初始化网络之后加载）
     [BHVersionTool requestAppVersion:NavVC];
+    
+
 }
 #pragma mark - UMeng统计
 - (void)setUMengAnalytics {

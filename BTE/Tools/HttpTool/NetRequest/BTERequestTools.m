@@ -18,9 +18,9 @@
                      success:(void (^)(id responseObject))success
                      failure:(void (^)(NSError *error))failure
 {
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    manager.requestSerializer.timeoutInterval = 30.0f;
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+//    manager.requestSerializer.timeoutInterval = 30.0f;
     switch (type) {
         case HttpRequestTypeGet:
         {

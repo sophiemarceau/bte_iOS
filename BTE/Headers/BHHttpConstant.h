@@ -44,6 +44,20 @@ static NSString * const kHeader = @"http://192.168.24.135:3001/";
 // 比特易h5入口地址
 #define kAppBTEH5Address [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/index"]
 
+// 投资详情入口地址
+#define kAppStrategyAddress [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/strategy"]
+//MARK:我的账户
+
+//账户基本信息
+#define kAcountInfo [NSString stringWithFormat:@"%@%@",kDomain,@"app/api/account/info"]
+//获取当前跟投信息
+#define kAcountHoldInfo [NSString stringWithFormat:@"%@%@",kDomain,@"app/api/account/hold"]
+//获取当前跟投份额信息
+#define kAcountSettleInfo [NSString stringWithFormat:@"%@%@",kDomain,@"app/api/account/settle"]
+//退出登录
+#define kAcountUserLogout [NSString stringWithFormat:@"%@%@",kDomain,@"app/api/user/logout"]
+
+
 
 #endif /* BHHttpConstant_h */
 

@@ -13,6 +13,14 @@
 		8112E3B6204541AE00419BC9 /* YQCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8112E389204541AE00419BC9 /* YQCacheManager.m */; };
 		8112E3B7204541AE00419BC9 /* YQNetworking+RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8112E38D204541AE00419BC9 /* YQNetworking+RequestManager.m */; };
 		8112E3B8204541AE00419BC9 /* YQNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8112E38E204541AE00419BC9 /* YQNetworking.m */; };
+		8112E3CB205126F900419BC9 /* MyAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8112E3CA205126F900419BC9 /* MyAccountViewController.m */; };
+		8112E3D02051352200419BC9 /* BTEMyAccountTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8112E3CF2051352200419BC9 /* BTEMyAccountTableView.m */; };
+		8112E3D320514F2600419BC9 /* BTEMyAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8112E3D220514F2600419BC9 /* BTEMyAccountTableViewCell.m */; };
+		8112E3D7205260FE00419BC9 /* BTEAllAmountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8112E3D6205260FE00419BC9 /* BTEAllAmountModel.m */; };
+		8112E3DA205261C600419BC9 /* BTELegalAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 8112E3D9205261C600419BC9 /* BTELegalAccount.m */; };
+		8112E3DD205262CA00419BC9 /* BTEBtcAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 8112E3DC205262C900419BC9 /* BTEBtcAccount.m */; };
+		8112E3E0205265DB00419BC9 /* BTEStatisticsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8112E3DF205265DB00419BC9 /* BTEStatisticsModel.m */; };
+		8112E3E32052666000419BC9 /* BTEAccountDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8112E3E22052666000419BC9 /* BTEAccountDetailsModel.m */; };
 		816CCD1D2009ED24009E03D2 /* BHVersionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 816CCD1B2009ED24009E03D2 /* BHVersionTool.m */; };
 		816CCD202009F06A009E03D2 /* BTEUpgradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 816CCD1F2009F06A009E03D2 /* BTEUpgradeViewController.m */; };
 		8179AD44200736C4001678D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AD43200736C4001678D2 /* main.m */; };
@@ -154,6 +162,22 @@
 		8112E38C204541AE00419BC9 /* YQNetworking+RequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YQNetworking+RequestManager.h"; sourceTree = "<group>"; };
 		8112E38D204541AE00419BC9 /* YQNetworking+RequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YQNetworking+RequestManager.m"; sourceTree = "<group>"; };
 		8112E38E204541AE00419BC9 /* YQNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQNetworking.m; sourceTree = "<group>"; };
+		8112E3C9205126F900419BC9 /* MyAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyAccountViewController.h; sourceTree = "<group>"; };
+		8112E3CA205126F900419BC9 /* MyAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAccountViewController.m; sourceTree = "<group>"; };
+		8112E3CE2051352200419BC9 /* BTEMyAccountTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEMyAccountTableView.h; sourceTree = "<group>"; };
+		8112E3CF2051352200419BC9 /* BTEMyAccountTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEMyAccountTableView.m; sourceTree = "<group>"; };
+		8112E3D120514F2600419BC9 /* BTEMyAccountTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEMyAccountTableViewCell.h; sourceTree = "<group>"; };
+		8112E3D220514F2600419BC9 /* BTEMyAccountTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEMyAccountTableViewCell.m; sourceTree = "<group>"; };
+		8112E3D5205260FE00419BC9 /* BTEAllAmountModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEAllAmountModel.h; sourceTree = "<group>"; };
+		8112E3D6205260FE00419BC9 /* BTEAllAmountModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEAllAmountModel.m; sourceTree = "<group>"; };
+		8112E3D8205261C600419BC9 /* BTELegalAccount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTELegalAccount.h; sourceTree = "<group>"; };
+		8112E3D9205261C600419BC9 /* BTELegalAccount.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTELegalAccount.m; sourceTree = "<group>"; };
+		8112E3DB205262C900419BC9 /* BTEBtcAccount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEBtcAccount.h; sourceTree = "<group>"; };
+		8112E3DC205262C900419BC9 /* BTEBtcAccount.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEBtcAccount.m; sourceTree = "<group>"; };
+		8112E3DE205265DB00419BC9 /* BTEStatisticsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEStatisticsModel.h; sourceTree = "<group>"; };
+		8112E3DF205265DB00419BC9 /* BTEStatisticsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEStatisticsModel.m; sourceTree = "<group>"; };
+		8112E3E12052666000419BC9 /* BTEAccountDetailsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEAccountDetailsModel.h; sourceTree = "<group>"; };
+		8112E3E22052666000419BC9 /* BTEAccountDetailsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEAccountDetailsModel.m; sourceTree = "<group>"; };
 		816CCD1B2009ED24009E03D2 /* BHVersionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHVersionTool.m; sourceTree = "<group>"; };
 		816CCD1C2009ED24009E03D2 /* BHVersionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHVersionTool.h; sourceTree = "<group>"; };
 		816CCD1E2009F06A009E03D2 /* BTEUpgradeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEUpgradeViewController.h; sourceTree = "<group>"; };
@@ -434,6 +458,53 @@
 			path = RequestManager;
 			sourceTree = "<group>";
 		};
+		8112E3C8205125D500419BC9 /* MyAccount(我的账户) */ = {
+			isa = PBXGroup;
+			children = (
+				8112E3D4205260C500419BC9 /* Model */,
+				8112E3CD205134CF00419BC9 /* View */,
+				8112E3CC2051315900419BC9 /* Controller */,
+			);
+			path = "MyAccount(我的账户)";
+			sourceTree = "<group>";
+		};
+		8112E3CC2051315900419BC9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8112E3C9205126F900419BC9 /* MyAccountViewController.h */,
+				8112E3CA205126F900419BC9 /* MyAccountViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8112E3CD205134CF00419BC9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8112E3CE2051352200419BC9 /* BTEMyAccountTableView.h */,
+				8112E3CF2051352200419BC9 /* BTEMyAccountTableView.m */,
+				8112E3D120514F2600419BC9 /* BTEMyAccountTableViewCell.h */,
+				8112E3D220514F2600419BC9 /* BTEMyAccountTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8112E3D4205260C500419BC9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8112E3D5205260FE00419BC9 /* BTEAllAmountModel.h */,
+				8112E3D6205260FE00419BC9 /* BTEAllAmountModel.m */,
+				8112E3D8205261C600419BC9 /* BTELegalAccount.h */,
+				8112E3D9205261C600419BC9 /* BTELegalAccount.m */,
+				8112E3DB205262C900419BC9 /* BTEBtcAccount.h */,
+				8112E3DC205262C900419BC9 /* BTEBtcAccount.m */,
+				8112E3DE205265DB00419BC9 /* BTEStatisticsModel.h */,
+				8112E3DF205265DB00419BC9 /* BTEStatisticsModel.m */,
+				8112E3E12052666000419BC9 /* BTEAccountDetailsModel.h */,
+				8112E3E22052666000419BC9 /* BTEAccountDetailsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		816CCD212009F085009E03D2 /* Upgrade */ = {
 			isa = PBXGroup;
 			children = (
@@ -581,6 +652,7 @@
 		8179AD6720073BD0001678D2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8112E3C8205125D500419BC9 /* MyAccount(我的账户) */,
 				B90071B82044FBFC00431065 /* Login(登录) */,
 				8179AF112008A2F0001678D2 /* HomePageVC */,
 				8179AEF92008A08C001678D2 /* Main */,
@@ -1107,7 +1179,7 @@
 				TargetAttributes = {
 					8179AD30200736C4001678D2 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1252,6 +1324,7 @@
 				8179AE5420085FAA001678D2 /* BHProgressHUD.m in Sources */,
 				8179D2F22021D73600C13447 /* Y_KLineAccessory.m in Sources */,
 				8179D2F02021D73600C13447 /* Y_VolumeMAView.m in Sources */,
+				8112E3D7205260FE00419BC9 /* BTEAllAmountModel.m in Sources */,
 				8179AE3720085DB5001678D2 /* NSString+CommonFunc.m in Sources */,
 				8179AE2220085DB5001678D2 /* UIView+Animation.m in Sources */,
 				8179AE3920085DB5001678D2 /* UIImage+help.m in Sources */,
@@ -1270,6 +1343,7 @@
 				8179AF0B2008A08C001678D2 /* BHGuideVC.m in Sources */,
 				8179AE2B20085DB5001678D2 /* NSDictionary+safe.m in Sources */,
 				8179AE3E20085DB5001678D2 /* NSMutableAttributedString+extension.m in Sources */,
+				8112E3D02051352200419BC9 /* BTEMyAccountTableView.m in Sources */,
 				8179AE2720085DB5001678D2 /* NSString+MD5.m in Sources */,
 				816CCD1D2009ED24009E03D2 /* BHVersionTool.m in Sources */,
 				8112E3B4204541AE00419BC9 /* YQDiskCache.m in Sources */,
@@ -1291,6 +1365,7 @@
 				8179AF172009E0A3001678D2 /* BTEHomeWebViewController.m in Sources */,
 				8179D2FE2021D73600C13447 /* Y_MALine.m in Sources */,
 				B90071CC20456F0D00431065 /* BTELoginVC.m in Sources */,
+				8112E3D320514F2600419BC9 /* BTEMyAccountTableViewCell.m in Sources */,
 				8179D3092021D82800C13447 /* ViewController.m in Sources */,
 				8179AE4320085DB5001678D2 /* UIView+category.m in Sources */,
 				8179AF0F2008A08C001678D2 /* BHBaseController.m in Sources */,
@@ -1304,6 +1379,8 @@
 				B9A5597B2047ED2A009CC3BA /* WebViewJavascriptBridge.m in Sources */,
 				8179AF142008A3BA001678D2 /* BTEHomePageViewController.m in Sources */,
 				8179AE8220086175001678D2 /* SSKeychain.m in Sources */,
+				8112E3DA205261C600419BC9 /* BTELegalAccount.m in Sources */,
+				8112E3DD205262CA00419BC9 /* BTEBtcAccount.m in Sources */,
 				8179AE3220085DB5001678D2 /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
 				8179AE8A20086175001678D2 /* LLSegmentBarConfig.m in Sources */,
 				8179D2FA2021D73600C13447 /* Y_KLineVolumePositionModel.m in Sources */,
@@ -1319,6 +1396,7 @@
 				8179AE2920085DB5001678D2 /* UIView+Extend.m in Sources */,
 				8179D2F42021D73600C13447 /* Y_KLinePositionModel.m in Sources */,
 				816CCD202009F06A009E03D2 /* BTEUpgradeViewController.m in Sources */,
+				8112E3E0205265DB00419BC9 /* BTEStatisticsModel.m in Sources */,
 				8179D2EE2021D73600C13447 /* Y_KLineView.m in Sources */,
 				8179AE3C20085DB5001678D2 /* NSString+category.m in Sources */,
 				8179AE4020085DB5001678D2 /* NSDate+Categoey.m in Sources */,
@@ -1341,7 +1419,9 @@
 				8179AE8720086175001678D2 /* DSJSONRPCError.m in Sources */,
 				8179AE2C20085DB5001678D2 /* UIButton+avoidMultiTouch.m in Sources */,
 				8179AE2D20085DB5001678D2 /* NSArray+description.m in Sources */,
+				8112E3E32052666000419BC9 /* BTEAccountDetailsModel.m in Sources */,
 				8112E3B7204541AE00419BC9 /* YQNetworking+RequestManager.m in Sources */,
+				8112E3CB205126F900419BC9 /* MyAccountViewController.m in Sources */,
 				8179AE8C20086175001678D2 /* LLSegmentBarVC.m in Sources */,
 				8179D2FC2021D73600C13447 /* Y_KLineVolume.m in Sources */,
 				8179AE3A20085DB5001678D2 /* UIColor+Externsion.m in Sources */,
@@ -1492,7 +1572,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = BTE/BTE.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 696JEW54Q7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BTE/Headers/BTEPrefixHeader.pch";
@@ -1501,8 +1581,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BTE.iosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "538ba165-298a-4300-896f-e218ef63a90b";
-				PROVISIONING_PROFILE_SPECIFIER = Develop_profile_bte;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1514,8 +1594,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = BTE/BTE.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 696JEW54Q7;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BTE/Headers/BTEPrefixHeader.pch";
@@ -1524,8 +1604,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BTE.iosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5980bb59-1c75-428a-96e1-3fe26e45247d";
-				PROVISIONING_PROFILE_SPECIFIER = Distribution_profile_bte;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
