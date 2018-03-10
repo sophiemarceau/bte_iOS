@@ -293,12 +293,12 @@
         
         
         if ([statisticsModel.ror integerValue] > 0) {
-            label5.text = [NSString stringWithFormat:@"%@%%",statisticsModel.ror];
-            label5.textColor = BHHexColor(@"FF6B28");
+            label5.text = [NSString stringWithFormat:@"+%@%%",statisticsModel.ror];
+            label5.textColor = BHHexColor(@"1BAC75");
         } else if ([statisticsModel.ror integerValue] < 0)
         {
             label5.text = [NSString stringWithFormat:@"%@%%",statisticsModel.ror];
-            label5.textColor = BHHexColor(@"1BAC75");
+            label5.textColor = BHHexColor(@"FF6B28");
         } else
         {
             label5.text = [NSString stringWithFormat:@"%@%%",statisticsModel.ror];

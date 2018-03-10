@@ -121,13 +121,13 @@
                   symbolName = "+[Y_KLineGroupModel objectWithArray:]"
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wangli/Desktop/BTE%E7%9A%84%E5%89%AF%E6%9C%AC/BTE/Kline/BTC_K%E7%BA%BF%E5%9B%BE/KLine/Model/KLineModel/Y_KLineGroupModel.m"
-                  timestampString = "541413181.8623199"
+                  urlString = "file:///Users/wangli/Desktop/BTE/BTE/Kline/BTC_K%E7%BA%BF%E5%9B%BE/KLine/Model/KLineModel/Y_KLineGroupModel.m"
+                  timestampString = "542360663.906391"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "71">
+                  offsetFromSymbolStart = "96">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -136,13 +136,13 @@
                   symbolName = "+[Y_KLineGroupModel objectWithArray:]"
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wangli/Desktop/BTE%E7%9A%84%E5%89%AF%E6%9C%AC/BTE/Kline/BTC_K%E7%BA%BF%E5%9B%BE/KLine/Model/KLineModel/Y_KLineGroupModel.m"
-                  timestampString = "541413181.8646539"
+                  urlString = "file:///Users/wangli/Desktop/BTE/BTE/Kline/BTC_K%E7%BA%BF%E5%9B%BE/KLine/Model/KLineModel/Y_KLineGroupModel.m"
+                  timestampString = "542360663.909674"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "160">
+                  offsetFromSymbolStart = "196">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -417,13 +417,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BTE/Tools/HttpTool/YQNetworking/YQNetworking.m"
-            timestampString = "541413581.273702"
+            filePath = "BTE/Classes/Login/BTELoginVC.m"
+            timestampString = "542360765.737774"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "+getWithUrl:refreshRequest:cache:params:progressBlock:successBlock:failBlock:"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "-setResetpwdType"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -433,13 +433,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BTE/Tools/HttpTool/YQNetworking/YQNetworking.m"
-            timestampString = "541413581.27378"
+            filePath = "BTE/Classes/HomePageVC/BTEHomeWebViewController.m"
+            timestampString = "542360765.739228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "+getWithUrl:refreshRequest:cache:params:progressBlock:successBlock:failBlock:"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-observeH5BridgeHandler"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -449,13 +449,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BTE/Common/BHVersionTool.m"
-            timestampString = "541413581.2738431"
+            filePath = "BTE/Classes/HomePageVC/BTEHomeWebViewController.m"
+            timestampString = "542360765.739601"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "+requestAppVersion:"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "-observeH5BridgeHandler"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -465,13 +465,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BTE/Common/BHVersionTool.m"
-            timestampString = "541413581.274296"
+            filePath = "BTE/Classes/MyAccount(&#x6211;&#x7684;&#x8d26;&#x6237;)/View/BTEMyAccountTableView.m"
+            timestampString = "542360765.7399369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "+requestAppVersion:"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "-setTableHeadView"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Classes/HomePageVC/BTEHomeWebViewController.m"
+            timestampString = "542360765.740741"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "-observeH5BridgeHandler"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -481,13 +497,93 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BTE/Tools/HttpTool/YQNetworking/YQNetworking.m"
-            timestampString = "541413581.274533"
+            filePath = "BTE/Classes/MyAccount(&#x6211;&#x7684;&#x8d26;&#x6237;)/Controller/MyAccountViewController.m"
+            timestampString = "542288022.179448"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "+getWithUrl:refreshRequest:cache:params:progressBlock:successBlock:failBlock:"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "-jumpToDetails:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Classes/MyAccount(&#x6211;&#x7684;&#x8d26;&#x6237;)/View/BTEMyAccountTableViewCell.m"
+            timestampString = "542360765.74105"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "-commit"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Classes/MyAccount(&#x6211;&#x7684;&#x8d26;&#x6237;)/View/BTEMyAccountTableView.m"
+            timestampString = "542360765.741359"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "275"
+            endingLineNumber = "275"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Classes/Main/Base/BHBaseWebVC.m"
+            timestampString = "542360765.742033"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "-webView:didFailLoadWithError:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Classes/Main/Base/BHBaseWebVC.m"
+            timestampString = "542360765.742153"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "-webViewDidFinishLoad:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Classes/MyAccount(&#x6211;&#x7684;&#x8d26;&#x6237;)/View/BTEMyAccountTableView.m"
+            timestampString = "542360765.742222"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "295"
+            endingLineNumber = "295"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

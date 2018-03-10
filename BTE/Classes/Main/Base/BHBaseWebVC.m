@@ -225,7 +225,7 @@
 }
 //打印log
 - (void)catchJsLog{
-    if(DEBUG){
+    #ifdef DEBUG
         JSContext *ctx = [self.webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
         ctx[@"console"][@"log"] = ^(JSValue * msg) {
             NSLog(@"H5  log : %@", msg);
@@ -236,8 +236,6 @@
         ctx[@"console"][@"error"] = ^(JSValue * msg) {
             NSLog(@"H5  error : %@", msg);
         };
-    }
+     #endif
 }
-
-
 @end

@@ -140,12 +140,12 @@
     _detailLabel2.text = [NSString stringWithFormat:@"%@BTC",model.currentAmount];
     
     if ([model.ror integerValue] > 0) {
-        _detailLabel3.text = [NSString stringWithFormat:@"%@%%",model.ror];
-        _detailLabel3.textColor = BHHexColor(@"FF6B28");
+        _detailLabel3.text = [NSString stringWithFormat:@"+%@%%",model.ror];
+        _detailLabel3.textColor = BHHexColor(@"1BAC75");
     } else if ([model.ror integerValue] < 0)
     {
         _detailLabel3.text = [NSString stringWithFormat:@"%@%%",model.ror];
-        _detailLabel3.textColor = BHHexColor(@"1BAC75");
+        _detailLabel3.textColor = BHHexColor(@"FF6B28");
     } else
     {
         _detailLabel3.text = [NSString stringWithFormat:@"%@%%",model.ror];
