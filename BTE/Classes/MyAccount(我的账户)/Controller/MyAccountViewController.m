@@ -13,6 +13,7 @@
 #import "BTEStatisticsModel.h"
 #import "BTEAccountDetailsModel.h"
 #import "BTEHomeWebViewController.h"
+#import "BTELoginVC.h"
 @interface MyAccountViewController ()<MyAccountTableViewDelegate>
 {
     BTEAllAmountModel *amountModel;
@@ -29,7 +30,7 @@
     // Do any additional setup after loading the view.
     self.title = @"我的账户";
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.leftBarButtonItem = [self createLeftBarItem];
+//    self.navigationItem.leftBarButtonItem = [self createLeftBarItem];
     
     if (self.myAccountTableView == nil) {
         self.myAccountTableView = [[BTEMyAccountTableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - NAVIGATION_HEIGHT)];
@@ -37,12 +38,47 @@
     }
     
     [self.view addSubview:self.myAccountTableView];
-    
-    //获取账户基本信息
-    [self getMyAccountInfo];
-//    //获取当前跟投份额信息
-//    [self getMyAccountCurrentInfo];
+    //初始化为0
+    self.isloginAndGetMyAccountInfo = @"0";
 }
+
+
+- (void)getMyAccountLoginStatus
+{
+    NSMutableDictionary * pramaDic = @{}.mutableCopy;
+    NSString * methodName = @"";
+    if (User.userToken) {
+        [pramaDic setObject:User.userToken forKey:@"bte-token"];
+    }
+    
+    methodName = kGetUserLoginInfo;
+    
+    WS(weakSelf)
+    [self hudShow:self.view msg:@"请稍后"];
+    [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
+        [weakSelf hudClose];
+        if (IsSafeDictionary(responseObject) && [[responseObject objectForKey:@"data"] integerValue] == 0) {//未登录
+            [BTELoginVC OpenLogin:self callback:^(BOOL isComplete) {
+                if (isComplete) {
+                    //登录成功刷新我的账户页面
+                    //获取账户基本信息
+                    [weakSelf getMyAccountInfo];
+                } else
+                {
+                    [self.tabBarController setSelectedIndex:0];
+                }
+            }];
+        } else if (IsSafeDictionary(responseObject) && [[responseObject objectForKey:@"data"] integerValue] == 1)//已登录
+        {
+            //获取账户基本信息
+            [self getMyAccountInfo];
+        }
+    } failure:^(NSError *error) {
+        [weakSelf hudClose];
+        RequestError(error);
+    }];
+}
+
 
 
 
@@ -67,9 +103,12 @@
     [self hudShow:self.view msg:@"请稍后"];
     [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
         [weakSelf hudClose];
+        self.isloginAndGetMyAccountInfo = @"0";
         //删除本地登录信息
         [User removeLoginData];
-        [weakSelf backAction:nil];
+        //发送通知告诉web token变动
+        [[NSNotificationCenter defaultCenter]postNotificationName:NotificationUserLoginSuccess object:nil];
+        [self.tabBarController setSelectedIndex:0];
     } failure:^(NSError *error) {
         [weakSelf hudClose];
         RequestError(error);
@@ -82,7 +121,7 @@
     
     homePageVc.urlString = [NSString stringWithFormat:@"%@/%@",kAppStrategyAddress,productId];
     homePageVc.isHiddenLeft = YES;
-    homePageVc.isHiddenBottom = YES;
+    homePageVc.isHiddenBottom = NO;
     [self.navigationController pushViewController:homePageVc animated:YES];
 }
 
@@ -96,14 +135,18 @@
     
     WS(weakSelf)
     [self hudShow:self.view msg:@"请稍后"];
+    self.isloginAndGetMyAccountInfo = @"1";
     [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
         [weakSelf hudClose];
+        //登录成功并获取到了账户信息
+        self.isloginAndGetMyAccountInfo = @"1";
         amountModel = [BTEAllAmountModel yy_modelWithDictionary:responseObject[@"data"]];
         legalAccountModel = [BTELegalAccount yy_modelWithDictionary:responseObject[@"data"][@"legalAccount"]];
         btcAccountModel = [BTEBtcAccount yy_modelWithDictionary:responseObject[@"data"][@"btcAccount"]];
         [weakSelf getMyAccountCurrentInfo];
     } failure:^(NSError *error) {
         [weakSelf hudClose];
+        self.isloginAndGetMyAccountInfo = @"0";
         RequestError(error);
     }];
 }
@@ -152,22 +195,31 @@
 }
 
 
-- (UIBarButtonItem *)createLeftBarItem{
-    UIImage * image = [UIImage imageNamed:@"nav_back"];
-    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setImage:image forState:UIControlStateNormal];
-    [btn setImage:image forState:UIControlStateHighlighted];
-    btn.bounds = CGRectMake(0, 0, 60, 40);
-    [btn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
-    btn.imageEdgeInsets = UIEdgeInsetsMake(0, - btn.width + MIN(image.size.width, 14), 0, 0);
-    return [[UIBarButtonItem alloc]initWithCustomView:btn];
-}
+//- (UIBarButtonItem *)createLeftBarItem{
+//    UIImage * image = [UIImage imageNamed:@"nav_back"];
+//    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [btn setImage:image forState:UIControlStateNormal];
+//    [btn setImage:image forState:UIControlStateHighlighted];
+//    btn.bounds = CGRectMake(0, 0, 60, 40);
+//    [btn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
+//    btn.imageEdgeInsets = UIEdgeInsetsMake(0, - btn.width + MIN(image.size.width, 14), 0, 0);
+//    return [[UIBarButtonItem alloc]initWithCustomView:btn];
+//}
 //返回
--(void)backAction:(UIBarButtonItem *)sender {
-    if (self.callRefreshBlock) {
-        self.callRefreshBlock();
+//-(void)backAction:(UIBarButtonItem *)sender {
+//    if (self.callRefreshBlock) {
+//        self.callRefreshBlock();
+//    }
+//    [self.navigationController popViewControllerAnimated:YES];
+//}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if ([self.isloginAndGetMyAccountInfo isEqualToString:@"0"]) {
+        //获取登录状态
+        [self getMyAccountLoginStatus];
     }
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

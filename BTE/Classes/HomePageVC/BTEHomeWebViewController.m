@@ -37,6 +37,7 @@
 }
 - (void)addNotification {
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(update) name:NotificationReSetPassword object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(sendUserTokenAndReloadWebView) name:NotificationUserLoginSuccess object:nil];
 }
 -(void)observeH5BridgeHandler {
     WS(weakSelf)
@@ -47,12 +48,6 @@
                 if (isComplete) {
                     [weakSelf sendUserToken];
                     [weakSelf reloadWebView:data[@"url"]];
-                    //登录成功跳转原生我的账户页面
-                    MyAccountViewController *accountVc = [[MyAccountViewController alloc] init];
-                    accountVc.callRefreshBlock = ^{
-                        [weakSelf reloadWebView:self.urlString];
-                    };
-                    [self.navigationController pushViewController:accountVc animated:YES];
                 }
             }];
         }
@@ -68,12 +63,7 @@
     
     //我的账户已登录点击监听
     [self.bridge registerHandler:@"jumpToAccount" handler:^(id data, WVJBResponseCallback responseCallback) {
-        //登录成功跳转原生我的账户页面
-        MyAccountViewController *accountVc = [[MyAccountViewController alloc] init];
-        accountVc.callRefreshBlock = ^{
-            [weakSelf reloadWebView:self.urlString];
-        };
-        [self.navigationController pushViewController:accountVc animated:YES];
+
     }];
     
     
@@ -88,28 +78,10 @@
             {
                self.navigationItem.title = [data objectForKey:@"title"];
             }
-            if ([[data objectForKey:@"title"] isEqualToString:@"我的账户"]) {
-//                [self.navigationController setNavigationBarHidden:YES animated:NO];
-                self.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT - (self.isHiddenBottom ? HOME_INDICATOR_HEIGHT : TAB_BAR_HEIGHT));
-                
-                //设置状态栏颜色
-                _statusBarView = [[UIView alloc]   initWithFrame:CGRectMake(0, 0,    self.view.bounds.size.width, 20)];
-                _statusBarView.backgroundColor = [BHHexColor hexColor:@"63B0F3"];
-                [self.view addSubview:_statusBarView];
-                
-            } else
-            {
-                [_statusBarView removeFromSuperview];
-               [self.navigationController setNavigationBarHidden:NO animated:NO];
-                self.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT  - (self.isHiddenBottom ? HOME_INDICATOR_HEIGHT : TAB_BAR_HEIGHT));
-            }
         }
     }];
     //标识是否是index页面 显示左返回键
     [self.bridge registerHandler:@"twoIndex" handler:^(id data, WVJBResponseCallback responseCallback) {
-        [_statusBarView removeFromSuperview];
-        [self.navigationController setNavigationBarHidden:NO animated:NO];
-        self.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT  - (self.isHiddenBottom ? HOME_INDICATOR_HEIGHT : TAB_BAR_HEIGHT));
         weakSelf.isHiddenLeft = NO;
         if (data && [data objectForKey:@"title"]) {
             self.navigationItem.title = [data objectForKey:@"title"];
@@ -117,6 +89,16 @@
     }];
     
 }
+
+
+- (void)sendUserTokenAndReloadWebView
+{
+    [self sendUserToken];
+    [self reloadWebView:self.urlString];
+}
+
+
+
 - (void)sendUserToken {
     NSLog(@"i send userToken ---%@",User.userToken);
     [self.bridge registerHandler:@"sendUserInfo" handler:^(id data, WVJBResponseCallback responseCallback) {

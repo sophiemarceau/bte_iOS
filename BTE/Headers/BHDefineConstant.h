@@ -147,7 +147,11 @@ if (error.code != -900000) { \
 #define FontName [UIFont systemFontOfSize:[UIFont systemFontSize]].fontName // 系统字体
 #define  KfontNormal(a) [UIFont fontWithName:FontName size:(a)]
 
+//数据返回结果是字典
+#define IsSafeDictionary(_ref)   [_ref isKindOfClass:[NSDictionary class]]
 
+//数据返回结果是数组
+#define IsSafeArray(_ref)        [_ref isKindOfClass:[NSArray class]]
 
 
 

@@ -385,9 +385,9 @@ typedef NS_ENUM(NSInteger, LoginType) {
 }
 //返回
 -(void)backAction:(UIBarButtonItem *)sender {
-//    if (self.loginCompletion) {
-//        self.loginCompletion(NO);
-//    }
+    if (self.loginCompletion) {
+        self.loginCompletion(NO);
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

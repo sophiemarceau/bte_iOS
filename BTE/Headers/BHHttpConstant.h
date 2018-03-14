@@ -9,7 +9,7 @@
 #ifndef BHHttpConstant_h
 #define BHHttpConstant_h
 
-#define ONLION 1
+#define ONLION 0
 
 //数据库接口
 #if ONLION
@@ -41,8 +41,16 @@ static NSString * const kHeader = @"http://192.168.24.135:3001/";
 //协议地址
 #define kAppBTEProtcol [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/protocol/"]
 
-// 比特易h5入口地址
-#define kAppBTEH5Address [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/index"]
+// 比特易h5入口地址 市场分析
+#define kAppBTEH5AnalyzeAddress [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/index"]
+
+// 比特易h5入口地址 策略跟随
+#define kAppBTEH5FollowAddress [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/StrategyIndex"]
+
+// 比特易h5入口地址 我的账户
+#define kAppBTEH5MyAccountAddress [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/mime"]
+
+
 
 // 投资详情入口地址
 #define kAppStrategyAddress [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/strategy"]
@@ -57,7 +65,8 @@ static NSString * const kHeader = @"http://192.168.24.135:3001/";
 //退出登录
 #define kAcountUserLogout [NSString stringWithFormat:@"%@%@",kDomain,@"app/api/user/logout"]
 
-
+//获取用户登录状态
+#define kGetUserLoginInfo [NSString stringWithFormat:@"%@%@",kDomain,@"app/api/user/online"]
 
 #endif /* BHHttpConstant_h */
 

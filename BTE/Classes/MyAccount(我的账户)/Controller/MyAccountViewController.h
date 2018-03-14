@@ -12,4 +12,5 @@ typedef void (^CallRefreshBlock)(void);
 @interface MyAccountViewController : BHBaseController
 @property (nonatomic,retain) BTEMyAccountTableView *myAccountTableView;//我的账户视图
 @property (nonatomic,copy) CallRefreshBlock callRefreshBlock;
+@property (nonatomic,strong) NSString *isloginAndGetMyAccountInfo;//1 登录并且已获取到了用户信息
 @end

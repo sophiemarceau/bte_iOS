@@ -22,7 +22,7 @@
 #import "ViewController.h"
 #import "MyAccountViewController.h"
 
-@interface AppDelegate ()<EAIntroDelegate,JPUSHRegisterDelegate>
+@interface AppDelegate ()<EAIntroDelegate,JPUSHRegisterDelegate,UITabBarControllerDelegate>
 
 @end
 
@@ -31,7 +31,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 启动图片延时: 1秒
-//    [NSThread sleepForTimeInterval:3];
+    //    [NSThread sleepForTimeInterval:3];
     
     [self setupKeyWindow];
     
@@ -75,11 +75,11 @@
 
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
 {
-        if(self.isEable) {
-            return UIInterfaceOrientationMaskLandscape;
-        } else {
-    return UIInterfaceOrientationMaskPortrait;
-        }
+    if(self.isEable) {
+        return UIInterfaceOrientationMaskLandscape;
+    } else {
+        return UIInterfaceOrientationMaskPortrait;
+    }
 }
 #pragma mark - Actions
 #pragma mark - webview与H5交互
@@ -108,28 +108,109 @@
 
 
 - (void)setupKeyWindow {
-    BTEHomeWebViewController *homePageVc= [[BTEHomeWebViewController alloc] init];
-
-    homePageVc.urlString = kAppBTEH5Address;
-    homePageVc.isHiddenLeft = YES;
-    homePageVc.isHiddenBottom = YES;
+    //    BTEHomeWebViewController *homePageVc= [[BTEHomeWebViewController alloc] init];
     
-//    ViewController *homePageVc= [[ViewController alloc] init];
+    //    homePageVc.urlString = kAppBTEH5Address;
+    //    homePageVc.isHiddenLeft = YES;
+    //    homePageVc.isHiddenBottom = YES;
+    //
+    ////    ViewController *homePageVc= [[ViewController alloc] init];
+    //
+    //    //登录成功跳转原生我的账户页面
+    ////    MyAccountViewController *homePageVc = [[MyAccountViewController alloc] init];
+    //
+    //
+    //    BHNavigationController *NavVC = [[BHNavigationController alloc] initWithRootViewController:homePageVc];
     
-    //登录成功跳转原生我的账户页面
-//    MyAccountViewController *homePageVc = [[MyAccountViewController alloc] init];
+    //a.初始化一个tabBar控制器
+    UITabBarController *tb=[[UITabBarController alloc]init];
+    tb.delegate = self;
+    //设置不透明
+    [UITabBar appearance].translucent = NO;
+    //b.创建子控制器
+    BTEHomeWebViewController *findePageVc= [[BTEHomeWebViewController alloc] init];
+    findePageVc.urlString = kAppBTEH5AnalyzeAddress;
+    findePageVc.isHiddenLeft = YES;
+    findePageVc.isHiddenBottom = NO;
+    BHNavigationController *findeNavVC = [[BHNavigationController alloc] initWithRootViewController:findePageVc];
+    findeNavVC.view.backgroundColor=[UIColor whiteColor];
+    findeNavVC.tabBarItem.title=@"市场分析";
+    findeNavVC.tabBarItem.image=[[UIImage imageNamed:@"tab_ic_discover"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    findeNavVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"tab_ic_discover_light"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [self selectedTapTabBarItems:findeNavVC.tabBarItem];
+    [self unSelectedTapTabBarItems:findeNavVC.tabBarItem];
+    
+    BTEHomeWebViewController *strategyFollowPageVc= [[BTEHomeWebViewController alloc] init];
+    strategyFollowPageVc.urlString = kAppBTEH5FollowAddress;
+    strategyFollowPageVc.isHiddenLeft = YES;
+    strategyFollowPageVc.isHiddenBottom = NO;
+    BHNavigationController *strategyFollowNavVC = [[BHNavigationController alloc] initWithRootViewController:strategyFollowPageVc];
+    strategyFollowNavVC.view.backgroundColor=[UIColor whiteColor];
+    strategyFollowNavVC.tabBarItem.title=@"策略跟随";
+    strategyFollowNavVC.tabBarItem.image=[[UIImage imageNamed:@"tab_ic_tactics"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    strategyFollowNavVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"tab_ic_tactics_light"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [self selectedTapTabBarItems:strategyFollowNavVC.tabBarItem];
+    [self unSelectedTapTabBarItems:strategyFollowNavVC.tabBarItem];
+    
+    MyAccountViewController *myAccountPageVc = [[MyAccountViewController alloc] init];
+    BHNavigationController *myAccountNavVC = [[BHNavigationController alloc] initWithRootViewController:myAccountPageVc];
+    myAccountNavVC.view.backgroundColor=[UIColor whiteColor];
+    myAccountNavVC.tabBarItem.title=@"我的账户";
+    myAccountNavVC.tabBarItem.image=[[UIImage imageNamed:@"tab_ic_mine"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    myAccountNavVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"tab_ic_mine_light"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [self selectedTapTabBarItems:myAccountNavVC.tabBarItem];
+    [self unSelectedTapTabBarItems:myAccountNavVC.tabBarItem];
+    //    [naviVideo setNavigationBarHidden:YES animated:YES];
     
     
-    BHNavigationController *NavVC = [[BHNavigationController alloc] initWithRootViewController:homePageVc];
+    //c.添加子控制器到ITabBarController中
+    //c.1第一种方式
+    //    [tb addChildViewController:c1];
+    //    [tb addChildViewController:c2];
+    
+    //c.2第二种方式
+    tb.viewControllers=@[findeNavVC,strategyFollowNavVC,myAccountNavVC];
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = NavVC;
-    self.window.backgroundColor= [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     //请求版本更新 （注意一定要在初始化网络之后加载）
-    [BHVersionTool requestAppVersion:NavVC];
+    [BHVersionTool requestAppVersion:findeNavVC];
+    [self.window setRootViewController:tb];
     
-
 }
+
+
+#pragma mark - tabbar 代理及属性修改方法
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    if (tabBarController.selectedIndex > 0) {
+        
+        
+    }
+    
+}
+
+
+
+-(void)unSelectedTapTabBarItems:(UITabBarItem *)tabBarItem
+{
+    NSDictionary *titleAttributesNormal = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:BHHexColor(@"9CA1A9"), nil] forKeys:[NSArray arrayWithObjects:UITextAttributeTextColor, nil]];
+    [tabBarItem setTitleTextAttributes:titleAttributesNormal forState:UIControlStateNormal];
+}
+
+-(void)selectedTapTabBarItems:(UITabBarItem *)tabBarItem
+{
+    NSDictionary *titleAttributesSelected = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:BHHexColor(@"308CDD"), nil] forKeys:[NSArray arrayWithObjects:UITextAttributeTextColor, nil]];
+    [tabBarItem setTitleTextAttributes:titleAttributesSelected forState:UIControlStateSelected];
+}
+
+- (void)setTitleAdjustment:(UITabBarItem *)tabBarItem{
+    UIOffset titleOffset = UIOffsetMake(0, -3);
+    [tabBarItem setTitlePositionAdjustment:titleOffset];
+}
+
+
 #pragma mark - UMeng统计
 - (void)setUMengAnalytics {
     UMConfigInstance.appKey = UMENGKEY;
@@ -233,7 +314,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSString *currentVersion = [[[NSBundle mainBundle] infoDictionary]
                                 objectForKey:@"CFBundleShortVersionString"];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
+    
     NSString *lastRunVersion = [defaults objectForKey:LAST_RUN_VERSION_KEY];
     if (!lastRunVersion) {
         [defaults setObject:currentVersion forKey:LAST_RUN_VERSION_KEY];
@@ -250,14 +331,14 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 }
 
 - (void)showIntroWithCrossDissolve {
-
+    
     NSMutableArray *pages = [NSMutableArray array];
     for (int i=1; i<=4; i++) {
         EAIntroPage *page = [EAIntroPage page];
         page.titleImage = [UIImage imageNamed:[NSString stringWithFormat:@"show%d",i]];
         [pages addObject:page];
     }
-
+    
     EAIntroView *intro = [[EAIntroView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) andPages:pages];
     intro.delegate=self;
     [intro showInView:self.window.rootViewController.view animateDuration:0.0];
