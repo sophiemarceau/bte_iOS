@@ -46,7 +46,7 @@
     _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 56, SCREEN_WIDTH, 24)];
     _subTitleLabel1.text = [NSString stringWithFormat:@"$%@",amountModel.allAmount];
     _subTitleLabel1.textAlignment = NSTextAlignmentCenter;
-    _subTitleLabel1.font = UIFontRegularOfSize(32);
+    _subTitleLabel1.font = UIFontRegularOfSize(30);
     _subTitleLabel1.textColor = BHHexColor(@"ffffff");
     [bgImageView addSubview:_subTitleLabel1];
     
@@ -76,7 +76,7 @@
     _detailLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, _detailLabel1.width, 24)];
     _detailLabel3.text = [NSString stringWithFormat:@"$%@",legalAccountModel.legalBalance];
     _detailLabel3.textAlignment = NSTextAlignmentCenter;
-    _detailLabel3.font = [UIFont boldSystemFontOfSize:20];
+    _detailLabel3.font = [UIFont systemFontOfSize:20];
     _detailLabel3.textColor = BHHexColor(@"44A0F1");
     [headWhiteBgView addSubview:_detailLabel3];
     
@@ -84,7 +84,7 @@
     _detailLabel4.text = [NSString stringWithFormat:@"%@($%@)",btcAccountModel.balance,btcAccountModel.legalBalance];
     _detailLabel4.left = _detailLabel3.right;
     _detailLabel4.textAlignment = NSTextAlignmentCenter;
-    _detailLabel4.font = [UIFont boldSystemFontOfSize:20];
+    _detailLabel4.font = [UIFont systemFontOfSize:20];
     _detailLabel4.textColor = BHHexColor(@"44A0F1");
     [headWhiteBgView addSubview:_detailLabel4];
     
