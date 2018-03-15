@@ -43,7 +43,7 @@ static NSString *const kConfirmPasswordDescription = @"请再次确认新的交�
 // 服务热线
 static NSString *const SERVICE_HOT_LINE = @"400-965-0866";
 
-static NSString *const kAppStoreAddress = @" https://www.btctoutiao.info/app/download";
+static NSString *const kAppStoreAddress = @"https://itunes.apple.com/cn/app/id1342160976?mt=8";
 
 
 
