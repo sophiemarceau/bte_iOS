@@ -79,6 +79,9 @@
                self.navigationItem.title = [data objectForKey:@"title"];
             }
         }
+        // 强制显示tabbar
+        self.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT  - TAB_BAR_HEIGHT);
+        self.tabBarController.tabBar.hidden = NO;
     }];
     //标识是否是index页面 显示左返回键
     [self.bridge registerHandler:@"twoIndex" handler:^(id data, WVJBResponseCallback responseCallback) {
@@ -86,6 +89,9 @@
         if (data && [data objectForKey:@"title"]) {
             self.navigationItem.title = [data objectForKey:@"title"];
         }
+        // 强制隐藏tabbar
+        self.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT  -  HOME_INDICATOR_HEIGHT);
+        self.tabBarController.tabBar.hidden = YES;
     }];
     
 }
