@@ -29,21 +29,34 @@
 //设置头部视图
 - (void)setTableHeadView
 {
-    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 130 + 101)];
+    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 160 + 101)];
     headView.backgroundColor = KBGColor;
     
-    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 130)];
+    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 160)];
     bgImageView.image = [UIImage imageNamed:@"pic_account_bg"];
     [headView addSubview:bgImageView];
     
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 24, SCREEN_WIDTH, 14)];
+    
+    UIImageView *iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(16, 7, 32, 32)];
+    iconImageView.image = [UIImage imageNamed:@"bte_logo_account"];
+    [bgImageView addSubview:iconImageView];
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 12, SCREEN_WIDTH - 100, 20)];
+    titleLabel.text = @"我的账户";
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.font = UIFontRegularOfSize(18);
+    titleLabel.textColor = BHHexColor(@"ffffff");
+    [bgImageView addSubview:titleLabel];
+    
+    
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 24 + 30, SCREEN_WIDTH, 14)];
     _titleLabel.text = @"账户可用余额（合计）";
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.font = UIFontRegularOfSize(12);
     _titleLabel.textColor = BHHexColor(@"ffffff");
     [bgImageView addSubview:_titleLabel];
     
-    _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 56, SCREEN_WIDTH, 24)];
+    _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 51 + 30, SCREEN_WIDTH, 24)];
     _subTitleLabel1.text = [NSString stringWithFormat:@"$%@",amountModel.allAmount];
     _subTitleLabel1.textAlignment = NSTextAlignmentCenter;
     _subTitleLabel1.font = UIFontRegularOfSize(30);

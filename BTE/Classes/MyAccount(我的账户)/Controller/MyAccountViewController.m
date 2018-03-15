@@ -20,6 +20,8 @@
     BTELegalAccount *legalAccountModel;
     BTEBtcAccount *btcAccountModel;
     BTEStatisticsModel *statisticsModel;
+    //设置状态栏颜色
+    UIView *_statusBarView;
 }
 @end
 
@@ -28,12 +30,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"我的账户";
+//    self.title = @"我的账户";
     self.view.backgroundColor = [UIColor whiteColor];
 //    self.navigationItem.leftBarButtonItem = [self createLeftBarItem];
     
     if (self.myAccountTableView == nil) {
-        self.myAccountTableView = [[BTEMyAccountTableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - NAVIGATION_HEIGHT)];
+        self.myAccountTableView = [[BTEMyAccountTableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - TAB_BAR_HEIGHT)];
         self.myAccountTableView.delegate = self;
     }
     
@@ -216,10 +218,24 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    //设置状态栏颜色
+    _statusBarView = [[UIView alloc]   initWithFrame:CGRectMake(0, 0,    self.view.bounds.size.width, 20)];
+    _statusBarView.backgroundColor = [BHHexColor hexColor:@"63B0F3"];
+    [self.view addSubview:_statusBarView];
+
     if ([self.isloginAndGetMyAccountInfo isEqualToString:@"0"]) {
         //获取登录状态
         [self getMyAccountLoginStatus];
     }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    [_statusBarView removeFromSuperview];
+
 }
 
 - (void)didReceiveMemoryWarning {
