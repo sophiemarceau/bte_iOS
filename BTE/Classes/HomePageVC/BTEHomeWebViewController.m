@@ -90,7 +90,9 @@
             self.navigationItem.title = [data objectForKey:@"title"];
         }
         // 强制隐藏tabbar
-        self.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT  -  HOME_INDICATOR_HEIGHT);
+//        SCREEN_HEIGHT- NAVIGATION_HEIGHT  -  HOME_INDICATOR_HEIGHT
+        self.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT);
+        self.view.height = SCREEN_HEIGHT- NAVIGATION_HEIGHT;
         self.tabBarController.tabBar.hidden = YES;
     }];
     
