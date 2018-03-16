@@ -36,13 +36,13 @@
     bgImageView.image = [UIImage imageNamed:@"pic_account_bg"];
     [headView addSubview:bgImageView];
     
-    labelRefresh = [[UILabel alloc] initWithFrame:CGRectMake(50, 42, SCREEN_WIDTH - 100, 20)];
+    labelRefresh = [[UILabel alloc] initWithFrame:CGRectMake(50, -30, SCREEN_WIDTH - 100, 20)];
     labelRefresh.text = @"下拉刷新";
     labelRefresh.textAlignment = NSTextAlignmentCenter;
     labelRefresh.font = UIFontRegularOfSize(13);
     labelRefresh.textColor = BHHexColor(@"ffffff");
     labelRefresh.hidden = YES;
-    [bgImageView addSubview:labelRefresh];
+    [headView addSubview:labelRefresh];
     
     UIImageView *iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(16, 7, 32, 32)];
     iconImageView.image = [UIImage imageNamed:@"bte_logo_account"];

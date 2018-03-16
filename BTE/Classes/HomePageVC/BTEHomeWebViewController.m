@@ -81,6 +81,7 @@
         }
         // 强制显示tabbar
         self.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT  - TAB_BAR_HEIGHT);
+        self.view.height = SCREEN_HEIGHT- NAVIGATION_HEIGHT  - TAB_BAR_HEIGHT;
         self.tabBarController.tabBar.hidden = NO;
     }];
     //标识是否是index页面 显示左返回键
