@@ -32,21 +32,28 @@
     UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 160 + 101)];
     headView.backgroundColor = KBGColor;
     
-    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 160)];
+    bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 160)];
     bgImageView.image = [UIImage imageNamed:@"pic_account_bg"];
     [headView addSubview:bgImageView];
     
+    labelRefresh = [[UILabel alloc] initWithFrame:CGRectMake(50, 42, SCREEN_WIDTH - 100, 20)];
+    labelRefresh.text = @"下拉刷新";
+    labelRefresh.textAlignment = NSTextAlignmentCenter;
+    labelRefresh.font = UIFontRegularOfSize(13);
+    labelRefresh.textColor = BHHexColor(@"ffffff");
+    labelRefresh.hidden = YES;
+    [bgImageView addSubview:labelRefresh];
     
     UIImageView *iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(16, 7, 32, 32)];
     iconImageView.image = [UIImage imageNamed:@"bte_logo_account"];
-    [bgImageView addSubview:iconImageView];
+    [headView addSubview:iconImageView];
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 12, SCREEN_WIDTH - 100, 20)];
     titleLabel.text = @"我的账户";
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.font = UIFontRegularOfSize(18);
     titleLabel.textColor = BHHexColor(@"ffffff");
-    [bgImageView addSubview:titleLabel];
+    [headView addSubview:titleLabel];
     
     
     _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 24 + 30, SCREEN_WIDTH, 14)];
@@ -54,14 +61,14 @@
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.font = UIFontRegularOfSize(12);
     _titleLabel.textColor = BHHexColor(@"ffffff");
-    [bgImageView addSubview:_titleLabel];
+    [headView addSubview:_titleLabel];
     
     _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 51 + 30, SCREEN_WIDTH, 24)];
     _subTitleLabel1.text = [NSString stringWithFormat:@"$%@",amountModel.allAmount];
     _subTitleLabel1.textAlignment = NSTextAlignmentCenter;
     _subTitleLabel1.font = UIFontRegularOfSize(30);
     _subTitleLabel1.textColor = BHHexColor(@"ffffff");
-    [bgImageView addSubview:_subTitleLabel1];
+    [headView addSubview:_subTitleLabel1];
     
     UIView *headWhiteBgView = [[UIView alloc] initWithFrame:CGRectMake(12, 0, SCREEN_WIDTH - 12 * 2, 82)];
     headWhiteBgView.backgroundColor = [UIColor whiteColor];
@@ -356,5 +363,23 @@
 //    }
 }
 
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    //获取偏移量
+    CGPoint offset = scrollView.contentOffset;
+    //判断是否改变
+    if (offset.y < 0) {
+        CGRect rect = bgImageView.frame;
+        //我们只需要改变图片的y值和高度即可
+        rect.origin.y = offset.y;
+        rect.size.height = 160 - offset.y;
+        bgImageView.frame = rect;
+        if (offset.y < -30) {
+            labelRefresh.hidden = NO;
+        } else
+        {
+            labelRefresh.hidden = YES;
+        }
+    }
+}
 
 @end

@@ -19,13 +19,15 @@
 -(void)logout;//退出登录
 -(void)jumpToDetails:(NSString *)productId;//
 @end
-@interface BTEMyAccountTableView : UIView<UITableViewDelegate,UITableViewDataSource,JumpToDetailDelegate>
+@interface BTEMyAccountTableView : UIView<UITableViewDelegate,UITableViewDataSource,JumpToDetailDelegate,UIScrollViewDelegate>
 {
     BTEAllAmountModel *amountModel;
     BTELegalAccount *legalAccountModel;
     BTEBtcAccount *btcAccountModel;
     BTEStatisticsModel *statisticsModel;
     NSInteger type;//1 当前跟投 2结束跟投
+    UIImageView *bgImageView;
+    UILabel *labelRefresh;
 }
 @property (nonatomic,retain) UITableView *myAccountTableView;//我的账户视图
 @property(nonatomic,weak) id <MyAccountTableViewDelegate>delegate;
