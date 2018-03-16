@@ -126,6 +126,7 @@
 - (UIWebView *)webView {
     if (!_webView) {
         _webView = [[UIWebView alloc]initWithFrame:CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT  - (_isHiddenBottom ? HOME_INDICATOR_HEIGHT : TAB_BAR_HEIGHT))];
+        _webView.backgroundColor = KBGColor;
         //添加观察者
         if (self.isAllowTitle) {
             [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];

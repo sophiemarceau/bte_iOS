@@ -113,7 +113,7 @@ if (error.code != -900000) { \
 
 //新增
 //背景色
-#define KBGColor BHHexColor(@"f4f5fa")
+#define KBGColor BHHexColor(@"E8EBED")
 #pragma mark - 颜色相关
 
 #define kColorRgb(r,g,b)               [UIColor colorWithRed:(r/255.0f) green:(g/255.0f) blue:(b/255.0f) alpha:1]
