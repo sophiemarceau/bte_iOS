@@ -11,7 +11,10 @@
 #import "BHVersionTool.h" //版本升级
 #import "BTEHomeWebViewController.h"
 #import <Bugly/Bugly.h> //腾讯Bugly
-#import "UMMobClick/MobClick.h"
+#import <UMCommon/UMCommon.h>
+#import <UMAnalytics/MobClick.h>
+#import <UMErrorCatch/UMErrorCatch.h>
+#import <UMShare/UMShare.h>
 // 引入JPush功能所需头文件
 #import "JPUSHService.h"
 // iOS10注册APNs所需头文件
@@ -39,7 +42,7 @@
     [self _showGuideView];
     //腾讯Bugly
     [Bugly startWithAppId:BuglyAppId];
-    [self setUMengAnalytics]; //友盟统计
+    [self setUMengInit]; //友盟初始化相关
     [self setJPush:launchOptions]; //Jpush
     // 修改 网页user-agent
     [self sendUserAgent];
@@ -211,13 +214,13 @@
 }
 
 
-#pragma mark - UMeng统计
-- (void)setUMengAnalytics {
-    UMConfigInstance.appKey = UMENGKEY;
-    UMConfigInstance.channelId = @"App Store";
-    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    [MobClick setAppVersion:version];
-    [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK！
+#pragma mark - UMeng初始化相关
+- (void)setUMengInit {
+    [UMConfigure initWithAppkey:UMENGKEY channel:@"App Store"];//初始化
+    //调试模式此函数不起作用 错误捕获
+    [UMErrorCatch initErrorCatch];
+    // 统计组件配置 也可不设置 有默认配置
+    [MobClick setScenarioType:E_UM_NORMAL];
 }
 #pragma mark - JPush
 - (void)setJPush:(NSDictionary *)launchOptions {
