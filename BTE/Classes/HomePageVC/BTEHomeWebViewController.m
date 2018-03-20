@@ -9,8 +9,15 @@
 #import "BTEHomeWebViewController.h"
 #import "BTELoginVC.h"
 #import "MyAccountViewController.h"
+#import "BTEShareView.h"
 @interface BTEHomeWebViewController ()
-
+//分享需要的参数
+@property (nonatomic, strong) NSString *shareImageUrl;
+@property (nonatomic, strong) NSString *shareUrl;
+@property (nonatomic, strong) NSString *sharetitle;
+@property (nonatomic, strong) NSString *shareDesc;
+@property (nonatomic, assign) UMS_SHARE_TYPE shareType;
+@property (nonatomic, copy) ShareViewCallBack shareViewCallBack;
 @end
 
 @implementation BTEHomeWebViewController
@@ -75,6 +82,10 @@
             if ([[data objectForKey:@"title"] isEqualToString:@"比特易-玩转比特币 多看比特易"]) {
                 self.navigationItem.title = @"比特易";
                 self.navigationItem.rightBarButtonItem = [self creatRightBarItem];
+                self.shareType = UMS_SHARE_TYPE_WEB_LINK;//web链接
+                self.sharetitle = @"比特易-领先的数字货币市场专业分析平台";
+                self.shareDesc = @"玩转比特币，多看比特易，聪明的投资者都在这里！";
+                self.shareUrl = kAppBTEH5AnalyzeAddress;
             } else
             {
                self.navigationItem.title = [data objectForKey:@"title"];
@@ -95,6 +106,18 @@
         
         if (data && [data objectForKey:@"url"]) {
             self.navigationItem.rightBarButtonItem = [self creatRightBarItem];
+            self.shareType = UMS_SHARE_TYPE_WEB_LINK;//web链接
+            self.sharetitle = @"比特易-领先的数字货币市场专业分析平台";
+            if ([[data objectForKey:@"url"] rangeOfString:@"wechat/StrategyIndex"].location != NSNotFound) {
+                
+              self.shareDesc = @"价值1000亿的策略咨询，就这么公开透明告诉你啦，速点~！";
+                
+            }else
+            {
+               self.shareDesc = @"在比特易与最清晰的数字货币市场相遇，擦亮眼睛，不做韭菜！";
+            }
+            
+            self.shareUrl = [data objectForKey:@"url"];
         } else
         {
             self.navigationItem.rightBarButtonItem = nil;
@@ -121,7 +144,10 @@
     [self reloadWebView:self.urlString];
 }
 
-
+- (void)shareAlert
+{
+    [BTEShareView popShareViewCallBack:nil imageUrl:[UIImage imageNamed:@"AppIcon"] shareUrl:self.shareUrl sharetitle:self.sharetitle shareDesc:self.shareDesc shareType:self.shareType currentVc:self];
+}
 
 - (void)sendUserToken {
     NSLog(@"i send userToken ---%@",User.userToken);
