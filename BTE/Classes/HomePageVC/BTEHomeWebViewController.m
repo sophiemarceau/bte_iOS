@@ -74,9 +74,11 @@
         if (data && [data objectForKey:@"title"]) {
             if ([[data objectForKey:@"title"] isEqualToString:@"比特易-玩转比特币 多看比特易"]) {
                 self.navigationItem.title = @"比特易";
+                self.navigationItem.rightBarButtonItem = [self creatRightBarItem];
             } else
             {
                self.navigationItem.title = [data objectForKey:@"title"];
+                self.navigationItem.rightBarButtonItem = nil;
             }
         }
         // 强制显示tabbar
@@ -90,6 +92,14 @@
         if (data && [data objectForKey:@"title"]) {
             self.navigationItem.title = [data objectForKey:@"title"];
         }
+        
+        if (data && [data objectForKey:@"url"]) {
+            self.navigationItem.rightBarButtonItem = [self creatRightBarItem];
+        } else
+        {
+            self.navigationItem.rightBarButtonItem = nil;
+        }
+        
         // 强制隐藏tabbar
 //        SCREEN_HEIGHT- NAVIGATION_HEIGHT  -  HOME_INDICATOR_HEIGHT
         self.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT);
@@ -99,6 +109,11 @@
     
 }
 
+- (UIBarButtonItem *)creatRightBarItem {
+    UIImage *buttonNormal = [[UIImage imageNamed:@"share_button_image"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIBarButtonItem * leftItem = [[UIBarButtonItem alloc]initWithImage:buttonNormal style:UIBarButtonItemStylePlain target:self action:@selector(shareAlert)];
+    return leftItem;
+}
 
 - (void)sendUserTokenAndReloadWebView
 {
