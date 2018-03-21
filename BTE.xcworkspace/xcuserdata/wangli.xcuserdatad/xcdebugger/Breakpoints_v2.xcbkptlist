@@ -122,12 +122,12 @@
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wangli/Desktop/BTE/BTE/Kline/BTC_K%E7%BA%BF%E5%9B%BE/KLine/Model/KLineModel/Y_KLineGroupModel.m"
-                  timestampString = "543296359.839228"
+                  timestampString = "543322809.3161711"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "71">
+                  offsetFromSymbolStart = "96">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -137,12 +137,12 @@
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wangli/Desktop/BTE/BTE/Kline/BTC_K%E7%BA%BF%E5%9B%BE/KLine/Model/KLineModel/Y_KLineGroupModel.m"
-                  timestampString = "543296359.8440911"
+                  timestampString = "543322809.318141"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "160">
+                  offsetFromSymbolStart = "196">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -418,7 +418,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/Login/BTELoginVC.m"
-            timestampString = "543207833.230085"
+            timestampString = "543322882.883691"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "217"
@@ -434,7 +434,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/MyAccount(&#x6211;&#x7684;&#x8d26;&#x6237;)/Controller/MyAccountViewController.m"
-            timestampString = "543310813.943226"
+            timestampString = "543322882.884249"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
@@ -498,7 +498,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/MyAccount(&#x6211;&#x7684;&#x8d26;&#x6237;)/Controller/MyAccountViewController.m"
-            timestampString = "543310813.943734"
+            timestampString = "543322882.884637"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "257"
@@ -514,7 +514,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/MyAccount(&#x6211;&#x7684;&#x8d26;&#x6237;)/Controller/MyAccountViewController.m"
-            timestampString = "543310813.944119"
+            timestampString = "543322882.884884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "266"
@@ -546,12 +546,124 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/ShareView/BTEShareView.m"
-            timestampString = "543310813.944561"
+            timestampString = "543322882.885132"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "165"
             endingLineNumber = "165"
             landmarkName = "-shareWithType:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Classes/Login/BTELoginVC.m"
+            timestampString = "543322882.885404"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "349"
+            endingLineNumber = "349"
+            landmarkName = "-checkButtonStatus:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Classes/Login/BTELoginVC.m"
+            timestampString = "543322882.885723"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "351"
+            endingLineNumber = "351"
+            landmarkName = "-checkButtonStatus:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Classes/Login/BTELoginVC.m"
+            timestampString = "543322882.886108"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "342"
+            endingLineNumber = "342"
+            landmarkName = "-checkButtonStatus:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Classes/Login/BTELoginVC.m"
+            timestampString = "543322882.8863651"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "344"
+            endingLineNumber = "344"
+            landmarkName = "-checkButtonStatus:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Classes/Login/BTELoginVC.m"
+            timestampString = "543322882.886603"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "-changeLoginAction:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Classes/Login/BTELoginVC.m"
+            timestampString = "543322882.8871959"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
+            landmarkName = "-setResetpwdType"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Classes/Login/BTELoginVC.m"
+            timestampString = "543322882.887471"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "318"
+            endingLineNumber = "318"
+            landmarkName = "-textFieldShouldClear:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -290,9 +290,13 @@ typedef NS_ENUM(NSInteger, LoginType) {
     if (self.loginType != LoginResetpwdType) {
         if (account.length == 11 &&
             (self.loginType ? code.length > 0 : code.length > 0)) {
-            [self changeLoginEnabled:YES];
+            if (!self.loginBtn.userInteractionEnabled) {
+                [self changeLoginEnabled:YES];
+            }
         }else {
-            [self changeLoginEnabled:NO];
+            if (self.loginBtn.userInteractionEnabled) {
+                [self changeLoginEnabled:NO];
+            }
         }
     }else {
         //密码校验 密码确认都大于0的时候再亮起
