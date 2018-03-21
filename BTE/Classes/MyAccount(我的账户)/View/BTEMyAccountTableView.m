@@ -36,7 +36,7 @@
     bgImageView.image = [UIImage imageNamed:@"pic_account_bg"];
     [headView addSubview:bgImageView];
     
-    labelRefresh = [[UILabel alloc] initWithFrame:CGRectMake(50, -30, SCREEN_WIDTH - 100, 20)];
+    labelRefresh = [[UILabel alloc] initWithFrame:CGRectMake(50, -50, SCREEN_WIDTH - 100, 20)];
     labelRefresh.text = @"下拉刷新";
     labelRefresh.textAlignment = NSTextAlignmentCenter;
     labelRefresh.font = UIFontRegularOfSize(13);
@@ -64,7 +64,12 @@
     [headView addSubview:_titleLabel];
     
     _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 51 + 30, SCREEN_WIDTH, 24)];
-    _subTitleLabel1.text = [NSString stringWithFormat:@"$%@",amountModel.allAmount];
+    if (amountModel.allAmount) {
+        _subTitleLabel1.text = [NSString stringWithFormat:@"$%@",amountModel.allAmount];
+    } else
+    {
+        _subTitleLabel1.text = @"$0";
+    }
     _subTitleLabel1.textAlignment = NSTextAlignmentCenter;
     _subTitleLabel1.font = UIFontRegularOfSize(30);
     _subTitleLabel1.textColor = BHHexColor(@"ffffff");
@@ -94,14 +99,24 @@
     [headWhiteBgView addSubview:_detailLabel2];
     
     _detailLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, _detailLabel1.width, 24)];
-    _detailLabel3.text = [NSString stringWithFormat:@"$%@",legalAccountModel.legalBalance];
+    if (legalAccountModel.legalBalance) {
+        _detailLabel3.text = [NSString stringWithFormat:@"$%@",legalAccountModel.legalBalance];
+    } else
+    {
+        _detailLabel3.text = @"$0";
+    }
     _detailLabel3.textAlignment = NSTextAlignmentCenter;
     _detailLabel3.font = [UIFont systemFontOfSize:20];
     _detailLabel3.textColor = BHHexColor(@"44A0F1");
     [headWhiteBgView addSubview:_detailLabel3];
     
     _detailLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, _detailLabel1.width, 24)];
-    _detailLabel4.text = [NSString stringWithFormat:@"%@($%@)",btcAccountModel.balance,btcAccountModel.legalBalance];
+    if (btcAccountModel.balance) {
+        _detailLabel4.text = [NSString stringWithFormat:@"%@($%@)",btcAccountModel.balance,btcAccountModel.legalBalance];
+    } else
+    {
+        _detailLabel4.text = @"$0";
+    }
     _detailLabel4.left = _detailLabel3.right;
     _detailLabel4.textAlignment = NSTextAlignmentCenter;
     _detailLabel4.font = [UIFont systemFontOfSize:20];
