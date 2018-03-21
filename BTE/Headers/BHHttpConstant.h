@@ -9,7 +9,7 @@
 #ifndef BHHttpConstant_h
 #define BHHttpConstant_h
 
-#define ONLION 1
+#define ONLION 0
 
 //数据库接口
 #if ONLION

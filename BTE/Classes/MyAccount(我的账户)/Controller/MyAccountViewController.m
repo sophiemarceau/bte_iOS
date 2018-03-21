@@ -14,7 +14,7 @@
 #import "BTEAccountDetailsModel.h"
 #import "BTEHomeWebViewController.h"
 #import "BTELoginVC.h"
-@interface MyAccountViewController ()<MyAccountTableViewDelegate>
+@interface MyAccountViewController ()<MyAccountTableViewDelegate,UIAlertViewDelegate>
 {
     BTEAllAmountModel *amountModel;
     BTELegalAccount *legalAccountModel;
@@ -96,26 +96,38 @@
 }
 -(void)logout//退出登录
 {
-    NSMutableDictionary * pramaDic = @{}.mutableCopy;
-    NSString * methodName = @"";
-    [pramaDic setObject:User.userToken forKey:@"bte-token"];
-    methodName = kAcountUserLogout;
-    
-    WS(weakSelf)
-    [self hudShow:self.view msg:@"请稍后"];
-    [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
-        [weakSelf hudClose];
-        self.isloginAndGetMyAccountInfo = @"0";
-        //删除本地登录信息
-        [User removeLoginData];
-        //发送通知告诉web token变动
-        [[NSNotificationCenter defaultCenter]postNotificationName:NotificationUserLoginSuccess object:nil];
-        [self.tabBarController setSelectedIndex:0];
-    } failure:^(NSError *error) {
-        [weakSelf hudClose];
-        RequestError(error);
-    }];
+    UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"你确定要退出登录" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"取消",@"确定", nil];
+    [alertview show];
 }
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)//继续播放
+    {
+        NSMutableDictionary * pramaDic = @{}.mutableCopy;
+        NSString * methodName = @"";
+        [pramaDic setObject:User.userToken forKey:@"bte-token"];
+        methodName = kAcountUserLogout;
+        
+        WS(weakSelf)
+        [self hudShow:self.view msg:@"请稍后"];
+        [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
+            [weakSelf hudClose];
+            self.isloginAndGetMyAccountInfo = @"0";
+            //删除本地登录信息
+            [User removeLoginData];
+            //发送通知告诉web token变动
+            [[NSNotificationCenter defaultCenter]postNotificationName:NotificationUserLoginSuccess object:nil];
+            [self.tabBarController setSelectedIndex:0];
+        } failure:^(NSError *error) {
+            [weakSelf hudClose];
+            RequestError(error);
+        }];
+    }
+}
+
+
 //跳转投资详情
 -(void)jumpToDetails:(NSString *)productId
 {
