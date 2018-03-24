@@ -8,6 +8,7 @@
 
 #import "BTEHomePageTableView.h"
 #import "BTEHomePageTableViewCell.h"
+#import "LBBannerView.h"
 @implementation BTEHomePageTableView
 
 -(instancetype)initWithFrame:(CGRect)frame
@@ -199,7 +200,36 @@
     {
         UITableViewCell *cell = [[UITableViewCell alloc] init];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.backgroundColor = KBGColor;
+        cell.backgroundColor = KBGCell;
+        
+        
+        UIImageView *image1 = [[UIImageView alloc] initWithFrame:CGRectMake(17, 18, 16, 18)];
+        image1.image = [UIImage imageNamed:@"home_Market news"];
+        [cell.contentView addSubview:image1];
+        
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 17, 80, 20)];
+        titleLabel.text = @"市场快讯";
+        titleLabel.font = UIFontRegularOfSize(18);
+        titleLabel.textColor = BHHexColor(@"292C33");
+        [cell.contentView addSubview:titleLabel];
+        
+        
+        //模拟数据源
+        NSArray *imagesArray = @[[UIImage imageNamed:@"home_Market news"],
+                                 [UIImage imageNamed:@"home_Market news"],
+                                 [UIImage imageNamed:@"home_Market news"],
+                                 [UIImage imageNamed:@"home_Market news"],
+                                 [UIImage imageNamed:@"home_Market news"],
+                                 [UIImage imageNamed:@"home_Market news"]];
+        
+        //创建轮播器控件
+        LBBannerView *bannerView = [[LBBannerView alloc] initViewWithFrame:CGRectMake(0, 53, SCREEN_WIDTH, 129) autoPlayTime:3.0f imagesArray:imagesArray clickCallBack:^(NSInteger index) {
+            NSLog(@"点击了第%ld张图片",index);
+        }];
+        
+        [cell.contentView addSubview:bannerView];
+        
+        
         return cell;
     } else
     {

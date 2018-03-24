@@ -25,6 +25,7 @@
 		81403B352064EBBF00788F9D /* HomeDesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 81403B342064EBBF00788F9D /* HomeDesListModel.m */; };
 		81403B382064EF0700788F9D /* HomeProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 81403B372064EF0700788F9D /* HomeProductModel.m */; };
 		81403B3B2064F04B00788F9D /* HomeProductInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 81403B3A2064F04B00788F9D /* HomeProductInfoModel.m */; };
+		81403B3E206623AE00788F9D /* LBBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81403B3D206623AC00788F9D /* LBBannerView.m */; };
 		815F8F532060B997006BB0D0 /* BTEShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 815F8F522060B997006BB0D0 /* BTEShareView.m */; };
 		816CCD1D2009ED24009E03D2 /* BHVersionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 816CCD1B2009ED24009E03D2 /* BHVersionTool.m */; };
 		816CCD202009F06A009E03D2 /* BTEUpgradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 816CCD1F2009F06A009E03D2 /* BTEUpgradeViewController.m */; };
@@ -193,6 +194,8 @@
 		81403B372064EF0700788F9D /* HomeProductModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeProductModel.m; sourceTree = "<group>"; };
 		81403B392064F04B00788F9D /* HomeProductInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeProductInfoModel.h; sourceTree = "<group>"; };
 		81403B3A2064F04B00788F9D /* HomeProductInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeProductInfoModel.m; sourceTree = "<group>"; };
+		81403B3C206623AC00788F9D /* LBBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBBannerView.h; sourceTree = "<group>"; };
+		81403B3D206623AC00788F9D /* LBBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBBannerView.m; sourceTree = "<group>"; };
 		815F8F512060B997006BB0D0 /* BTEShareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEShareView.h; sourceTree = "<group>"; };
 		815F8F522060B997006BB0D0 /* BTEShareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEShareView.m; sourceTree = "<group>"; };
 		816CCD1B2009ED24009E03D2 /* BHVersionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHVersionTool.m; sourceTree = "<group>"; };
@@ -1105,6 +1108,8 @@
 				818B1CCA206382200065B3FA /* BTEHomePageTableView.m */,
 				818B1CCC206391860065B3FA /* BTEHomePageTableViewCell.h */,
 				818B1CCD206391860065B3FA /* BTEHomePageTableViewCell.m */,
+				81403B3C206623AC00788F9D /* LBBannerView.h */,
+				81403B3D206623AC00788F9D /* LBBannerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1476,6 +1481,7 @@
 				8179AE4020085DB5001678D2 /* NSDate+Categoey.m in Sources */,
 				8112E3B8204541AE00419BC9 /* YQNetworking.m in Sources */,
 				B9A559792047ED2A009CC3BA /* WebViewJavascriptBridgeBase.m in Sources */,
+				81403B3E206623AE00788F9D /* LBBannerView.m in Sources */,
 				8179AE3320085DB5001678D2 /* UIViewController+extend.m in Sources */,
 				8179D2EA2021D73600C13447 /* Y_StockChartGlobalVariable.m in Sources */,
 				8179AE2E20085DB5001678D2 /* NSObject+JSONParse.m in Sources */,
