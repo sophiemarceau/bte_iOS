@@ -24,6 +24,7 @@
 
 #import "ViewController.h"
 #import "MyAccountViewController.h"
+#import "BTEHomePageViewController.h"
 
 @interface AppDelegate ()<EAIntroDelegate,JPUSHRegisterDelegate,UITabBarControllerDelegate>
 
@@ -145,10 +146,13 @@
     //设置不透明
     [UITabBar appearance].translucent = NO;
     //b.创建子控制器
-    BTEHomeWebViewController *findePageVc= [[BTEHomeWebViewController alloc] init];
-    findePageVc.urlString = kAppBTEH5AnalyzeAddress;
-    findePageVc.isHiddenLeft = YES;
-    findePageVc.isHiddenBottom = NO;
+    
+    BTEHomePageViewController *findePageVc= [[BTEHomePageViewController alloc] init];
+    
+//    BTEHomeWebViewController *findePageVc= [[BTEHomeWebViewController alloc] init];
+//    findePageVc.urlString = kAppBTEH5AnalyzeAddress;
+//    findePageVc.isHiddenLeft = YES;
+//    findePageVc.isHiddenBottom = NO;
     BHNavigationController *findeNavVC = [[BHNavigationController alloc] initWithRootViewController:findePageVc];
     findeNavVC.view.backgroundColor=[UIColor whiteColor];
     findeNavVC.tabBarItem.title=@"市场分析";

@@ -69,6 +69,15 @@ static NSString * const kHeader = @"http://192.168.24.64:3001/";
 //获取用户登录状态
 #define kGetUserLoginInfo [NSString stringWithFormat:@"%@%@",kDomain,@"app/api/user/online"]
 
+//MARK:首页市 场分析
+#define kGetlatestInfo [NSString stringWithFormat:@"%@%@",kDomain,@"app/api/advise/latests"]
+
+//新闻快讯
+#define kGetlatestNewsInfo [NSString stringWithFormat:@"%@%@",kDomain,@"app/api/news/latest"]
+
+//获取首页显示的策略信息
+#define kGetlatestProductInfo [NSString stringWithFormat:@"%@%@",kDomain,@"app/api/product/home"]
+
 #endif /* BHHttpConstant_h */
 
 

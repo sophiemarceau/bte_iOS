@@ -108,11 +108,11 @@
             self.navigationItem.rightBarButtonItem = [self creatRightBarItem];
             self.shareType = UMS_SHARE_TYPE_WEB_LINK;//web链接
             self.sharetitle = @"比特易-领先的数字货币市场专业分析平台";
-            if ([[data objectForKey:@"url"] rangeOfString:@"wechat/StrategyIndex"].location != NSNotFound) {
+            if ([[data objectForKey:@"url"] rangeOfString:@"wechat/strategy/"].location != NSNotFound) {
                 
               self.shareDesc = @"价值1000亿的策略咨询，就这么公开透明告诉你啦，速点~！";
                 
-            }else
+            }else if ([[data objectForKey:@"url"] rangeOfString:@"wechat/deal/"].location != NSNotFound)
             {
                self.shareDesc = @"在比特易与最清晰的数字货币市场相遇，擦亮眼睛，不做韭菜！";
             }

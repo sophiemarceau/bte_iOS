@@ -21,6 +21,10 @@
 		8112E3DD205262CA00419BC9 /* BTEBtcAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 8112E3DC205262C900419BC9 /* BTEBtcAccount.m */; };
 		8112E3E0205265DB00419BC9 /* BTEStatisticsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8112E3DF205265DB00419BC9 /* BTEStatisticsModel.m */; };
 		8112E3E32052666000419BC9 /* BTEAccountDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8112E3E22052666000419BC9 /* BTEAccountDetailsModel.m */; };
+		81403B322064E99800788F9D /* HomeDescriptionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 81403B312064E99800788F9D /* HomeDescriptionModel.m */; };
+		81403B352064EBBF00788F9D /* HomeDesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 81403B342064EBBF00788F9D /* HomeDesListModel.m */; };
+		81403B382064EF0700788F9D /* HomeProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 81403B372064EF0700788F9D /* HomeProductModel.m */; };
+		81403B3B2064F04B00788F9D /* HomeProductInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 81403B3A2064F04B00788F9D /* HomeProductInfoModel.m */; };
 		815F8F532060B997006BB0D0 /* BTEShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 815F8F522060B997006BB0D0 /* BTEShareView.m */; };
 		816CCD1D2009ED24009E03D2 /* BHVersionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 816CCD1B2009ED24009E03D2 /* BHVersionTool.m */; };
 		816CCD202009F06A009E03D2 /* BTEUpgradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 816CCD1F2009F06A009E03D2 /* BTEUpgradeViewController.m */; };
@@ -117,6 +121,8 @@
 		8179D3042021D76B00C13447 /* NetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D3022021D76B00C13447 /* NetWorking.m */; };
 		8179D3092021D82800C13447 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D3052021D82700C13447 /* ViewController.m */; };
 		8179D30A2021D82800C13447 /* Y_StockChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D3072021D82800C13447 /* Y_StockChartViewController.m */; };
+		818B1CCB206382200065B3FA /* BTEHomePageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 818B1CCA206382200065B3FA /* BTEHomePageTableView.m */; };
+		818B1CCE206391860065B3FA /* BTEHomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 818B1CCD206391860065B3FA /* BTEHomePageTableViewCell.m */; };
 		A3C2D27DD5C7720F52180047 /* libPods-BTE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A790C91021B35BCE72495255 /* libPods-BTE.a */; };
 		B90071BD2044FC6500431065 /* BTELoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90071BB2044FC6500431065 /* BTELoginVC.xib */; };
 		B90071C02045344A00431065 /* BHGradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B90071BE2045344900431065 /* BHGradientButton.m */; };
@@ -179,6 +185,14 @@
 		8112E3DF205265DB00419BC9 /* BTEStatisticsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEStatisticsModel.m; sourceTree = "<group>"; };
 		8112E3E12052666000419BC9 /* BTEAccountDetailsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEAccountDetailsModel.h; sourceTree = "<group>"; };
 		8112E3E22052666000419BC9 /* BTEAccountDetailsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEAccountDetailsModel.m; sourceTree = "<group>"; };
+		81403B302064E99800788F9D /* HomeDescriptionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeDescriptionModel.h; sourceTree = "<group>"; };
+		81403B312064E99800788F9D /* HomeDescriptionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeDescriptionModel.m; sourceTree = "<group>"; };
+		81403B332064EBBF00788F9D /* HomeDesListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeDesListModel.h; sourceTree = "<group>"; };
+		81403B342064EBBF00788F9D /* HomeDesListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeDesListModel.m; sourceTree = "<group>"; };
+		81403B362064EF0700788F9D /* HomeProductModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeProductModel.h; sourceTree = "<group>"; };
+		81403B372064EF0700788F9D /* HomeProductModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeProductModel.m; sourceTree = "<group>"; };
+		81403B392064F04B00788F9D /* HomeProductInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeProductInfoModel.h; sourceTree = "<group>"; };
+		81403B3A2064F04B00788F9D /* HomeProductInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeProductInfoModel.m; sourceTree = "<group>"; };
 		815F8F512060B997006BB0D0 /* BTEShareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEShareView.h; sourceTree = "<group>"; };
 		815F8F522060B997006BB0D0 /* BTEShareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEShareView.m; sourceTree = "<group>"; };
 		816CCD1B2009ED24009E03D2 /* BHVersionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHVersionTool.m; sourceTree = "<group>"; };
@@ -368,6 +382,10 @@
 		8179D3062021D82700C13447 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8179D3072021D82800C13447 /* Y_StockChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartViewController.m; sourceTree = "<group>"; };
 		8179D3082021D82800C13447 /* Y_StockChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartViewController.h; sourceTree = "<group>"; };
+		818B1CC9206382200065B3FA /* BTEHomePageTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEHomePageTableView.h; sourceTree = "<group>"; };
+		818B1CCA206382200065B3FA /* BTEHomePageTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEHomePageTableView.m; sourceTree = "<group>"; };
+		818B1CCC206391860065B3FA /* BTEHomePageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEHomePageTableViewCell.h; sourceTree = "<group>"; };
+		818B1CCD206391860065B3FA /* BTEHomePageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEHomePageTableViewCell.m; sourceTree = "<group>"; };
 		A790C91021B35BCE72495255 /* libPods-BTE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BTE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B90071B92044FC6500431065 /* BTELoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTELoginVC.h; sourceTree = "<group>"; };
 		B90071BB2044FC6500431065 /* BTELoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BTELoginVC.xib; sourceTree = "<group>"; };
@@ -854,8 +872,9 @@
 		8179AF112008A2F0001678D2 /* HomePageVC */ = {
 			isa = PBXGroup;
 			children = (
-				8179AF122008A3BA001678D2 /* BTEHomePageViewController.h */,
-				8179AF132008A3BA001678D2 /* BTEHomePageViewController.m */,
+				818B1CC8206381B40065B3FA /* Controller */,
+				818B1CC7206381A60065B3FA /* Model */,
+				818B1CC62063817A0065B3FA /* View */,
 				8179AF152009E0A3001678D2 /* BTEHomeWebViewController.h */,
 				8179AF162009E0A3001678D2 /* BTEHomeWebViewController.m */,
 			);
@@ -1077,6 +1096,41 @@
 				8179D3032021D76B00C13447 /* NetWorking.h */,
 			);
 			path = NetWorking;
+			sourceTree = "<group>";
+		};
+		818B1CC62063817A0065B3FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				818B1CC9206382200065B3FA /* BTEHomePageTableView.h */,
+				818B1CCA206382200065B3FA /* BTEHomePageTableView.m */,
+				818B1CCC206391860065B3FA /* BTEHomePageTableViewCell.h */,
+				818B1CCD206391860065B3FA /* BTEHomePageTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		818B1CC7206381A60065B3FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				81403B302064E99800788F9D /* HomeDescriptionModel.h */,
+				81403B312064E99800788F9D /* HomeDescriptionModel.m */,
+				81403B332064EBBF00788F9D /* HomeDesListModel.h */,
+				81403B342064EBBF00788F9D /* HomeDesListModel.m */,
+				81403B362064EF0700788F9D /* HomeProductModel.h */,
+				81403B372064EF0700788F9D /* HomeProductModel.m */,
+				81403B392064F04B00788F9D /* HomeProductInfoModel.h */,
+				81403B3A2064F04B00788F9D /* HomeProductInfoModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		818B1CC8206381B40065B3FA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8179AF122008A3BA001678D2 /* BTEHomePageViewController.h */,
+				8179AF132008A3BA001678D2 /* BTEHomePageViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		B90071B82044FBFC00431065 /* Login(登录) */ = {
@@ -1346,6 +1400,7 @@
 				8179D2FD2021D73600C13447 /* Y_KLineMainView.m in Sources */,
 				B90071C02045344A00431065 /* BHGradientButton.m in Sources */,
 				B90071CA20456EEE00431065 /* BTEUserInfo.m in Sources */,
+				81403B382064EF0700788F9D /* HomeProductModel.m in Sources */,
 				8179D2FB2021D73600C13447 /* Y_KLineVolumeView.m in Sources */,
 				8179D2F82021D73600C13447 /* Y_KLineGroupModel.m in Sources */,
 				8179AE3420085DB5001678D2 /* UIView+Frame.m in Sources */,
@@ -1361,6 +1416,8 @@
 				816CCD1D2009ED24009E03D2 /* BHVersionTool.m in Sources */,
 				8112E3B4204541AE00419BC9 /* YQDiskCache.m in Sources */,
 				8179AE2520085DB5001678D2 /* UIFont+extension.m in Sources */,
+				81403B3B2064F04B00788F9D /* HomeProductInfoModel.m in Sources */,
+				818B1CCB206382200065B3FA /* BTEHomePageTableView.m in Sources */,
 				B90071C42045382000431065 /* CircularProgressBar.m in Sources */,
 				8179AEA420087E53001678D2 /* BTERequestTools.m in Sources */,
 				8179AE8320086175001678D2 /* SSKeychainQuery.m in Sources */,
@@ -1393,12 +1450,14 @@
 				8179AF142008A3BA001678D2 /* BTEHomePageViewController.m in Sources */,
 				8179AE8220086175001678D2 /* SSKeychain.m in Sources */,
 				8112E3DA205261C600419BC9 /* BTELegalAccount.m in Sources */,
+				818B1CCE206391860065B3FA /* BTEHomePageTableViewCell.m in Sources */,
 				8112E3DD205262CA00419BC9 /* BTEBtcAccount.m in Sources */,
 				815F8F532060B997006BB0D0 /* BTEShareView.m in Sources */,
 				8179AE3220085DB5001678D2 /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
 				8179AE8A20086175001678D2 /* LLSegmentBarConfig.m in Sources */,
 				8179D2FA2021D73600C13447 /* Y_KLineVolumePositionModel.m in Sources */,
 				8179D2EC2021D73600C13447 /* Y_StockChartView.m in Sources */,
+				81403B322064E99800788F9D /* HomeDescriptionModel.m in Sources */,
 				8179AE3020085DB5001678D2 /* NSString+Size.m in Sources */,
 				8179AE2420085DB5001678D2 /* WLScaleLayoutConstrain.m in Sources */,
 				8179AE3D20085DB5001678D2 /* UILabel+category.m in Sources */,
@@ -1406,6 +1465,7 @@
 				8179AE4220085DB5001678D2 /* UIView+UIStatusBar.m in Sources */,
 				8179D30A2021D82800C13447 /* Y_StockChartViewController.m in Sources */,
 				8179D2EF2021D73600C13447 /* Y_StockChartRightYView.m in Sources */,
+				81403B352064EBBF00788F9D /* HomeDesListModel.m in Sources */,
 				8179AE2620085DB5001678D2 /* NSMutableArray+safe.m in Sources */,
 				8179AE2920085DB5001678D2 /* UIView+Extend.m in Sources */,
 				8179D2F42021D73600C13447 /* Y_KLinePositionModel.m in Sources */,
