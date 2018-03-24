@@ -26,6 +26,9 @@
 		81403B382064EF0700788F9D /* HomeProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 81403B372064EF0700788F9D /* HomeProductModel.m */; };
 		81403B3B2064F04B00788F9D /* HomeProductInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 81403B3A2064F04B00788F9D /* HomeProductInfoModel.m */; };
 		81403B3E206623AE00788F9D /* LBBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81403B3D206623AC00788F9D /* LBBannerView.m */; };
+		81403B452066331A00788F9D /* BTEStrategyFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81403B442066331A00788F9D /* BTEStrategyFollowViewController.m */; };
+		81403B482066355900788F9D /* BTEStrategyFollowTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81403B472066355900788F9D /* BTEStrategyFollowTableView.m */; };
+		81403B4B20663DB100788F9D /* StrategyFollowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81403B4A20663DB100788F9D /* StrategyFollowTableViewCell.m */; };
 		815F8F532060B997006BB0D0 /* BTEShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 815F8F522060B997006BB0D0 /* BTEShareView.m */; };
 		816CCD1D2009ED24009E03D2 /* BHVersionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 816CCD1B2009ED24009E03D2 /* BHVersionTool.m */; };
 		816CCD202009F06A009E03D2 /* BTEUpgradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 816CCD1F2009F06A009E03D2 /* BTEUpgradeViewController.m */; };
@@ -196,6 +199,12 @@
 		81403B3A2064F04B00788F9D /* HomeProductInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeProductInfoModel.m; sourceTree = "<group>"; };
 		81403B3C206623AC00788F9D /* LBBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBBannerView.h; sourceTree = "<group>"; };
 		81403B3D206623AC00788F9D /* LBBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBBannerView.m; sourceTree = "<group>"; };
+		81403B432066331A00788F9D /* BTEStrategyFollowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEStrategyFollowViewController.h; sourceTree = "<group>"; };
+		81403B442066331A00788F9D /* BTEStrategyFollowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEStrategyFollowViewController.m; sourceTree = "<group>"; };
+		81403B462066355900788F9D /* BTEStrategyFollowTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEStrategyFollowTableView.h; sourceTree = "<group>"; };
+		81403B472066355900788F9D /* BTEStrategyFollowTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEStrategyFollowTableView.m; sourceTree = "<group>"; };
+		81403B4920663DB100788F9D /* StrategyFollowTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StrategyFollowTableViewCell.h; sourceTree = "<group>"; };
+		81403B4A20663DB100788F9D /* StrategyFollowTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StrategyFollowTableViewCell.m; sourceTree = "<group>"; };
 		815F8F512060B997006BB0D0 /* BTEShareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEShareView.h; sourceTree = "<group>"; };
 		815F8F522060B997006BB0D0 /* BTEShareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEShareView.m; sourceTree = "<group>"; };
 		816CCD1B2009ED24009E03D2 /* BHVersionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHVersionTool.m; sourceTree = "<group>"; };
@@ -529,6 +538,43 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		81403B3F2066326800788F9D /* StrategyFollow */ = {
+			isa = PBXGroup;
+			children = (
+				81403B42206632B900788F9D /* Controller */,
+				81403B41206632B000788F9D /* View */,
+				81403B40206632A400788F9D /* Model */,
+			);
+			path = StrategyFollow;
+			sourceTree = "<group>";
+		};
+		81403B40206632A400788F9D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		81403B41206632B000788F9D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				81403B462066355900788F9D /* BTEStrategyFollowTableView.h */,
+				81403B472066355900788F9D /* BTEStrategyFollowTableView.m */,
+				81403B4920663DB100788F9D /* StrategyFollowTableViewCell.h */,
+				81403B4A20663DB100788F9D /* StrategyFollowTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		81403B42206632B900788F9D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				81403B432066331A00788F9D /* BTEStrategyFollowViewController.h */,
+				81403B442066331A00788F9D /* BTEStrategyFollowViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		815F8F502060B933006BB0D0 /* ShareView */ = {
 			isa = PBXGroup;
 			children = (
@@ -685,6 +731,7 @@
 		8179AD6720073BD0001678D2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				81403B3F2066326800788F9D /* StrategyFollow */,
 				815F8F502060B933006BB0D0 /* ShareView */,
 				8112E3C8205125D500419BC9 /* MyAccount(我的账户) */,
 				B90071B82044FBFC00431065 /* Login(登录) */,
@@ -1401,6 +1448,7 @@
 				8179AE2220085DB5001678D2 /* UIView+Animation.m in Sources */,
 				8179AE3920085DB5001678D2 /* UIImage+help.m in Sources */,
 				8179D2ED2021D73600C13447 /* Y_KLineMAView.m in Sources */,
+				81403B4B20663DB100788F9D /* StrategyFollowTableViewCell.m in Sources */,
 				8179D2F32021D73600C13447 /* Y_AccessoryMAView.m in Sources */,
 				8179D2FD2021D73600C13447 /* Y_KLineMainView.m in Sources */,
 				B90071C02045344A00431065 /* BHGradientButton.m in Sources */,
@@ -1416,9 +1464,11 @@
 				8179AF0B2008A08C001678D2 /* BHGuideVC.m in Sources */,
 				8179AE2B20085DB5001678D2 /* NSDictionary+safe.m in Sources */,
 				8179AE3E20085DB5001678D2 /* NSMutableAttributedString+extension.m in Sources */,
+				81403B452066331A00788F9D /* BTEStrategyFollowViewController.m in Sources */,
 				8112E3D02051352200419BC9 /* BTEMyAccountTableView.m in Sources */,
 				8179AE2720085DB5001678D2 /* NSString+MD5.m in Sources */,
 				816CCD1D2009ED24009E03D2 /* BHVersionTool.m in Sources */,
+				81403B482066355900788F9D /* BTEStrategyFollowTableView.m in Sources */,
 				8112E3B4204541AE00419BC9 /* YQDiskCache.m in Sources */,
 				8179AE2520085DB5001678D2 /* UIFont+extension.m in Sources */,
 				81403B3B2064F04B00788F9D /* HomeProductInfoModel.m in Sources */,

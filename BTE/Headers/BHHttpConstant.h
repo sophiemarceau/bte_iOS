@@ -78,6 +78,9 @@ static NSString * const kHeader = @"http://192.168.24.64:3001/";
 //获取首页显示的策略信息
 #define kGetlatestProductInfo [NSString stringWithFormat:@"%@%@",kDomain,@"app/api/product/home"]
 
+//MARK:策略列表页
+//获取策略列表
+#define kGetlatestProductList [NSString stringWithFormat:@"%@%@",kDomain,@"app/api/product/list"]
 #endif /* BHHttpConstant_h */
 
 

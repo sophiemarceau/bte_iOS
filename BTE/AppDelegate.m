@@ -25,7 +25,7 @@
 #import "ViewController.h"
 #import "MyAccountViewController.h"
 #import "BTEHomePageViewController.h"
-
+#import "BTEStrategyFollowViewController.h"
 @interface AppDelegate ()<EAIntroDelegate,JPUSHRegisterDelegate,UITabBarControllerDelegate>
 
 @end
@@ -161,10 +161,11 @@
     [self selectedTapTabBarItems:findeNavVC.tabBarItem];
     [self unSelectedTapTabBarItems:findeNavVC.tabBarItem];
     
-    BTEHomeWebViewController *strategyFollowPageVc= [[BTEHomeWebViewController alloc] init];
-    strategyFollowPageVc.urlString = kAppBTEH5FollowAddress;
-    strategyFollowPageVc.isHiddenLeft = YES;
-    strategyFollowPageVc.isHiddenBottom = NO;
+    BTEStrategyFollowViewController *strategyFollowPageVc= [[BTEStrategyFollowViewController alloc] init];
+//    BTEHomeWebViewController *strategyFollowPageVc= [[BTEHomeWebViewController alloc] init];
+//    strategyFollowPageVc.urlString = kAppBTEH5FollowAddress;
+//    strategyFollowPageVc.isHiddenLeft = YES;
+//    strategyFollowPageVc.isHiddenBottom = NO;
     BHNavigationController *strategyFollowNavVC = [[BHNavigationController alloc] initWithRootViewController:strategyFollowPageVc];
     strategyFollowNavVC.view.backgroundColor=[UIColor whiteColor];
     strategyFollowNavVC.tabBarItem.title=@"策略跟随";
