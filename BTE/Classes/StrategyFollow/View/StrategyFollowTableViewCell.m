@@ -19,13 +19,13 @@
         
         
         _bgView = [[UIView alloc] initWithFrame:CGRectMake(16, 16, SCREEN_WIDTH - 36, 198 - 16)];
-        _bgView.backgroundColor = BHHexColor(@"F0F8FF");
+        _bgView.backgroundColor = BHHexColor(@"ffffff");
         _bgView.layer.masksToBounds = YES;
         _bgView.layer.cornerRadius = 4;
         [self.contentView addSubview:_bgView];
         
-        UIImageView *image2 = [[UIImageView alloc] initWithFrame:CGRectMake(16, 28, 32, 36)];
-        [_bgView addSubview:image2];
+        _image2 = [[UIImageView alloc] initWithFrame:CGRectMake(16, 28, 32, 36)];
+        [_bgView addSubview:_image2];
         
         _titleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(64, 24, 180, 20)];
         
@@ -33,22 +33,21 @@
         _titleLabel2.textColor = BHHexColor(@"292C33");
         [_bgView addSubview:_titleLabel2];
         
-        _titleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(64, 48, 180, 21)];
+        _titleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(64, 48, SCREEN_WIDTH - 160, 21)];
         
         _titleLabel3.numberOfLines = 0;
         _titleLabel3.font = UIFontRegularOfSize(14);
         _titleLabel3.textColor = BHHexColor(@"525866");
-        [_titleLabel3 sizeToFit];
         [_bgView addSubview:_titleLabel3];
         
-        UIView *bgView1 = [[UIView alloc] initWithFrame:CGRectMake(16, 25, 24, 24)];
-        bgView1.backgroundColor = [UIColor clearColor];
-        bgView1.left = _bgView.width - 24 - 16;
-        bgView1.layer.masksToBounds = YES;
-        bgView1.layer.cornerRadius = 4;
-        bgView1.layer.borderWidth = 2;
+        _bgView1 = [[UIView alloc] initWithFrame:CGRectMake(16, 25, 24, 24)];
+        _bgView1.backgroundColor = [UIColor clearColor];
+        _bgView1.left = _bgView.width - 24 - 16;
+        _bgView1.layer.masksToBounds = YES;
+        _bgView1.layer.cornerRadius = 4;
+        _bgView1.layer.borderWidth = 2;
         
-        [_bgView addSubview:bgView1];
+        [_bgView addSubview:_bgView1];
         
         _titleLabel7 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
         _titleLabel7.textAlignment = NSTextAlignmentCenter;
@@ -56,7 +55,7 @@
         _titleLabel7.font = UIFontRegularOfSize(20);
         
         
-        [bgView1 addSubview:_titleLabel7];
+        [_bgView1 addSubview:_titleLabel7];
         
         
         
@@ -69,16 +68,16 @@
         _titleLabel4.textColor = BHHexColor(@"7A8499");
         [_bgView addSubview:_titleLabel4];
         
-        UIView *bgView2 = [[UIView alloc] initWithFrame:CGRectMake(16, 93, _bgView.width - 32, 1)];
-        bgView2.backgroundColor = BHHexColor(@"E6EBF0");
-        [_bgView addSubview:bgView2];
+        _bgView2 = [[UIView alloc] initWithFrame:CGRectMake(16, 93, _bgView.width - 32, 1)];
+        _bgView2.backgroundColor = BHHexColor(@"E6EBF0");
+        [_bgView addSubview:_bgView2];
         
         
-        UILabel *titleLabel6 = [[UILabel alloc] initWithFrame:CGRectMake(16, 108, 160, 12)];
-        titleLabel6.text = @"累计收益率：";
-        titleLabel6.font = UIFontRegularOfSize(12);
-        titleLabel6.textColor = BHHexColor(@"525866");
-        [_bgView addSubview:titleLabel6];
+        _titleLabel6 = [[UILabel alloc] initWithFrame:CGRectMake(16, 108, 160, 12)];
+        _titleLabel6.text = @"累计收益率";
+        _titleLabel6.font = UIFontRegularOfSize(12);
+        _titleLabel6.textColor = BHHexColor(@"525866");
+        [_bgView addSubview:_titleLabel6];
         
         _titleLabel5 = [[UILabel alloc] initWithFrame:CGRectMake(16, 104, 160, 20)];
         _titleLabel5.left = _bgView.width - 160 - 16;
@@ -93,7 +92,12 @@
 
 -(void)layoutSubviews{
     [super layoutSubviews];
-    
+    _bgView.height = self.frame.size.height - 16;
+    CGRect rect = [_titleLabel3.text boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 160, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:UIFontRegularOfSize(14)} context:nil];
+    _titleLabel3.height = rect.size.height;
+    _bgView2.top = _titleLabel3.bottom + 10;
+    _titleLabel6.top = _bgView2.bottom + 14;
+    _titleLabel5.top = _bgView2.bottom + 10;
 }
 
 //刷新数据UI
@@ -132,7 +136,20 @@
     }
     
     _titleLabel7.text = productInfoModel.riskValue;
-    _titleLabel5.text = [NSString stringWithFormat:@"%@%%",productInfoModel.ror];
+    
+    
+    if ([productInfoModel.ror integerValue] > 0) {
+        _titleLabel5.text = [NSString stringWithFormat:@"+%@%%",productInfoModel.ror];
+        _titleLabel5.textColor = BHHexColor(@"1BAC75");
+    } else if ([productInfoModel.ror integerValue] < 0)
+    {
+        _titleLabel5.text = [NSString stringWithFormat:@"%@%%",productInfoModel.ror];
+        _titleLabel5.textColor = BHHexColor(@"FF6B28");
+    } else
+    {
+        _titleLabel5.text = [NSString stringWithFormat:@"%@%%",productInfoModel.ror];
+        _titleLabel5.textColor = BHHexColor(@"292C33");
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

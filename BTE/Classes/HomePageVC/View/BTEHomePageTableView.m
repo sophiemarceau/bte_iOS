@@ -342,11 +342,23 @@
         UILabel *titleLabel5 = [[UILabel alloc] initWithFrame:CGRectMake(16, 104, 160, 20)];
         titleLabel5.left = bgView.width - 160 - 16;
         titleLabel5.textAlignment = NSTextAlignmentRight;
-        titleLabel5.text = [NSString stringWithFormat:@"%@%%",productInfoModel.ror];
         titleLabel5.font = UIFontRegularOfSize(20);
-        titleLabel5.textColor = BHHexColor(@"525866");
         [bgView addSubview:titleLabel5];
         
+        
+        if ([productInfoModel.ror integerValue] > 0) {
+            titleLabel5.text = [NSString stringWithFormat:@"+%@%%",productInfoModel.ror];
+            titleLabel5.textColor = BHHexColor(@"1BAC75");
+        } else if ([productInfoModel.ror integerValue] < 0)
+        {
+            titleLabel5.text = [NSString stringWithFormat:@"%@%%",productInfoModel.ror];
+            titleLabel5.textColor = BHHexColor(@"FF6B28");
+        } else
+        {
+            titleLabel5.text = [NSString stringWithFormat:@"%@%%",productInfoModel.ror];
+            titleLabel5.textColor = BHHexColor(@"292C33");
+        }
+
         return cell;
     }
 }

@@ -14,9 +14,11 @@
 @property(nonatomic, strong) UILabel *titleLabel2;//副标题
 @property(nonatomic, strong) UILabel *titleLabel3;//副标题
 @property(nonatomic, strong) UIView *bgView1;//副标题
+@property(nonatomic, strong) UIView *bgView2;//副标题
 @property(nonatomic, strong) UILabel *titleLabel7;//副标题
 @property(nonatomic, strong) UILabel *titleLabel4;//背景视图
 @property(nonatomic, strong) UILabel *titleLabel5;//分割线视图
+@property(nonatomic, strong) UILabel *titleLabel6;//分割线视图
 //刷新数据UI
 -(void)setCellWithModel:(HomeProductInfoModel *)productInfoModel;
 @end

@@ -15,7 +15,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         _strategyFollowTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height) style:UITableViewStylePlain];
-        _strategyFollowTableView.backgroundColor = KBGColor;
+        _strategyFollowTableView.backgroundColor = KBGCell;
         _strategyFollowTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _strategyFollowTableView.delegate = self;
         _strategyFollowTableView.dataSource = self;
@@ -82,29 +82,15 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
-        return 198;
-    } else
-    {
-        return 250;
-    }
+    return [self cellHeight:_dataSource[indexPath.row]];
 }
 
-- (float)cellHeight
+- (float)cellHeight:(HomeProductInfoModel *)productInfoModel
 {
-    //    NSString * contentStr= descriptionModel.desc;
-    //    CGRect rect = [contentStr boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 64, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil];
-    //    if (rect.size.height > defaultHeight) {
-    //        if (_isShow) {//是否展开
-    //            return fixedHeight + btnHeight + rect.size.height;
-    //        }else{
-    //            return fixedHeight + btnHeight + defaultHeight;
-    //        }
-    //    } else {
-    //        return fixedHeight + rect.size.height;
-    //    }
+        CGRect rect = [productInfoModel.desc boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 160, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:UIFontRegularOfSize(14)} context:nil];
     
-    return 168;
+    
+    return 48 + 46 + 23 + rect.size.height;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
