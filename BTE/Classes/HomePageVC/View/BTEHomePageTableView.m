@@ -100,7 +100,7 @@
         return [self cellHeight] + 16;
     } else if (indexPath.row == [_dataSource count] + 2)
     {
-        return 198;
+        return 53 + 129 + 16;
     } else if (indexPath.row == [_dataSource count] + 3)
     {
         return 16;
@@ -213,17 +213,8 @@
         titleLabel.textColor = BHHexColor(@"292C33");
         [cell.contentView addSubview:titleLabel];
         
-        
-        //模拟数据源
-        NSArray *imagesArray = @[[UIImage imageNamed:@"home_Market news"],
-                                 [UIImage imageNamed:@"home_Market news"],
-                                 [UIImage imageNamed:@"home_Market news"],
-                                 [UIImage imageNamed:@"home_Market news"],
-                                 [UIImage imageNamed:@"home_Market news"],
-                                 [UIImage imageNamed:@"home_Market news"]];
-        
         //创建轮播器控件
-        LBBannerView *bannerView = [[LBBannerView alloc] initViewWithFrame:CGRectMake(0, 53, SCREEN_WIDTH, 129) autoPlayTime:3.0f imagesArray:imagesArray clickCallBack:^(NSInteger index) {
+        LBBannerView *bannerView = [[LBBannerView alloc] initViewWithFrame:CGRectMake(0, 53, SCREEN_WIDTH, 129) autoPlayTime:3.0f imagesArray:productList clickCallBack:^(NSInteger index) {
             NSLog(@"点击了第%ld张图片",index);
         }];
         
@@ -272,13 +263,13 @@
         
         [bgView addSubview:image2];
         
-        UILabel *titleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(64, 24, 180, 20)];
+        UILabel *titleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(64, 24, SCREEN_WIDTH - 160, 20)];
         titleLabel2.text = productInfoModel.name;
         titleLabel2.font = UIFontRegularOfSize(16);
         titleLabel2.textColor = BHHexColor(@"292C33");
         [bgView addSubview:titleLabel2];
         
-        UILabel *titleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(64, 48, 180, 21)];
+        UILabel *titleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(64, 48, SCREEN_WIDTH - 160, 21)];
         titleLabel3.text = productInfoModel.desc;
         titleLabel3.font = UIFontRegularOfSize(14);
         titleLabel3.textColor = BHHexColor(@"525866");

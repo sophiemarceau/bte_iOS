@@ -7,7 +7,7 @@
 //
 
 #import "LBBannerView.h"
-
+#import "BTEMarketNewsView.h"
 //宏定义scrollview的宽高
 #define view_WIDTH self.frame.size.width
 #define view_HEIGHT self.frame.size.height
@@ -16,8 +16,6 @@
 
 //scrollView
 @property(nonatomic, strong) UIScrollView * scrollView;
-//pageControl
-//@property(nonatomic, strong) UIPageControl *pageControl;
 
 /** 定时器 */
 @property (nonatomic, strong) NSTimer *timer;
@@ -41,7 +39,6 @@
 {
 
     if (self = [super initWithFrame:frame]) {
-//        self.bounds = frame;
         _delayTime = playTime;
         //要给block赋值,不然点击图片没有反应,block是空的,不会执行block
         self.clickBlcok = clickCallBack;
@@ -78,7 +75,7 @@
     _imageViews = [NSMutableArray array];
     //创建三个imageView作为循环复用的载体，图片将循环加载在这三个imageView上面
     for (NSInteger i = 0; i < 3; i++) {
-        UIImageView *imageView = [[UIImageView alloc] init];
+        BTEMarketNewsView *imageView = [[BTEMarketNewsView alloc] initViewWithFrame:CGRectMake(view_WIDTH * i, 0, view_WIDTH,view_HEIGHT)];
         imageView.frame = CGRectMake(view_WIDTH * i, 0, view_WIDTH,view_HEIGHT);
         //(self.dataArray.count - 1 + i)%self.dataArray.count也可以达到让一开始3个imageview分别显示最后一张<-->第一张<-->第二张图片,但是让大家理解起来会有一定难度,所以采用下面最简单的方法直接设置
         //imageView.tag = (self.dataArray.count - 1 + i)%self.dataArray.count;
@@ -97,23 +94,13 @@
         [imageView addGestureRecognizer:tap];
 
         //设置imageView上的image图片
-        [self setImageWithImageView:imageView];
+//        [self setImageWithImageView:imageView];
         [self setImageView:imageView atIndex:index];
         //将imageView加入数组中，方便随后取用
         [_imageViews addObject:imageView];
         [self.scrollView addSubview:imageView];
 
     }
-
-
-    //初始化pageControl,最后添加,这样它会显示在最前面,不会被遮挡
-
-//    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.scrollView.frame) - 30, view_WIDTH, 30)];
-//    self.pageControl.numberOfPages = _imagesArray.count;
-//    self.pageControl.currentPage = 0;
-//    [self addSubview:self.pageControl];
-
-
 }
 
 
@@ -131,17 +118,13 @@
  相对于下面那个方法的坏处:其实我们完全可以不传递index这个参数,我们完全可以把index赋值给imageview的tag,这样我们只用传递一个imageview过来,就可以既拿到imageview,又可以通过imageview的tag拿到index
  总结:2个方法都可以,看大家喜欢哪一种,哪一种顺手好理解就使用哪一种
  */
-- (void)setImageView:(UIImageView *)imageView atIndex:(NSInteger)index
+- (void)setImageView:(BTEMarketNewsView *)imageView atIndex:(NSInteger)index
 {
-    UIImage *image = (UIImage *)_imagesArray[index];
-    imageView.image = image;
+    [imageView setHomeProductModel:_imagesArray[index]];
 
 }
 - (void)setImageWithImageView:(UIImageView *)imageView{
 
-    //根据imageView的tag值给imageView设置image
-    // UIImage *image = (UIImage *)self.dataArray[imageView.tag];
-    // imageView.image = image;
 }
 
 
@@ -227,7 +210,7 @@
 
     //    NSInteger index = 0;
     //修改imageViews中的imageView的tag值，从而修改imageView上显示的image，pageControl的页码
-    for (UIImageView *imageView in _imageViews) {
+    for (BTEMarketNewsView *imageView in _imageViews) {
         /*
          （1）当屏幕中间那个imageview显示最后一张图片时，右边的ImageView,也即下一张图片应该是显示最开始的那一张图片(第0张)；
 
@@ -236,14 +219,14 @@
         NSInteger index = imageView.tag + flag ;
 
         if (index < 0) {
-            index = _imageViews.count - 1;
-        } else if (index >= _imageViews.count) {
+            index = _imagesArray.count - 1;
+        } else if (index >= _imagesArray.count) {
             index = 0;
         }
 
         imageView.tag = index;
         //更新每一页上的image
-        [self setImageWithImageView:imageView];
+//        [self setImageWithImageView:imageView];
         [self setImageView:imageView atIndex:index];
     }
     //更新pageControl显示的页码,也就是中间那个imageview的tag值

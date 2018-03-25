@@ -29,6 +29,7 @@
 		81403B452066331A00788F9D /* BTEStrategyFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81403B442066331A00788F9D /* BTEStrategyFollowViewController.m */; };
 		81403B482066355900788F9D /* BTEStrategyFollowTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81403B472066355900788F9D /* BTEStrategyFollowTableView.m */; };
 		81403B4B20663DB100788F9D /* StrategyFollowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81403B4A20663DB100788F9D /* StrategyFollowTableViewCell.m */; };
+		81403B4E206795BF00788F9D /* BTEMarketNewsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81403B4D206795BF00788F9D /* BTEMarketNewsView.m */; };
 		815F8F532060B997006BB0D0 /* BTEShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 815F8F522060B997006BB0D0 /* BTEShareView.m */; };
 		816CCD1D2009ED24009E03D2 /* BHVersionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 816CCD1B2009ED24009E03D2 /* BHVersionTool.m */; };
 		816CCD202009F06A009E03D2 /* BTEUpgradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 816CCD1F2009F06A009E03D2 /* BTEUpgradeViewController.m */; };
@@ -205,6 +206,8 @@
 		81403B472066355900788F9D /* BTEStrategyFollowTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEStrategyFollowTableView.m; sourceTree = "<group>"; };
 		81403B4920663DB100788F9D /* StrategyFollowTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StrategyFollowTableViewCell.h; sourceTree = "<group>"; };
 		81403B4A20663DB100788F9D /* StrategyFollowTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StrategyFollowTableViewCell.m; sourceTree = "<group>"; };
+		81403B4C206795BF00788F9D /* BTEMarketNewsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEMarketNewsView.h; sourceTree = "<group>"; };
+		81403B4D206795BF00788F9D /* BTEMarketNewsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEMarketNewsView.m; sourceTree = "<group>"; };
 		815F8F512060B997006BB0D0 /* BTEShareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEShareView.h; sourceTree = "<group>"; };
 		815F8F522060B997006BB0D0 /* BTEShareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEShareView.m; sourceTree = "<group>"; };
 		816CCD1B2009ED24009E03D2 /* BHVersionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHVersionTool.m; sourceTree = "<group>"; };
@@ -1157,6 +1160,8 @@
 				818B1CCD206391860065B3FA /* BTEHomePageTableViewCell.m */,
 				81403B3C206623AC00788F9D /* LBBannerView.h */,
 				81403B3D206623AC00788F9D /* LBBannerView.m */,
+				81403B4C206795BF00788F9D /* BTEMarketNewsView.h */,
+				81403B4D206795BF00788F9D /* BTEMarketNewsView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1485,6 +1490,7 @@
 				8179AE2120085DB5001678D2 /* UITextField+WLB.m in Sources */,
 				8179AE3120085DB5001678D2 /* CALayer+Additions.m in Sources */,
 				8179AE2A20085DB5001678D2 /* NullSafe.m in Sources */,
+				81403B4E206795BF00788F9D /* BTEMarketNewsView.m in Sources */,
 				8179D3042021D76B00C13447 /* NetWorking.m in Sources */,
 				8179AE5A20085FAA001678D2 /* BHToast.m in Sources */,
 				8179AF172009E0A3001678D2 /* BTEHomeWebViewController.m in Sources */,

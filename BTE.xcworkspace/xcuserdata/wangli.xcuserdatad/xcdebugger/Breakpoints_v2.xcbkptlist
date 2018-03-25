@@ -106,7 +106,7 @@
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wangli/Desktop/BTE/BTE/Kline/BTC_K%E7%BA%BF%E5%9B%BE/KLine/Model/KLineModel/Y_KLineGroupModel.m"
-                  timestampString = "543656949.539399"
+                  timestampString = "543662915.946543"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -121,7 +121,7 @@
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wangli/Desktop/BTE/BTE/Kline/BTC_K%E7%BA%BF%E5%9B%BE/KLine/Model/KLineModel/Y_KLineGroupModel.m"
-                  timestampString = "543656949.5413851"
+                  timestampString = "543662915.948796"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -625,40 +625,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BTE/Classes/HomePageVC/Controller/BTEHomePageViewController.m"
-            timestampString = "543658015.566258"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "-getlatestsStatus"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BTE/Classes/HomePageVC/View/BTEHomePageTableView.m"
-            timestampString = "543658015.5663559"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "BTE/Classes/StrategyFollow/View/StrategyFollowTableViewCell.m"
-            timestampString = "543658015.5671329"
+            timestampString = "543663467.93347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
@@ -674,7 +642,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/StrategyFollow/View/StrategyFollowTableViewCell.m"
-            timestampString = "543658015.567472"
+            timestampString = "543663467.933921"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "113"
@@ -690,12 +658,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/StrategyFollow/View/StrategyFollowTableViewCell.m"
-            timestampString = "543658015.567741"
+            timestampString = "543663467.934203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
             endingLineNumber = "95"
             landmarkName = "-layoutSubviews"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Classes/HomePageVC/View/LBBannerView.m"
+            timestampString = "543663467.934462"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
+            landmarkName = "-updateImageViewsAndPageControl"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Classes/HomePageVC/View/LBBannerView.m"
+            timestampString = "543663467.934805"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "-updateImageViewsAndPageControl"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
