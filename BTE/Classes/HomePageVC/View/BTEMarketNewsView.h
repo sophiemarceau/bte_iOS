@@ -11,6 +11,12 @@
 @interface BTEMarketNewsView : UIView
 {
     HomeProductModel *_model;
+    UIView *bgview;
+    UIView *bgview1;
+    UIView *bgview2;
+    UIView *bgview3;
+    UILabel *labelTitle;
+    UILabel *labelTitle1;
 }
 - (instancetype)initViewWithFrame:(CGRect)frame;
 - (void)setHomeProductModel:(HomeProductModel *)model;
