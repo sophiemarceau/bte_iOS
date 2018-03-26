@@ -55,6 +55,10 @@ static NSString * const kHeader = @"http://192.168.24.64:3001/";
 
 // 投资详情入口地址
 #define kAppStrategyAddress [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/strategy"]
+
+// 交易详情入口地址
+#define kAppDealAddress [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/deal"]
+
 //MARK:我的账户
 
 //账户基本信息

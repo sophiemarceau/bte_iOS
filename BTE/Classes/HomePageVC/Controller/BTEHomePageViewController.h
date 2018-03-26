@@ -8,6 +8,6 @@
 
 #import "BHBaseController.h"
 #import "BTEHomePageTableView.h"
-@interface BTEHomePageViewController : BHBaseController
+@interface BTEHomePageViewController : BHBaseController<HomePageTableViewDelegate>
 @property (nonatomic,retain) BTEHomePageTableView *homePageTableView;//市场分析视图
 @end

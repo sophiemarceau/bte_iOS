@@ -360,6 +360,17 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if ([_dataSource count] > 0 && indexPath.row >= 1 && indexPath.row <= [_dataSource count])
+    {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(jumpToDetail:)]) {
+            HomeDesListModel *model = _dataSource[indexPath.row - 1];
+            [self.delegate jumpToDetail:model.symbol];
+        }
+    }
+    
+    
+    
     if (indexPath.row == [_dataSource count] + 1) {
         NSString *contentStr = descriptionModel.desc;
         CGRect rect = [contentStr boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 64, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil];

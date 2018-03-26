@@ -12,6 +12,7 @@
 #import "HomeDesListModel.h"
 #import "HomeProductModel.h"
 #import "HomeProductInfoModel.h"
+#import "BTEHomeWebViewController.h"
 @interface BTEHomePageViewController ()
 {
     HomeDescriptionModel *descriptionModel;
@@ -43,7 +44,7 @@
     
     if (self.homePageTableView == nil) {
         self.homePageTableView = [[BTEHomePageTableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - TAB_BAR_HEIGHT - NAVIGATION_HEIGHT)];
-//        self.homePageTableView.delegate = self;
+        self.homePageTableView.delegate = self;
     }
     
     [self.view addSubview:self.homePageTableView];
@@ -129,6 +130,16 @@
         [weakSelf hudClose];
         RequestError(error);
     }];
+}
+
+- (void)jumpToDetail:(NSString *)name
+{
+    BTEHomeWebViewController *homePageVc= [[BTEHomeWebViewController alloc] init];
+    
+    homePageVc.urlString = [NSString stringWithFormat:@"%@/%@",kAppDealAddress,name];
+    homePageVc.isHiddenLeft = YES;
+    homePageVc.isHiddenBottom = NO;
+    [self.navigationController pushViewController:homePageVc animated:YES];
 }
 
 
