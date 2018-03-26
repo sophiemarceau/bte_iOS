@@ -108,7 +108,10 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(jumpToDetail:)]) {
+        HomeProductInfoModel *model = _dataSource[indexPath.row];
+        [self.delegate jumpToDetail:model.id];
+    }
 }
 
 @end

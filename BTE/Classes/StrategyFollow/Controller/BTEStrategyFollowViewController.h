@@ -8,6 +8,6 @@
 
 #import "BHBaseController.h"
 #import "BTEStrategyFollowTableView.h"
-@interface BTEStrategyFollowViewController : BHBaseController
+@interface BTEStrategyFollowViewController : BHBaseController<StrategyFollowTableViewDelegate>
 @property (nonatomic,retain) BTEStrategyFollowTableView *strategyFollowTableView;//策略跟随视图
 @end

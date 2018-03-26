@@ -8,6 +8,7 @@
 
 #import "BTEStrategyFollowViewController.h"
 #import "HomeProductInfoModel.h"
+#import "BTEHomeWebViewController.h"
 @interface BTEStrategyFollowViewController ()
 
 @end
@@ -20,7 +21,7 @@
     self.title = @"策略跟随";
     if (self.strategyFollowTableView == nil) {
         self.strategyFollowTableView = [[BTEStrategyFollowTableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - TAB_BAR_HEIGHT - NAVIGATION_HEIGHT)];
-        //        self.homePageTableView.delegate = self;
+                self.strategyFollowTableView.delegate = self;
     }
     
     [self.view addSubview:self.strategyFollowTableView];
@@ -51,6 +52,16 @@
         [weakSelf hudClose];
         RequestError(error);
     }];
+}
+
+- (void)jumpToDetail:(NSString *)productId
+{
+    BTEHomeWebViewController *homePageVc= [[BTEHomeWebViewController alloc] init];
+    
+    homePageVc.urlString = [NSString stringWithFormat:@"%@/%@",kAppStrategyAddress,productId];
+    homePageVc.isHiddenLeft = YES;
+    homePageVc.isHiddenBottom = NO;
+    [self.navigationController pushViewController:homePageVc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
