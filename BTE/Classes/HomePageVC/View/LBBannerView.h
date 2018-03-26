@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void (^clickCallBack) (NSInteger index);
+typedef void (^clickCallBack) (float height);
 @interface LBBannerView : UIView
 
 

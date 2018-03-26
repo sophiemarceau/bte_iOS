@@ -23,6 +23,7 @@
         defaultHeight = 68;
         fixedHeight = 60;
         btnHeight = 20;
+        defaultScrollHeight = 130;
         _isShow = NO;//初始化不展开
         [self addSubview:_homePageTableView];
         [self setTableHeadView];
@@ -100,7 +101,7 @@
         return [self cellHeight] + 16;
     } else if (indexPath.row == [_dataSource count] + 2)
     {
-        return 53 + 129 + 16;
+        return 53 + defaultScrollHeight + 16;
     } else if (indexPath.row == [_dataSource count] + 3)
     {
         return 16;
@@ -214,8 +215,11 @@
         [cell.contentView addSubview:titleLabel];
         
         //创建轮播器控件
-        LBBannerView *bannerView = [[LBBannerView alloc] initViewWithFrame:CGRectMake(0, 53, SCREEN_WIDTH, 129) autoPlayTime:3.0f imagesArray:productList clickCallBack:^(NSInteger index) {
-            NSLog(@"点击了第%ld张图片",index);
+        LBBannerView *bannerView = [[LBBannerView alloc] initViewWithFrame:CGRectMake(0, 53, SCREEN_WIDTH, defaultScrollHeight) autoPlayTime:5.0f imagesArray:productList clickCallBack:^(float height) {
+            NSLog(@"点击了第%f张图片",height);
+            defaultScrollHeight = height;
+            [self.homePageTableView beginUpdates];
+            [self.homePageTableView endUpdates];
         }];
         
         [cell.contentView addSubview:bannerView];

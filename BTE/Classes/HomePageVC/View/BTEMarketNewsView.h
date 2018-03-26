@@ -17,6 +17,8 @@
     UIView *bgview3;
     UILabel *labelTitle;
     UILabel *labelTitle1;
+    float defaultHeight;//labelTitle1默认高度
+    UIImageView *arrowImage;
 }
 - (instancetype)initViewWithFrame:(CGRect)frame;
 - (void)setHomeProductModel:(HomeProductModel *)model;

@@ -35,7 +35,7 @@
 
 #pragma mark - 初始化轮播器控件
 
-- (instancetype)initViewWithFrame:(CGRect)frame autoPlayTime:(NSTimeInterval)playTime imagesArray:(NSArray *)imagesArray clickCallBack:(void (^)(NSInteger))clickCallBack
+- (instancetype)initViewWithFrame:(CGRect)frame autoPlayTime:(NSTimeInterval)playTime imagesArray:(NSArray *)imagesArray clickCallBack:(void (^)(float))clickCallBack
 {
 
     if (self = [super initWithFrame:frame]) {
@@ -108,7 +108,22 @@
 - (void)imageViewClicked:(UITapGestureRecognizer *)tap
 {
     int index = (int)tap.view.tag;
-    if (_clickBlcok) _clickBlcok(index);
+    HomeProductModel *tempModel = _imagesArray[index];
+    tempModel.isShow = !tempModel.isShow;
+    BTEMarketNewsView *imageView = (BTEMarketNewsView *)tap.view;
+
+    float currentHeight = self.height;
+    CGRect rect = [tempModel.content boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 32 - 2 - 32, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:UIFontRegularOfSize(14)} context:nil];
+    
+    if (currentHeight < 44 + 16 + rect.size.height) {
+        currentHeight = 44 + 16 + rect.size.height;
+    }
+    if (_clickBlcok) _clickBlcok(currentHeight);
+//    imageView.height = currentHeight;
+    self.height = currentHeight;
+    self.scrollView.height = currentHeight;
+    self.scrollView.contentSize = CGSizeMake(view_WIDTH * 3, currentHeight);
+    [imageView setHomeProductModel:tempModel];
 }
 
 
@@ -120,7 +135,8 @@
  */
 - (void)setImageView:(BTEMarketNewsView *)imageView atIndex:(NSInteger)index
 {
-    [imageView setHomeProductModel:_imagesArray[index]];
+    HomeProductModel *tempModel = _imagesArray[index];
+    [imageView setHomeProductModel:tempModel];
 
 }
 - (void)setImageWithImageView:(UIImageView *)imageView{

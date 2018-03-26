@@ -13,4 +13,6 @@
 @property(nonatomic,copy)NSString * title;//
 @property(nonatomic,copy)NSString * content;//
 @property(nonatomic,copy)NSString * date;//
+@property(nonatomic,assign) BOOL  isShow;//
+
 @end

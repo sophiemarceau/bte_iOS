@@ -21,6 +21,7 @@
 {
     BOOL _isShow; // 市场分析是否展开
     float defaultHeight;//四行文字默认高度
+    float defaultScrollHeight;//滚动视图默认高度
     float fixedHeight;//其它固定高度 此处市场分析高度
     float btnHeight;//更多箭头高度
     
