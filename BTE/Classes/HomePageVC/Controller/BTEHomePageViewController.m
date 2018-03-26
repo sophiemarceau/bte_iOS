@@ -51,7 +51,8 @@
     
     //获取最新的推荐列表
     [self getlatestsStatus];
-    
+    [self getlatestsNews];
+    [self getlatestsProduct];
 }
 #pragma mark - 获取最新的推荐列表
 - (void)getlatestsStatus
@@ -73,7 +74,8 @@
             descModel.desc = responseObject[@"data"][@"description"];
             descriptionModel = descModel;
             detailsList = [NSArray yy_modelArrayWithClass:[HomeDesListModel class] json:responseObject[@"data"][@"list"]];
-            [weakSelf getlatestsNews];
+            //刷新tableview
+            [weakSelf.homePageTableView refreshUi:detailsList productList:productList model1:descriptionModel model2:productInfoModel];
         }
     } failure:^(NSError *error) {
         [weakSelf hudClose];
@@ -98,7 +100,8 @@
         [weakSelf hudClose];
         if (IsSafeDictionary(responseObject)) {
             productList = [NSArray yy_modelArrayWithClass:[HomeProductModel class] json:responseObject[@"data"]];
-            [weakSelf getlatestsProduct];
+            //刷新tableview
+            [weakSelf.homePageTableView refreshUi:detailsList productList:productList model1:descriptionModel model2:productInfoModel];
         }
     } failure:^(NSError *error) {
         [weakSelf hudClose];
