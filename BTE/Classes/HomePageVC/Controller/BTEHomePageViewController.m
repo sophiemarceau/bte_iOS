@@ -35,7 +35,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"比特易";
+    [self customtitleView];
     self.navigationItem.rightBarButtonItem = [self creatRightBarItem];
     self.shareType = UMS_SHARE_TYPE_WEB_LINK;//web链接
     self.sharetitle = @"比特易-领先的数字货币市场专业分析平台";
