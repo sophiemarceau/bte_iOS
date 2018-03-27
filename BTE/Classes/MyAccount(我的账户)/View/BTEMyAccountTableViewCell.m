@@ -139,10 +139,10 @@
     _detailLabel1.text = [NSString stringWithFormat:@"%@BTC",model.amount];
     _detailLabel2.text = [NSString stringWithFormat:@"%@BTC",model.currentAmount];
     
-    if ([model.ror integerValue] > 0) {
+    if ([model.ror floatValue] > 0) {
         _detailLabel3.text = [NSString stringWithFormat:@"+%@%%",model.ror];
         _detailLabel3.textColor = BHHexColor(@"1BAC75");
-    } else if ([model.ror integerValue] < 0)
+    } else if ([model.ror floatValue] < 0)
     {
         _detailLabel3.text = [NSString stringWithFormat:@"%@%%",model.ror];
         _detailLabel3.textColor = BHHexColor(@"FF6B28");

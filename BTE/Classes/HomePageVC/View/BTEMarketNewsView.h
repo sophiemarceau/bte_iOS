@@ -13,10 +13,11 @@
     HomeProductModel *_model;
     UIView *bgview;
     UIView *bgview1;
-    UIView *bgview2;
+//    UIView *bgview2;
     UIView *bgview3;
     UILabel *labelTitle;
     UILabel *labelTitle1;
+    UILabel *labelTitle2;
     float defaultHeight;//labelTitle1默认高度
     UIImageView *arrowImage;
 }

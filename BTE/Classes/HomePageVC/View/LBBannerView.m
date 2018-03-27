@@ -112,11 +112,22 @@
     tempModel.isShow = !tempModel.isShow;
     BTEMarketNewsView *imageView = (BTEMarketNewsView *)tap.view;
 
-    float currentHeight = self.height;
-    CGRect rect = [tempModel.content boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 32 - 2 - 32, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:UIFontRegularOfSize(14)} context:nil];
     
-    if (currentHeight < 44 + 16 + rect.size.height) {
-        currentHeight = 44 + 16 + rect.size.height;
+    float height;
+    
+    if ([tempModel.title isEqualToString:@""]) {
+        height = 38 + 16;
+    } else
+    {
+        height = 64 + 16;
+    }
+    
+    
+    float currentHeight = self.height;
+    CGRect rect = [tempModel.content boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 26 * 2 - 32, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:UIFontRegularOfSize(14)} context:nil];
+    
+    if (currentHeight < height + rect.size.height) {
+        currentHeight = height + rect.size.height;
     }
     if (_clickBlcok) _clickBlcok(currentHeight);
 //    imageView.height = currentHeight;

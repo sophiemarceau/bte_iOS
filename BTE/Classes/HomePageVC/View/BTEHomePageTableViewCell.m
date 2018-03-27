@@ -82,16 +82,16 @@
     _subTitleLabel2.text = model.trend;
     _subTitleLabel3.text = [NSString stringWithFormat:@"$%@",model.price];
     _subTitleLabel4.text = model.operation;
-    if ([model.change integerValue] > 0) {
+    if ([model.change floatValue] > 0) {
         _subTitleLabel5.text = [NSString stringWithFormat:@"+%.2f%%",[model.change floatValue]];
     } else
     {
         _subTitleLabel5.text = [NSString stringWithFormat:@"%.2f%%",[model.change floatValue]];
     }
 
-    if ([model.change integerValue] > 0) {
+    if ([model.change floatValue] > 0) {
         _buttonView.backgroundColor = BHHexColor(@"228B22");
-    } else if ([model.change integerValue] < 0)
+    } else if ([model.change floatValue] < 0)
     {
         _buttonView.backgroundColor = BHHexColor(@"FF4040");
     } else

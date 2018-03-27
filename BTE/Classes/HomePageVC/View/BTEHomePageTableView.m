@@ -21,9 +21,9 @@
         _homePageTableView.delegate = self;
         _homePageTableView.dataSource = self;
         defaultHeight = 68;
-        fixedHeight = 60;
+        fixedHeight = 52;
         btnHeight = 20;
-        defaultScrollHeight = 130;
+        defaultScrollHeight = 70 + 80;
         _isShow = NO;//初始化不展开
         [self addSubview:_homePageTableView];
         [self setTableHeadView];
@@ -87,7 +87,7 @@
 
 #pragma mark - tableViewDelegate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [_dataSource count] + 5;
+    return [_dataSource count] + 6;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -98,11 +98,16 @@
         return 72;
     } else if (indexPath.row == [_dataSource count] + 1)
     {
-        return [self cellHeight] + 16;
-    } else if (indexPath.row == [_dataSource count] + 2)
+        return [self cellHeight];
+    }
+    else if (indexPath.row == [_dataSource count] + 2)
+    {
+        return 16;
+    }
+    else if (indexPath.row == [_dataSource count] + 3)
     {
         return 53 + defaultScrollHeight + 16;
-    } else if (indexPath.row == [_dataSource count] + 3)
+    } else if (indexPath.row == [_dataSource count] + 4)
     {
         return 16;
     } else
@@ -114,7 +119,7 @@
 - (float)cellHeight
 {
     NSString * contentStr= descriptionModel.desc;
-    CGRect rect = [contentStr boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 64, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil];
+    CGRect rect = [contentStr boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 32, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil];
     if (rect.size.height > defaultHeight) {
         if (_isShow) {//是否展开
             return fixedHeight + btnHeight + rect.size.height;
@@ -129,7 +134,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0 || indexPath.row == [_dataSource count] + 3) {
+    if (indexPath.row == 0 || indexPath.row == [_dataSource count] + 2 || indexPath.row == [_dataSource count] + 4) {
         UITableViewCell *cell = [[UITableViewCell alloc] init];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.backgroundColor = KBGColor;
@@ -151,27 +156,27 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.backgroundColor = KBGCell;
         
-        UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(16, 16, SCREEN_WIDTH - 32, 168)];
+        UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(16, 0, SCREEN_WIDTH - 32, 168)];
         bgView.height = [self cellHeight];
-        bgView.backgroundColor = BHHexColor(@"F0F8FF");
+        bgView.backgroundColor = BHHexColor(@"fafafa");
         bgView.layer.masksToBounds = YES;
         bgView.layer.cornerRadius = 4;
         [cell.contentView addSubview:bgView];
         
-        UIImageView *image1 = [[UIImageView alloc] initWithFrame:CGRectMake(17, 26, 16, 16)];
+        UIImageView *image1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 22, 16, 16)];
         image1.image = [UIImage imageNamed:@"home_market analysis"];
         [bgView addSubview:image1];
         
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 24, 80, 20)];
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(24, 22, 80, 18)];
         titleLabel.text = @"市场分析";
-        titleLabel.font = UIFontRegularOfSize(18);
-        titleLabel.textColor = BHHexColor(@"292C33");
+        titleLabel.font = UIFontMediumOfSize(18);
+        titleLabel.textColor = BHHexColor(@"525866");
         [bgView addSubview:titleLabel];
         
         
         NSString * contentStr= descriptionModel.desc;
-        CGRect rect = [contentStr boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 64, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil];
-        UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(16, 60, SCREEN_WIDTH - 64, rect.size.height)];
+        CGRect rect = [contentStr boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 32, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil];
+        UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 52, SCREEN_WIDTH - 32, rect.size.height)];
         contentLabel.text = descriptionModel.desc;
         if (_isShow) {
             
@@ -197,7 +202,7 @@
         }
        
         return cell;
-    } else if (indexPath.row == [_dataSource count] + 2)
+    } else if (indexPath.row == [_dataSource count] + 3)
     {
         UITableViewCell *cell = [[UITableViewCell alloc] init];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -208,10 +213,10 @@
         image1.image = [UIImage imageNamed:@"home_Market news"];
         [cell.contentView addSubview:image1];
         
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 17, 80, 20)];
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 17, 80, 18)];
         titleLabel.text = @"市场快讯";
-        titleLabel.font = UIFontRegularOfSize(18);
-        titleLabel.textColor = BHHexColor(@"292C33");
+        titleLabel.font = UIFontMediumOfSize(18);
+        titleLabel.textColor = BHHexColor(@"525866");
         [cell.contentView addSubview:titleLabel];
         
         //创建轮播器控件

@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "home_retract.png",
+      "filename" : "home_shichangfenxi_retract.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "home_retract@2x.png",
+      "filename" : "home_shichangfenxi_retract@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "home_retract@3x.png",
+      "filename" : "home_shichangfenxi_retract@3x.png",
       "scale" : "3x"
     }
   ],
