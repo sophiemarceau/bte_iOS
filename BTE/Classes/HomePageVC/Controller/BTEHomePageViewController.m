@@ -13,12 +13,14 @@
 #import "HomeProductModel.h"
 #import "HomeProductInfoModel.h"
 #import "BTEHomeWebViewController.h"
+#import "BTECurrencyTypePickerView.h"
 @interface BTEHomePageViewController ()
 {
     HomeDescriptionModel *descriptionModel;
     NSArray *detailsList;
     NSArray *productList;
     HomeProductInfoModel *productInfoModel;
+    NSString *currentCurrencyType;//记录当前展示币种
 }
 //分享需要的参数
 @property (nonatomic, strong) NSString *shareImageUrl;
@@ -75,7 +77,7 @@
             descriptionModel = descModel;
             detailsList = [NSArray yy_modelArrayWithClass:[HomeDesListModel class] json:responseObject[@"data"][@"list"]];
             //刷新tableview
-            [weakSelf.homePageTableView refreshUi:detailsList productList:productList model1:descriptionModel model2:productInfoModel];
+            [weakSelf.homePageTableView refreshUi:detailsList productList:productList model1:descriptionModel model2:productInfoModel currentCurrencyType:currentCurrencyType];
         }
     } failure:^(NSError *error) {
         [weakSelf hudClose];
@@ -101,7 +103,7 @@
         if (IsSafeDictionary(responseObject)) {
             productList = [NSArray yy_modelArrayWithClass:[HomeProductModel class] json:responseObject[@"data"]];
             //刷新tableview
-            [weakSelf.homePageTableView refreshUi:detailsList productList:productList model1:descriptionModel model2:productInfoModel];
+            [weakSelf.homePageTableView refreshUi:detailsList productList:productList model1:descriptionModel model2:productInfoModel currentCurrencyType:currentCurrencyType];
         }
     } failure:^(NSError *error) {
         [weakSelf hudClose];
@@ -127,7 +129,7 @@
         if (IsSafeDictionary(responseObject)) {
             productInfoModel = [HomeProductInfoModel yy_modelWithDictionary:responseObject[@"data"]];
             //刷新tableview
-            [weakSelf.homePageTableView refreshUi:detailsList productList:productList model1:descriptionModel model2:productInfoModel];
+            [weakSelf.homePageTableView refreshUi:detailsList productList:productList model1:descriptionModel model2:productInfoModel currentCurrencyType:currentCurrencyType];
         }
     } failure:^(NSError *error) {
         [weakSelf hudClose];
@@ -144,7 +146,16 @@
     homePageVc.isHiddenBottom = NO;
     [self.navigationController pushViewController:homePageVc animated:YES];
 }
-
+- (void)doTapChange:(NSString *)name//选择币种
+{
+    WS(weakSelf)
+    [BTECurrencyTypePickerView provincePickerViewWithArray:detailsList WithProvince:name ProvinceBlock:^(NSInteger rowIndex) {
+        //获取最新的推荐列表
+        HomeDesListModel *tempModel = detailsList[rowIndex];
+        currentCurrencyType = tempModel.symbol;
+        [weakSelf getlatestsStatus];
+    }];
+}
 
 #pragma mark - 分享
 - (UIBarButtonItem *)creatRightBarItem {

@@ -35,7 +35,85 @@
 //设置头部视图
 - (void)setTableHeadView
 {
+    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 62)];
+    bgView.backgroundColor = BHHexColor(@"fafafa");
     
+    _iconImage = [[UIImageView alloc] initWithFrame:CGRectMake(16, 17, 18, 18)];
+    [_iconImage sd_setImageWithURL:[NSURL URLWithString:headModel.icon] placeholderImage:nil];
+    [bgView addSubview:_iconImage];
+    
+    _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(38, 17, 75, 18)];
+    _subTitleLabel1.text = [NSString stringWithFormat:@"%@行情",headModel.symbol];
+    _subTitleLabel1.font = UIFontMediumOfSize(18);
+    _subTitleLabel1.textColor = BHHexColor(@"525866");
+    [bgView addSubview:_subTitleLabel1];
+    
+    _iconImage1 = [[UIImageView alloc] initWithFrame:CGRectMake(117, 22, 18, 10)];
+    _iconImage1.image = [UIImage imageNamed:@"home_more"];
+    _iconImage1.userInteractionEnabled = YES;
+    //点击手势
+    UITapGestureRecognizer *r5 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(TapChange:)];
+    [_iconImage1 addGestureRecognizer:r5];
+
+    [bgView addSubview:_iconImage1];
+    
+    _subTitleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(16, 10, 110, 20)];
+    _subTitleLabel3.left = SCREEN_WIDTH - _subTitleLabel3.width - 16;
+    _subTitleLabel3.textAlignment = NSTextAlignmentRight;
+    _subTitleLabel3.text = [NSString stringWithFormat:@"$%@",headModel.price];
+    _subTitleLabel3.font = UIFontRegularOfSize(20);
+    _subTitleLabel3.textColor = BHHexColor(@"228B22");
+    [bgView addSubview:_subTitleLabel3];
+    
+    _buttonView = [[UIView alloc] initWithFrame:CGRectMake(0, 35, 50, 16)];
+    _buttonView.backgroundColor = [UIColor whiteColor];
+    _buttonView.layer.masksToBounds = YES;
+    _buttonView.layer.cornerRadius = 2;
+    _buttonView.right = SCREEN_WIDTH - 52;
+    [bgView addSubview:_buttonView];
+    
+    
+    _subTitleLabel5 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 16)];
+    _subTitleLabel5.text = @"-2.39%";
+    _subTitleLabel5.textAlignment = NSTextAlignmentCenter;
+    _subTitleLabel5.font = UIFontRegularOfSize(12);
+    _subTitleLabel5.textColor = BHHexColor(@"FFFFFF");
+    [_buttonView addSubview:_subTitleLabel5];
+    
+    
+    if ([headModel.change floatValue] > 0) {
+        _subTitleLabel5.text = [NSString stringWithFormat:@"+%.2f%%",[headModel.change floatValue]];
+    } else
+    {
+        _subTitleLabel5.text = [NSString stringWithFormat:@"%.2f%%",[headModel.change floatValue]];
+    }
+
+    if ([headModel.change floatValue] > 0) {
+        _buttonView.backgroundColor = BHHexColor(@"228B22");
+    } else if ([headModel.change floatValue] < 0)
+    {
+        _buttonView.backgroundColor = BHHexColor(@"FF4040");
+    } else
+    {
+        _buttonView.backgroundColor = BHHexColor(@"292C33");
+    }
+    
+    _subTitleLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(124, 38, 40, 12)];
+    _subTitleLabel4.alpha = 0.6;
+    _subTitleLabel4.text = @"(24h)";
+    _subTitleLabel4.textAlignment = NSTextAlignmentRight;
+    _subTitleLabel4.font = UIFontRegularOfSize(12);
+    _subTitleLabel4.textColor = BHHexColor(@"525866");
+    _subTitleLabel4.right = SCREEN_WIDTH - 21;
+    [bgView addSubview:_subTitleLabel4];
+    self.homePageTableView.tableHeaderView = bgView;
+}
+
+- (void)TapChange:(UITapGestureRecognizer *)taps
+{
+    if (self.delegate && headModel.symbol && [self.delegate respondsToSelector:@selector(doTapChange:)]) {
+        [self.delegate doTapChange:headModel.symbol];
+    }
 }
 
 //设置尾部视图
@@ -75,12 +153,20 @@
 }
 
 //刷新数据UI
--(void)refreshUi:(NSArray *)model productList:(NSArray *)productListModel model1:(HomeDescriptionModel *)DescriptionModel model2:(HomeProductInfoModel *)ProductInfoModel
+-(void)refreshUi:(NSArray *)model productList:(NSArray *)productListModel model1:(HomeDescriptionModel *)DescriptionModel model2:(HomeProductInfoModel *)ProductInfoModel currentCurrencyType:(NSString *)currentCurrencyType
 {
     _dataSource = model;
     productList = productListModel;
     descriptionModel = DescriptionModel;
     productInfoModel = ProductInfoModel;
+    headModel = model[0];//默认第一个
+    if (currentCurrencyType) {
+        for (HomeDesListModel *tempModel in model) {
+            if ([tempModel.symbol isEqualToString:currentCurrencyType]) {
+                headModel = tempModel;
+            }
+        }
+    }
     [self setTableHeadView];
     [self.homePageTableView reloadData];
 }
