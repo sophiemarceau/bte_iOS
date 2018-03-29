@@ -62,14 +62,14 @@
     [containView addSubview:toolBar];
     
     UIButton *cancleButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    cancleButton.frame = CGRectMake(13, (44 - 13) / 2, 13, 13);
+    cancleButton.frame = CGRectMake(0, 0, 44, 44);
     [cancleButton setImage:[UIImage imageNamed:@"close_pick"] forState:UIControlStateNormal];
     [cancleButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     cancleButton.tag = CZHAddressPickerViewButtonTypeCancle;
     [toolBar addSubview:cancleButton];
     
     UIButton *sureButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    sureButton.frame = CGRectMake(SCREEN_WIDTH - 13 - 18, (44 - 11) / 2, 18, 11);
+    sureButton.frame = CGRectMake(SCREEN_WIDTH - 36 - 6, (44 - 22) / 2, 36, 22);
     [sureButton setImage:[UIImage imageNamed:@"choose_pick"] forState:UIControlStateNormal];
     [sureButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     sureButton.tag = CZHAddressPickerViewButtonTypeSure;

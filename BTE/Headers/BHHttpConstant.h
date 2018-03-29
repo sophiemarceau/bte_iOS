@@ -13,13 +13,13 @@
 
 //数据库接口
 #if ONLION
-static NSString * const kDomain = @"http://m.biteye.org/";
+static NSString * const kDomain = @"http://m.bte.top/";
 #else
 static NSString * const kDomain = @"http://47.94.217.12:18081/";
 #endif
 //开发环境  web-王磊开发环境
 #if ONLION
-static NSString * const kHeader = @"http://m.biteye.org/";
+static NSString * const kHeader = @"http://m.bte.top/";
 #else
 //static NSString * const kHeader = @"http://192.168.24.135:3001/";
 static NSString * const kHeader = @"http://192.168.24.64:3001/";

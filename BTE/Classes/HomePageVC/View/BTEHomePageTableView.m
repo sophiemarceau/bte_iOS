@@ -26,7 +26,6 @@
         defaultScrollHeight = 70 + 80;
         _isShow = NO;//初始化不展开
         [self addSubview:_homePageTableView];
-        [self setTableHeadView];
         [self setTableFooterView];
     }
     return self;
@@ -44,23 +43,22 @@
     
     _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(38, 17, 75, 18)];
     _subTitleLabel1.text = [NSString stringWithFormat:@"%@行情",headModel.symbol];
+    
     _subTitleLabel1.font = UIFontMediumOfSize(18);
     _subTitleLabel1.textColor = BHHexColor(@"525866");
     [bgView addSubview:_subTitleLabel1];
-    
-    _iconImage1 = [[UIImageView alloc] initWithFrame:CGRectMake(117, 22, 18, 10)];
-    _iconImage1.image = [UIImage imageNamed:@"home_more"];
-    _iconImage1.userInteractionEnabled = YES;
-    //点击手势
-    UITapGestureRecognizer *r5 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(TapChange:)];
-    [_iconImage1 addGestureRecognizer:r5];
 
-    [bgView addSubview:_iconImage1];
+    UIButton *sureButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    sureButton.frame = CGRectMake(117, 17, 36, 20);
+    [sureButton setImage:[UIImage imageNamed:@"home_more"] forState:UIControlStateNormal];
+    [sureButton addTarget:self action:@selector(TapChange:) forControlEvents:UIControlEventTouchUpInside];
+    [bgView addSubview:sureButton];
     
     _subTitleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(16, 10, 110, 20)];
     _subTitleLabel3.left = SCREEN_WIDTH - _subTitleLabel3.width - 16;
     _subTitleLabel3.textAlignment = NSTextAlignmentRight;
     _subTitleLabel3.text = [NSString stringWithFormat:@"$%@",headModel.price];
+    
     _subTitleLabel3.font = UIFontRegularOfSize(20);
     _subTitleLabel3.textColor = BHHexColor(@"228B22");
     [bgView addSubview:_subTitleLabel3];
@@ -167,7 +165,9 @@
             }
         }
     }
-    [self setTableHeadView];
+    if (headModel) {
+        [self setTableHeadView];
+    }
     [self.homePageTableView reloadData];
 }
 
