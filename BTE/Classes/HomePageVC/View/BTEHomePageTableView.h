@@ -33,6 +33,14 @@
     
 }
 @property (nonatomic,retain) UITableView *homePageTableView;//市场分析视图
+/**
+ 加载的webView
+ */
+@property (nonatomic, strong) UIWebView * webView;
+/**
+ 加载的URL
+ */
+@property (nonatomic, copy)NSString * urlString;
 @property(nonatomic,weak) id <HomePageTableViewDelegate>delegate;
 
 @property(nonatomic, strong) UIImageView *iconImage;//图片

@@ -34,7 +34,7 @@
 //设置头部视图
 - (void)setTableHeadView
 {
-    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 62)];
+    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 62 + 160)];
     bgView.backgroundColor = BHHexColor(@"fafafa");
     
     _iconImage = [[UIImageView alloc] initWithFrame:CGRectMake(16, 17, 18, 18)];
@@ -104,7 +104,33 @@
     _subTitleLabel4.textColor = BHHexColor(@"525866");
     _subTitleLabel4.right = SCREEN_WIDTH - 21;
     [bgView addSubview:_subTitleLabel4];
+    
+    self.urlString = @"http://192.168.24.135:3001/wechat/index";
+    [bgView addSubview:self.webView];
     self.homePageTableView.tableHeaderView = bgView;
+}
+
+#pragma mark - webView
+- (UIWebView *)webView {
+    if (!_webView) {
+        _webView = [[UIWebView alloc]initWithFrame:CGRectMake(0,62,SCREEN_WIDTH,160)];
+        _webView.backgroundColor = KBGColor;
+        //添加观察者
+//        if (self.isAllowTitle) {
+//            [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
+//        }
+        //请求
+        if (self.urlString || ![self.urlString isEqualToString:@""]) {
+            NSURL *URL = [NSURL URLWithString:self.urlString];
+            NSURLRequest *request = [NSURLRequest requestWithURL:URL cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30];
+            [_webView loadRequest:request];
+        }
+//        if (!self.longPressGestureEnabled) {
+//            [_webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitUserSelect='none';"];
+//            [_webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitTouchCallout='none';"];
+//        }
+    }
+    return _webView;
 }
 
 - (void)TapChange:(UITapGestureRecognizer *)taps
