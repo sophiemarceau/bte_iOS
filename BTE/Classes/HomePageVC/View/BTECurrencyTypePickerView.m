@@ -146,15 +146,86 @@
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
 {
-    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width / 3, 30)];
-    label.adjustsFontSizeToFitWidth = YES;
-    label.textAlignment = NSTextAlignmentCenter;
-    if (component == 0) {
-        HomeDesListModel *tempModel = self.provinceArray[row];
-        label.text = tempModel.symbol;
+    //设置分割线的颜色
+    for(UIView *singleLine in pickerView.subviews)
+    {
+        if (singleLine.frame.size.height < 1)
+        {
+            singleLine.backgroundColor = BHHexColor(@"E6EBF0");
+        }
     }
-    return label;
+    //修改选中行背景色
+//    NSArray *subviews = self.pickerView.subviews;
+//    NSArray *coloms = subviews.firstObject;
+//    if (coloms) {
+//        NSArray *subviewCache = [coloms valueForKey:@"subviewCache"];
+//        if (subviewCache.count > 0) {
+//            UIView *middleContainerView = [subviewCache.firstObject valueForKey:@"middleContainerView"];
+//            if (middleContainerView) {
+//                middleContainerView.backgroundColor = [UIColor clearColor];
+//            }
+//        }
+//    }
+    
+    
+    UILabel* pickerLabel = (UILabel*)view;
+    if (!pickerLabel){
+        pickerLabel = [[UILabel alloc] init];
+        // Setup label properties - frame, font, colors etc
+        //adjustsFontSizeToFitWidth property to YES
+        pickerLabel.backgroundColor = [UIColor clearColor];
+//        pickerLabel.textColor = BHHexColor(@"525866");
+        pickerLabel.font = UIFontMediumOfSize(20);
+        pickerLabel.alpha = 0.8;
+    }
+    // Fill the label text here
+    HomeDesListModel *tempModel = self.provinceArray[row];
+    pickerLabel.text = tempModel.symbol;
+    pickerLabel.textAlignment = NSTextAlignmentCenter;
+    return pickerLabel;
+    
+    
+    
+//    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width / 3, 30)];
+////    label.adjustsFontSizeToFitWidth = YES;
+//    label.textColor = BHHexColor(@"525866");
+//    label.font = UIFontMediumOfSize(20);
+//    label.textAlignment = NSTextAlignmentCenter;
+//    if (component == 0) {
+//        HomeDesListModel *tempModel = self.provinceArray[row];
+//        label.text = tempModel.symbol;
+//    }
+    
+//    if (self.selectProvinceIndex == row) {
+////        label.textColor = BHHexColor(@"525866");
+////        label.font = UIFontMediumOfSize(20);
+//        label.attributedText
+//        = [self pickerView:pickerView attributedTitleForRow:row forComponent:component];
+//    } else
+//    {
+//        HomeDesListModel *tempModel = self.provinceArray[row];
+//       label.text = tempModel.symbol;
+//       label.textColor = BHHexColor(@"525866");
+//        label.font = UIFontRegularOfSize(18);
+//    }
+    
+//    return label;
 }
+
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    NSString *titleString;
+    if (row == self.selectProvinceIndex) {
+        titleString = self.selectProvince;
+    }
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:titleString];
+    NSRange range = [titleString rangeOfString:titleString];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:BHHexColor(@"525866") range:range];
+    
+    return attributedString;
+}
+
+
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
@@ -162,6 +233,7 @@
         self.selectProvinceIndex = row;
         HomeDesListModel *tempModel = self.provinceArray[row];
         self.selectProvince = tempModel.symbol;
+//        [self.pickerView reloadAllComponents];   //修改选中字体属性 一定要写这句
     }
 }
 
