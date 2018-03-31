@@ -69,7 +69,7 @@
         
     } else
     {
-        _titleLabel.text = @"登录";
+        _titleLabel.text = @"点击登录";
         _titleLabel.font = UIFontRegularOfSize(20);
         _titleLabel.textColor = BHHexColor(@"ffffff");
         _titleLabel.frame = CGRectMake(70, 70, 100, 20);
@@ -105,7 +105,7 @@
         _detailLabel3.text = [NSString stringWithFormat:@"$%@",legalAccountModel.legalBalance];
     } else
     {
-        _detailLabel3.text = @"$0";
+        _detailLabel3.text = @"--";
     }
     _detailLabel3.font = [UIFont systemFontOfSize:20];
     _detailLabel3.textColor = BHHexColor(@"ffffff");
@@ -116,7 +116,7 @@
         _detailLabel4.text = [NSString stringWithFormat:@"%@($%@)",btcAccountModel.balance,btcAccountModel.legalBalance];
     } else
     {
-        _detailLabel4.text = @"$0";
+        _detailLabel4.text = @"--";
     }
     _detailLabel4.font = [UIFont systemFontOfSize:20];
     _detailLabel4.textColor = BHHexColor(@"ffffff");
