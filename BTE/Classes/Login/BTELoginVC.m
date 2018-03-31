@@ -67,6 +67,7 @@ typedef NS_ENUM(NSInteger, LoginType) {
  提醒重置密码文案
  */
 @property (weak, nonatomic) IBOutlet UILabel *resetPwdLabel;
+@property (weak, nonatomic) IBOutlet UILabel *adLabel;//广告文案label
 
 @end
 
@@ -227,6 +228,7 @@ typedef NS_ENUM(NSInteger, LoginType) {
         [self.loginBtn setTitle:@"确定" forState:UIControlStateNormal];
         self.accountWidthContrstraint.constant = -72;
         self.resetPwdLabel.hidden = NO;
+        self.adLabel.hidden = YES;
         //置灰登录按钮
         [self changeLoginEnabled:NO];
         if ([self.accountTextField canBecomeFirstResponder]) {

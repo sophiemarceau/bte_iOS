@@ -9,7 +9,7 @@
 #ifndef BHHttpConstant_h
 #define BHHttpConstant_h
 
-#define ONLION 0
+#define ONLION 1
 
 //数据库接口
 #if ONLION
@@ -66,6 +66,8 @@ static NSString * const kHeader = @"http://192.168.24.64:3001/";
 
 //账户基本信息
 #define kAcountInfo [NSString stringWithFormat:@"%@%@",kDomain,@"app/api/account/info"]
+//获取当前账户电话号码
+#define kAcountPhoneNum [NSString stringWithFormat:@"%@%@",kDomain,@"app/api/user/info"]
 //获取当前跟投信息
 #define kAcountHoldInfo [NSString stringWithFormat:@"%@%@",kDomain,@"app/api/account/hold"]
 //获取当前跟投份额信息

@@ -22,7 +22,7 @@
 @end
 @interface BTEMyAccountTableView : UIView<UITableViewDelegate,UITableViewDataSource,JumpToDetailDelegate,UIScrollViewDelegate>
 {
-    BTEAllAmountModel *amountModel;
+    NSString *amountModel;
     BTELegalAccount *legalAccountModel;
     BTEBtcAccount *btcAccountModel;
     BTEStatisticsModel *statisticsModel;
@@ -45,5 +45,5 @@
 @property(nonatomic, strong) UILabel *lineLabel1;//下划线
 @property(nonatomic, strong) UILabel *lineLabel2;//下划线
 //刷新数据UI
--(void)refreshUi:(NSArray *)model model1:(BTEAllAmountModel *)allAmountModel model2:(BTELegalAccount *)legalAccount model3:(BTEBtcAccount *)btcAccount model4:(BTEStatisticsModel *)statisticModel type:(NSInteger)typeValue islogin:(BOOL)islogin;
+-(void)refreshUi:(NSArray *)model model1:(NSString *)allAmountModel model2:(BTELegalAccount *)legalAccount model3:(BTEBtcAccount *)btcAccount model4:(BTEStatisticsModel *)statisticModel type:(NSInteger)typeValue islogin:(BOOL)islogin;
 @end

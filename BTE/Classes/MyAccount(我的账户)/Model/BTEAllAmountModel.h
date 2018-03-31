@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface BTEAllAmountModel : NSObject
-@property(nonatomic,copy)NSString * allAmount;//账户余额
+@property(nonatomic,copy)NSString * message;//电话号码
 @end

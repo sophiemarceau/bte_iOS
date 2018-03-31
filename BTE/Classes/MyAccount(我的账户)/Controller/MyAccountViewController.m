@@ -16,10 +16,11 @@
 #import "BTELoginVC.h"
 @interface MyAccountViewController ()<MyAccountTableViewDelegate,UIAlertViewDelegate>
 {
-    BTEAllAmountModel *amountModel;
+    NSString *amountModel;
     BTELegalAccount *legalAccountModel;
     BTEBtcAccount *btcAccountModel;
     BTEStatisticsModel *statisticsModel;
+    NSArray *detailsList;
     //设置状态栏颜色
     UIView *_statusBarView;
     BOOL _islogin;
@@ -63,8 +64,7 @@
         if (IsSafeDictionary(responseObject) && [[responseObject objectForKey:@"data"] integerValue] == 0) {//未登录
             _islogin = NO;
             //刷新tableview
-            [weakSelf.myAccountTableView refreshUi:nil model1:amountModel model2:legalAccountModel model3:btcAccountModel model4:statisticsModel type:1 islogin:_islogin];
-            weakSelf.myAccountTableView.myAccountTableView.tableFooterView = nil;
+            [weakSelf.myAccountTableView refreshUi:nil model1:nil model2:nil model3:nil model4:nil type:1 islogin:_islogin];
         } else if (IsSafeDictionary(responseObject) && [[responseObject objectForKey:@"data"] integerValue] == 1)//已登录
         {
             //获取账户基本信息
@@ -84,6 +84,7 @@
         if (isComplete) {
             //登录成功刷新我的账户页面
             //获取账户基本信息
+            _islogin = YES;
             [weakSelf getMyAccountInfo];
         } else
         {
@@ -166,10 +167,10 @@
         [weakSelf hudClose];
         //登录成功并获取到了账户信息
         self.isloginAndGetMyAccountInfo = @"1";
-        amountModel = [BTEAllAmountModel yy_modelWithDictionary:responseObject[@"data"]];
         legalAccountModel = [BTELegalAccount yy_modelWithDictionary:responseObject[@"data"][@"legalAccount"]];
         btcAccountModel = [BTEBtcAccount yy_modelWithDictionary:responseObject[@"data"][@"btcAccount"]];
         [weakSelf getMyAccountCurrentInfo];
+        [weakSelf getMyAccountCurrentPhone];
     } failure:^(NSError *error) {
         [weakSelf hudClose];
         self.isloginAndGetMyAccountInfo = @"0";
@@ -181,8 +182,11 @@
 {
     NSMutableDictionary * pramaDic = @{}.mutableCopy;
     NSString * methodName = @"";
-    if (User.userToken) {
+    if (User.userToken && ![User.userToken isEqualToString:@""]) {
         [pramaDic setObject:User.userToken forKey:@"bte-token"];
+    } else
+    {
+        return;
     }
     methodName = kAcountHoldInfo;
     
@@ -191,7 +195,34 @@
     [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
         [weakSelf hudClose];
         statisticsModel = [BTEStatisticsModel yy_modelWithDictionary:responseObject[@"data"][@"statistics"]];
-        NSArray *detailsList = [NSArray yy_modelArrayWithClass:[BTEAccountDetailsModel class] json:responseObject[@"data"][@"details"]];
+        detailsList = [NSArray yy_modelArrayWithClass:[BTEAccountDetailsModel class] json:responseObject[@"data"][@"details"]];
+        //刷新tableview
+        [weakSelf.myAccountTableView refreshUi:detailsList model1:amountModel model2:legalAccountModel model3:btcAccountModel model4:statisticsModel type:1 islogin:_islogin];
+    } failure:^(NSError *error) {
+        [weakSelf hudClose];
+        RequestError(error);
+    }];
+}
+
+#pragma mark -获取当前账户电话号码
+- (void)getMyAccountCurrentPhone
+{
+    NSMutableDictionary * pramaDic = @{}.mutableCopy;
+    NSString * methodName = @"";
+    if (User.userToken && ![User.userToken isEqualToString:@""]) {
+        [pramaDic setObject:User.userToken forKey:@"bte-token"];
+    } else
+    {
+        return;
+    }
+    methodName = kAcountPhoneNum;
+    
+    WS(weakSelf)
+    [self hudShow:self.view msg:@"请稍后"];
+    [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
+        [weakSelf hudClose];
+        NSLog(@"-----------%@",responseObject[@"data"][@"tel"]);
+        amountModel = responseObject[@"data"][@"tel"];
         //刷新tableview
         [weakSelf.myAccountTableView refreshUi:detailsList model1:amountModel model2:legalAccountModel model3:btcAccountModel model4:statisticsModel type:1 islogin:_islogin];
     } failure:^(NSError *error) {
@@ -216,7 +247,7 @@
     [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
         [weakSelf hudClose];
         statisticsModel = [BTEStatisticsModel yy_modelWithDictionary:responseObject[@"data"][@"statistics"]];
-        NSArray *detailsList = [NSArray yy_modelArrayWithClass:[BTEAccountDetailsModel class] json:responseObject[@"data"][@"details"]];
+        detailsList = [NSArray yy_modelArrayWithClass:[BTEAccountDetailsModel class] json:responseObject[@"data"][@"details"]];
         //刷新tableview
         [weakSelf.myAccountTableView refreshUi:detailsList model1:amountModel model2:legalAccountModel model3:btcAccountModel model4:statisticsModel type:2 islogin:_islogin];
     } failure:^(NSError *error) {

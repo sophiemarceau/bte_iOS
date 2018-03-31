@@ -41,7 +41,7 @@
     labelRefresh.hidden = YES;
     [headView addSubview:labelRefresh];
     
-    UIImageView *iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(16, 58, 42, 42)];
+    UIImageView *iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(16, 58, 46, 46)];
     iconImageView.image = [UIImage imageNamed:@"bte_logo_account"];
     [headView addSubview:iconImageView];
     
@@ -62,7 +62,7 @@
         _titleLabel.frame = CGRectMake(70, 62, 100, 13);
         
         _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(70, 82, 150, 18)];
-        _subTitleLabel1.text = @"188 8888 8888";
+        _subTitleLabel1.text = amountModel;
         _subTitleLabel1.font = UIFontRegularOfSize(18);
         _subTitleLabel1.textColor = BHHexColor(@"ffffff");
         [headView addSubview:_subTitleLabel1];
@@ -87,7 +87,7 @@
     _detailLabel1.alpha = 0.8;
     [headView addSubview:_detailLabel1];
     
-    UIView *vicLine = [[UIView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 2) / 2, 119.5, 2, 32)];
+    UIView *vicLine = [[UIView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 2) / 2, 137, 2, 32)];
     vicLine.backgroundColor = BHHexColor(@"ffffff");
     vicLine.alpha = 0.6;
     [headView addSubview:vicLine];
@@ -244,7 +244,7 @@
 }
 
 //刷新数据UI
--(void)refreshUi:(NSArray *)model model1:(BTEAllAmountModel *)allAmountModel model2:(BTELegalAccount *)legalAccount model3:(BTEBtcAccount *)btcAccount model4:(BTEStatisticsModel *)statisticModel type:(NSInteger)typeValue islogin:(BOOL)islogin;
+-(void)refreshUi:(NSArray *)model model1:(NSString *)allAmountModel model2:(BTELegalAccount *)legalAccount model3:(BTEBtcAccount *)btcAccount model4:(BTEStatisticsModel *)statisticModel type:(NSInteger)typeValue islogin:(BOOL)islogin;
 {
     _dataSource = model;
     amountModel = allAmountModel;
@@ -254,8 +254,15 @@
     type = typeValue;
     _islogin = islogin;
     [self setTableHeadView];
-    [self setTableFooterView];
+    if (_islogin) {
+        [self setTableFooterView];
+    } else
+    {
+        self.myAccountTableView.tableFooterView = nil;
+    }
+    
     [self.myAccountTableView reloadData];
+//    [self.myAccountTableView setContentOffset:CGPointMake(0,0)animated:YES];
 }
 
 
@@ -267,7 +274,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
         if (_dataSource.count == 0) {
-            return SCREEN_HEIGHT - TAB_BAR_HEIGHT - tableView.tableHeaderView.height;
+            return SCREEN_HEIGHT - TAB_BAR_HEIGHT - 197 - 16 - 48;
         }
         return 78;
     } else
@@ -309,7 +316,13 @@
         
         UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(175, label.top, label.width, label.height)];
         label2.font = UIFontRegularOfSize(12);
-        label2.text = @"当前额";
+        if (type == 2) {
+            label2.text = @"退出额";
+        } else
+        {
+            label2.text = @"当前额";
+        }
+        
         label2.textAlignment = NSTextAlignmentCenter;
         label2.centerX = SCREEN_WIDTH / 2;
         label2.textColor = BHHexColor(@"9CA1A9");
