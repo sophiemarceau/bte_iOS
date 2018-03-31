@@ -74,7 +74,8 @@ typedef NS_ENUM(NSInteger, LoginType) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self customtitleView];
+    self.title = @"登录";
+//    [self customtitleView];
     self.navigationItem.leftBarButtonItem = [self createLeftBarItem];
     [self changeSendCodeEnabled:NO];
     self.circularBar.delegate = self;

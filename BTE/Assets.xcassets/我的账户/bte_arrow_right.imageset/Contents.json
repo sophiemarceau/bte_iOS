@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "gengduo.png",
+      "filename" : "My Account_more.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "gengduo@2x.png",
+      "filename" : "My Account_more@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "gengduo@3x.png",
+      "filename" : "My Account_more@3x.png",
       "scale" : "3x"
     }
   ],

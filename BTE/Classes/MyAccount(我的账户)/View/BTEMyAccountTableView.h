@@ -18,6 +18,7 @@
 -(void)switchButton:(NSInteger)type;//type 1 当前跟投 2 已结束策略
 -(void)logout;//退出登录
 -(void)jumpToDetails:(NSString *)productId;//
+-(void)doTapChange;
 @end
 @interface BTEMyAccountTableView : UIView<UITableViewDelegate,UITableViewDataSource,JumpToDetailDelegate,UIScrollViewDelegate>
 {
@@ -28,6 +29,7 @@
     NSInteger type;//1 当前跟投 2结束跟投
     UIImageView *bgImageView;
     UILabel *labelRefresh;
+    BOOL _islogin;//是否登录
 }
 @property (nonatomic,retain) UITableView *myAccountTableView;//我的账户视图
 @property(nonatomic,weak) id <MyAccountTableViewDelegate>delegate;
@@ -43,5 +45,5 @@
 @property(nonatomic, strong) UILabel *lineLabel1;//下划线
 @property(nonatomic, strong) UILabel *lineLabel2;//下划线
 //刷新数据UI
--(void)refreshUi:(NSArray *)model model1:(BTEAllAmountModel *)allAmountModel model2:(BTELegalAccount *)legalAccount model3:(BTEBtcAccount *)btcAccount model4:(BTEStatisticsModel *)statisticModel type:(NSInteger)typeValue;
+-(void)refreshUi:(NSArray *)model model1:(BTEAllAmountModel *)allAmountModel model2:(BTELegalAccount *)legalAccount model3:(BTEBtcAccount *)btcAccount model4:(BTEStatisticsModel *)statisticModel type:(NSInteger)typeValue islogin:(BOOL)islogin;
 @end

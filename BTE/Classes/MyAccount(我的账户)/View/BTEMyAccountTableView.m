@@ -19,9 +19,6 @@
         _myAccountTableView.delegate = self;
         _myAccountTableView.dataSource = self;
         [self addSubview:_myAccountTableView];
-        [self setTableHeadView];
-        [self setTableFooterView];
-//        [self.myAccountTableView reloadData];
     }
     return self;
 }
@@ -29,10 +26,10 @@
 //设置头部视图
 - (void)setTableHeadView
 {
-    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 160 + 101)];
+    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 197 + 16 + 48)];
     headView.backgroundColor = KBGColor;
     
-    bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 160)];
+    bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 197)];
     bgImageView.image = [UIImage imageNamed:@"pic_account_bg"];
     [headView addSubview:bgImageView];
     
@@ -44,11 +41,11 @@
     labelRefresh.hidden = YES;
     [headView addSubview:labelRefresh];
     
-    UIImageView *iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(16, 7, 32, 32)];
+    UIImageView *iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(16, 58, 42, 42)];
     iconImageView.image = [UIImage imageNamed:@"bte_logo_account"];
     [headView addSubview:iconImageView];
     
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 12, SCREEN_WIDTH - 100, 20)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 16, SCREEN_WIDTH - 100, 20)];
     titleLabel.text = @"我的账户";
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.font = UIFontRegularOfSize(18);
@@ -57,77 +54,82 @@
     
     
     _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 24 + 30, SCREEN_WIDTH, 14)];
-    _titleLabel.text = @"账户可用余额（合计）";
-    _titleLabel.textAlignment = NSTextAlignmentCenter;
-    _titleLabel.font = UIFontRegularOfSize(12);
-    _titleLabel.textColor = BHHexColor(@"ffffff");
-    [headView addSubview:_titleLabel];
-    
-    _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 51 + 30, SCREEN_WIDTH, 24)];
-    if (amountModel.allAmount) {
-        _subTitleLabel1.text = [NSString stringWithFormat:@"$%@",amountModel.allAmount];
+    if (_islogin) {
+        _titleLabel.text = @"比特易";
+        _titleLabel.font = UIFontRegularOfSize(13);
+        _titleLabel.textColor = BHHexColor(@"ffffff");
+        _titleLabel.alpha = 0.8;
+        _titleLabel.frame = CGRectMake(70, 62, 100, 13);
+        
+        _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(70, 82, 150, 18)];
+        _subTitleLabel1.text = @"188 8888 8888";
+        _subTitleLabel1.font = UIFontRegularOfSize(18);
+        _subTitleLabel1.textColor = BHHexColor(@"ffffff");
+        [headView addSubview:_subTitleLabel1];
+        
     } else
     {
-        _subTitleLabel1.text = @"$0";
+        _titleLabel.text = @"登录";
+        _titleLabel.font = UIFontRegularOfSize(20);
+        _titleLabel.textColor = BHHexColor(@"ffffff");
+        _titleLabel.frame = CGRectMake(70, 70, 100, 20);
+        _titleLabel.userInteractionEnabled = YES;
+        //点击手势
+        UITapGestureRecognizer *r5 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doTapChange)];
+        [_titleLabel addGestureRecognizer:r5];
     }
-    _subTitleLabel1.textAlignment = NSTextAlignmentCenter;
-    _subTitleLabel1.font = UIFontRegularOfSize(30);
-    _subTitleLabel1.textColor = BHHexColor(@"ffffff");
-    [headView addSubview:_subTitleLabel1];
+    [headView addSubview:_titleLabel];
     
-    UIView *headWhiteBgView = [[UIView alloc] initWithFrame:CGRectMake(12, 0, SCREEN_WIDTH - 12 * 2, 82)];
-    headWhiteBgView.backgroundColor = [UIColor whiteColor];
-    headWhiteBgView.centerY = bgImageView.bottom;
-    headWhiteBgView.layer.masksToBounds = YES;
-    headWhiteBgView.layer.cornerRadius = 5;
-    [headView addSubview:headWhiteBgView];
-    
-    
-    _detailLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, headWhiteBgView.width / 2, 20)];
+    _detailLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 129, 100, 13)];
     _detailLabel1.text = @"美元";
-    _detailLabel1.font = UIFontRegularOfSize(14);
-    _detailLabel1.textColor = BHHexColor(@"292C33");
-    _detailLabel1.textAlignment = NSTextAlignmentCenter;
-    [headWhiteBgView addSubview:_detailLabel1];
+    _detailLabel1.font = UIFontRegularOfSize(13);
+    _detailLabel1.textColor = BHHexColor(@"ffffff");
+    _detailLabel1.alpha = 0.8;
+    [headView addSubview:_detailLabel1];
     
-    _detailLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, _detailLabel1.width, 20)];
+    UIView *vicLine = [[UIView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 2) / 2, 119.5, 2, 32)];
+    vicLine.backgroundColor = BHHexColor(@"ffffff");
+    vicLine.alpha = 0.6;
+    [headView addSubview:vicLine];
+    
+    _detailLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(0, _detailLabel1.top, _detailLabel1.width, _detailLabel1.height)];
     _detailLabel2.text = @"BTC";
-    _detailLabel2.left = _detailLabel1.right;
-    _detailLabel2.textAlignment = NSTextAlignmentCenter;
-    _detailLabel2.font = UIFontRegularOfSize(14);
-    _detailLabel2.textColor = BHHexColor(@"292C33");
-    [headWhiteBgView addSubview:_detailLabel2];
+    _detailLabel2.left = vicLine.right + 24;
+    _detailLabel2.font = UIFontRegularOfSize(13);
+    _detailLabel2.alpha = 0.8;
+    _detailLabel2.textColor = BHHexColor(@"ffffff");
+    [headView addSubview:_detailLabel2];
     
-    _detailLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, _detailLabel1.width, 24)];
+    _detailLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(_detailLabel1.left, _detailLabel1.bottom + 8, _detailLabel1.width, 20)];
     if (legalAccountModel.legalBalance) {
         _detailLabel3.text = [NSString stringWithFormat:@"$%@",legalAccountModel.legalBalance];
     } else
     {
         _detailLabel3.text = @"$0";
     }
-    _detailLabel3.textAlignment = NSTextAlignmentCenter;
     _detailLabel3.font = [UIFont systemFontOfSize:20];
-    _detailLabel3.textColor = BHHexColor(@"44A0F1");
-    [headWhiteBgView addSubview:_detailLabel3];
+    _detailLabel3.textColor = BHHexColor(@"ffffff");
+    [headView addSubview:_detailLabel3];
     
-    _detailLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, _detailLabel1.width, 24)];
+    _detailLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(_detailLabel2.left, _detailLabel3.top, _detailLabel1.width, 20)];
     if (btcAccountModel.balance) {
         _detailLabel4.text = [NSString stringWithFormat:@"%@($%@)",btcAccountModel.balance,btcAccountModel.legalBalance];
     } else
     {
         _detailLabel4.text = @"$0";
     }
-    _detailLabel4.left = _detailLabel3.right;
-    _detailLabel4.textAlignment = NSTextAlignmentCenter;
     _detailLabel4.font = [UIFont systemFontOfSize:20];
-    _detailLabel4.textColor = BHHexColor(@"44A0F1");
-    [headWhiteBgView addSubview:_detailLabel4];
-    
-    
-    
-    UIView *headButtonWhiteBgView = [[UIView alloc] initWithFrame:CGRectMake(0, headView.height - 47, SCREEN_WIDTH, 44)];
-    headButtonWhiteBgView.backgroundColor = [UIColor whiteColor];
+    _detailLabel4.textColor = BHHexColor(@"ffffff");
+    [headView addSubview:_detailLabel4];
+
+    UIView *headButtonWhiteBgView = [[UIView alloc] initWithFrame:CGRectMake(0, headView.height - 47, SCREEN_WIDTH, 48)];
+    headButtonWhiteBgView.backgroundColor = BHHexColor(@"fafafa");
     [headView addSubview:headButtonWhiteBgView];
+    
+    UIView *horiLine = [[UIView alloc] initWithFrame:CGRectMake(0, headView.height - 1, SCREEN_WIDTH, 1)];
+    horiLine.backgroundColor = KBGColor;
+    [headView addSubview:horiLine];
+    
     
     _commitButton1 = [UIButton buttonWithType:UIButtonTypeCustom];
     _commitButton1.frame = CGRectMake(0, 0, SCREEN_WIDTH / 2, 41);
@@ -174,6 +176,13 @@
     
     
     self.myAccountTableView.tableHeaderView = headView;
+}
+
+-(void)doTapChange
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(doTapChange)]) {
+        [self.delegate doTapChange];
+    }
 }
 
 //设置尾部视图
@@ -235,7 +244,7 @@
 }
 
 //刷新数据UI
--(void)refreshUi:(NSArray *)model model1:(BTEAllAmountModel *)allAmountModel model2:(BTELegalAccount *)legalAccount model3:(BTEBtcAccount *)btcAccount model4:(BTEStatisticsModel *)statisticModel type:(NSInteger)typeValue;
+-(void)refreshUi:(NSArray *)model model1:(BTEAllAmountModel *)allAmountModel model2:(BTELegalAccount *)legalAccount model3:(BTEBtcAccount *)btcAccount model4:(BTEStatisticsModel *)statisticModel type:(NSInteger)typeValue islogin:(BOOL)islogin;
 {
     _dataSource = model;
     amountModel = allAmountModel;
@@ -243,7 +252,9 @@
     btcAccountModel = btcAccount;
     statisticsModel = statisticModel;
     type = typeValue;
+    _islogin = islogin;
     [self setTableHeadView];
+    [self setTableFooterView];
     [self.myAccountTableView reloadData];
 }
 
@@ -256,7 +267,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
         if (_dataSource.count == 0) {
-            return 240;
+            return SCREEN_HEIGHT - TAB_BAR_HEIGHT - tableView.tableHeaderView.height;
         }
         return 78;
     } else
@@ -386,7 +397,7 @@
         CGRect rect = bgImageView.frame;
         //我们只需要改变图片的y值和高度即可
         rect.origin.y = offset.y;
-        rect.size.height = 160 - offset.y;
+        rect.size.height = 197 - offset.y;
         bgImageView.frame = rect;
         if (offset.y < -30) {
             labelRefresh.hidden = NO;

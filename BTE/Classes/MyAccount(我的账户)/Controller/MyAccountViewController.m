@@ -22,6 +22,7 @@
     BTEStatisticsModel *statisticsModel;
     //设置状态栏颜色
     UIView *_statusBarView;
+    BOOL _islogin;
 }
 @end
 
@@ -60,20 +61,15 @@
     [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
         [weakSelf hudClose];
         if (IsSafeDictionary(responseObject) && [[responseObject objectForKey:@"data"] integerValue] == 0) {//未登录
-            [BTELoginVC OpenLogin:self callback:^(BOOL isComplete) {
-                if (isComplete) {
-                    //登录成功刷新我的账户页面
-                    //获取账户基本信息
-                    [weakSelf getMyAccountInfo];
-                } else
-                {
-                    [self.tabBarController setSelectedIndex:0];
-                }
-            }];
+            _islogin = NO;
+            //刷新tableview
+            [weakSelf.myAccountTableView refreshUi:nil model1:amountModel model2:legalAccountModel model3:btcAccountModel model4:statisticsModel type:1 islogin:_islogin];
+            weakSelf.myAccountTableView.myAccountTableView.tableFooterView = nil;
         } else if (IsSafeDictionary(responseObject) && [[responseObject objectForKey:@"data"] integerValue] == 1)//已登录
         {
             //获取账户基本信息
-            [self getMyAccountInfo];
+            _islogin = YES;
+            [weakSelf getMyAccountInfo];
         }
     } failure:^(NSError *error) {
         [weakSelf hudClose];
@@ -81,17 +77,33 @@
     }];
 }
 
+-(void)doTapChange
+{
+    WS(weakSelf)
+    [BTELoginVC OpenLogin:self callback:^(BOOL isComplete) {
+        if (isComplete) {
+            //登录成功刷新我的账户页面
+            //获取账户基本信息
+            [weakSelf getMyAccountInfo];
+        } else
+        {
+//            [weakSelf.tabBarController setSelectedIndex:0];
+        }
+    }];
 
+}
 
 
 //当前跟投 已结束策略 按钮切换事件
 -(void)switchButton:(NSInteger)type//type 1 当前跟投 2 已结束策略
 {
-    if (type == 1) {
-        [self getMyAccountCurrentInfo];
-    } else
-    {
-        [self getMyAccountSettleInfo];
+    if (User.userToken) {
+        if (type == 1) {
+            [self getMyAccountCurrentInfo];
+        } else
+        {
+            [self getMyAccountSettleInfo];
+        }
     }
 }
 -(void)logout//退出登录
@@ -169,7 +181,9 @@
 {
     NSMutableDictionary * pramaDic = @{}.mutableCopy;
     NSString * methodName = @"";
-    [pramaDic setObject:User.userToken forKey:@"bte-token"];
+    if (User.userToken) {
+        [pramaDic setObject:User.userToken forKey:@"bte-token"];
+    }
     methodName = kAcountHoldInfo;
     
     WS(weakSelf)
@@ -179,7 +193,7 @@
         statisticsModel = [BTEStatisticsModel yy_modelWithDictionary:responseObject[@"data"][@"statistics"]];
         NSArray *detailsList = [NSArray yy_modelArrayWithClass:[BTEAccountDetailsModel class] json:responseObject[@"data"][@"details"]];
         //刷新tableview
-        [weakSelf.myAccountTableView refreshUi:detailsList model1:amountModel model2:legalAccountModel model3:btcAccountModel model4:statisticsModel type:1];
+        [weakSelf.myAccountTableView refreshUi:detailsList model1:amountModel model2:legalAccountModel model3:btcAccountModel model4:statisticsModel type:1 islogin:_islogin];
     } failure:^(NSError *error) {
         [weakSelf hudClose];
         RequestError(error);
@@ -191,7 +205,10 @@
 {
     NSMutableDictionary * pramaDic = @{}.mutableCopy;
     NSString * methodName = @"";
-    [pramaDic setObject:User.userToken forKey:@"bte-token"];
+    if (User.userToken) {
+        [pramaDic setObject:User.userToken forKey:@"bte-token"];
+    }
+    
     methodName = kAcountSettleInfo;
     
     WS(weakSelf)
@@ -201,7 +218,7 @@
         statisticsModel = [BTEStatisticsModel yy_modelWithDictionary:responseObject[@"data"][@"statistics"]];
         NSArray *detailsList = [NSArray yy_modelArrayWithClass:[BTEAccountDetailsModel class] json:responseObject[@"data"][@"details"]];
         //刷新tableview
-        [weakSelf.myAccountTableView refreshUi:detailsList model1:amountModel model2:legalAccountModel model3:btcAccountModel model4:statisticsModel type:2];
+        [weakSelf.myAccountTableView refreshUi:detailsList model1:amountModel model2:legalAccountModel model3:btcAccountModel model4:statisticsModel type:2 islogin:_islogin];
     } failure:^(NSError *error) {
         [weakSelf hudClose];
         RequestError(error);
@@ -233,7 +250,7 @@
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     //设置状态栏颜色
     _statusBarView = [[UIView alloc]   initWithFrame:CGRectMake(0, 0,    self.view.bounds.size.width, 20)];
-    _statusBarView.backgroundColor = [BHHexColor hexColor:@"63B0F3"];
+    _statusBarView.backgroundColor = [BHHexColor hexColor:@"53AFFF"];
     [self.view addSubview:_statusBarView];
 
     if ([self.isloginAndGetMyAccountInfo isEqualToString:@"0"]) {
