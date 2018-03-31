@@ -106,12 +106,12 @@
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wangli/Desktop/BTE/BTE/Kline/BTC_K%E7%BA%BF%E5%9B%BE/KLine/Model/KLineModel/Y_KLineGroupModel.m"
-                  timestampString = "544014518.897176"
+                  timestampString = "544169181.354491"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "71">
+                  offsetFromSymbolStart = "96">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -121,12 +121,12 @@
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wangli/Desktop/BTE/BTE/Kline/BTC_K%E7%BA%BF%E5%9B%BE/KLine/Model/KLineModel/Y_KLineGroupModel.m"
-                  timestampString = "544014518.900597"
+                  timestampString = "544169181.359741"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "160">
+                  offsetFromSymbolStart = "196">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -674,7 +674,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/HomePageVC/View/LBBannerView.m"
-            timestampString = "544014518.675211"
+            timestampString = "544168743.240438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "113"

@@ -17,7 +17,7 @@
 - (void)doTapChange:(NSString *)name;//选择币种
 - (void)jumpToDetail:(NSString *)name;
 @end
-@interface BTEHomePageTableView : UIView<UITableViewDelegate,UITableViewDataSource>
+@interface BTEHomePageTableView : UIView<UITableViewDelegate,UITableViewDataSource,UIWebViewDelegate>
 {
     BOOL _isShow; // 市场分析是否展开
     float defaultHeight;//四行文字默认高度
