@@ -62,6 +62,9 @@
         _titleLabel.frame = CGRectMake(70, 62, 100, 13);
         
         _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(70, 82, 150, 18)];
+        if (amountModel.length == 11) {
+            amountModel = [NSString stringWithFormat:@"%@ %@ %@",[amountModel substringWithRange:NSMakeRange(0,3)],[amountModel substringWithRange:NSMakeRange(3,4)],[amountModel substringWithRange:NSMakeRange(7,4)]];
+        }
         _subTitleLabel1.text = amountModel;
         _subTitleLabel1.font = UIFontRegularOfSize(18);
         _subTitleLabel1.textColor = BHHexColor(@"ffffff");
