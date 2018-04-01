@@ -303,14 +303,15 @@
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(16, 24, 80, 14)];
         label.font = UIFontRegularOfSize(12);
         label.text = @"投资额";
-        label.textColor = BHHexColor(@"9CA1A9");
+        label.alpha = 0.6;
+        label.textColor = BHHexColor(@"525866");
         label.backgroundColor = [UIColor whiteColor];
         [cell.contentView addSubview:label];
         
         UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(label.left, 46, label.width, label.height)];
-        label1.font = UIFontRegularOfSize(12);
+        label1.font = UIFontDINAlternateOfSize(14);
         label1.text = [NSString stringWithFormat:@"%@BTC",statisticsModel.purchaseAmount];
-        label1.textColor = BHHexColor(@"292C33");
+        label1.textColor = BHHexColor(@"525866");
         label1.backgroundColor = [UIColor whiteColor];
         [cell.contentView addSubview:label1];
         
@@ -325,35 +326,37 @@
         
         label2.textAlignment = NSTextAlignmentCenter;
         label2.centerX = SCREEN_WIDTH / 2;
-        label2.textColor = BHHexColor(@"9CA1A9");
+        label2.textColor = BHHexColor(@"525866");
+        label2.alpha = 0.6;
         label2.backgroundColor = [UIColor whiteColor];
         [cell.contentView addSubview:label2];
         
         UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectMake(15, label1.top, label2.width, label2.height)];
-        label3.font = UIFontRegularOfSize(12);
+        label3.font = UIFontDINAlternateOfSize(14);
         label3.text = [NSString stringWithFormat:@"%@BTC",statisticsModel.currentAmount];
         label3.centerX = label2.centerX;
         label3.textAlignment = NSTextAlignmentCenter;
-        label3.textColor = BHHexColor(@"292C33");
+        label3.textColor = BHHexColor(@"525866");
         label3.backgroundColor = [UIColor whiteColor];
         [cell.contentView addSubview:label3];
         
         UILabel *label4 = [[UILabel alloc] initWithFrame:CGRectMake(7, label.top, label.width, label.height)];
         label4.font = UIFontRegularOfSize(12);
         label4.text = @"收益";
-        label4.textColor = BHHexColor(@"9CA1A9");
+        label4.textColor = BHHexColor(@"525866");
+        label4.alpha = 0.6;
         label4.right = SCREEN_WIDTH - 16;
         label4.textAlignment = NSTextAlignmentRight;
         label4.backgroundColor = [UIColor whiteColor];
         [cell.contentView addSubview:label4];
         
         UILabel *label5 = [[UILabel alloc] initWithFrame:CGRectMake(7, label1.top, label4.width, label4.height)];
-        label5.font = UIFontRegularOfSize(12);
+        label5.font = UIFontDINAlternateOfSize(14);
         
         
         if ([statisticsModel.ror integerValue] > 0) {
             label5.text = [NSString stringWithFormat:@"+%@%%",statisticsModel.ror];
-            label5.textColor = BHHexColor(@"1BAC75");
+            label5.textColor = BHHexColor(@"228B22");
         } else if ([statisticsModel.ror integerValue] < 0)
         {
             label5.text = [NSString stringWithFormat:@"%@%%",statisticsModel.ror];

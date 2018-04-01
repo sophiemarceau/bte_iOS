@@ -20,6 +20,7 @@ static NSString * const kDomain = @"http://47.94.217.12:18081/";
 //开发环境  web-王磊开发环境
 #if ONLION
 static NSString * const kHeader = @"http://m.bte.top/";
+static NSString * const kChart = @"http://chart.bte.top/";
 #else
 //static NSString * const kHeader = @"http://192.168.24.135:3001/";
 static NSString * const kHeader = @"http://192.168.24.64:3001/";
@@ -60,7 +61,7 @@ static NSString * const kHeader = @"http://192.168.24.64:3001/";
 #define kAppDealAddress [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/deal"]
 
 // 首页市场分析图表
-#define kAppMarketAnalysisAddress [NSString stringWithFormat:@"%@%@",kHeader,@"chart/stockChart"]
+#define kAppMarketAnalysisAddress [NSString stringWithFormat:@"%@%@",kChart,@"chart/stockChart"]
 
 //MARK:我的账户
 

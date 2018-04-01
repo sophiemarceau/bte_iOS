@@ -17,86 +17,95 @@
         
         self.backgroundColor = [UIColor whiteColor];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(16, 24, 150, 18)];
         
-        _titleLabel.font = KfontNormal(14);
-        _titleLabel.textColor = BHHexColor(@"308CDD");
+        UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(16, 21, 2, 13)];
+        lineView.backgroundColor = BHHexColor(@"44A0F1");
+        [self.contentView addSubview:lineView];
+        
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(24, 20, 150, 14)];
+        
+        _titleLabel.font = UIFontMediumOfSize(14);
+        _titleLabel.textColor = BHHexColor(@"525866");
         [self.contentView addSubview:_titleLabel];
         
-        _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 56, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
+        _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 54, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
         _subTitleLabel1.text = @"投资额";
         _subTitleLabel1.font = UIFontRegularOfSize(12);
-        _subTitleLabel1.textColor = BHHexColor(@"9CA1A9");
+        _subTitleLabel1.textColor = BHHexColor(@"525866");
+        _subTitleLabel1.alpha = 0.6;
         [self.contentView addSubview:_subTitleLabel1];
         
-        _subTitleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(16, 56, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
+        _subTitleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(16, 54, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
         _subTitleLabel2.text = @"当前额";
         _subTitleLabel2.left = _subTitleLabel1.right;
         _subTitleLabel2.textAlignment = NSTextAlignmentCenter;
         _subTitleLabel2.font = UIFontRegularOfSize(12);
-        _subTitleLabel2.textColor = BHHexColor(@"9CA1A9");
+        _subTitleLabel2.textColor = BHHexColor(@"525866");
+        _subTitleLabel2.alpha = 0.6;
         [self.contentView addSubview:_subTitleLabel2];
         
-        _subTitleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(16, 56, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
+        _subTitleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(16, 54, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
         _subTitleLabel3.text = @"浮动收益";
         _subTitleLabel3.left = _subTitleLabel2.right;
         _subTitleLabel3.textAlignment = NSTextAlignmentCenter;
         _subTitleLabel3.font = UIFontRegularOfSize(12);
-        _subTitleLabel3.textColor = BHHexColor(@"9CA1A9");
+        _subTitleLabel3.textColor = BHHexColor(@"525866");
+        _subTitleLabel3.alpha = 0.6;
         [self.contentView addSubview:_subTitleLabel3];
         
-        _subTitleLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(16, 56, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
+        _subTitleLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(16, 54, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
         _subTitleLabel4.text = @"到期日";
         _subTitleLabel4.left = _subTitleLabel3.right;
         _subTitleLabel4.textAlignment = NSTextAlignmentRight;
         _subTitleLabel4.font = UIFontRegularOfSize(12);
-        _subTitleLabel4.textColor = BHHexColor(@"9CA1A9");
+        _subTitleLabel4.textColor = BHHexColor(@"525866");
+        _subTitleLabel4.alpha = 0.6;
         [self.contentView addSubview:_subTitleLabel4];
 
-        _detailLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 74, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
+        _detailLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 82, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
         
-        _detailLabel1.font = [UIFont boldSystemFontOfSize:12];
-        _detailLabel1.textColor = BHHexColor(@"292C33");
+        _detailLabel1.font = UIFontDINAlternateOfSize(14);
+        _detailLabel1.textColor = BHHexColor(@"525866");
         [self.contentView addSubview:_detailLabel1];
         
-        _detailLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(16, 74, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
+        _detailLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(16, 82, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
         
         _detailLabel2.left = _detailLabel1.right;
         _detailLabel2.textAlignment = NSTextAlignmentCenter;
-        _detailLabel2.font = [UIFont boldSystemFontOfSize:12];
-        _detailLabel2.textColor = BHHexColor(@"292C33");
+        _detailLabel2.font = UIFontDINAlternateOfSize(14);
+        _detailLabel2.textColor = BHHexColor(@"525866");
         [self.contentView addSubview:_detailLabel2];
         
-        _detailLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(16, 74, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
+        _detailLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(16, 82, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
         
         _detailLabel3.left = _detailLabel2.right;
         _detailLabel3.textAlignment = NSTextAlignmentCenter;
-        _detailLabel3.font = [UIFont boldSystemFontOfSize:12];
-        _detailLabel3.textColor = BHHexColor(@"292C33");
+        _detailLabel3.font = UIFontDINAlternateOfSize(14);
+        _detailLabel3.textColor = BHHexColor(@"525866");
         [self.contentView addSubview:_detailLabel3];
         
-        _detailLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(16, 74, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
+        _detailLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(16, 82, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
         
         _detailLabel4.left = _detailLabel3.right;
         _detailLabel4.textAlignment = NSTextAlignmentRight;
-        _detailLabel4.font = [UIFont boldSystemFontOfSize:12];
-        _detailLabel4.textColor = BHHexColor(@"292C33");
+        _detailLabel4.font = UIFontDINAlternateOfSize(14);
+        _detailLabel4.textColor = BHHexColor(@"525866");
         [self.contentView addSubview:_detailLabel4];
         
         
-        _subDetailLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 92, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
-        
-        _subDetailLabel1.font = [UIFont systemFontOfSize:12];
-        _subDetailLabel1.textColor = BHHexColor(@"000000");
-        [self.contentView addSubview:_subDetailLabel1];
-        
-        _subDetailLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(16, 92, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
-        
-        _subDetailLabel2.left = _subDetailLabel1.right;
-        _subDetailLabel2.textAlignment = NSTextAlignmentCenter;
-        _subDetailLabel2.font = [UIFont systemFontOfSize:12];
-        _subDetailLabel2.textColor = BHHexColor(@"000000");
-        [self.contentView addSubview:_subDetailLabel2];
+//        _subDetailLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 92, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
+//
+//        _subDetailLabel1.font = [UIFont systemFontOfSize:12];
+//        _subDetailLabel1.textColor = BHHexColor(@"000000");
+//        [self.contentView addSubview:_subDetailLabel1];
+//
+//        _subDetailLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(16, 92, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
+//
+//        _subDetailLabel2.left = _subDetailLabel1.right;
+//        _subDetailLabel2.textAlignment = NSTextAlignmentCenter;
+//        _subDetailLabel2.font = [UIFont systemFontOfSize:12];
+//        _subDetailLabel2.textColor = BHHexColor(@"000000");
+//        [self.contentView addSubview:_subDetailLabel2];
         
         UIButton *jumpDetailButton = [UIButton buttonWithType:UIButtonTypeCustom];
         jumpDetailButton.frame = CGRectMake(SCREEN_WIDTH - 26 - 50, 113, 50, 16);

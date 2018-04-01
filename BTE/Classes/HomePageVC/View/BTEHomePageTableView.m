@@ -93,7 +93,7 @@
         _buttonView.backgroundColor = BHHexColor(@"FF4040");
     } else
     {
-        _buttonView.backgroundColor = BHHexColor(@"292C33");
+        _buttonView.backgroundColor = BHHexColor(@"228B22");
     }
     
     _subTitleLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(124, 38, 40, 12)];
@@ -116,12 +116,12 @@
         _webView = [[UIWebView alloc]initWithFrame:CGRectMake(0,62,SCREEN_WIDTH,185)];
         _webView.backgroundColor = KBGColor;
         _webView.delegate = self;
-        //请求
-        if (self.urlString || ![self.urlString isEqualToString:@""]) {
-            NSURL *URL = [NSURL URLWithString:self.urlString];
-            NSURLRequest *request = [NSURLRequest requestWithURL:URL cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30];
-            [_webView loadRequest:request];
-        }
+    }
+    //请求
+    if (self.urlString || ![self.urlString isEqualToString:@""]) {
+        NSURL *URL = [NSURL URLWithString:self.urlString];
+        NSURLRequest *request = [NSURLRequest requestWithURL:URL cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30];
+        [_webView loadRequest:request];
     }
     return _webView;
 }

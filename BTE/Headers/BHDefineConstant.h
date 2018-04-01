@@ -145,6 +145,11 @@ if (error.code != -900000) { \
 #define UIFontRegularOfSize(fontSize)  (IS_IOS_9 ? [UIFont fontWithName:@"PingFangSC-Regular" size:fontSize] : [UIFont systemFontOfSize:fontSize])
 #define UIFontMediumOfSize(fontSize)  (IS_IOS_9 ? [UIFont fontWithName:@"PingFangSC-Medium" size:fontSize] : [UIFont systemFontOfSize:fontSize])
 
+#define UIFontDINAlternateOfSize(fontSize)  (IS_IOS_9 ? [UIFont fontWithName:@"DINAlternate-Bold" size:fontSize] : [UIFont systemFontOfSize:fontSize])
+
+
+
+
 #define FontName [UIFont systemFontOfSize:[UIFont systemFontSize]].fontName // 系统字体
 #define  KfontNormal(a) [UIFont fontWithName:FontName size:(a)]
 

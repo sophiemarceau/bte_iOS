@@ -96,7 +96,7 @@
         _buttonView.backgroundColor = BHHexColor(@"FF4040");
     } else
     {
-        _buttonView.backgroundColor = BHHexColor(@"292C33");
+        _buttonView.backgroundColor = BHHexColor(@"228B22");
     }
 }
 
