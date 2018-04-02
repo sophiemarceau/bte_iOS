@@ -146,6 +146,17 @@
     homePageVc.isHiddenBottom = NO;
     [self.navigationController pushViewController:homePageVc animated:YES];
 }
+
+- (void)jumpToStrategyFollow:(NSString *)productId
+{
+    BTEHomeWebViewController *homePageVc= [[BTEHomeWebViewController alloc] init];
+    
+    homePageVc.urlString = [NSString stringWithFormat:@"%@/%@",kAppStrategyAddress,productId];
+    homePageVc.isHiddenLeft = YES;
+    homePageVc.isHiddenBottom = NO;
+    [self.navigationController pushViewController:homePageVc animated:YES];
+}
+
 - (void)doTapChange:(NSString *)name//选择币种
 {
     WS(weakSelf)

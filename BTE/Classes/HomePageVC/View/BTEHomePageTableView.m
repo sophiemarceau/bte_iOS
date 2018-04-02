@@ -54,7 +54,7 @@
     [sureButton addTarget:self action:@selector(TapChange:) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:sureButton];
     
-    _subTitleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(16, 10, 110, 20)];
+    _subTitleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(16, 16, 110, 20)];
     _subTitleLabel3.left = SCREEN_WIDTH - _subTitleLabel3.width - 16;
     _subTitleLabel3.textAlignment = NSTextAlignmentRight;
     _subTitleLabel3.text = [NSString stringWithFormat:@"$%@",headModel.price];
@@ -63,47 +63,46 @@
     _subTitleLabel3.textColor = BHHexColor(@"228B22");
     [bgView addSubview:_subTitleLabel3];
     
-    _buttonView = [[UIView alloc] initWithFrame:CGRectMake(0, 35, 50, 16)];
-    _buttonView.backgroundColor = [UIColor whiteColor];
-    _buttonView.layer.masksToBounds = YES;
-    _buttonView.layer.cornerRadius = 2;
-    _buttonView.right = SCREEN_WIDTH - 52;
-    [bgView addSubview:_buttonView];
+//    _buttonView = [[UIView alloc] initWithFrame:CGRectMake(0, _subTitleLabel3.bottom + 5, 50, 16)];
+//    _buttonView.backgroundColor = [UIColor whiteColor];
+//    _buttonView.layer.masksToBounds = YES;
+//    _buttonView.layer.cornerRadius = 2;
+//    _buttonView.right = SCREEN_WIDTH - 52;
+//    [bgView addSubview:_buttonView];
     
     
-    _subTitleLabel5 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 16)];
-    _subTitleLabel5.text = @"-2.39%";
-    _subTitleLabel5.textAlignment = NSTextAlignmentCenter;
-    _subTitleLabel5.font = UIFontRegularOfSize(12);
-    _subTitleLabel5.textColor = BHHexColor(@"FFFFFF");
-    [_buttonView addSubview:_subTitleLabel5];
+//    _subTitleLabel5 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 16)];
+//    _subTitleLabel5.textAlignment = NSTextAlignmentCenter;
+//    _subTitleLabel5.font = UIFontRegularOfSize(12);
+//    _subTitleLabel5.textColor = BHHexColor(@"FFFFFF");
+//    [_buttonView addSubview:_subTitleLabel5];
+//
+//
+//    if ([headModel.change floatValue] > 0) {
+//        _subTitleLabel5.text = [NSString stringWithFormat:@"+%.2f",[headModel.change floatValue]];
+//    } else
+//    {
+//        _subTitleLabel5.text = [NSString stringWithFormat:@"%.2f",[headModel.change floatValue]];
+//    }
+//
+//    if ([headModel.change floatValue] > 0) {
+//        _buttonView.backgroundColor = BHHexColor(@"228B22");
+//    } else if ([headModel.change floatValue] < 0)
+//    {
+//        _buttonView.backgroundColor = BHHexColor(@"FF4040");
+//    } else
+//    {
+//        _buttonView.backgroundColor = BHHexColor(@"228B22");
+//    }
     
-    
-    if ([headModel.change floatValue] > 0) {
-        _subTitleLabel5.text = [NSString stringWithFormat:@"+%.2f%%",[headModel.change floatValue]];
-    } else
-    {
-        _subTitleLabel5.text = [NSString stringWithFormat:@"%.2f%%",[headModel.change floatValue]];
-    }
-
-    if ([headModel.change floatValue] > 0) {
-        _buttonView.backgroundColor = BHHexColor(@"228B22");
-    } else if ([headModel.change floatValue] < 0)
-    {
-        _buttonView.backgroundColor = BHHexColor(@"FF4040");
-    } else
-    {
-        _buttonView.backgroundColor = BHHexColor(@"228B22");
-    }
-    
-    _subTitleLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(124, 38, 40, 12)];
-    _subTitleLabel4.alpha = 0.6;
-    _subTitleLabel4.text = @"(24h)";
-    _subTitleLabel4.textAlignment = NSTextAlignmentRight;
-    _subTitleLabel4.font = UIFontRegularOfSize(12);
-    _subTitleLabel4.textColor = BHHexColor(@"525866");
-    _subTitleLabel4.right = SCREEN_WIDTH - 21;
-    [bgView addSubview:_subTitleLabel4];
+//    _subTitleLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(124, 38, 40, 12)];
+//    _subTitleLabel4.alpha = 0.6;
+//    _subTitleLabel4.text = @"(24h)";
+//    _subTitleLabel4.textAlignment = NSTextAlignmentRight;
+//    _subTitleLabel4.font = UIFontRegularOfSize(12);
+//    _subTitleLabel4.textColor = BHHexColor(@"525866");
+//    _subTitleLabel4.right = SCREEN_WIDTH - 21;
+//    [bgView addSubview:_subTitleLabel4];
     
     self.urlString = [NSString stringWithFormat:@"%@/%@",kAppMarketAnalysisAddress,headModel.symbol];
     [bgView addSubview:self.webView];
@@ -225,7 +224,8 @@
         return 16;
     } else
     {
-        return 250;
+        CGRect rect = [productInfoModel.desc boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 160, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:UIFontRegularOfSize(14)} context:nil];
+        return 124 + 48 + 78 + rect.size.height;
     }
 }
 
@@ -366,7 +366,9 @@
         titleLabel1.textColor = BHHexColor(@"9CA1A9");
         [cell.contentView addSubview:titleLabel1];
         
-        UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(16, 94, SCREEN_WIDTH - 36, 140)];
+        CGRect rect = [productInfoModel.desc boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 160, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:UIFontRegularOfSize(14)} context:nil];
+        
+        UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(16, 94, SCREEN_WIDTH - 36, 48 + 78 + rect.size.height)];
         bgView.backgroundColor = BHHexColor(@"F0F8FF");
         bgView.layer.masksToBounds = YES;
         bgView.layer.cornerRadius = 4;
@@ -391,9 +393,10 @@
         titleLabel2.textColor = BHHexColor(@"292C33");
         [bgView addSubview:titleLabel2];
         
-        UILabel *titleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(64, 48, SCREEN_WIDTH - 160, 21)];
+        UILabel *titleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(64, 48, SCREEN_WIDTH - 160, rect.size.height)];
         titleLabel3.text = productInfoModel.desc;
         titleLabel3.font = UIFontRegularOfSize(14);
+        titleLabel3.numberOfLines = 0;
         titleLabel3.textColor = BHHexColor(@"525866");
         [bgView addSubview:titleLabel3];
         
@@ -441,18 +444,18 @@
         titleLabel4.textColor = BHHexColor(@"7A8499");
         [bgView addSubview:titleLabel4];
         
-        UIView *bgView2 = [[UIView alloc] initWithFrame:CGRectMake(16, 93, bgView.width - 32, 1)];
+        UIView *bgView2 = [[UIView alloc] initWithFrame:CGRectMake(16, titleLabel3.bottom + 31, bgView.width - 32, 1)];
         bgView2.backgroundColor = BHHexColor(@"E6EBF0");
         [bgView addSubview:bgView2];
         
         
-        UILabel *titleLabel6 = [[UILabel alloc] initWithFrame:CGRectMake(16, 108, 160, 12)];
+        UILabel *titleLabel6 = [[UILabel alloc] initWithFrame:CGRectMake(16, bgView2.bottom + 13, 160, 12)];
         titleLabel6.text = @"累计收益率：";
         titleLabel6.font = UIFontRegularOfSize(12);
         titleLabel6.textColor = BHHexColor(@"525866");
         [bgView addSubview:titleLabel6];
         
-        UILabel *titleLabel5 = [[UILabel alloc] initWithFrame:CGRectMake(16, 104, 160, 20)];
+        UILabel *titleLabel5 = [[UILabel alloc] initWithFrame:CGRectMake(16, bgView2.bottom + 10, 160, 20)];
         titleLabel5.left = bgView.width - 160 - 16;
         titleLabel5.textAlignment = NSTextAlignmentRight;
         titleLabel5.font = UIFontRegularOfSize(20);
@@ -498,6 +501,13 @@
             [self.homePageTableView reloadData];
         }
     }
+    
+   if (indexPath.row == [_dataSource count] + 5)
+   {
+       if (self.delegate && [self.delegate respondsToSelector:@selector(jumpToStrategyFollow:)]) {
+           [self.delegate jumpToStrategyFollow:productInfoModel.id];
+       }
+   }
 }
 
 

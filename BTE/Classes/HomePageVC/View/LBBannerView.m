@@ -58,7 +58,7 @@
 - (void)creatUI
 {
     //初始化scrollview
-    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height + 2)];
     self.scrollView.contentSize = CGSizeMake(view_WIDTH * 3, view_HEIGHT);
     self.scrollView.showsHorizontalScrollIndicator = NO;
     self.scrollView.showsVerticalScrollIndicator = NO;

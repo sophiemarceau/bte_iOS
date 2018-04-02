@@ -16,6 +16,7 @@
 //-(void)switchButton:(NSInteger)type;//type 1 当前跟投 2 已结束策略
 - (void)doTapChange:(NSString *)name;//选择币种
 - (void)jumpToDetail:(NSString *)name;
+- (void)jumpToStrategyFollow:(NSString *)productId;
 @end
 @interface BTEHomePageTableView : UIView<UITableViewDelegate,UITableViewDataSource,UIWebViewDelegate>
 {
