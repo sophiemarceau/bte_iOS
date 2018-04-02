@@ -42,7 +42,8 @@
 
 //汉字编码
 - (NSString *)URLEncodedString;
-
+//增加千位分隔符
++ (NSString *)positiveFormat:(NSString *)text;
 // 增加千位分隔符
 + (NSString *)addComm:(NSString *)string;
 // 去掉千位分隔符

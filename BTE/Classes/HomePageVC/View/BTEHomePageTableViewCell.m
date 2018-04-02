@@ -80,7 +80,9 @@
     [_iconImage sd_setImageWithURL:[NSURL URLWithString:model.icon] placeholderImage:nil];
     _subTitleLabel1.text = model.symbol;
     _subTitleLabel2.text = model.trend;
-    _subTitleLabel3.text = [NSString stringWithFormat:@"$%@",model.price];
+    
+    NSString *price = [NSString positiveFormat:model.price];
+    _subTitleLabel3.text = [NSString stringWithFormat:@"$%@",price];
     _subTitleLabel4.text = model.operation;
     if ([model.change floatValue] > 0) {
         _subTitleLabel5.text = [NSString stringWithFormat:@"+%.2f%%",[model.change floatValue]];

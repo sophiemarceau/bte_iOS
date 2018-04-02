@@ -132,6 +132,18 @@
     return dateString;
 }
 
++ (NSString *)positiveFormat:(NSString *)text{
+    
+    if(!text || [text floatValue] == 0){
+        return @"0.00";
+    }else{
+        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        [numberFormatter setPositiveFormat:@",###.00;"];
+        return [numberFormatter stringFromNumber:[NSNumber numberWithDouble:[text doubleValue]]];
+    }
+    return @"";
+}
+
 - (NSString *)URLEncodedString
 {
     NSString *encodedString = (NSString *)

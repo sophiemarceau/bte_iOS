@@ -65,6 +65,20 @@
             _islogin = NO;
             //刷新tableview
             [weakSelf.myAccountTableView refreshUi:nil model1:nil model2:nil model3:nil model4:nil type:1 islogin:_islogin];
+            
+            WS(weakSelf)
+            [BTELoginVC OpenLogin:self callback:^(BOOL isComplete) {
+                if (isComplete) {
+                    //登录成功刷新我的账户页面
+                    //获取账户基本信息
+                    _islogin = YES;
+                    [weakSelf getMyAccountInfo];
+                } else
+                {
+                    [weakSelf.tabBarController setSelectedIndex:0];
+                }
+            }];
+            
         } else if (IsSafeDictionary(responseObject) && [[responseObject objectForKey:@"data"] integerValue] == 1)//已登录
         {
             //获取账户基本信息
