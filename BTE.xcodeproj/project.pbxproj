@@ -129,6 +129,7 @@
 		8179D30A2021D82800C13447 /* Y_StockChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D3072021D82800C13447 /* Y_StockChartViewController.m */; };
 		818B1CCB206382200065B3FA /* BTEHomePageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 818B1CCA206382200065B3FA /* BTEHomePageTableView.m */; };
 		818B1CCE206391860065B3FA /* BTEHomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 818B1CCD206391860065B3FA /* BTEHomePageTableViewCell.m */; };
+		81FFE180207242FA001AB03D /* BTELeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FFE17F207242FA001AB03D /* BTELeftView.m */; };
 		A3C2D27DD5C7720F52180047 /* libPods-BTE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A790C91021B35BCE72495255 /* libPods-BTE.a */; };
 		B90071BD2044FC6500431065 /* BTELoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90071BB2044FC6500431065 /* BTELoginVC.xib */; };
 		B90071C02045344A00431065 /* BHGradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B90071BE2045344900431065 /* BHGradientButton.m */; };
@@ -404,6 +405,8 @@
 		818B1CCA206382200065B3FA /* BTEHomePageTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEHomePageTableView.m; sourceTree = "<group>"; };
 		818B1CCC206391860065B3FA /* BTEHomePageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEHomePageTableViewCell.h; sourceTree = "<group>"; };
 		818B1CCD206391860065B3FA /* BTEHomePageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEHomePageTableViewCell.m; sourceTree = "<group>"; };
+		81FFE17E207242FA001AB03D /* BTELeftView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTELeftView.h; sourceTree = "<group>"; };
+		81FFE17F207242FA001AB03D /* BTELeftView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTELeftView.m; sourceTree = "<group>"; };
 		A790C91021B35BCE72495255 /* libPods-BTE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BTE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B90071B92044FC6500431065 /* BTELoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTELoginVC.h; sourceTree = "<group>"; };
 		B90071BB2044FC6500431065 /* BTELoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BTELoginVC.xib; sourceTree = "<group>"; };
@@ -737,6 +740,7 @@
 		8179AD6720073BD0001678D2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				81FFE17D207242CD001AB03D /* LeftView */,
 				81403B3F2066326800788F9D /* StrategyFollow */,
 				815F8F502060B933006BB0D0 /* ShareView */,
 				8112E3C8205125D500419BC9 /* MyAccount(我的账户) */,
@@ -1195,6 +1199,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		81FFE17D207242CD001AB03D /* LeftView */ = {
+			isa = PBXGroup;
+			children = (
+				81FFE17E207242FA001AB03D /* BTELeftView.h */,
+				81FFE17F207242FA001AB03D /* BTELeftView.m */,
+			);
+			path = LeftView;
+			sourceTree = "<group>";
+		};
 		B90071B82044FBFC00431065 /* Login(登录) */ = {
 			isa = PBXGroup;
 			children = (
@@ -1515,6 +1528,7 @@
 				B9A5597B2047ED2A009CC3BA /* WebViewJavascriptBridge.m in Sources */,
 				8179AF142008A3BA001678D2 /* BTEHomePageViewController.m in Sources */,
 				8179AE8220086175001678D2 /* SSKeychain.m in Sources */,
+				81FFE180207242FA001AB03D /* BTELeftView.m in Sources */,
 				8112E3DA205261C600419BC9 /* BTELegalAccount.m in Sources */,
 				818B1CCE206391860065B3FA /* BTEHomePageTableViewCell.m in Sources */,
 				8112E3DD205262CA00419BC9 /* BTEBtcAccount.m in Sources */,

@@ -110,7 +110,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (self.delegate && [self.delegate respondsToSelector:@selector(jumpToDetail:)]) {
         HomeProductInfoModel *model = _dataSource[indexPath.row];
-        [self.delegate jumpToDetail:model.id];
+        [self.delegate jumpToDetail:model];
     }
 }
 

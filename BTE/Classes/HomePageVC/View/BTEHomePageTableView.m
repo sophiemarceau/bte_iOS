@@ -486,7 +486,7 @@
     {
         if (self.delegate && [self.delegate respondsToSelector:@selector(jumpToDetail:)]) {
             HomeDesListModel *model = _dataSource[indexPath.row - 1];
-            [self.delegate jumpToDetail:model.symbol];
+            [self.delegate jumpToDetail:model];
         }
     }
     

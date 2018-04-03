@@ -14,6 +14,7 @@
 #import "HomeProductInfoModel.h"
 #import "BTEHomeWebViewController.h"
 #import "BTECurrencyTypePickerView.h"
+#import "BTELeftView.h"
 @interface BTEHomePageViewController ()
 {
     HomeDescriptionModel *descriptionModel;
@@ -39,9 +40,10 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self customtitleView];
     self.navigationItem.rightBarButtonItem = [self creatRightBarItem];
+    self.navigationItem.leftBarButtonItem = [self creatLeftBarItem];
     self.shareType = UMS_SHARE_TYPE_WEB_LINK;//web链接
-    self.sharetitle = @"比特易-领先的数字货币市场专业分析平台";
-    self.shareDesc = @"玩转比特币，多看比特易，聪明的投资者都在这里！";
+    self.sharetitle = @"比特易—数字货币分析平台";
+    self.shareDesc = @"比特易是业界领先的数字货币市场专业分析平台，获软银、蓝驰战略投资！玩转比特币，多看比特易！";
     self.shareUrl = kAppBTEH5AnalyzeAddress;
     
     if (self.homePageTableView == nil) {
@@ -137,13 +139,14 @@
     }];
 }
 
-- (void)jumpToDetail:(NSString *)name
+- (void)jumpToDetail:(HomeDesListModel *)model
 {
     BTEHomeWebViewController *homePageVc= [[BTEHomeWebViewController alloc] init];
     
-    homePageVc.urlString = [NSString stringWithFormat:@"%@/%@",kAppDealAddress,name];
+    homePageVc.urlString = [NSString stringWithFormat:@"%@/%@/%@/%@",kAppDealAddress,model.symbol,[model.trend stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[model.operation stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     homePageVc.isHiddenLeft = YES;
     homePageVc.isHiddenBottom = NO;
+    homePageVc.desListModel = model;
     [self.navigationController pushViewController:homePageVc animated:YES];
 }
 
@@ -175,9 +178,20 @@
     return leftItem;
 }
 
+- (UIBarButtonItem *)creatLeftBarItem {
+    UIImage *buttonNormal = [[UIImage imageNamed:@"share_button_image"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIBarButtonItem * leftItem = [[UIBarButtonItem alloc]initWithImage:buttonNormal style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView)];
+    return leftItem;
+}
+
 - (void)shareAlert
 {
     [BTEShareView popShareViewCallBack:nil imageUrl:[UIImage imageNamed:@"AppIcon"] shareUrl:self.shareUrl sharetitle:self.sharetitle shareDesc:self.shareDesc shareType:self.shareType currentVc:self];
+}
+
+- (void)showLeftView
+{
+    [BTELeftView popActivateNowCallBack:nil cancelCallBack:nil];
 }
 
 - (void)didReceiveMemoryWarning {

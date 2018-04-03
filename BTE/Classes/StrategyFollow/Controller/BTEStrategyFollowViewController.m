@@ -83,13 +83,14 @@
     }];
 }
 
-- (void)jumpToDetail:(NSString *)productId
+- (void)jumpToDetail:(HomeProductInfoModel *)model
 {
     BTEHomeWebViewController *homePageVc= [[BTEHomeWebViewController alloc] init];
     
-    homePageVc.urlString = [NSString stringWithFormat:@"%@/%@",kAppStrategyAddress,productId];
+    homePageVc.urlString = [NSString stringWithFormat:@"%@/%@",kAppStrategyAddress,model.id];
     homePageVc.isHiddenLeft = YES;
     homePageVc.isHiddenBottom = NO;
+    homePageVc.productInfoModel = model;
     [self.navigationController pushViewController:homePageVc animated:YES];
 }
 
