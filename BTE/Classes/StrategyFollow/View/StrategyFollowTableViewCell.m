@@ -14,12 +14,12 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        self.backgroundColor = KBGCell;
+        self.backgroundColor = KBGColor;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         
         _bgView = [[UIView alloc] initWithFrame:CGRectMake(16, 16, SCREEN_WIDTH - 36, 198 - 16)];
-        _bgView.backgroundColor = BHHexColor(@"ffffff");
+        _bgView.backgroundColor = KBGCell;
         _bgView.layer.masksToBounds = YES;
         _bgView.layer.cornerRadius = 4;
         [self.contentView addSubview:_bgView];
@@ -30,14 +30,14 @@
         _titleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(64, 24, 180, 20)];
         
         _titleLabel2.font = UIFontRegularOfSize(16);
-        _titleLabel2.textColor = BHHexColor(@"292C33");
+        _titleLabel2.textColor = BHHexColor(@"626A75");
         [_bgView addSubview:_titleLabel2];
         
         _titleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(64, 48, SCREEN_WIDTH - 160, 21)];
-        
         _titleLabel3.numberOfLines = 0;
         _titleLabel3.font = UIFontRegularOfSize(14);
-        _titleLabel3.textColor = BHHexColor(@"525866");
+        _titleLabel3.textColor = BHHexColor(@"626A75");
+        _titleLabel3.alpha = 0.8;
         [_bgView addSubview:_titleLabel3];
         
         _bgView1 = [[UIView alloc] initWithFrame:CGRectMake(16, 25, 24, 24)];
@@ -51,10 +51,7 @@
         
         _titleLabel7 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
         _titleLabel7.textAlignment = NSTextAlignmentCenter;
-        
         _titleLabel7.font = UIFontRegularOfSize(20);
-        
-        
         [_bgView1 addSubview:_titleLabel7];
         
         
@@ -76,7 +73,7 @@
         _titleLabel6 = [[UILabel alloc] initWithFrame:CGRectMake(16, 108, 160, 12)];
         _titleLabel6.text = @"累计收益率";
         _titleLabel6.font = UIFontRegularOfSize(12);
-        _titleLabel6.textColor = BHHexColor(@"525866");
+        _titleLabel6.textColor = BHHexColor(@"626A75");
         [_bgView addSubview:_titleLabel6];
         
         _titleLabel5 = [[UILabel alloc] initWithFrame:CGRectMake(16, 104, 160, 20)];
@@ -84,7 +81,7 @@
         _titleLabel5.textAlignment = NSTextAlignmentRight;
         
         _titleLabel5.font = UIFontRegularOfSize(20);
-        _titleLabel5.textColor = BHHexColor(@"525866");
+//        _titleLabel5.textColor = BHHexColor(@"525866");
         [_bgView addSubview:_titleLabel5];
     }
     return self;
@@ -95,7 +92,7 @@
     _bgView.height = self.frame.size.height - 16;
     CGRect rect = [_titleLabel3.text boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 160, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:UIFontRegularOfSize(14)} context:nil];
     _titleLabel3.height = rect.size.height;
-    _bgView2.top = _titleLabel3.bottom + 10;
+    _bgView2.top = _titleLabel3.bottom + 16;
     _titleLabel6.top = _bgView2.bottom + 14;
     _titleLabel5.top = _bgView2.bottom + 10;
 }
@@ -138,17 +135,17 @@
     _titleLabel7.text = productInfoModel.riskValue;
     
     
-    if ([productInfoModel.ror integerValue] > 0) {
+    if ([productInfoModel.ror floatValue] > 0) {
         _titleLabel5.text = [NSString stringWithFormat:@"+%@%%",productInfoModel.ror];
-        _titleLabel5.textColor = BHHexColor(@"1BAC75");
-    } else if ([productInfoModel.ror integerValue] < 0)
+        _titleLabel5.textColor = BHHexColor(@"228B22");
+    } else if ([productInfoModel.ror floatValue] < 0)
     {
         _titleLabel5.text = [NSString stringWithFormat:@"%@%%",productInfoModel.ror];
-        _titleLabel5.textColor = BHHexColor(@"FF6B28");
+        _titleLabel5.textColor = BHHexColor(@"FF4040");
     } else
     {
         _titleLabel5.text = [NSString stringWithFormat:@"%@%%",productInfoModel.ror];
-        _titleLabel5.textColor = BHHexColor(@"292C33");
+        _titleLabel5.textColor = BHHexColor(@"626A75");
     }
 }
 
