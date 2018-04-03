@@ -60,9 +60,9 @@
     methodName = kGetlatestProductList;
     
     WS(weakSelf)
-    [self hudShow:self.view msg:@"请稍后"];
+    NMShowLoadIng;
     [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
-        [weakSelf hudClose];
+        NMRemovLoadIng;
         if (IsSafeDictionary(responseObject)) {
            NSArray *productList = [NSArray yy_modelArrayWithClass:[HomeProductInfoModel class] json:responseObject[@"data"][@"details"]];
             [dataArray addObjectsFromArray:productList];
@@ -74,11 +74,10 @@
             {
                 [weakSelf.strategyFollowTableView.strategyFollowTableView.mj_footer endRefreshing];
             }
-            
         }
     } failure:^(NSError *error) {
         [weakSelf.strategyFollowTableView.strategyFollowTableView.mj_footer endRefreshing];
-        [weakSelf hudClose];
+        NMRemovLoadIng;
         RequestError(error);
     }];
 }

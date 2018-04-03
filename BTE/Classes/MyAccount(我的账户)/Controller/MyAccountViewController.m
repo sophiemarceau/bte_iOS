@@ -58,9 +58,9 @@
     methodName = kGetUserLoginInfo;
     
     WS(weakSelf)
-    [self hudShow:self.view msg:@"请稍后"];
+    NMShowLoadIng;
     [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
-        [weakSelf hudClose];
+        NMRemovLoadIng;
         if (IsSafeDictionary(responseObject) && [[responseObject objectForKey:@"data"] integerValue] == 0) {//未登录
             _islogin = NO;
             //刷新tableview
@@ -86,7 +86,7 @@
             [weakSelf getMyAccountInfo];
         }
     } failure:^(NSError *error) {
-        [weakSelf hudClose];
+        NMRemovLoadIng;
         RequestError(error);
     }];
 }
@@ -138,9 +138,9 @@
         methodName = kAcountUserLogout;
         
         WS(weakSelf)
-        [self hudShow:self.view msg:@"请稍后"];
+        NMShowLoadIng;
         [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
-            [weakSelf hudClose];
+            NMRemovLoadIng;
             self.isloginAndGetMyAccountInfo = @"0";
             //删除本地登录信息
             [User removeLoginData];
@@ -148,7 +148,7 @@
             [[NSNotificationCenter defaultCenter]postNotificationName:NotificationUserLoginSuccess object:nil];
             [self.tabBarController setSelectedIndex:0];
         } failure:^(NSError *error) {
-            [weakSelf hudClose];
+            NMRemovLoadIng;
             RequestError(error);
         }];
     }
@@ -175,10 +175,10 @@
     methodName = kAcountInfo;
     
     WS(weakSelf)
-    [self hudShow:self.view msg:@"请稍后"];
+    NMShowLoadIng;
     self.isloginAndGetMyAccountInfo = @"1";
     [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
-        [weakSelf hudClose];
+        NMRemovLoadIng;
         //登录成功并获取到了账户信息
         self.isloginAndGetMyAccountInfo = @"1";
         legalAccountModel = [BTELegalAccount yy_modelWithDictionary:responseObject[@"data"][@"legalAccount"]];
@@ -186,7 +186,7 @@
         [weakSelf getMyAccountCurrentInfo];
         [weakSelf getMyAccountCurrentPhone];
     } failure:^(NSError *error) {
-        [weakSelf hudClose];
+        NMRemovLoadIng;
         self.isloginAndGetMyAccountInfo = @"0";
         RequestError(error);
     }];
@@ -205,15 +205,15 @@
     methodName = kAcountHoldInfo;
     
     WS(weakSelf)
-    [self hudShow:self.view msg:@"请稍后"];
+    NMShowLoadIng;
     [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
-        [weakSelf hudClose];
+        NMRemovLoadIng;
         statisticsModel = [BTEStatisticsModel yy_modelWithDictionary:responseObject[@"data"][@"statistics"]];
         detailsList = [NSArray yy_modelArrayWithClass:[BTEAccountDetailsModel class] json:responseObject[@"data"][@"details"]];
         //刷新tableview
         [weakSelf.myAccountTableView refreshUi:detailsList model1:amountModel model2:legalAccountModel model3:btcAccountModel model4:statisticsModel type:1 islogin:_islogin];
     } failure:^(NSError *error) {
-        [weakSelf hudClose];
+        NMRemovLoadIng;
         RequestError(error);
     }];
 }
@@ -232,15 +232,15 @@
     methodName = kAcountPhoneNum;
     
     WS(weakSelf)
-    [self hudShow:self.view msg:@"请稍后"];
+    NMShowLoadIng;
     [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
-        [weakSelf hudClose];
+        NMRemovLoadIng;
         NSLog(@"-----------%@",responseObject[@"data"][@"tel"]);
         amountModel = responseObject[@"data"][@"tel"];
         //刷新tableview
         [weakSelf.myAccountTableView refreshUi:detailsList model1:amountModel model2:legalAccountModel model3:btcAccountModel model4:statisticsModel type:1 islogin:_islogin];
     } failure:^(NSError *error) {
-        [weakSelf hudClose];
+        NMRemovLoadIng;
         RequestError(error);
     }];
 }
@@ -257,15 +257,15 @@
     methodName = kAcountSettleInfo;
     
     WS(weakSelf)
-    [self hudShow:self.view msg:@"请稍后"];
+    NMShowLoadIng;
     [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
-        [weakSelf hudClose];
+        NMRemovLoadIng;
         statisticsModel = [BTEStatisticsModel yy_modelWithDictionary:responseObject[@"data"][@"statistics"]];
         detailsList = [NSArray yy_modelArrayWithClass:[BTEAccountDetailsModel class] json:responseObject[@"data"][@"details"]];
         //刷新tableview
         [weakSelf.myAccountTableView refreshUi:detailsList model1:amountModel model2:legalAccountModel model3:btcAccountModel model4:statisticsModel type:2 islogin:_islogin];
     } failure:^(NSError *error) {
-        [weakSelf hudClose];
+        NMRemovLoadIng;
         RequestError(error);
     }];
 }

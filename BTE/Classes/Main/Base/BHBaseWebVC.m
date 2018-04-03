@@ -87,7 +87,7 @@
 #pragma mark - UIWebView delegate
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = true;
-    [BHProgressHUD showLoading];
+    NMShowLoadIng;
     return YES;
 }
 - (void)webViewDidStartLoad:(UIWebView *)webView {
@@ -95,11 +95,11 @@
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
-    [BHProgressHUD hideLoading];
+    NMRemovLoadIng;
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
-    [BHProgressHUD hideLoading];
+    NMRemovLoadIng;
 }
 
 #pragma mark - getCookie
@@ -177,8 +177,7 @@
     }
     NSLog(@"WKWebView删除缓存");
     [self clearCache];
-    [BHProgressHUD hideLoading];
-    
+    NMRemovLoadIng;
 }
 - (UIBarButtonItem *)creatLeftBarItem {
     UIImage *buttonNormal = [[UIImage imageNamed:@"nav_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

@@ -130,6 +130,10 @@
 		818B1CCB206382200065B3FA /* BTEHomePageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 818B1CCA206382200065B3FA /* BTEHomePageTableView.m */; };
 		818B1CCE206391860065B3FA /* BTEHomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 818B1CCD206391860065B3FA /* BTEHomePageTableViewCell.m */; };
 		81FFE180207242FA001AB03D /* BTELeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FFE17F207242FA001AB03D /* BTELeftView.m */; };
+		81FFE183207367BC001AB03D /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FFE181207367BB001AB03D /* Tools.m */; };
+		81FFE1892073680D001AB03D /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FFE1852073680D001AB03D /* FLAnimatedImage.m */; };
+		81FFE18A2073680D001AB03D /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FFE1862073680D001AB03D /* FLAnimatedImageView.m */; };
+		81FFE18E20736AE3001AB03D /* jiazaipage.gif in Resources */ = {isa = PBXBuildFile; fileRef = 81FFE18D20736AE3001AB03D /* jiazaipage.gif */; };
 		A3C2D27DD5C7720F52180047 /* libPods-BTE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A790C91021B35BCE72495255 /* libPods-BTE.a */; };
 		B90071BD2044FC6500431065 /* BTELoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90071BB2044FC6500431065 /* BTELoginVC.xib */; };
 		B90071C02045344A00431065 /* BHGradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B90071BE2045344900431065 /* BHGradientButton.m */; };
@@ -407,6 +411,13 @@
 		818B1CCD206391860065B3FA /* BTEHomePageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEHomePageTableViewCell.m; sourceTree = "<group>"; };
 		81FFE17E207242FA001AB03D /* BTELeftView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTELeftView.h; sourceTree = "<group>"; };
 		81FFE17F207242FA001AB03D /* BTELeftView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTELeftView.m; sourceTree = "<group>"; };
+		81FFE181207367BB001AB03D /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
+		81FFE182207367BB001AB03D /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		81FFE1852073680D001AB03D /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImage.m; sourceTree = "<group>"; };
+		81FFE1862073680D001AB03D /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImageView.m; sourceTree = "<group>"; };
+		81FFE1872073680D001AB03D /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImage.h; sourceTree = "<group>"; };
+		81FFE1882073680D001AB03D /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
+		81FFE18D20736AE3001AB03D /* jiazaipage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = jiazaipage.gif; sourceTree = "<group>"; };
 		A790C91021B35BCE72495255 /* libPods-BTE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BTE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B90071B92044FC6500431065 /* BTELoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTELoginVC.h; sourceTree = "<group>"; };
 		B90071BB2044FC6500431065 /* BTELoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BTELoginVC.xib; sourceTree = "<group>"; };
@@ -800,6 +811,8 @@
 		8179AE6320086175001678D2 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				81FFE18B20736AAD001AB03D /* Resource */,
+				81FFE1842073680D001AB03D /* FLAnimatedImage */,
 				B9A559712047ED2A009CC3BA /* WebViewJavascriptBridge */,
 				8179AE6420086175001678D2 /* SSKeychain */,
 				8179AE6D20086175001678D2 /* EAIntroView */,
@@ -862,6 +875,8 @@
 		8179AE8D20086181001678D2 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				81FFE182207367BB001AB03D /* Tools.h */,
+				81FFE181207367BB001AB03D /* Tools.m */,
 				8179AE9B20086181001678D2 /* BHHexColor.h */,
 				8179AE8E20086181001678D2 /* BHHexColor.m */,
 				8179AE8F20086181001678D2 /* HttpTool */,
@@ -1208,6 +1223,33 @@
 			path = LeftView;
 			sourceTree = "<group>";
 		};
+		81FFE1842073680D001AB03D /* FLAnimatedImage */ = {
+			isa = PBXGroup;
+			children = (
+				81FFE1852073680D001AB03D /* FLAnimatedImage.m */,
+				81FFE1862073680D001AB03D /* FLAnimatedImageView.m */,
+				81FFE1872073680D001AB03D /* FLAnimatedImage.h */,
+				81FFE1882073680D001AB03D /* FLAnimatedImageView.h */,
+			);
+			path = FLAnimatedImage;
+			sourceTree = "<group>";
+		};
+		81FFE18B20736AAD001AB03D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				81FFE18C20736ACE001AB03D /* images */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		81FFE18C20736ACE001AB03D /* images */ = {
+			isa = PBXGroup;
+			children = (
+				81FFE18D20736AE3001AB03D /* jiazaipage.gif */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		B90071B82044FBFC00431065 /* Login(登录) */ = {
 			isa = PBXGroup;
 			children = (
@@ -1368,6 +1410,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81FFE18E20736AE3001AB03D /* jiazaipage.gif in Resources */,
 				8179AE5620085FAA001678D2 /* BHAdvisoryShareView in Resources */,
 				8179AE5520085FAA001678D2 /* BHArticleShareVIew in Resources */,
 				8179AEDD20089DB5001678D2 /* Info.plist in Resources */,
@@ -1491,6 +1534,7 @@
 				8112E3D02051352200419BC9 /* BTEMyAccountTableView.m in Sources */,
 				8179AE2720085DB5001678D2 /* NSString+MD5.m in Sources */,
 				816CCD1D2009ED24009E03D2 /* BHVersionTool.m in Sources */,
+				81FFE183207367BC001AB03D /* Tools.m in Sources */,
 				81403B482066355900788F9D /* BTEStrategyFollowTableView.m in Sources */,
 				8112E3B4204541AE00419BC9 /* YQDiskCache.m in Sources */,
 				8179AE2520085DB5001678D2 /* UIFont+extension.m in Sources */,
@@ -1514,6 +1558,7 @@
 				8179AF172009E0A3001678D2 /* BTEHomeWebViewController.m in Sources */,
 				8179D2FE2021D73600C13447 /* Y_MALine.m in Sources */,
 				B90071CC20456F0D00431065 /* BTELoginVC.m in Sources */,
+				81FFE18A2073680D001AB03D /* FLAnimatedImageView.m in Sources */,
 				8112E3D320514F2600419BC9 /* BTEMyAccountTableViewCell.m in Sources */,
 				8179D3092021D82800C13447 /* ViewController.m in Sources */,
 				8179AE4320085DB5001678D2 /* UIView+category.m in Sources */,
@@ -1554,6 +1599,7 @@
 				8179D2EE2021D73600C13447 /* Y_KLineView.m in Sources */,
 				8179AE3C20085DB5001678D2 /* NSString+category.m in Sources */,
 				8179AE4020085DB5001678D2 /* NSDate+Categoey.m in Sources */,
+				81FFE1892073680D001AB03D /* FLAnimatedImage.m in Sources */,
 				8112E3B8204541AE00419BC9 /* YQNetworking.m in Sources */,
 				B9A559792047ED2A009CC3BA /* WebViewJavascriptBridgeBase.m in Sources */,
 				81403B3E206623AE00788F9D /* LBBannerView.m in Sources */,

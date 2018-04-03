@@ -70,9 +70,9 @@
     methodName = kGetlatestInfo;
     
     WS(weakSelf)
-    [self hudShow:self.view msg:@"请稍后"];
+    NMShowLoadIng;
     [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
-        [weakSelf hudClose];
+        NMRemovLoadIng;
         if (IsSafeDictionary(responseObject)) {
             HomeDescriptionModel *descModel = [[HomeDescriptionModel alloc] init];
             descModel.desc = responseObject[@"data"][@"description"];
@@ -82,7 +82,7 @@
             [weakSelf.homePageTableView refreshUi:detailsList productList:productList model1:descriptionModel model2:productInfoModel currentCurrencyType:currentCurrencyType];
         }
     } failure:^(NSError *error) {
-        [weakSelf hudClose];
+        NMRemovLoadIng;
         RequestError(error);
     }];
 }
@@ -99,16 +99,16 @@
     methodName = kGetlatestNewsInfo;
     
     WS(weakSelf)
-    [self hudShow:self.view msg:@"请稍后"];
+    NMShowLoadIng;
     [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
-        [weakSelf hudClose];
+        NMRemovLoadIng;
         if (IsSafeDictionary(responseObject)) {
             productList = [NSArray yy_modelArrayWithClass:[HomeProductModel class] json:responseObject[@"data"]];
             //刷新tableview
             [weakSelf.homePageTableView refreshUi:detailsList productList:productList model1:descriptionModel model2:productInfoModel currentCurrencyType:currentCurrencyType];
         }
     } failure:^(NSError *error) {
-        [weakSelf hudClose];
+        NMRemovLoadIng;
         RequestError(error);
     }];
 }
@@ -125,16 +125,16 @@
     methodName = kGetlatestProductInfo;
     
     WS(weakSelf)
-    [self hudShow:self.view msg:@"请稍后"];
+    NMShowLoadIng;
     [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
-        [weakSelf hudClose];
+        NMRemovLoadIng;
         if (IsSafeDictionary(responseObject)) {
             productInfoModel = [HomeProductInfoModel yy_modelWithDictionary:responseObject[@"data"]];
             //刷新tableview
             [weakSelf.homePageTableView refreshUi:detailsList productList:productList model1:descriptionModel model2:productInfoModel currentCurrencyType:currentCurrencyType];
         }
     } failure:^(NSError *error) {
-        [weakSelf hudClose];
+        NMRemovLoadIng;
         RequestError(error);
     }];
 }
@@ -143,7 +143,7 @@
 {
     BTEHomeWebViewController *homePageVc= [[BTEHomeWebViewController alloc] init];
     
-    homePageVc.urlString = [NSString stringWithFormat:@"%@/%@/%@/%@",kAppDealAddress,model.symbol,[model.trend stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[model.operation stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    homePageVc.urlString = [NSString stringWithFormat:@"%@/%@",kAppDealAddress,model.symbol];
     homePageVc.isHiddenLeft = YES;
     homePageVc.isHiddenBottom = NO;
     homePageVc.desListModel = model;

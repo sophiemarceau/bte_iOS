@@ -54,6 +54,12 @@ if (error.code != -900000) { \
 #define BH_loginSuccess @"WL_loginSuccess"
 
 
+//加载动画
+#define NMShowLoadIng;  [Tools imageWithImage]
+//删除动画
+#define NMRemovLoadIng; [Tools removeLoadingView]
+
+
 #pragma mark - 字符串相关
 /**
  *  格式化字符串

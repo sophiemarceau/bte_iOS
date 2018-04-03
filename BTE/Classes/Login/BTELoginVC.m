@@ -109,12 +109,12 @@ typedef NS_ENUM(NSInteger, LoginType) {
         methodName = self.loginType ? kPwdLogin : kCodeLogin;
         
         WS(weakSelf)
-        [self hudShow:self.view msg:@"请稍后"];
+        NMShowLoadIng;
         [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
-            [weakSelf hudClose];
+            NMRemovLoadIng;
             [weakSelf loginSuccess:responseObject];
         } failure:^(NSError *error) {
-            [weakSelf hudClose];
+            NMRemovLoadIng;
             RequestError(error);
         }];
     }else {
@@ -132,12 +132,12 @@ typedef NS_ENUM(NSInteger, LoginType) {
             return;
         }
         WS(weakSelf)
-        [self hudShow:self.view msg:@"请稍后"];
+        NMShowLoadIng;
         [BTERequestTools requestWithURLString:kreSetPwd parameters:@{@"pwd1": account , @"pwd2" : code} type:2 success:^(id responseObject) {
-            [weakSelf hudClose];
+            NMRemovLoadIng;
             [weakSelf loginSuccess:responseObject];
         } failure:^(NSError *error) {
-            [weakSelf hudClose];
+            NMRemovLoadIng;
             RequestError(error);
         }];
     }
@@ -244,13 +244,13 @@ typedef NS_ENUM(NSInteger, LoginType) {
         return;
     }
     WS(weakSelf)
-    [self hudShow:self.view msg:@"请稍后"];
+    NMShowLoadIng;
     [BTERequestTools requestWithURLString:kMessageAuth parameters:@{@"mobile":account} type:2 success:^(id responseObject) {
-        [weakSelf hudClose];
+        NMRemovLoadIng;
         [BHToast showMessage:@"验证码已发送至手机"];
         [weakSelf circleProgressStart];
     } failure:^(NSError *error)  {
-        [weakSelf hudClose];
+        NMRemovLoadIng;
         RequestError(error);
     }];
 }

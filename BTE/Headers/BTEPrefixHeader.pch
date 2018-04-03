@@ -19,7 +19,7 @@
 #import <MBProgressHUD.h>
 #import <UIImageView+WebCache.h>
 #import "BHToast.h"
-
+#import "Tools.h"
 // MARK: --------Headers---------
 #import "BHAppConfig.h"
 #import "BHHttpConstant.h"
