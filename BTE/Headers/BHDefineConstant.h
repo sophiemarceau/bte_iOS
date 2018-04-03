@@ -119,7 +119,7 @@ if (error.code != -900000) { \
 
 //新增
 //背景色
-#define KBGColor BHHexColor(@"E8EBED")
+#define KBGColor BHHexColor(@"edf0f2")
 #define KBGCell BHHexColor(@"FAFAFA")
 #pragma mark - 颜色相关
 

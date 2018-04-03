@@ -26,10 +26,10 @@
 //设置头部视图
 - (void)setTableHeadView
 {
-    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 197 + 16 + 48)];
+    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 178.5 + 48)];
     headView.backgroundColor = KBGColor;
     
-    bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 197)];
+    bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 162.5)];
     bgImageView.image = [UIImage imageNamed:@"pic_account_bg"];
     [headView addSubview:bgImageView];
     
@@ -41,65 +41,70 @@
     labelRefresh.hidden = YES;
     [headView addSubview:labelRefresh];
     
-    UIImageView *iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(16, 58, 46, 46)];
+    UIImageView *iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(16, 8.6, 31.7, 31.7)];
     iconImageView.image = [UIImage imageNamed:@"bte_logo_account"];
     [headView addSubview:iconImageView];
     
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 16, SCREEN_WIDTH - 100, 20)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 12, SCREEN_WIDTH - 100, 20)];
     titleLabel.text = @"我的账户";
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.font = UIFontRegularOfSize(18);
     titleLabel.textColor = BHHexColor(@"ffffff");
     [headView addSubview:titleLabel];
     
+    UILabel *titleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(50, 61.5, SCREEN_WIDTH - 100, 20)];
+    titleLabel1.text = @"账户可用余额";
+    titleLabel1.textAlignment = NSTextAlignmentCenter;
+    titleLabel1.font = UIFontRegularOfSize(12);
+    titleLabel1.textColor = BHHexColor(@"ffffff");
+    [headView addSubview:titleLabel1];
     
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 24 + 30, SCREEN_WIDTH, 14)];
-    if (_islogin) {
-        _titleLabel.text = @"比特易";
-        _titleLabel.font = UIFontRegularOfSize(13);
-        _titleLabel.textColor = BHHexColor(@"ffffff");
-        _titleLabel.alpha = 0.8;
-        _titleLabel.frame = CGRectMake(70, 62, 100, 13);
-        
-        _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(70, 82, 150, 18)];
-        if (amountModel.length == 11) {
-            amountModel = [NSString stringWithFormat:@"%@ %@ %@",[amountModel substringWithRange:NSMakeRange(0,3)],[amountModel substringWithRange:NSMakeRange(3,4)],[amountModel substringWithRange:NSMakeRange(7,4)]];
-        }
-        _subTitleLabel1.text = amountModel;
-        _subTitleLabel1.font = UIFontRegularOfSize(18);
-        _subTitleLabel1.textColor = BHHexColor(@"ffffff");
-        [headView addSubview:_subTitleLabel1];
-        
-    } else
-    {
-        _titleLabel.text = @"点击登录";
-        _titleLabel.font = UIFontRegularOfSize(20);
-        _titleLabel.textColor = BHHexColor(@"ffffff");
-        _titleLabel.frame = CGRectMake(70, 70, 100, 20);
-        _titleLabel.userInteractionEnabled = YES;
-        //点击手势
-        UITapGestureRecognizer *r5 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doTapChange)];
-        [_titleLabel addGestureRecognizer:r5];
-    }
-    [headView addSubview:_titleLabel];
     
-    _detailLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 129, 100, 13)];
+//    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 24 + 30, SCREEN_WIDTH, 14)];
+//    if (_islogin) {
+//        _titleLabel.text = @"比特易";
+//        _titleLabel.font = UIFontRegularOfSize(13);
+//        _titleLabel.textColor = BHHexColor(@"ffffff");
+//        _titleLabel.alpha = 0.8;
+//        _titleLabel.frame = CGRectMake(70, 62, 100, 13);
+//
+//        _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(70, 82, 150, 18)];
+//        if (amountModel.length == 11) {
+//            amountModel = [NSString stringWithFormat:@"%@ %@ %@",[amountModel substringWithRange:NSMakeRange(0,3)],[amountModel substringWithRange:NSMakeRange(3,4)],[amountModel substringWithRange:NSMakeRange(7,4)]];
+//        }
+//        _subTitleLabel1.text = amountModel;
+//        _subTitleLabel1.font = UIFontRegularOfSize(18);
+//        _subTitleLabel1.textColor = BHHexColor(@"ffffff");
+//        [headView addSubview:_subTitleLabel1];
+//
+//    } else
+//    {
+//        _titleLabel.text = @"点击登录";
+//        _titleLabel.font = UIFontRegularOfSize(20);
+//        _titleLabel.textColor = BHHexColor(@"ffffff");
+//        _titleLabel.frame = CGRectMake(70, 70, 100, 20);
+//        _titleLabel.userInteractionEnabled = YES;
+//        //点击手势
+//        UITapGestureRecognizer *r5 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doTapChange)];
+//        [_titleLabel addGestureRecognizer:r5];
+//    }
+//    [headView addSubview:_titleLabel];
+    
+    _detailLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(65, 92.5, 100, 14)];
     _detailLabel1.text = @"美元";
-    _detailLabel1.font = UIFontRegularOfSize(13);
+    _detailLabel1.font = UIFontRegularOfSize(14);
     _detailLabel1.textColor = BHHexColor(@"ffffff");
-    _detailLabel1.alpha = 0.8;
     [headView addSubview:_detailLabel1];
     
-    UIView *vicLine = [[UIView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 2) / 2, 137, 2, 32)];
-    vicLine.backgroundColor = BHHexColor(@"ffffff");
-    vicLine.alpha = 0.6;
-    [headView addSubview:vicLine];
+//    UIView *vicLine = [[UIView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 2) / 2, 137, 2, 32)];
+//    vicLine.backgroundColor = BHHexColor(@"ffffff");
+//    vicLine.alpha = 0.6;
+//    [headView addSubview:vicLine];
     
-    _detailLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(0, _detailLabel1.top, _detailLabel1.width, _detailLabel1.height)];
+    _detailLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 65 - _detailLabel1.width, _detailLabel1.top, _detailLabel1.width, _detailLabel1.height)];
     _detailLabel2.text = @"BTC";
-    _detailLabel2.left = vicLine.right + 24;
-    _detailLabel2.font = UIFontRegularOfSize(13);
-    _detailLabel2.alpha = 0.8;
+    _detailLabel2.textAlignment = NSTextAlignmentRight;
+    _detailLabel2.font = UIFontRegularOfSize(14);
     _detailLabel2.textColor = BHHexColor(@"ffffff");
     [headView addSubview:_detailLabel2];
     
@@ -110,6 +115,8 @@
     {
         _detailLabel3.text = @"--";
     }
+    _detailLabel3.textAlignment = NSTextAlignmentCenter;
+    _detailLabel3.centerX = 81;
     _detailLabel3.font = [UIFont systemFontOfSize:20];
     _detailLabel3.textColor = BHHexColor(@"ffffff");
     [headView addSubview:_detailLabel3];
@@ -122,6 +129,8 @@
         _detailLabel4.text = @"--";
     }
     _detailLabel4.font = [UIFont systemFontOfSize:20];
+    _detailLabel4.textAlignment = NSTextAlignmentCenter;
+    _detailLabel4.centerX = SCREEN_WIDTH -  76;
     _detailLabel4.textColor = BHHexColor(@"ffffff");
     [headView addSubview:_detailLabel4];
 
@@ -416,7 +425,7 @@
         CGRect rect = bgImageView.frame;
         //我们只需要改变图片的y值和高度即可
         rect.origin.y = offset.y;
-        rect.size.height = 197 - offset.y;
+        rect.size.height = 162.5 - offset.y;
         bgImageView.frame = rect;
         if (offset.y < -30) {
             labelRefresh.hidden = NO;

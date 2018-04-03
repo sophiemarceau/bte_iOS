@@ -15,13 +15,13 @@
     self = [super initWithFrame:frame];
     if (self) {
         _strategyFollowTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height) style:UITableViewStylePlain];
-        _strategyFollowTableView.backgroundColor = KBGCell;
+        _strategyFollowTableView.backgroundColor = KBGColor;
         _strategyFollowTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _strategyFollowTableView.delegate = self;
         _strategyFollowTableView.dataSource = self;
         [self addSubview:_strategyFollowTableView];
 //        [self setTableHeadView];
-        [self setTableFooterView];
+//        [self setTableFooterView];
     }
     return self;
 }
