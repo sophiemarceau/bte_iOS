@@ -43,7 +43,7 @@
     self.navigationItem.leftBarButtonItem = [self creatLeftBarItem];
     self.shareType = UMS_SHARE_TYPE_WEB_LINK;//web链接
     self.sharetitle = @"比特易—数字货币分析平台";
-    self.shareDesc = @"比特易是业界领先的数字货币市场专业分析平台，获软银、蓝驰战略投资！玩转比特币，多看比特易！";
+    self.shareDesc = @"比特易是业界领先的数字货币市场专业分析平台，软银中国资本(SBCVC)、蓝驰创投(BlueRun Ventures)战略投资，玩转比特币，多看比特易。";
     self.shareUrl = kAppBTEH5AnalyzeAddress;
     
     if (self.homePageTableView == nil) {
