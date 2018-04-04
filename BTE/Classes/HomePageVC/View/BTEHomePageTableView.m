@@ -237,7 +237,7 @@
         return 16;
     } else
     {
-        CGRect rect = [productInfoModel.desc boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 160, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:UIFontRegularOfSize(14)} context:nil];
+        CGRect rect = [productInfoModel.desc boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 160, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:UIFontRegularOfSize(12)} context:nil];
         return 124 + 48 + 78 + rect.size.height;
     }
 }
@@ -295,8 +295,8 @@
         
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(24, 22, 80, 18)];
         titleLabel.text = @"市场分析";
-        titleLabel.font = UIFontMediumOfSize(18);
-        titleLabel.textColor = BHHexColor(@"525866");
+        titleLabel.font = UIFontMediumOfSize(17);
+        titleLabel.textColor = BHHexColor(@"626A75");
         [bgView addSubview:titleLabel];
         
         
@@ -312,7 +312,7 @@
         }
         contentLabel.font = [UIFont systemFontOfSize:14];
         contentLabel.numberOfLines = 0;
-        contentLabel.textColor = BHHexColor(@"525866");
+        contentLabel.textColor = BHHexColor(@"626A75");
         [bgView addSubview:contentLabel];
         
         if (rect.size.height > defaultHeight) {
@@ -341,8 +341,8 @@
         
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 17, 80, 18)];
         titleLabel.text = @"市场快讯";
-        titleLabel.font = UIFontMediumOfSize(18);
-        titleLabel.textColor = BHHexColor(@"525866");
+        titleLabel.font = UIFontMediumOfSize(17);
+        titleLabel.textColor = BHHexColor(@"626A75");
         [cell.contentView addSubview:titleLabel];
         
         //创建轮播器控件
@@ -368,21 +368,21 @@
         
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(42, 20, 80, 20)];
         titleLabel.text = @"策略跟随";
-        titleLabel.font = UIFontRegularOfSize(18);
-        titleLabel.textColor = BHHexColor(@"292C33");
+        titleLabel.font = UIFontMediumOfSize(17);
+        titleLabel.textColor = BHHexColor(@"626A75");
         [cell.contentView addSubview:titleLabel];
         
         UILabel *titleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 48, SCREEN_WIDTH - 32, 38)];
         titleLabel1.text = @"通过领先的交易跟随技术，一键跟随专业团队交易策略，投资数字货币更简单。";
         titleLabel1.numberOfLines = 0;
         titleLabel1.font = UIFontRegularOfSize(12);
-        titleLabel1.textColor = BHHexColor(@"9CA1A9");
+        titleLabel1.textColor = BHHexColor(@"626A75");
         [cell.contentView addSubview:titleLabel1];
         
-        CGRect rect = [productInfoModel.desc boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 160, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:UIFontRegularOfSize(14)} context:nil];
+        CGRect rect = [productInfoModel.desc boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 160, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:UIFontRegularOfSize(12)} context:nil];
         
         UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(16, 94, SCREEN_WIDTH - 36, 48 + 78 + rect.size.height)];
-        bgView.backgroundColor = BHHexColor(@"F0F8FF");
+        bgView.backgroundColor = BHHexColor(@"EDF0F2");
         bgView.layer.masksToBounds = YES;
         bgView.layer.cornerRadius = 4;
         [cell.contentView addSubview:bgView];
@@ -402,13 +402,14 @@
         
         UILabel *titleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(64, 24, SCREEN_WIDTH - 160, 20)];
         titleLabel2.text = productInfoModel.name;
-        titleLabel2.font = UIFontRegularOfSize(16);
-        titleLabel2.textColor = BHHexColor(@"292C33");
+        titleLabel2.font = UIFontMediumOfSize(16);
+        titleLabel2.textColor = BHHexColor(@"525866");
         [bgView addSubview:titleLabel2];
         
         UILabel *titleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(64, 48, SCREEN_WIDTH - 160, rect.size.height)];
         titleLabel3.text = productInfoModel.desc;
-        titleLabel3.font = UIFontRegularOfSize(14);
+        titleLabel3.font = UIFontRegularOfSize(12);
+        titleLabel3.alpha = 0.8;
         titleLabel3.numberOfLines = 0;
         titleLabel3.textColor = BHHexColor(@"525866");
         [bgView addSubview:titleLabel3];
@@ -454,7 +455,7 @@
         titleLabel4.textAlignment = NSTextAlignmentRight;
         titleLabel4.text = @"风险";
         titleLabel4.font = UIFontRegularOfSize(12);
-        titleLabel4.textColor = BHHexColor(@"7A8499");
+        titleLabel4.textColor = BHHexColor(@"626A75");
         [bgView addSubview:titleLabel4];
         
         UIView *bgView2 = [[UIView alloc] initWithFrame:CGRectMake(16, titleLabel3.bottom + 31, bgView.width - 32, 1)];
@@ -462,10 +463,10 @@
         [bgView addSubview:bgView2];
         
         
-        UILabel *titleLabel6 = [[UILabel alloc] initWithFrame:CGRectMake(16, bgView2.bottom + 13, 160, 12)];
+        UILabel *titleLabel6 = [[UILabel alloc] initWithFrame:CGRectMake(16, bgView2.bottom + 13, 160, 14)];
         titleLabel6.text = @"累计收益率：";
-        titleLabel6.font = UIFontRegularOfSize(12);
-        titleLabel6.textColor = BHHexColor(@"525866");
+        titleLabel6.font = UIFontRegularOfSize(14);
+        titleLabel6.textColor = BHHexColor(@"626A75");
         [bgView addSubview:titleLabel6];
         
         UILabel *titleLabel5 = [[UILabel alloc] initWithFrame:CGRectMake(16, bgView2.bottom + 10, 160, 20)];

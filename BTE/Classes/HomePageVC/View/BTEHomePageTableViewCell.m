@@ -19,13 +19,13 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         
-        _iconImage = [[UIImageView alloc] initWithFrame:CGRectMake(16, 14, 22, 22)];
+        _iconImage = [[UIImageView alloc] initWithFrame:CGRectMake(16, 17, 17, 17)];
         [self.contentView addSubview:_iconImage];
         
-        _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(44, 17, 60, 18)];
+        _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(39, 17, 60, 18)];
         _subTitleLabel1.text = @"BTC";
         _subTitleLabel1.font = UIFontMediumOfSize(18);
-        _subTitleLabel1.textColor = BHHexColor(@"525866");
+        _subTitleLabel1.textColor = BHHexColor(@"626A75");
         [self.contentView addSubview:_subTitleLabel1];
         
         _subTitleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(124, 18, 100, 16)];
@@ -38,12 +38,14 @@
         _subTitleLabel3.text = @"$2,663.24";
         _subTitleLabel3.font = UIFontRegularOfSize(14);
         _subTitleLabel3.textColor = BHHexColor(@"525866");
+        _subTitleLabel3.alpha = 0.8;
         [self.contentView addSubview:_subTitleLabel3];
         
-        _subTitleLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(124, 44, 160, 14)];
+        _subTitleLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(124, 44, 160, 13)];
         _subTitleLabel4.text = @"附近分阶段建仓";
-        _subTitleLabel4.font = UIFontRegularOfSize(12);
+        _subTitleLabel4.font = UIFontRegularOfSize(13);
         _subTitleLabel4.textColor = BHHexColor(@"525866");
+        _subTitleLabel4.alpha = 0.8;
         [self.contentView addSubview:_subTitleLabel4];
         
         

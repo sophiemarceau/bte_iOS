@@ -61,15 +61,15 @@
     [self addSubview:bgview3];
     
     labelTitle = [[UILabel alloc] initWithFrame:CGRectMake(14, 16, bgview3.width - 32, 14)];
-    labelTitle.textColor = BHHexColor(@"525866");
+    labelTitle.textColor = BHHexColor(@"626A75");
     labelTitle.text = @"比特币价格跌至14502美元 下跌涨幅约25%";
-    labelTitle.font = UIFontRegularOfSize(14);
+    labelTitle.font = UIFontMediumOfSize(14);
     [bgview3 addSubview:labelTitle];
     
     
     
     labelTitle2 = [[UILabel alloc] initWithFrame:CGRectMake(14, labelTitle.bottom + 12, bgview3.width - 32, 12)];
-    labelTitle2.textColor = BHHexColor(@"525866");
+    labelTitle2.textColor = BHHexColor(@"626A75");
     labelTitle2.text = @"比特币价格跌至14502美元 下跌涨幅约25%";
     labelTitle2.font = UIFontRegularOfSize(12);
     labelTitle2.alpha = 0.8;
@@ -77,7 +77,7 @@
     
     
     labelTitle1 = [[UILabel alloc] initWithFrame:CGRectMake(14, labelTitle2.bottom + 6, bgview3.width - 32, defaultHeight)];
-    labelTitle1.textColor = BHHexColor(@"525866");
+    labelTitle1.textColor = BHHexColor(@"626A75");
     labelTitle1.numberOfLines = 0;
     labelTitle1.text = @"(12月22日 星期五 11:32) 在今天的交易时段，比特币价格最低为14502美元，较12月17日创下的19,783美元历史高点共下跌了约25%。..";
     labelTitle1.font = UIFontRegularOfSize(14);
