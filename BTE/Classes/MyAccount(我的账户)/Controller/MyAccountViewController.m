@@ -141,12 +141,16 @@
         NMShowLoadIng;
         [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
             NMRemovLoadIng;
-            self.isloginAndGetMyAccountInfo = @"0";
+            weakSelf.isloginAndGetMyAccountInfo = @"0";
+            
+            //退出成功删除手机号
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:nil forKey:MobilePhoneNum];
             //删除本地登录信息
             [User removeLoginData];
             //发送通知告诉web token变动
             [[NSNotificationCenter defaultCenter]postNotificationName:NotificationUserLoginSuccess object:nil];
-            [self.tabBarController setSelectedIndex:0];
+            [weakSelf.tabBarController setSelectedIndex:0];
         } failure:^(NSError *error) {
             NMRemovLoadIng;
             RequestError(error);

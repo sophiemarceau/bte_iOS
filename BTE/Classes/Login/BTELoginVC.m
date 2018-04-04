@@ -112,6 +112,10 @@ typedef NS_ENUM(NSInteger, LoginType) {
         NMShowLoadIng;
         [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
             NMRemovLoadIng;
+            //登录成功记录手机号
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:account forKey:MobilePhoneNum];
+            [defaults synchronize];
             [weakSelf loginSuccess:responseObject];
         } failure:^(NSError *error) {
             NMRemovLoadIng;

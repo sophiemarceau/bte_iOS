@@ -143,7 +143,7 @@
 //设置尾部视图
 - (void)setTableFooterView
 {
-    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 143)];
+    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 189)];
     headView.backgroundColor = KBGColor;
     
     UIImageView *image1 = [[UIImageView alloc] initWithFrame:CGRectMake(31, 29, 74, 74)];
@@ -163,16 +163,24 @@
     UILabel *titleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(151, 24, 195, 25)];
     titleLabel1.text = @"玩转比特币 多看比特易";
     titleLabel1.font = UIFontRegularOfSize(14);
-    titleLabel1.textColor = BHHexColor(@"696969");
+    titleLabel1.textColor = BHHexColor(@"626A75");
     [headView addSubview:titleLabel1];
     
     UILabel *titleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(126, 53, SCREEN_WIDTH - 126 - 18, 25)];
     titleLabel2.text = @"比特易是业界领先的数字货币市场专业分析平台，我们提供专业数字货币市场分析工具和风险管理策略，帮您有效控制数字货币投资风险。";
-    titleLabel2.font = UIFontRegularOfSize(10);
+    titleLabel2.font = UIFontRegularOfSize(12);
     titleLabel2.numberOfLines = 0;
-    titleLabel2.textColor = BHHexColor(@"525866");
+    titleLabel2.textColor = BHHexColor(@"626A75");
+    titleLabel2.alpha = 0.8;
     [titleLabel2 sizeToFit];
     [headView addSubview:titleLabel2];
+    
+    
+    
+    UIImageView *image3 = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 124) / 2, 145, 124, 25)];
+    image3.image = [UIImage imageNamed:@"bottom_sb_bluerun"];
+    [headView addSubview:image3];
+    
     self.homePageTableView.tableFooterView = headView;
 }
 

@@ -179,7 +179,7 @@
 }
 
 - (UIBarButtonItem *)creatLeftBarItem {
-    UIImage *buttonNormal = [[UIImage imageNamed:@"share_button_image"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *buttonNormal = [[UIImage imageNamed:@"Navigation bar_Edit menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIBarButtonItem * leftItem = [[UIBarButtonItem alloc]initWithImage:buttonNormal style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView)];
     return leftItem;
 }
@@ -191,7 +191,12 @@
 
 - (void)showLeftView
 {
-    [BTELeftView popActivateNowCallBack:nil cancelCallBack:nil];
+    WS(weakSelf)
+    [BTELeftView popActivateNowCallBack:^(NSInteger index) {
+        [weakSelf.tabBarController setSelectedIndex:index];
+    } cancelCallBack:^{
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

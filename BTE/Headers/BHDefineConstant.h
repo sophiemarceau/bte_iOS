@@ -121,6 +121,11 @@ if (error.code != -900000) { \
 //背景色
 #define KBGColor BHHexColor(@"edf0f2")
 #define KBGCell BHHexColor(@"FAFAFA")
+
+
+#define MobilePhoneNum @"MOBILEPHONENUM"
+
+
 #pragma mark - 颜色相关
 
 #define kColorRgb(r,g,b)               [UIColor colorWithRed:(r/255.0f) green:(g/255.0f) blue:(b/255.0f) alpha:1]

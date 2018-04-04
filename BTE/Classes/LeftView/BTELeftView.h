@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void(^ActivateNowCallBack)(void);//立即激活
-typedef void(^CalcelCallBack)(void);//取消
+typedef void(^ActivateNowCallBack)(NSInteger index);//回调跳转
+typedef void(^CalcelCallBack)(void);//备用
 @interface BTELeftView : UIView
 /**
  激活弹窗

@@ -134,6 +134,7 @@
 		81FFE1892073680D001AB03D /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FFE1852073680D001AB03D /* FLAnimatedImage.m */; };
 		81FFE18A2073680D001AB03D /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FFE1862073680D001AB03D /* FLAnimatedImageView.m */; };
 		81FFE18E20736AE3001AB03D /* jiazaipage.gif in Resources */ = {isa = PBXBuildFile; fileRef = 81FFE18D20736AE3001AB03D /* jiazaipage.gif */; };
+		81FFE1912074AA11001AB03D /* LeftViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FFE1902074AA11001AB03D /* LeftViewTableViewCell.m */; };
 		A3C2D27DD5C7720F52180047 /* libPods-BTE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A790C91021B35BCE72495255 /* libPods-BTE.a */; };
 		B90071BD2044FC6500431065 /* BTELoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90071BB2044FC6500431065 /* BTELoginVC.xib */; };
 		B90071C02045344A00431065 /* BHGradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B90071BE2045344900431065 /* BHGradientButton.m */; };
@@ -418,6 +419,8 @@
 		81FFE1872073680D001AB03D /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImage.h; sourceTree = "<group>"; };
 		81FFE1882073680D001AB03D /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
 		81FFE18D20736AE3001AB03D /* jiazaipage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = jiazaipage.gif; sourceTree = "<group>"; };
+		81FFE18F2074AA11001AB03D /* LeftViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftViewTableViewCell.h; sourceTree = "<group>"; };
+		81FFE1902074AA11001AB03D /* LeftViewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftViewTableViewCell.m; sourceTree = "<group>"; };
 		A790C91021B35BCE72495255 /* libPods-BTE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BTE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B90071B92044FC6500431065 /* BTELoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTELoginVC.h; sourceTree = "<group>"; };
 		B90071BB2044FC6500431065 /* BTELoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BTELoginVC.xib; sourceTree = "<group>"; };
@@ -1219,6 +1222,8 @@
 			children = (
 				81FFE17E207242FA001AB03D /* BTELeftView.h */,
 				81FFE17F207242FA001AB03D /* BTELeftView.m */,
+				81FFE18F2074AA11001AB03D /* LeftViewTableViewCell.h */,
+				81FFE1902074AA11001AB03D /* LeftViewTableViewCell.m */,
 			);
 			path = LeftView;
 			sourceTree = "<group>";
@@ -1545,6 +1550,7 @@
 				8179AE8320086175001678D2 /* SSKeychainQuery.m in Sources */,
 				8179AD44200736C4001678D2 /* main.m in Sources */,
 				8179AE8520086175001678D2 /* EAIntroView.m in Sources */,
+				81FFE1912074AA11001AB03D /* LeftViewTableViewCell.m in Sources */,
 				8179D3002021D73600C13447 /* Y_StockChartSegmentView.m in Sources */,
 				8179AE8820086175001678D2 /* DSJSONRPC.m in Sources */,
 				8179AF0C2008A08C001678D2 /* BHNavigationController.m in Sources */,
