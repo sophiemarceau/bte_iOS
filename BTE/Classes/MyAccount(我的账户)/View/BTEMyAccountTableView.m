@@ -109,11 +109,11 @@
     [headView addSubview:_detailLabel2];
     
     _detailLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(_detailLabel1.left, _detailLabel1.bottom + 8, _detailLabel1.width, 20)];
-    if (legalAccountModel.legalBalance) {
+    if (legalAccountModel.legalBalance && [legalAccountModel.legalBalance floatValue] != 0) {
         _detailLabel3.text = [NSString stringWithFormat:@"$%@",legalAccountModel.legalBalance];
     } else
     {
-        _detailLabel3.text = @"--";
+        _detailLabel3.text = @"0";
     }
     _detailLabel3.textAlignment = NSTextAlignmentCenter;
     _detailLabel3.centerX = 81;
@@ -122,11 +122,11 @@
     [headView addSubview:_detailLabel3];
     
     _detailLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(_detailLabel2.left, _detailLabel3.top, _detailLabel1.width, 20)];
-    if (btcAccountModel.balance) {
+    if (btcAccountModel.balance && [btcAccountModel.balance floatValue] != 0) {
         _detailLabel4.text = [NSString stringWithFormat:@"%@($%@)",btcAccountModel.balance,btcAccountModel.legalBalance];
     } else
     {
-        _detailLabel4.text = @"--";
+        _detailLabel4.text = @"0";
     }
     _detailLabel4.font = [UIFont systemFontOfSize:20];
     _detailLabel4.textAlignment = NSTextAlignmentCenter;

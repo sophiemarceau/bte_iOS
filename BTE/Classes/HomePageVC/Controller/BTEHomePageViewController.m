@@ -22,6 +22,7 @@
     NSArray *productList;
     HomeProductInfoModel *productInfoModel;
     NSString *currentCurrencyType;//记录当前展示币种
+    UIView *selectView;//下拉选择框
 }
 //分享需要的参数
 @property (nonatomic, strong) NSString *shareImageUrl;
@@ -162,14 +163,44 @@
 
 - (void)doTapChange:(NSString *)name//选择币种
 {
-    WS(weakSelf)
-    [BTECurrencyTypePickerView provincePickerViewWithArray:detailsList WithProvince:name ProvinceBlock:^(NSInteger rowIndex) {
-        //获取最新的推荐列表
-        HomeDesListModel *tempModel = detailsList[rowIndex];
-        currentCurrencyType = tempModel.symbol;
-        [weakSelf getlatestsStatus];
-    }];
+//    WS(weakSelf)
+//    [BTECurrencyTypePickerView provincePickerViewWithArray:detailsList WithProvince:name ProvinceBlock:^(NSInteger rowIndex) {
+//        //获取最新的推荐列表
+//        HomeDesListModel *tempModel = detailsList[rowIndex];
+//        currentCurrencyType = tempModel.symbol;
+//        [weakSelf getlatestsStatus];
+//    }];
+    if (detailsList.count > 0) {
+        selectView = [[UIView alloc] initWithFrame:CGRectMake(16, 0, 110, 44 *detailsList.count)];
+        selectView.backgroundColor = BHHexColor(@"308CDD");
+        [self.view addSubview:selectView];
+        
+        
+        for (int i = 0; i < detailsList.count; i++) {
+            HomeDesListModel *tempModel = detailsList[i];
+            UIButton *sureButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            sureButton.frame = CGRectMake(0, 44 * i, 110, 44);
+            sureButton.tag = 100 + i;
+            sureButton.backgroundColor = [UIColor clearColor];
+            [sureButton setTitle:[NSString stringWithFormat:@"%@行情",tempModel.symbol] forState:UIControlStateNormal];
+            [sureButton setTitleColor:BHHexColor(@"ffffff") forState:UIControlStateNormal];
+            sureButton.titleLabel.font = UIFontRegularOfSize(17);
+            [sureButton addTarget:self action:@selector(selectChange:) forControlEvents:UIControlEventTouchUpInside];
+            [selectView addSubview:sureButton];
+        }
+    }
 }
+
+- (void)selectChange:(UIButton *)sender
+{
+    NSInteger index = sender.tag - 100;
+    //获取最新的推荐列表
+    HomeDesListModel *tempModel = detailsList[index];
+    currentCurrencyType = tempModel.symbol;
+    [self getlatestsStatus];
+    [selectView removeFromSuperview];
+}
+
 
 #pragma mark - 分享
 - (UIBarButtonItem *)creatRightBarItem {
@@ -186,17 +217,25 @@
 
 - (void)shareAlert
 {
+    [selectView removeFromSuperview];
     [BTEShareView popShareViewCallBack:nil imageUrl:[UIImage imageNamed:@"AppIcon"] shareUrl:self.shareUrl sharetitle:self.sharetitle shareDesc:self.shareDesc shareType:self.shareType currentVc:self];
 }
 
 - (void)showLeftView
 {
+    [selectView removeFromSuperview];
     WS(weakSelf)
     [BTELeftView popActivateNowCallBack:^(NSInteger index) {
         [weakSelf.tabBarController setSelectedIndex:index];
     } cancelCallBack:^{
         
     }];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [selectView removeFromSuperview];
 }
 
 - (void)didReceiveMemoryWarning {
