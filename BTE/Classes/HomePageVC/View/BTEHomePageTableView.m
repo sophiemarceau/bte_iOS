@@ -61,7 +61,8 @@
     _subTitleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(16, 12, 110, 20)];
     _subTitleLabel3.left = SCREEN_WIDTH - _subTitleLabel3.width - 16;
     _subTitleLabel3.textAlignment = NSTextAlignmentRight;
-    _subTitleLabel3.text = [NSString stringWithFormat:@"$%@",headModel.price];
+    NSString *priceString = [NSString stringWithFormat:@"%.2f",[headModel.price floatValue]];
+    _subTitleLabel3.text = [NSString stringWithFormat:@"$%@",priceString];
     
     _subTitleLabel3.font = UIFontRegularOfSize(20);
     _subTitleLabel3.textColor = BHHexColor(@"228B22");

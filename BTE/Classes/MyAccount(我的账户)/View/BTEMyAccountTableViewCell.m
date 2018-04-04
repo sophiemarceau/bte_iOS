@@ -151,7 +151,7 @@
     
     if ([model.ror floatValue] > 0) {
         _detailLabel3.text = [NSString stringWithFormat:@"+%@%%",model.ror];
-        _detailLabel3.textColor = BHHexColor(@"1BAC75");
+        _detailLabel3.textColor = BHHexColor(@"228B22");
     } else if ([model.ror floatValue] < 0)
     {
         _detailLabel3.text = [NSString stringWithFormat:@"%@%%",model.ror];
@@ -159,7 +159,7 @@
     } else
     {
         _detailLabel3.text = [NSString stringWithFormat:@"%@%%",model.ror];
-        _detailLabel3.textColor = BHHexColor(@"292C33");
+        _detailLabel3.textColor = BHHexColor(@"626A75");
     }
     
     _detailLabel4.text = [NSString stringWithFormat:@"%@",model.end];
