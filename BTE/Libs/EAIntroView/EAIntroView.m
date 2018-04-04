@@ -141,7 +141,7 @@
     [self.pageBgFront setImage:[self bgForPage:0]];
 }
 - (void)tap{
-//    [self skipIntroduction];
+    [self skipIntroduction];
 }
 - (UIView *)viewForPage:(EAIntroPage *)page atXIndex:(CGFloat *)xIndex {
     
@@ -237,6 +237,7 @@
     
     self.pageControl.numberOfPages = _pages.count;
     [self addSubview:self.pageControl];
+    self.pageControl.hidden = YES;//隐藏了
     
     self.skipButton = [[UIButton alloc] initWithFrame:CGRectMake((self.scrollView.frame.size.width - 168) / 2, self.scrollView.frame.size.height - 58 - 40, 168, 40)];
     [self.skipButton setBackgroundImage:[UIImage imageNamed:@"Immediate_experience"] forState:UIControlStateNormal];
@@ -263,7 +264,7 @@
         LastPageIndex = self.pageControl.currentPage;
         self.pageControl.currentPage = self.currentPageIndex;
         if (self.currentPageIndex == 3) {
-            self.skipButton.hidden = NO;
+            self.skipButton.hidden = YES;
         } else
         {
             self.skipButton.hidden = YES;

@@ -474,7 +474,7 @@
         
         
         UILabel *titleLabel6 = [[UILabel alloc] initWithFrame:CGRectMake(16, bgView2.bottom + 13, 160, 14)];
-        titleLabel6.text = @"累计收益率：";
+        titleLabel6.text = @"累计收益率";
         titleLabel6.font = UIFontRegularOfSize(14);
         titleLabel6.textColor = BHHexColor(@"626A75");
         [bgView addSubview:titleLabel6];
