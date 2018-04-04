@@ -34,27 +34,32 @@
 //设置头部视图
 - (void)setTableHeadView
 {
-    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 62 + 185)];
+    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 44 + 185)];
     bgView.backgroundColor = BHHexColor(@"fafafa");
     
-    _iconImage = [[UIImageView alloc] initWithFrame:CGRectMake(16, 17, 18, 18)];
+    _iconImage = [[UIImageView alloc] initWithFrame:CGRectMake(16, 14, 17, 17)];
     [_iconImage sd_setImageWithURL:[NSURL URLWithString:headModel.icon] placeholderImage:nil];
     [bgView addSubview:_iconImage];
     
-    _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(38, 17, 75, 18)];
+    _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(38, 14, 75, 17)];
     _subTitleLabel1.text = [NSString stringWithFormat:@"%@行情",headModel.symbol];
     
-    _subTitleLabel1.font = UIFontMediumOfSize(18);
-    _subTitleLabel1.textColor = BHHexColor(@"525866");
+    _subTitleLabel1.font = UIFontMediumOfSize(17);
+    _subTitleLabel1.textColor = BHHexColor(@"626A75");
     [bgView addSubview:_subTitleLabel1];
 
     UIButton *sureButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    sureButton.frame = CGRectMake(117, 17, 36, 20);
-    [sureButton setImage:[UIImage imageNamed:@"home_more"] forState:UIControlStateNormal];
+    sureButton.frame = CGRectMake(105, 10, 36, 30);
+//    sureButton.backgroundColor = [UIColor redColor];
     [sureButton addTarget:self action:@selector(TapChange:) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:sureButton];
     
-    _subTitleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(16, 16, 110, 20)];
+    UIImageView *arrowImage = [[UIImageView alloc] initWithFrame:CGRectMake(111, 24, 6, 6)];
+    arrowImage.image = [UIImage imageNamed:@"home_arrow_bg"];
+    arrowImage.userInteractionEnabled = YES;
+    [bgView addSubview:arrowImage];
+    
+    _subTitleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(16, 12, 110, 20)];
     _subTitleLabel3.left = SCREEN_WIDTH - _subTitleLabel3.width - 16;
     _subTitleLabel3.textAlignment = NSTextAlignmentRight;
     _subTitleLabel3.text = [NSString stringWithFormat:@"$%@",headModel.price];
@@ -112,7 +117,7 @@
 #pragma mark - webView
 - (UIWebView *)webView {
     if (!_webView) {
-        _webView = [[UIWebView alloc]initWithFrame:CGRectMake(0,62,SCREEN_WIDTH,185)];
+        _webView = [[UIWebView alloc]initWithFrame:CGRectMake(0,44,SCREEN_WIDTH,185)];
         _webView.backgroundColor = KBGColor;
         _webView.delegate = self;
     }
