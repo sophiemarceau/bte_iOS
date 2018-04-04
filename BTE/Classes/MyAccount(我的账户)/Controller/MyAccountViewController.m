@@ -184,7 +184,7 @@
         legalAccountModel = [BTELegalAccount yy_modelWithDictionary:responseObject[@"data"][@"legalAccount"]];
         btcAccountModel = [BTEBtcAccount yy_modelWithDictionary:responseObject[@"data"][@"btcAccount"]];
         [weakSelf getMyAccountCurrentInfo];
-        [weakSelf getMyAccountCurrentPhone];
+//        [weakSelf getMyAccountCurrentPhone];
     } failure:^(NSError *error) {
         NMRemovLoadIng;
         self.isloginAndGetMyAccountInfo = @"0";

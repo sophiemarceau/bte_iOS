@@ -144,21 +144,21 @@
     
     
     _commitButton1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    _commitButton1.frame = CGRectMake(0, 0, SCREEN_WIDTH / 2, 41);
+    _commitButton1.frame = CGRectMake(0, 0, SCREEN_WIDTH / 2, 45);
     _commitButton1.tag = 101;
     [_commitButton1 setTitle:@"当前跟投份额" forState:UIControlStateNormal];
     [_commitButton1 setTitleColor:BHHexColor(@"308CDD") forState:UIControlStateNormal];
     [_commitButton1 addTarget:self action:@selector(switchButton:) forControlEvents:UIControlEventTouchUpInside];
-    _commitButton1.titleLabel.font = UIFontRegularOfSize(16);
+    _commitButton1.titleLabel.font = UIFontRegularOfSize(14);
     [headButtonWhiteBgView addSubview:_commitButton1];
     
     _commitButton2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    _commitButton2.frame = CGRectMake(SCREEN_WIDTH / 2, 0, SCREEN_WIDTH / 2, 41);
+    _commitButton2.frame = CGRectMake(SCREEN_WIDTH / 2, 0, SCREEN_WIDTH / 2, 45);
     _commitButton2.tag = 102;
     [_commitButton2 setTitle:@"已结束策略" forState:UIControlStateNormal];
-    [_commitButton2 setTitleColor:BHHexColor(@"525866") forState:UIControlStateNormal];
+    [_commitButton2 setTitleColor:BHHexColor(@"626A75") forState:UIControlStateNormal];
     [_commitButton2 addTarget:self action:@selector(switchButton:) forControlEvents:UIControlEventTouchUpInside];
-    _commitButton2.titleLabel.font = UIFontRegularOfSize(16);
+    _commitButton2.titleLabel.font = UIFontRegularOfSize(14);
     [headButtonWhiteBgView addSubview:_commitButton2];
     
     _lineLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 41, 80, 3)];
@@ -175,12 +175,12 @@
     
     if (type != 2) {
         [_commitButton1 setTitleColor:BHHexColor(@"308CDD") forState:UIControlStateNormal];
-        [_commitButton2 setTitleColor:BHHexColor(@"525866") forState:UIControlStateNormal];
+        [_commitButton2 setTitleColor:BHHexColor(@"626A75") forState:UIControlStateNormal];
         _lineLabel1.hidden = NO;
         _lineLabel2.hidden = YES;
     } else
     {
-        [_commitButton1 setTitleColor:BHHexColor(@"525866") forState:UIControlStateNormal];
+        [_commitButton1 setTitleColor:BHHexColor(@"626A75") forState:UIControlStateNormal];
         [_commitButton2 setTitleColor:BHHexColor(@"308CDD") forState:UIControlStateNormal];
         _lineLabel1.hidden = YES;
         _lineLabel2.hidden = NO;
@@ -204,14 +204,15 @@
     headView.backgroundColor = [UIColor clearColor];
     
     UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 21, SCREEN_WIDTH, 50)];
-    bgView.backgroundColor = [UIColor whiteColor];
+    bgView.backgroundColor = KBGCell;
     [headView addSubview:bgView];
     UIButton *commitButton = [UIButton buttonWithType:UIButtonTypeCustom];
     commitButton.frame = CGRectMake(0, 0, SCREEN_WIDTH, 50);
     [commitButton setTitle:@"退出登录" forState:UIControlStateNormal];
-    [commitButton setTitleColor:BHHexColor(@"9CA1A9") forState:UIControlStateNormal];
+    [commitButton setTitleColor:BHHexColor(@"525866") forState:UIControlStateNormal];
     [commitButton addTarget:self action:@selector(commit:) forControlEvents:UIControlEventTouchUpInside];
     commitButton.titleLabel.font = UIFontRegularOfSize(16);
+    commitButton.titleLabel.alpha = 0.6;
     [bgView addSubview:commitButton];
     
     self.myAccountTableView.tableFooterView = headView;
@@ -288,7 +289,7 @@
         if (_dataSource.count == 0) {
             return SCREEN_HEIGHT - TAB_BAR_HEIGHT - 197 - 16 - 48;
         }
-        return 78;
+        return 89;
     } else
     {
         return 146;
@@ -302,7 +303,7 @@
         if (_dataSource.count == 0) {
             UITableViewCell *cell = [[UITableViewCell alloc] init];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            cell.backgroundColor = BHHexColor(@"ffffff");
+            cell.backgroundColor = KBGCell;
             UIImageView *bgImage = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 168) / 2, 60, 168, 112)];
             bgImage.image = [UIImage imageNamed:@"bte_account_bgkong"];
             [cell.contentView addSubview:bgImage];
@@ -311,20 +312,19 @@
         
         UITableViewCell *cell = [[UITableViewCell alloc] init];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.backgroundColor = BHHexColor(@"ffffff");
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(16, 24, 80, 14)];
+        cell.backgroundColor = KBGCell;
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(16, 25, 80, 14)];
         label.font = UIFontRegularOfSize(12);
         label.text = @"投资额";
         label.alpha = 0.6;
-        label.textColor = BHHexColor(@"525866");
+        label.textColor = BHHexColor(@"626A75");
         label.backgroundColor = [UIColor whiteColor];
         [cell.contentView addSubview:label];
         
-        UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(label.left, 46, label.width, label.height)];
+        UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(label.left, 53, label.width, label.height)];
         label1.font = UIFontDINAlternateOfSize(14);
         label1.text = [NSString stringWithFormat:@"%@BTC",statisticsModel.purchaseAmount];
-        label1.textColor = BHHexColor(@"525866");
-        label1.backgroundColor = [UIColor whiteColor];
+        label1.textColor = BHHexColor(@"626A75");
         [cell.contentView addSubview:label1];
         
         UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(175, label.top, label.width, label.height)];
@@ -338,7 +338,7 @@
         
         label2.textAlignment = NSTextAlignmentCenter;
         label2.centerX = SCREEN_WIDTH / 2;
-        label2.textColor = BHHexColor(@"525866");
+        label2.textColor = BHHexColor(@"626A75");
         label2.alpha = 0.6;
         label2.backgroundColor = [UIColor whiteColor];
         [cell.contentView addSubview:label2];
@@ -348,14 +348,13 @@
         label3.text = [NSString stringWithFormat:@"%@BTC",statisticsModel.currentAmount];
         label3.centerX = label2.centerX;
         label3.textAlignment = NSTextAlignmentCenter;
-        label3.textColor = BHHexColor(@"525866");
-        label3.backgroundColor = [UIColor whiteColor];
+        label3.textColor = BHHexColor(@"626A75");
         [cell.contentView addSubview:label3];
         
         UILabel *label4 = [[UILabel alloc] initWithFrame:CGRectMake(7, label.top, label.width, label.height)];
         label4.font = UIFontRegularOfSize(12);
         label4.text = @"收益";
-        label4.textColor = BHHexColor(@"525866");
+        label4.textColor = BHHexColor(@"626A75");
         label4.alpha = 0.6;
         label4.right = SCREEN_WIDTH - 16;
         label4.textAlignment = NSTextAlignmentRight;
@@ -376,14 +375,13 @@
         } else
         {
             label5.text = [NSString stringWithFormat:@"%@%%",statisticsModel.ror];
-            label5.textColor = BHHexColor(@"292C33");
+            label5.textColor = BHHexColor(@"626A75");
         }
         label5.textAlignment = NSTextAlignmentRight;
         label5.right = label4.right;
-        label5.backgroundColor = [UIColor whiteColor];
         [cell.contentView addSubview:label5];
         
-        UILabel *lineLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 77, SCREEN_WIDTH, 1)];
+        UILabel *lineLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 88, SCREEN_WIDTH, 1)];
         lineLabel.backgroundColor = kColorRgba(0, 0, 0, 0.1);
         [cell.contentView addSubview:lineLabel];
         return cell;

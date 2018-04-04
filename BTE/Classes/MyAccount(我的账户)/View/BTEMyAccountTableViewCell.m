@@ -15,7 +15,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = KBGCell;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(16, 21, 2, 13)];
@@ -25,13 +25,13 @@
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(24, 20, 150, 14)];
         
         _titleLabel.font = UIFontMediumOfSize(14);
-        _titleLabel.textColor = BHHexColor(@"525866");
+        _titleLabel.textColor = BHHexColor(@"626A75");
         [self.contentView addSubview:_titleLabel];
         
         _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 54, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
         _subTitleLabel1.text = @"投资额";
         _subTitleLabel1.font = UIFontRegularOfSize(12);
-        _subTitleLabel1.textColor = BHHexColor(@"525866");
+        _subTitleLabel1.textColor = BHHexColor(@"626A75");
         _subTitleLabel1.alpha = 0.6;
         [self.contentView addSubview:_subTitleLabel1];
         
@@ -40,7 +40,7 @@
         _subTitleLabel2.left = _subTitleLabel1.right;
         _subTitleLabel2.textAlignment = NSTextAlignmentCenter;
         _subTitleLabel2.font = UIFontRegularOfSize(12);
-        _subTitleLabel2.textColor = BHHexColor(@"525866");
+        _subTitleLabel2.textColor = BHHexColor(@"626A75");
         _subTitleLabel2.alpha = 0.6;
         [self.contentView addSubview:_subTitleLabel2];
         
@@ -49,7 +49,7 @@
         _subTitleLabel3.left = _subTitleLabel2.right;
         _subTitleLabel3.textAlignment = NSTextAlignmentCenter;
         _subTitleLabel3.font = UIFontRegularOfSize(12);
-        _subTitleLabel3.textColor = BHHexColor(@"525866");
+        _subTitleLabel3.textColor = BHHexColor(@"626A75");
         _subTitleLabel3.alpha = 0.6;
         [self.contentView addSubview:_subTitleLabel3];
         
@@ -58,14 +58,14 @@
         _subTitleLabel4.left = _subTitleLabel3.right;
         _subTitleLabel4.textAlignment = NSTextAlignmentRight;
         _subTitleLabel4.font = UIFontRegularOfSize(12);
-        _subTitleLabel4.textColor = BHHexColor(@"525866");
+        _subTitleLabel4.textColor = BHHexColor(@"626A75");
         _subTitleLabel4.alpha = 0.6;
         [self.contentView addSubview:_subTitleLabel4];
 
         _detailLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 82, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
         
         _detailLabel1.font = UIFontDINAlternateOfSize(14);
-        _detailLabel1.textColor = BHHexColor(@"525866");
+        _detailLabel1.textColor = BHHexColor(@"626A75");
         [self.contentView addSubview:_detailLabel1];
         
         _detailLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(16, 82, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
@@ -73,7 +73,7 @@
         _detailLabel2.left = _detailLabel1.right;
         _detailLabel2.textAlignment = NSTextAlignmentCenter;
         _detailLabel2.font = UIFontDINAlternateOfSize(14);
-        _detailLabel2.textColor = BHHexColor(@"525866");
+        _detailLabel2.textColor = BHHexColor(@"626A75");
         [self.contentView addSubview:_detailLabel2];
         
         _detailLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(16, 82, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
@@ -81,7 +81,7 @@
         _detailLabel3.left = _detailLabel2.right;
         _detailLabel3.textAlignment = NSTextAlignmentCenter;
         _detailLabel3.font = UIFontDINAlternateOfSize(14);
-        _detailLabel3.textColor = BHHexColor(@"525866");
+        _detailLabel3.textColor = BHHexColor(@"626A75");
         [self.contentView addSubview:_detailLabel3];
         
         _detailLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(16, 82, (SCREEN_WIDTH - 16 * 2) / 4, 14)];
@@ -89,7 +89,7 @@
         _detailLabel4.left = _detailLabel3.right;
         _detailLabel4.textAlignment = NSTextAlignmentRight;
         _detailLabel4.font = UIFontDINAlternateOfSize(14);
-        _detailLabel4.textColor = BHHexColor(@"525866");
+        _detailLabel4.textColor = BHHexColor(@"626A75");
         [self.contentView addSubview:_detailLabel4];
         
         
@@ -121,7 +121,8 @@
         [self.contentView addSubview:bgImageView];
         
         _lineView = [[UIView alloc] initWithFrame:CGRectMake(16, 145, SCREEN_WIDTH - 16 * 2, 1)];
-        _lineView.backgroundColor = kColorRgba(0, 0, 0, 0.1);
+//        _lineView.backgroundColor = kColorRgba(0, 0, 0, 0.1);
+        _lineView.backgroundColor = BHHexColor(@"E6EBF0");
         [self.contentView addSubview:_lineView];
     }
     return self;
