@@ -175,13 +175,22 @@
         selectView.backgroundColor = BHHexColor(@"308CDD");
         [self.view addSubview:selectView];
         
+        if (currentCurrencyType == nil) {
+            HomeDesListModel *tempModel = detailsList[0];
+            currentCurrencyType = tempModel.symbol;
+        }
         
         for (int i = 0; i < detailsList.count; i++) {
             HomeDesListModel *tempModel = detailsList[i];
             UIButton *sureButton = [UIButton buttonWithType:UIButtonTypeCustom];
             sureButton.frame = CGRectMake(0, 44 * i, 110, 44);
             sureButton.tag = 100 + i;
-            sureButton.backgroundColor = [UIColor clearColor];
+            if ([currentCurrencyType isEqualToString:tempModel.symbol]) {
+                sureButton.backgroundColor = BHHexColor(@"5CACF3");
+            } else
+            {
+                sureButton.backgroundColor = [UIColor clearColor];
+            }
             [sureButton setTitle:[NSString stringWithFormat:@"%@行情",tempModel.symbol] forState:UIControlStateNormal];
             [sureButton setTitleColor:BHHexColor(@"ffffff") forState:UIControlStateNormal];
             sureButton.titleLabel.font = UIFontRegularOfSize(17);

@@ -49,14 +49,13 @@
     [bgView addSubview:_subTitleLabel1];
 
     UIButton *sureButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    sureButton.frame = CGRectMake(105, 10, 36, 30);
+    sureButton.frame = CGRectMake(38, 10, 136, 30);
 //    sureButton.backgroundColor = [UIColor redColor];
     [sureButton addTarget:self action:@selector(TapChange:) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:sureButton];
     
-    UIImageView *arrowImage = [[UIImageView alloc] initWithFrame:CGRectMake(111, 24, 6, 6)];
+    UIImageView *arrowImage = [[UIImageView alloc] initWithFrame:CGRectMake(111, 20, 9, 9)];
     arrowImage.image = [UIImage imageNamed:@"home_arrow_bg"];
-    arrowImage.userInteractionEnabled = YES;
     [bgView addSubview:arrowImage];
     
     _subTitleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(16, 12, 110, 20)];
