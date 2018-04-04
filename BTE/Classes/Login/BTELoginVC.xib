@@ -223,6 +223,13 @@
                         <action selector="protocolAction:" destination="-1" eventType="touchUpInside" id="QI1-ig-q6J"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bottom_bg" translatesAutoresizingMaskIntoConstraints="NO" id="keA-wI-Ukq" userLabel="Login_bottom_bg">
+                    <rect key="frame" x="109.5" y="607" width="155" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="155" id="F8R-iP-jpN"/>
+                        <constraint firstAttribute="height" constant="31" id="rlo-Rg-uk1"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -233,12 +240,14 @@
                 <constraint firstItem="eFX-2M-Frv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="45" id="KuO-tD-4Op"/>
                 <constraint firstItem="KJt-Ju-72d" firstAttribute="top" secondItem="VfF-Gj-Nm4" secondAttribute="bottom" constant="15" id="MWk-Ma-LlT"/>
                 <constraint firstItem="HxO-Fo-9zg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MgJ-bg-2Rs"/>
+                <constraint firstAttribute="bottom" secondItem="keA-wI-Ukq" secondAttribute="bottom" constant="29" id="Ns4-Gx-FvT"/>
                 <constraint firstItem="PvU-D3-7ST" firstAttribute="leading" secondItem="VfF-Gj-Nm4" secondAttribute="leading" id="Q6j-pa-eAS"/>
                 <constraint firstAttribute="trailing" secondItem="eFX-2M-Frv" secondAttribute="trailing" constant="45" id="S2L-73-3R7"/>
                 <constraint firstItem="VfF-Gj-Nm4" firstAttribute="trailing" secondItem="eFX-2M-Frv" secondAttribute="trailing" id="YTw-fi-kDY"/>
                 <constraint firstItem="VfF-Gj-Nm4" firstAttribute="top" secondItem="eFX-2M-Frv" secondAttribute="bottom" constant="25" id="bH5-L4-aO2"/>
                 <constraint firstItem="ZPi-KV-Shr" firstAttribute="centerX" secondItem="PvU-D3-7ST" secondAttribute="centerX" id="bXc-AU-RRd"/>
                 <constraint firstItem="dEf-PP-pB7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bqi-5d-2OT"/>
+                <constraint firstItem="keA-wI-Ukq" firstAttribute="centerX" secondItem="HxO-Fo-9zg" secondAttribute="centerX" id="cLm-Zz-x9k"/>
                 <constraint firstItem="KJt-Ju-72d" firstAttribute="leading" secondItem="VfF-Gj-Nm4" secondAttribute="leading" id="mk1-Rk-TYh"/>
                 <constraint firstItem="ZaT-6Z-Lak" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nTd-CM-e9g"/>
                 <constraint firstItem="PvU-D3-7ST" firstAttribute="trailing" secondItem="VfF-Gj-Nm4" secondAttribute="trailing" id="o1X-W9-5OE"/>
@@ -251,5 +260,6 @@
     </objects>
     <resources>
         <image name="Login_logo_bg" width="189" height="36"/>
+        <image name="login_bottom_bg" width="155" height="31"/>
     </resources>
 </document>

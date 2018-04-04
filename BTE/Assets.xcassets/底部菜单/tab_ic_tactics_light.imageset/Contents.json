@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "tab_ic_tactics_light.png",
+      "filename" : "strategy_Selected.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "tab_ic_tactics_light@2x.png",
+      "filename" : "strategy_Selected@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "tab_ic_tactics_light@3x.png",
+      "filename" : "strategy_Selected@3x.png",
       "scale" : "3x"
     }
   ],

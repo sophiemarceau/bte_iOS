@@ -148,30 +148,46 @@
 //设置尾部视图
 - (void)setTableFooterView
 {
-    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 189)];
+    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 151 + 145)];
     headView.backgroundColor = KBGColor;
     
-    UIImageView *image1 = [[UIImageView alloc] initWithFrame:CGRectMake(31, 29, 74, 74)];
+    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 151)];
+    bgView.backgroundColor = KBGCell;
+    [headView addSubview:bgView];
+    
+    UILabel *titleLabels = [[UILabel alloc] initWithFrame:CGRectMake(0, 26, SCREEN_WIDTH, 17)];
+    titleLabels.text = @"软银中国资本&蓝驰创投A轮战略投资";
+    titleLabels.font = UIFontRegularOfSize(17);
+    titleLabels.textAlignment = NSTextAlignmentCenter;
+    titleLabels.textColor = BHHexColor(@"525866");
+    [bgView addSubview:titleLabels];
+    
+    UIImageView *image3 = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 312) / 2, titleLabels.bottom + 40, 312, 28)];
+    image3.image = [UIImage imageNamed:@"home_bg_botoom"];
+    [bgView addSubview:image3];
+    
+    
+    UIImageView *image1 = [[UIImageView alloc] initWithFrame:CGRectMake(31, 29 + 151, 74, 74)];
     image1.image = [UIImage imageNamed:@"erweima"];
     [headView addSubview:image1];
     
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(34, 106, 80, 14)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(34, 106 + 151, 80, 14)];
     titleLabel.text = @"打开微信,扫一扫";
     titleLabel.font = UIFontRegularOfSize(10);
     titleLabel.textColor = BHHexColor(@"AEAEAE");
     [headView addSubview:titleLabel];
     
-    UIImageView *image2 = [[UIImageView alloc] initWithFrame:CGRectMake(126, 31, 22, 12)];
+    UIImageView *image2 = [[UIImageView alloc] initWithFrame:CGRectMake(126, 31 + 151, 22, 12)];
     image2.image = [UIImage imageNamed:@"home_dibu_logo"];
     [headView addSubview:image2];
     
-    UILabel *titleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(151, 24, 195, 25)];
+    UILabel *titleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(151, 24 + 151, 195, 25)];
     titleLabel1.text = @"玩转比特币 多看比特易";
     titleLabel1.font = UIFontRegularOfSize(14);
     titleLabel1.textColor = BHHexColor(@"626A75");
     [headView addSubview:titleLabel1];
     
-    UILabel *titleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(126, 53, SCREEN_WIDTH - 126 - 18, 25)];
+    UILabel *titleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(126, 53 + 151, SCREEN_WIDTH - 126 - 18, 25)];
     titleLabel2.text = @"比特易是业界领先的数字货币市场专业分析平台，我们提供专业数字货币市场分析工具和风险管理策略，帮您有效控制数字货币投资风险。";
     titleLabel2.font = UIFontRegularOfSize(12);
     titleLabel2.numberOfLines = 0;
@@ -179,12 +195,6 @@
     titleLabel2.alpha = 0.8;
     [titleLabel2 sizeToFit];
     [headView addSubview:titleLabel2];
-    
-    
-    
-    UIImageView *image3 = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 124) / 2, 145, 124, 25)];
-    image3.image = [UIImage imageNamed:@"bottom_sb_bluerun"];
-    [headView addSubview:image3];
     
     self.homePageTableView.tableFooterView = headView;
 }
@@ -231,7 +241,7 @@
     }
     else if (indexPath.row == [_dataSource count] + 3)
     {
-        return 53 + defaultScrollHeight + 16;
+        return 53 + defaultScrollHeight + 16 + 16;
     } else if (indexPath.row == [_dataSource count] + 4)
     {
         return 16;
@@ -361,7 +371,7 @@
     {
         UITableViewCell *cell = [[UITableViewCell alloc] init];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.backgroundColor = BHHexColor(@"ffffff");
+        cell.backgroundColor = KBGCell;
         UIImageView *image1 = [[UIImageView alloc] initWithFrame:CGRectMake(17, 22, 16, 16)];
         image1.image = [UIImage imageNamed:@"home_Strategy follow"];
         [cell.contentView addSubview:image1];
@@ -488,7 +498,11 @@
             titleLabel5.text = [NSString stringWithFormat:@"%@%%",productInfoModel.ror];
             titleLabel5.textColor = BHHexColor(@"292C33");
         }
-
+        
+        UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, bgView.bottom + 16, SCREEN_WIDTH, 16)];
+        bottomView.backgroundColor = KBGColor;
+        [cell.contentView addSubview:bottomView];
+        
         return cell;
     }
 }
