@@ -26,7 +26,7 @@
     BTELeftView *actView = [[BTELeftView alloc] initWithFrame:CGRectMake(-SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     actView.activateNowCallBack = activateNowCallBack;
     actView.cancelCallBack = cancelCallBack;
-    actView.backgroundColor = kColorRgba(0, 0, 0, 0.1);
+    actView.backgroundColor = kColorRgba(255, 255, 255, 0.1);
     [[UIApplication sharedApplication].keyWindow addSubview:actView];
     
     UIImageView *bgImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, SCREEN_HEIGHT)];
@@ -93,7 +93,7 @@
     actView.array = @[@"市场分析",@"策略跟随",@"我的账户"];
     actView.arrayImage = @[@"left_cell_image1",@"left_cell_image2",@"left_cell_image3"];
     
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.1 animations:^{
         actView.left = 0;
     }];
 }
@@ -129,7 +129,7 @@
 
 - (void)doTapChange
 {
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.1 animations:^{
         self.left = -SCREEN_WIDTH;
     } completion:^(BOOL finished) {
         [self removeFromSuperview];
