@@ -108,8 +108,8 @@
             self.navigationItem.rightBarButtonItem = [self creatRightBarItem];
             self.shareType = UMS_SHARE_TYPE_WEB_LINK;//web链接
             if ([[data objectForKey:@"url"] rangeOfString:@"wechat/strategy/"].location != NSNotFound) {
-              self.sharetitle = @"比特易—数字货币分析平台";
-              self.shareDesc = [NSString stringWithFormat:@"我跟随比特易%@，当前收益%@%%，比特易是业界领先的数字货币市场专业分析平台，软银中国资本(SBCVC)、蓝驰创投(BlueRun Ventures)战略投资，玩转比特币，多看比特易。",self.productInfoModel.name,self.productInfoModel.ror];
+              self.sharetitle = [NSString stringWithFormat:@"比特易—%@,当前收益%@%%",self.productInfoModel.name,self.productInfoModel.ror];
+              self.shareDesc = [NSString stringWithFormat:@"我跟随了比特易%@，当前收益%@%%，比特易是业界领先的数字货币市场专业分析平台，软银中国资本(SBCVC)、蓝驰创投(BlueRun Ventures)战略投资，玩转比特币，多看比特易。",self.productInfoModel.name,self.productInfoModel.ror];
                 
             }else if ([[data objectForKey:@"url"] rangeOfString:@"wechat/deal/"].location != NSNotFound)
             {
