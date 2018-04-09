@@ -123,8 +123,55 @@
 }
 -(void)logout//退出登录
 {
-    UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"你确定要退出登录" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"取消",@"确定", nil];
-    [alertview show];
+    NSString *message = NSLocalizedString(@"确定要退出登录吗？",nil);
+//    NSString *title = @"提示";
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
+//    //改变title的大小和颜色
+//    NSMutableAttributedString *titleAtt = [[NSMutableAttributedString alloc] initWithString:title];
+//    [titleAtt addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16] range:NSMakeRange(0, title.length)];
+//    [titleAtt addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:NSMakeRange(0, title.length)];
+//    [alertController setValue:titleAtt forKey:@"attributedTitle"];
+    //改变message的大小和颜色
+    NSMutableAttributedString *messageAtt = [[NSMutableAttributedString alloc] initWithString:message];
+    [messageAtt addAttribute:NSFontAttributeName value:UIFontRegularOfSize(14) range:NSMakeRange(0, message.length)];
+    [messageAtt addAttribute:NSForegroundColorAttributeName value:BHHexColor(@"626A75") range:NSMakeRange(0, message.length)];
+    [alertController setValue:messageAtt forKey:@"attributedMessage"];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消",nil) style:UIAlertActionStyleDefault handler:nil];
+    [alertController addAction:cancelAction];
+    UIAlertAction *sureAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"确定",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        NSMutableDictionary * pramaDic = @{}.mutableCopy;
+        NSString * methodName = @"";
+        [pramaDic setObject:User.userToken forKey:@"bte-token"];
+        methodName = kAcountUserLogout;
+        
+        WS(weakSelf)
+        NMShowLoadIng;
+        [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
+            NMRemovLoadIng;
+            weakSelf.isloginAndGetMyAccountInfo = @"0";
+            
+            //退出成功删除手机号
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:nil forKey:MobilePhoneNum];
+            //删除本地登录信息
+            [User removeLoginData];
+            //发送通知告诉web token变动
+            [[NSNotificationCenter defaultCenter]postNotificationName:NotificationUserLoginSuccess object:nil];
+            [weakSelf.tabBarController setSelectedIndex:0];
+        } failure:^(NSError *error) {
+            NMRemovLoadIng;
+            RequestError(error);
+        }];
+    }];
+    [alertController addAction:sureAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+    
+    
+    
+//    UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"确定要退出登录吗？" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"取消",@"确定", nil];
+//    [alertview show];
 }
 
 
