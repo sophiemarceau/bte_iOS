@@ -112,6 +112,12 @@
     tempModel.isShow = !tempModel.isShow;
     BTEMarketNewsView *imageView = (BTEMarketNewsView *)tap.view;
 
+    if (tempModel.isShow) {
+        [self stopTimer];
+    } else
+    {
+        [self startTimer];
+    }
     
     float height;
     
@@ -126,9 +132,28 @@
     float currentHeight = self.height;
     CGRect rect = [tempModel.content boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 26 * 2 - 32, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:UIFontRegularOfSize(14)} context:nil];
     
-    if (currentHeight < height + rect.size.height) {
-        currentHeight = height + rect.size.height;
+    if (tempModel.isShow) {//展开
+        if (currentHeight < height + rect.size.height) {
+            currentHeight = height + rect.size.height;
+        }
+    } else //收起
+    {
+        BOOL flag = NO;//表示全部无展开
+        currentHeight = 70 + 80;//初始高度
+        for (HomeProductModel *tempModels in _imagesArray) {
+            if (tempModels.isShow) {
+                CGRect rect = [tempModels.content boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 26 * 2 - 32, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:UIFontRegularOfSize(14)} context:nil];
+                if (currentHeight < height + rect.size.height) {
+                    currentHeight = height + rect.size.height;
+                }
+                flag = YES;//表示至少有一个展开
+            }
+        }
+//        if (!flag) {
+//            currentHeight = 70 + 80;
+//        }
     }
+    
     if (_clickBlcok) _clickBlcok(currentHeight);
 //    imageView.height = currentHeight;
     self.height = currentHeight;
@@ -177,10 +202,12 @@
 //开启定时器
 - (void)startTimer
 {
-    NSTimer *timer = [NSTimer timerWithTimeInterval:_delayTime target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
-    //加入NSRunLoopCommonModes运行模式,这样可以让定时器无论是在默认还是拖拽模式下都可以正常运作
-    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
-    self.timer = timer;
+    if (_timer == nil) {
+        NSTimer *timer = [NSTimer timerWithTimeInterval:_delayTime target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
+        //加入NSRunLoopCommonModes运行模式,这样可以让定时器无论是在默认还是拖拽模式下都可以正常运作
+        [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+        self.timer = timer;
+    }
 }
 
 
