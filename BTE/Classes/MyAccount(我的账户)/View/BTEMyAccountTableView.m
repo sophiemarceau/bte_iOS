@@ -18,6 +18,8 @@
         _myAccountTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _myAccountTableView.delegate = self;
         _myAccountTableView.dataSource = self;
+        _myAccountTableView.bounces = NO;
+        _myAccountTableView.showsVerticalScrollIndicator = NO;
         [self addSubview:_myAccountTableView];
     }
     return self;
@@ -26,12 +28,24 @@
 //设置头部视图
 - (void)setTableHeadView
 {
-    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 178.5 + 48)];
+    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 262.5 + 48)];
     headView.backgroundColor = KBGColor;
     
-    bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 162.5)];
-    bgImageView.image = [UIImage imageNamed:@"pic_account_bg"];
-    [headView addSubview:bgImageView];
+//    bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 162.5)];
+//    bgImageView.image = [UIImage imageNamed:@"pic_account_bg"];
+//    [headView addSubview:bgImageView];
+    
+    titleBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 104)];
+    titleBgView.backgroundColor = BHHexColor(@"1389EF");
+    gradientLayer = [CAGradientLayer layer];
+    gradientLayer.colors = @[(__bridge id)BHHexColor(@"53AFFF").CGColor, (__bridge id)BHHexColor(@"1389EF").CGColor];
+//    gradientLayer.locations = @[@0.3, @0.5, @1.0];
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(1.0, 0);
+    gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 104);
+    [titleBgView.layer addSublayer:gradientLayer];
+    
+    [headView addSubview:titleBgView];
     
     labelRefresh = [[UILabel alloc] initWithFrame:CGRectMake(50, -50, SCREEN_WIDTH - 100, 20)];
     labelRefresh.text = @"下拉刷新";
@@ -41,7 +55,7 @@
     labelRefresh.hidden = YES;
     [headView addSubview:labelRefresh];
     
-    UIImageView *iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(16, 8.6, 31.7, 31.7)];
+    UIImageView *iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(17, 48, 31.7, 31.7)];
     iconImageView.image = [UIImage imageNamed:@"bte_logo_account"];
     [headView addSubview:iconImageView];
     
@@ -52,61 +66,67 @@
     titleLabel.textColor = BHHexColor(@"ffffff");
     [headView addSubview:titleLabel];
     
-    UILabel *titleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(50, 61.5, SCREEN_WIDTH - 100, 20)];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *phoneNum = [defaults objectForKey:MobilePhoneNum];
+    NSString *phoneString = [NSString stringWithFormat:@"%@****%@",[phoneNum substringWithRange:NSMakeRange(0,3)],[phoneNum substringWithRange:NSMakeRange(7,4)]];
+    
+    UILabel *titleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(57, 56, SCREEN_WIDTH - 100, 17)];
+    titleLabel2.text = phoneString;
+    titleLabel2.font = UIFontRegularOfSize(17);
+    titleLabel2.textColor = BHHexColor(@"ffffff");
+    [headView addSubview:titleLabel2];
+    
+    UIImageView *arrowImageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 16 - 8, 57, 8, 14)];
+    arrowImageView.image = [UIImage imageNamed:@"arrowImageView_icon"];
+    [headView addSubview:arrowImageView];
+    
+    UIButton *arrowButton1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    arrowButton1.frame = CGRectMake(SCREEN_WIDTH - 45, 54, 40, 30);
+    [arrowButton1 addTarget:self action:@selector(setButton:) forControlEvents:UIControlEventTouchUpInside];
+    [headView addSubview:arrowButton1];
+    
+    
+    
+    
+    UIView *whiteBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 120, SCREEN_WIDTH, 124)];
+    whiteBgView.backgroundColor = KBGCell;
+    [headView addSubview:whiteBgView];
+    
+    
+    UILabel *titleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 17, SCREEN_WIDTH - 100, 20)];
     titleLabel1.text = @"账户可用余额";
-    titleLabel1.textAlignment = NSTextAlignmentCenter;
-    titleLabel1.font = UIFontRegularOfSize(12);
-    titleLabel1.textColor = BHHexColor(@"ffffff");
-    [headView addSubview:titleLabel1];
+    titleLabel1.font = UIFontRegularOfSize(14);
+    titleLabel1.textColor = BHHexColor(@"626A75");
+    [whiteBgView addSubview:titleLabel1];
     
     
-//    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 24 + 30, SCREEN_WIDTH, 14)];
-//    if (_islogin) {
-//        _titleLabel.text = @"比特易";
-//        _titleLabel.font = UIFontRegularOfSize(13);
-//        _titleLabel.textColor = BHHexColor(@"ffffff");
-//        _titleLabel.alpha = 0.8;
-//        _titleLabel.frame = CGRectMake(70, 62, 100, 13);
-//
-//        _subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(70, 82, 150, 18)];
-//        if (amountModel.length == 11) {
-//            amountModel = [NSString stringWithFormat:@"%@ %@ %@",[amountModel substringWithRange:NSMakeRange(0,3)],[amountModel substringWithRange:NSMakeRange(3,4)],[amountModel substringWithRange:NSMakeRange(7,4)]];
-//        }
-//        _subTitleLabel1.text = amountModel;
-//        _subTitleLabel1.font = UIFontRegularOfSize(18);
-//        _subTitleLabel1.textColor = BHHexColor(@"ffffff");
-//        [headView addSubview:_subTitleLabel1];
-//
-//    } else
-//    {
-//        _titleLabel.text = @"点击登录";
-//        _titleLabel.font = UIFontRegularOfSize(20);
-//        _titleLabel.textColor = BHHexColor(@"ffffff");
-//        _titleLabel.frame = CGRectMake(70, 70, 100, 20);
-//        _titleLabel.userInteractionEnabled = YES;
-//        //点击手势
-//        UITapGestureRecognizer *r5 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doTapChange)];
-//        [_titleLabel addGestureRecognizer:r5];
-//    }
-//    [headView addSubview:_titleLabel];
+    UIButton *arrowButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    arrowButton.frame = CGRectMake(SCREEN_WIDTH - 58, 10, 48, 30);
+    [arrowButton setTitle:@"充值" forState:UIControlStateNormal];
+    [arrowButton setTitleColor:BHHexColor(@"308CDD") forState:UIControlStateNormal];
+    [arrowButton addTarget:self action:@selector(switchButton:) forControlEvents:UIControlEventTouchUpInside];
+    arrowButton.titleLabel.font = UIFontRegularOfSize(14);
+    [whiteBgView addSubview:arrowButton];
     
-    _detailLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(65, 92.5, 100, 14)];
+    _detailLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 57, 100, 14)];
     _detailLabel1.text = @"美元";
+    _detailLabel1.alpha = 0.8;
     _detailLabel1.font = UIFontRegularOfSize(14);
-    _detailLabel1.textColor = BHHexColor(@"ffffff");
-    [headView addSubview:_detailLabel1];
+    _detailLabel1.textColor = BHHexColor(@"626A75");
+    [whiteBgView addSubview:_detailLabel1];
     
-//    UIView *vicLine = [[UIView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 2) / 2, 137, 2, 32)];
-//    vicLine.backgroundColor = BHHexColor(@"ffffff");
-//    vicLine.alpha = 0.6;
-//    [headView addSubview:vicLine];
+    UIView *vicLine = [[UIView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 2) / 2, 62, 2, 32)];
+    vicLine.backgroundColor = BHHexColor(@"E6EBF0");
+    vicLine.alpha = 0.6;
+    [whiteBgView addSubview:vicLine];
     
-    _detailLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 65 - _detailLabel1.width, _detailLabel1.top, _detailLabel1.width, _detailLabel1.height)];
+    _detailLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(vicLine.right + 25, _detailLabel1.top, _detailLabel1.width, _detailLabel1.height)];
     _detailLabel2.text = @"BTC";
-    _detailLabel2.textAlignment = NSTextAlignmentRight;
+    _detailLabel2.alpha = 0.8;
     _detailLabel2.font = UIFontRegularOfSize(14);
-    _detailLabel2.textColor = BHHexColor(@"ffffff");
-    [headView addSubview:_detailLabel2];
+    _detailLabel2.textColor = BHHexColor(@"626A75");
+    [whiteBgView addSubview:_detailLabel2];
     
     _detailLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(_detailLabel1.left, _detailLabel1.bottom + 8, _detailLabel1.width, 20)];
     if (legalAccountModel.legalBalance && [legalAccountModel.legalBalance floatValue] != 0) {
@@ -115,11 +135,9 @@
     {
         _detailLabel3.text = @"0";
     }
-    _detailLabel3.textAlignment = NSTextAlignmentCenter;
-    _detailLabel3.centerX = 81;
     _detailLabel3.font = [UIFont systemFontOfSize:20];
-    _detailLabel3.textColor = BHHexColor(@"ffffff");
-    [headView addSubview:_detailLabel3];
+    _detailLabel3.textColor = BHHexColor(@"308CDD");
+    [whiteBgView addSubview:_detailLabel3];
     
     _detailLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(_detailLabel2.left, _detailLabel3.top, _detailLabel1.width, 20)];
     if (btcAccountModel.balance && [btcAccountModel.balance floatValue] != 0) {
@@ -129,10 +147,8 @@
         _detailLabel4.text = @"0";
     }
     _detailLabel4.font = [UIFont systemFontOfSize:20];
-    _detailLabel4.textAlignment = NSTextAlignmentCenter;
-    _detailLabel4.centerX = SCREEN_WIDTH -  76;
-    _detailLabel4.textColor = BHHexColor(@"ffffff");
-    [headView addSubview:_detailLabel4];
+    _detailLabel4.textColor = BHHexColor(@"308CDD");
+    [whiteBgView addSubview:_detailLabel4];
 
     UIView *headButtonWhiteBgView = [[UIView alloc] initWithFrame:CGRectMake(0, headView.height - 47, SCREEN_WIDTH, 48)];
     headButtonWhiteBgView.backgroundColor = BHHexColor(@"fafafa");
@@ -200,23 +216,35 @@
 //设置尾部视图
 - (void)setTableFooterView
 {
-    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 92)];
-    headView.backgroundColor = [UIColor clearColor];
-    
-    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 21, SCREEN_WIDTH, 50)];
-    bgView.backgroundColor = KBGCell;
-    [headView addSubview:bgView];
-    UIButton *commitButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    commitButton.frame = CGRectMake(0, 0, SCREEN_WIDTH, 50);
-    [commitButton setTitle:@"退出登录" forState:UIControlStateNormal];
-    [commitButton setTitleColor:BHHexColor(@"525866") forState:UIControlStateNormal];
-    [commitButton addTarget:self action:@selector(commit:) forControlEvents:UIControlEventTouchUpInside];
-    commitButton.titleLabel.font = UIFontRegularOfSize(16);
-    commitButton.titleLabel.alpha = 0.6;
-    [bgView addSubview:commitButton];
-    
-    self.myAccountTableView.tableFooterView = headView;
+//    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 92)];
+//    headView.backgroundColor = [UIColor clearColor];
+//
+//    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 21, SCREEN_WIDTH, 50)];
+//    bgView.backgroundColor = KBGCell;
+//    [headView addSubview:bgView];
+//    UIButton *commitButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    commitButton.frame = CGRectMake(0, 0, SCREEN_WIDTH, 50);
+//    [commitButton setTitle:@"退出登录" forState:UIControlStateNormal];
+//    [commitButton setTitleColor:BHHexColor(@"525866") forState:UIControlStateNormal];
+//    [commitButton addTarget:self action:@selector(commit:) forControlEvents:UIControlEventTouchUpInside];
+//    commitButton.titleLabel.font = UIFontRegularOfSize(16);
+//    commitButton.titleLabel.alpha = 0.6;
+//    [bgView addSubview:commitButton];
+//
+//    self.myAccountTableView.tableFooterView = headView;
 }
+
+
+
+#pragma mark - 跳转设置
+- (void)setButton:(UIButton *)sender
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(jumpToSet)]) {
+        [self.delegate jumpToSet];
+    }
+}
+
+
 
 #pragma mark - 退出登录
 - (void)commit:(id)sender
@@ -417,21 +445,25 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     //获取偏移量
-    CGPoint offset = scrollView.contentOffset;
-    //判断是否改变
-    if (offset.y < 0) {
-        CGRect rect = bgImageView.frame;
-        //我们只需要改变图片的y值和高度即可
-        rect.origin.y = offset.y;
-        rect.size.height = 162.5 - offset.y;
-        bgImageView.frame = rect;
-        if (offset.y < -30) {
-            labelRefresh.hidden = NO;
-        } else
-        {
-            labelRefresh.hidden = YES;
-        }
-    }
+//    CGPoint offset = scrollView.contentOffset;
+//    //判断是否改变
+//    if (offset.y < 0) {
+//        CGRect rect = titleBgView.frame;
+//        //我们只需要改变图片的y值和高度即可
+//        rect.origin.y = offset.y;
+//        rect.size.height = 104 - offset.y;
+//        titleBgView.frame = rect;
+////        gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, rect.size.height);
+//        if (offset.y < -30) {
+//            labelRefresh.hidden = NO;
+//        } else
+//        {
+//            labelRefresh.hidden = YES;
+//        }
+//    } else
+//    {
+//        titleBgView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 104);
+//    }
 }
 
 @end

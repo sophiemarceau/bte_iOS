@@ -18,6 +18,8 @@
 -(void)switchButton:(NSInteger)type;//type 1 当前跟投 2 已结束策略
 -(void)logout;//退出登录
 -(void)jumpToDetails:(NSString *)productId;//
+-(void)jumpToSet;
+-(void)jumpToCharge;
 -(void)doTapChange;
 @end
 @interface BTEMyAccountTableView : UIView<UITableViewDelegate,UITableViewDataSource,JumpToDetailDelegate,UIScrollViewDelegate>
@@ -28,6 +30,8 @@
     BTEStatisticsModel *statisticsModel;
     NSInteger type;//1 当前跟投 2结束跟投
     UIImageView *bgImageView;
+    UIView *titleBgView;
+    CAGradientLayer *gradientLayer;
     UILabel *labelRefresh;
     BOOL _islogin;//是否登录
 }

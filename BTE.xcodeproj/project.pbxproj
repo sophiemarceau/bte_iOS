@@ -34,6 +34,7 @@
 		815F8F532060B997006BB0D0 /* BTEShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 815F8F522060B997006BB0D0 /* BTEShareView.m */; };
 		816CCD1D2009ED24009E03D2 /* BHVersionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 816CCD1B2009ED24009E03D2 /* BHVersionTool.m */; };
 		816CCD202009F06A009E03D2 /* BTEUpgradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 816CCD1F2009F06A009E03D2 /* BTEUpgradeViewController.m */; };
+		8176F535207CC3210090852A /* BTESetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8176F534207CC3210090852A /* BTESetViewController.m */; };
 		8179AD44200736C4001678D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AD43200736C4001678D2 /* main.m */; };
 		8179AD4E200736C4001678D2 /* BTETests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AD4D200736C4001678D2 /* BTETests.m */; };
 		8179AD59200736C4001678D2 /* BTEUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AD58200736C4001678D2 /* BTEUITests.m */; };
@@ -223,6 +224,8 @@
 		816CCD1C2009ED24009E03D2 /* BHVersionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHVersionTool.h; sourceTree = "<group>"; };
 		816CCD1E2009F06A009E03D2 /* BTEUpgradeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEUpgradeViewController.h; sourceTree = "<group>"; };
 		816CCD1F2009F06A009E03D2 /* BTEUpgradeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEUpgradeViewController.m; sourceTree = "<group>"; };
+		8176F533207CC3210090852A /* BTESetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTESetViewController.h; sourceTree = "<group>"; };
+		8176F534207CC3210090852A /* BTESetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTESetViewController.m; sourceTree = "<group>"; };
 		8179AD31200736C4001678D2 /* BTE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8179AD34200736C4001678D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8179AD43200736C4001678D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -616,6 +619,39 @@
 			path = Upgrade;
 			sourceTree = "<group>";
 		};
+		8176F52F207CC2410090852A /* Set(设置) */ = {
+			isa = PBXGroup;
+			children = (
+				8176F532207CC2980090852A /* Controller */,
+				8176F531207CC2920090852A /* View */,
+				8176F530207CC27C0090852A /* Model */,
+			);
+			path = "Set(设置)";
+			sourceTree = "<group>";
+		};
+		8176F530207CC27C0090852A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8176F531207CC2920090852A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8176F532207CC2980090852A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8176F533207CC3210090852A /* BTESetViewController.h */,
+				8176F534207CC3210090852A /* BTESetViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		8179AD28200736C4001678D2 = {
 			isa = PBXGroup;
 			children = (
@@ -754,6 +790,7 @@
 		8179AD6720073BD0001678D2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8176F52F207CC2410090852A /* Set(设置) */,
 				81FFE17D207242CD001AB03D /* LeftView */,
 				81403B3F2066326800788F9D /* StrategyFollow */,
 				815F8F502060B933006BB0D0 /* ShareView */,
@@ -1571,6 +1608,7 @@
 				8179AF0F2008A08C001678D2 /* BHBaseController.m in Sources */,
 				8112E3B6204541AE00419BC9 /* YQCacheManager.m in Sources */,
 				8179AE3820085DB5001678D2 /* UIButton+EnlargeEdge.m in Sources */,
+				8176F535207CC3210090852A /* BTESetViewController.m in Sources */,
 				B90071C7204549C000431065 /* BHTextField.m in Sources */,
 				8179AE9C20086181001678D2 /* BHHexColor.m in Sources */,
 				8179AE3B20085DB5001678D2 /* UIImage+Scale.m in Sources */,

@@ -14,6 +14,7 @@
 #import "BTEAccountDetailsModel.h"
 #import "BTEHomeWebViewController.h"
 #import "BTELoginVC.h"
+#import "BTESetViewController.h"
 @interface MyAccountViewController ()<MyAccountTableViewDelegate,UIAlertViewDelegate>
 {
     NSString *amountModel;
@@ -37,7 +38,7 @@
 //    self.navigationItem.leftBarButtonItem = [self createLeftBarItem];
     
     if (self.myAccountTableView == nil) {
-        self.myAccountTableView = [[BTEMyAccountTableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - TAB_BAR_HEIGHT)];
+        self.myAccountTableView = [[BTEMyAccountTableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - TAB_BAR_HEIGHT - NAVIGATION_HEIGHT)];
         self.myAccountTableView.delegate = self;
     }
     
@@ -340,6 +341,17 @@
 //    [self.navigationController popViewControllerAnimated:YES];
 //}
 
+-(void)jumpToSet
+{
+    BTESetViewController *setVc = [[BTESetViewController alloc] init];
+    [self.navigationController pushViewController:setVc animated:YES];
+}
+
+-(void)jumpToCharge
+{
+    
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -347,6 +359,14 @@
     //设置状态栏颜色
     _statusBarView = [[UIView alloc]   initWithFrame:CGRectMake(0, 0,    self.view.bounds.size.width, 20)];
     _statusBarView.backgroundColor = [BHHexColor hexColor:@"53AFFF"];
+    
+    
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.colors = @[(__bridge id)BHHexColor(@"53AFFF").CGColor, (__bridge id)BHHexColor(@"1389EF").CGColor];
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(1.0, 0);
+    gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 20);
+    [_statusBarView.layer addSublayer:gradientLayer];
     [self.view addSubview:_statusBarView];
 
     if ([self.isloginAndGetMyAccountInfo isEqualToString:@"0"]) {
