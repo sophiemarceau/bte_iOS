@@ -36,6 +36,7 @@
 		816CCD202009F06A009E03D2 /* BTEUpgradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 816CCD1F2009F06A009E03D2 /* BTEUpgradeViewController.m */; };
 		8176F535207CC3210090852A /* BTESetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8176F534207CC3210090852A /* BTESetViewController.m */; };
 		8176F538207DAD2C0090852A /* WLActivateAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8176F537207DAD2C0090852A /* WLActivateAlertView.m */; };
+		8176F53B207DDBA10090852A /* BTEInviteFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8176F53A207DDBA10090852A /* BTEInviteFriendViewController.m */; };
 		8179AD44200736C4001678D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AD43200736C4001678D2 /* main.m */; };
 		8179AD4E200736C4001678D2 /* BTETests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AD4D200736C4001678D2 /* BTETests.m */; };
 		8179AD59200736C4001678D2 /* BTEUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AD58200736C4001678D2 /* BTEUITests.m */; };
@@ -229,6 +230,8 @@
 		8176F534207CC3210090852A /* BTESetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTESetViewController.m; sourceTree = "<group>"; };
 		8176F536207DAD2B0090852A /* WLActivateAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLActivateAlertView.h; sourceTree = "<group>"; };
 		8176F537207DAD2C0090852A /* WLActivateAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLActivateAlertView.m; sourceTree = "<group>"; };
+		8176F539207DDBA10090852A /* BTEInviteFriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEInviteFriendViewController.h; sourceTree = "<group>"; };
+		8176F53A207DDBA10090852A /* BTEInviteFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEInviteFriendViewController.m; sourceTree = "<group>"; };
 		8179AD31200736C4001678D2 /* BTE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8179AD34200736C4001678D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8179AD43200736C4001678D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -653,6 +656,8 @@
 			children = (
 				8176F533207CC3210090852A /* BTESetViewController.h */,
 				8176F534207CC3210090852A /* BTESetViewController.m */,
+				8176F539207DDBA10090852A /* BTEInviteFriendViewController.h */,
+				8176F53A207DDBA10090852A /* BTEInviteFriendViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1613,6 +1618,7 @@
 				8179AF0F2008A08C001678D2 /* BHBaseController.m in Sources */,
 				8112E3B6204541AE00419BC9 /* YQCacheManager.m in Sources */,
 				8179AE3820085DB5001678D2 /* UIButton+EnlargeEdge.m in Sources */,
+				8176F53B207DDBA10090852A /* BTEInviteFriendViewController.m in Sources */,
 				8176F535207CC3210090852A /* BTESetViewController.m in Sources */,
 				B90071C7204549C000431065 /* BHTextField.m in Sources */,
 				8179AE9C20086181001678D2 /* BHHexColor.m in Sources */,

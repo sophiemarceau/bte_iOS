@@ -8,6 +8,7 @@
 
 #import "BTESetViewController.h"
 #import "WLActivateAlertView.h"
+#import "BTEInviteFriendViewController.h"
 @interface BTESetViewController ()
 
 @end
@@ -235,7 +236,8 @@
 
     } else if (indexPath.row == 1)
     {
-        
+        BTEInviteFriendViewController *invateVc = [[BTEInviteFriendViewController alloc] init];
+        [self.navigationController pushViewController:invateVc animated:YES];
     }else if (indexPath.row == 2)
     {
         NSString *telNum = [NSString stringWithFormat:@"tel://01085112088"];

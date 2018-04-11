@@ -136,6 +136,42 @@
     [self removeFromSuperview];
 }
 
+//对外使用对应tag点击事件
++ (void)popShareViewCallBack:(ShareViewCallBack)shareViewCallBack
+                    imageUrl:(id)_imageUrl shareUrl:(id)_shareUrl sharetitle:(NSString *)_sharetitle shareDesc:(NSString *)_shareDesc shareType:(UMS_SHARE_TYPE)_shareType currentVc:(UIViewController *)currentVc shareButtonTag:(NSInteger)index
+{
+    BTEShareView *shareView = [[BTEShareView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    shareView.shareViewCallBack = shareViewCallBack;
+    shareView.shareImageUrl = _imageUrl;
+    shareView.shareUrl = _shareUrl;
+    shareView.sharetitle = _sharetitle;
+    shareView.shareDesc = _shareDesc;
+    shareView.shareType = _shareType;
+    shareView.viewController = currentVc;
+    shareView.backgroundColor = kColorRgba(0, 0, 0, 0.6);
+    [[UIApplication sharedApplication].keyWindow addSubview:shareView];
+    if (index == 101) {//微信
+        shareView.platform = UMSocialPlatformType_WechatSession;//微信
+        [shareView shareWithType:_shareType];
+    } else if (index == 102)//朋友圈
+    {
+        shareView.platform = UMSocialPlatformType_WechatTimeLine;//朋友圈
+        [shareView shareWithType:_shareType];
+    } else if (index == 103)//新浪微博
+    {
+        shareView.platform = UMSocialPlatformType_Sina;//新浪微博
+        [shareView shareWithType:_shareType];
+    } else if (index == 104)//拷贝链接
+    {
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = shareView.shareUrl;
+        [BHToast showMessage:@"复制成功"];
+    }
+    
+    
+    [shareView removeFromSuperview];
+}
+
 
 - (void)shareWithType:(UMS_SHARE_TYPE)type
 {

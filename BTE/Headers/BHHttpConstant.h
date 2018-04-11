@@ -92,6 +92,10 @@ static NSString * const kChart = @"http://chart.bte.top/";
 //MARK:策略列表页
 //获取策略列表
 #define kGetlatestProductList [NSString stringWithFormat:@"%@%@",kDomain,@"app/api/product/list"]
+
+//获取邀请好友
+#define kGetUserInvateFrend [NSString stringWithFormat:@"%@%@",kDomain,@"app/api/user/myQrCode"]
+#define kGetUserInvateFrendUrl [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/regiSter"]
 #endif /* BHHttpConstant_h */
 
 

@@ -40,4 +40,8 @@ typedef void(^ShareViewCallBack)(void);//分享回调预留
  */
 + (void)popShareViewCallBack:(ShareViewCallBack)shareViewCallBack
                     imageUrl:(id)_imageUrl shareUrl:(id)_shareUrl sharetitle:(NSString *)_sharetitle shareDesc:(NSString *)_shareDesc shareType:(UMS_SHARE_TYPE)_shareType currentVc:(UIViewController *)currentVc;
+//对外使用对应tag点击事件
++ (void)popShareViewCallBack:(ShareViewCallBack)shareViewCallBack
+                            imageUrl:(id)_imageUrl shareUrl:(id)_shareUrl sharetitle:(NSString *)_sharetitle shareDesc:(NSString *)_shareDesc shareType:(UMS_SHARE_TYPE)_shareType currentVc:(UIViewController *)currentVc shareButtonTag:(NSInteger)index;
+
 @end

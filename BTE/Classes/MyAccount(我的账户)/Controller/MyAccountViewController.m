@@ -38,7 +38,7 @@
 //    self.navigationItem.leftBarButtonItem = [self createLeftBarItem];
     
     if (self.myAccountTableView == nil) {
-        self.myAccountTableView = [[BTEMyAccountTableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - TAB_BAR_HEIGHT - NAVIGATION_HEIGHT)];
+        self.myAccountTableView = [[BTEMyAccountTableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - TAB_BAR_HEIGHT)];
         self.myAccountTableView.delegate = self;
     }
     
