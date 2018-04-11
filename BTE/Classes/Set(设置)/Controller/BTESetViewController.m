@@ -7,7 +7,7 @@
 //
 
 #import "BTESetViewController.h"
-
+#import "WLActivateAlertView.h"
 @interface BTESetViewController ()
 
 @end
@@ -84,14 +84,14 @@
         NMShowLoadIng;
         [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
             NMRemovLoadIng;
-            //退出成功删除手机号
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             [defaults setObject:nil forKey:MobilePhoneNum];
             //删除本地登录信息
             [User removeLoginData];
             //发送通知告诉web token变动
             [[NSNotificationCenter defaultCenter]postNotificationName:NotificationUserLoginSuccess object:nil];
-            [weakSelf.tabBarController setSelectedIndex:0];
+            [weakSelf.navigationController popViewControllerAnimated:NO];
+            
         } failure:^(NSError *error) {
             NMRemovLoadIng;
             RequestError(error);
@@ -204,7 +204,7 @@
         
         UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 120 - 16, 15, 120, 14)];
         label1.font = UIFontRegularOfSize(14);
-        label1.text = kCurrentVersion;
+        label1.text = [NSString stringWithFormat:@"v%@",kCurrentVersion];
         label1.textAlignment = NSTextAlignmentRight;
         label1.alpha = 0.5;
         label1.textColor = BHHexColor(@"626A75");
@@ -220,9 +220,19 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0) {
-        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA4NzM2MjIxMA%3D%3D&scene=110#wechat_redirect"]]) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA4NzM2MjIxMA%3D%3D&scene=110#wechat_redirect"]];
-        }
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = @"bte-top";
+        [WLActivateAlertView popActivateNowCallBack:^{
+            if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"weixin://"]]) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"weixin://"]];
+            } else
+            {
+                [BHToast showMessage:@"您还未安装微信！"];
+            }
+        } cancelCallBack:^{
+           
+        }];
+
     } else if (indexPath.row == 1)
     {
         

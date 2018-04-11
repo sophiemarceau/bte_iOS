@@ -368,10 +368,15 @@
     gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 20);
     [_statusBarView.layer addSublayer:gradientLayer];
     [self.view addSubview:_statusBarView];
-
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *phoneNum = [defaults objectForKey:MobilePhoneNum];
     if ([self.isloginAndGetMyAccountInfo isEqualToString:@"0"]) {
         //获取登录状态
         [self getMyAccountLoginStatus];
+    } else if ([self.isloginAndGetMyAccountInfo isEqualToString:@"1"] && phoneNum == nil)//退出登录处理
+    {
+        self.isloginAndGetMyAccountInfo = @"0";
+        [self.tabBarController setSelectedIndex:0];
     }
 }
 
