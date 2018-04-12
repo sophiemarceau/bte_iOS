@@ -7,7 +7,7 @@
 //
 
 #import "BTEInviteFriendViewController.h"
-
+#import "BTEFreandCountViewController.h"
 @interface BTEInviteFriendViewController ()
 
 @end
@@ -20,8 +20,8 @@
     self.view.backgroundColor = KBGColor;
     self.title = @"邀请好友";
     self.shareType = UMS_SHARE_TYPE_WEB_LINK;//web链接
-    self.sharetitle = @"比特易-数字货币分析平台";
-    self.shareDesc = @"比特易是业界领先的数字货币市场专业分析平台，软银中国资本(SBCVC)、蓝驰创投(BlueRun Ventures)战略投资，玩转比特币，多看比特易。";
+    self.sharetitle = @"我正在用比特易，最专业的数字货币市场分析平台";
+    self.shareDesc = @"比特易，专业数字货币市场分析平台，软银战略投资，玩转比特币，多用比特易";
     _setTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - NAVIGATION_HEIGHT) style:UITableViewStylePlain];
     _setTableView.backgroundColor = KBGColor;
     _setTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -45,6 +45,7 @@
     
     UIImageView *bgImage = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 315) / 2, 30, 315, 416)];
     bgImage.image = [UIImage imageNamed:@"bg_image_invate"];
+    bgImage.userInteractionEnabled = YES;
     [headView addSubview:bgImage];
     
     UIImageView *bgImage1 = [[UIImageView alloc] initWithFrame:CGRectMake(30.2, 20.2, 43.6, 43.6)];
@@ -79,7 +80,7 @@
     commitButton.frame = CGRectMake((bgImage.width - 150) / 2, 364, 150, 50);
     [commitButton setTitle:@"查看邀请结果" forState:UIControlStateNormal];
     [commitButton setTitleColor:BHHexColor(@"308CDD") forState:UIControlStateNormal];
-    [commitButton addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
+    [commitButton addTarget:self action:@selector(checkOut) forControlEvents:UIControlEventTouchUpInside];
     commitButton.titleLabel.font = UIFontRegularOfSize(14);
     [bgImage addSubview:commitButton];
     
@@ -123,13 +124,13 @@
 {
     if (_dicInvate) {
         if (sender.tag == 101) {//微信
-            [BTEShareView popShareViewCallBack:nil imageUrl:[UIImage imageNamed:@"AppIcon"] shareUrl:[_dicInvate objectForKey:@"url"] sharetitle:self.sharetitle shareDesc:self.shareDesc shareType:self.shareType currentVc:self shareButtonTag:101];
+            [BTEShareView popShareViewCallBack:nil imageUrl:[UIImage imageNamed:@"share_icon"] shareUrl:[_dicInvate objectForKey:@"url"] sharetitle:self.sharetitle shareDesc:self.shareDesc shareType:self.shareType currentVc:self shareButtonTag:101];
         } else if (sender.tag == 102)//朋友圈
         {
-            [BTEShareView popShareViewCallBack:nil imageUrl:[UIImage imageNamed:@"AppIcon"] shareUrl:[_dicInvate objectForKey:@"url"] sharetitle:self.sharetitle shareDesc:self.shareDesc shareType:self.shareType currentVc:self shareButtonTag:102];
+            [BTEShareView popShareViewCallBack:nil imageUrl:[UIImage imageNamed:@"share_icon"] shareUrl:[_dicInvate objectForKey:@"url"] sharetitle:self.sharetitle shareDesc:self.shareDesc shareType:self.shareType currentVc:self shareButtonTag:102];
         } else if (sender.tag == 103)//微博
         {
-            [BTEShareView popShareViewCallBack:nil imageUrl:[UIImage imageNamed:@"AppIcon"] shareUrl:[_dicInvate objectForKey:@"url"] sharetitle:self.sharetitle shareDesc:self.shareDesc shareType:self.shareType currentVc:self shareButtonTag:103];
+            [BTEShareView popShareViewCallBack:nil imageUrl:[UIImage imageNamed:@"share_icon"] shareUrl:[_dicInvate objectForKey:@"url"] sharetitle:self.sharetitle shareDesc:self.shareDesc shareType:self.shareType currentVc:self shareButtonTag:103];
         }
     }
 }
@@ -160,6 +161,11 @@
     }];
 }
 
+- (void)checkOut
+{
+    BTEFreandCountViewController *freandVc = [[BTEFreandCountViewController alloc] init];
+    [self.navigationController pushViewController:freandVc animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

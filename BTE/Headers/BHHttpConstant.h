@@ -96,6 +96,9 @@ static NSString * const kChart = @"http://chart.bte.top/";
 //获取邀请好友
 #define kGetUserInvateFrend [NSString stringWithFormat:@"%@%@",kDomain,@"app/api/user/myQrCode"]
 #define kGetUserInvateFrendUrl [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/regiSter"]
+
+//获取邀请好友结果
+#define kGetUserInvateFrendCount [NSString stringWithFormat:@"%@%@",kDomain,@"app/api/user/invite/list"]
 #endif /* BHHttpConstant_h */
 
 
