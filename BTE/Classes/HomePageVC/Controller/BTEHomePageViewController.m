@@ -236,6 +236,9 @@
     WS(weakSelf)
     [BTELeftView popActivateNowCallBack:^(NSInteger index) {
         [weakSelf.tabBarController setSelectedIndex:index];
+        if (index == 0) {
+            [weakSelf.homePageTableView.homePageTableView setContentOffset:CGPointMake(0,0) animated:NO];
+        }
     } cancelCallBack:^{
         
     }];
