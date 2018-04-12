@@ -24,47 +24,60 @@
 
 - (void)creatView
 {
-    UIImageView *bgImage = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 315) / 2, 30, 315, 416)];
-    bgImage.image = [UIImage imageNamed:@"bg_image_invate"];
-    bgImage.userInteractionEnabled = YES;
-    [self.view addSubview:bgImage];
     
-    titleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake((bgImage.width - 250) / 2, 35, 250, 16)];
-    titleLabel1.font = UIFontRegularOfSize(16);
-    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"您已成功邀请%ld位好友",_dataArr.count]];
-    
-    [str addAttribute:NSForegroundColorAttributeName value:BHHexColor(@"308cdd") range:NSMakeRange(6,str.length - 9)];
-    [str addAttribute:NSFontAttributeName value:UIFontRegularOfSize(20) range:NSMakeRange(6,str.length - 9)];
-    titleLabel1.attributedText = str;
-    titleLabel1.textAlignment = NSTextAlignmentCenter;
-    titleLabel1.textColor = BHHexColor(@"626A75");
-    [bgImage addSubview:titleLabel1];
-    
-    UILabel *titleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(54, 123, 100, 12)];
-    titleLabel2.text = @"用户";
-    titleLabel2.font = UIFontRegularOfSize(12);
-    titleLabel2.alpha = 0.6;
-    titleLabel2.textColor = BHHexColor(@"626A75");
-    [bgImage addSubview:titleLabel2];
-    
-    UILabel *titleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake((bgImage.width - 69 - 100), titleLabel2.top, 100, 12)];
-    titleLabel3.text = @"注册时间";
-    titleLabel3.textAlignment = NSTextAlignmentRight;
-    titleLabel3.font = UIFontRegularOfSize(12);
-    titleLabel3.alpha = 0.6;
-    titleLabel3.textColor = BHHexColor(@"626A75");
-    [bgImage addSubview:titleLabel3];
-    
-    _setTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 135, bgImage.width, bgImage.height - 137) style:UITableViewStylePlain];
-    _setTableView.backgroundColor = [UIColor clearColor];
-    _setTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _setTableView.delegate = self;
-    _setTableView.dataSource = self;
-    _setTableView.bounces = NO;
-    _setTableView.showsVerticalScrollIndicator = NO;
-    [bgImage addSubview:_setTableView];
-    
-    
+    if (_dataArr && _dataArr.count > 0) {
+        UIImageView *bgImage = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 315) / 2, 30, 315, 416)];
+        bgImage.image = [UIImage imageNamed:@"bg_image_invate"];
+        bgImage.userInteractionEnabled = YES;
+        [self.view addSubview:bgImage];
+        
+        titleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake((bgImage.width - 250) / 2, 35, 250, 16)];
+        titleLabel1.font = UIFontRegularOfSize(16);
+        titleLabel1.textColor = BHHexColor(@"626A75");
+        NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"您已成功邀请%ld位好友",_dataArr.count]];
+        [str addAttribute:NSForegroundColorAttributeName value:BHHexColor(@"308cdd") range:NSMakeRange(6,str.length - 9)];
+        [str addAttribute:NSFontAttributeName value:UIFontRegularOfSize(20) range:NSMakeRange(6,str.length - 9)];
+        titleLabel1.attributedText = str;
+        titleLabel1.textAlignment = NSTextAlignmentCenter;
+        
+        [bgImage addSubview:titleLabel1];
+        
+        UILabel *titleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(54, 123, 100, 12)];
+        titleLabel2.text = @"用户";
+        titleLabel2.font = UIFontRegularOfSize(12);
+        titleLabel2.alpha = 0.6;
+        titleLabel2.textColor = BHHexColor(@"626A75");
+        [bgImage addSubview:titleLabel2];
+        
+        UILabel *titleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake((bgImage.width - 69 - 100), titleLabel2.top, 100, 12)];
+        titleLabel3.text = @"注册时间";
+        titleLabel3.textAlignment = NSTextAlignmentRight;
+        titleLabel3.font = UIFontRegularOfSize(12);
+        titleLabel3.alpha = 0.6;
+        titleLabel3.textColor = BHHexColor(@"626A75");
+        [bgImage addSubview:titleLabel3];
+        
+        _setTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 135, bgImage.width, bgImage.height - 137) style:UITableViewStylePlain];
+        _setTableView.backgroundColor = [UIColor clearColor];
+        _setTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _setTableView.delegate = self;
+        _setTableView.dataSource = self;
+        _setTableView.bounces = NO;
+        _setTableView.showsVerticalScrollIndicator = NO;
+        [bgImage addSubview:_setTableView];
+    } else
+    {
+        UIImageView *bgImage = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 160) / 2, 141, 160, 155)];
+        bgImage.image = [UIImage imageNamed:@"bg_no_data"];
+        bgImage.userInteractionEnabled = YES;
+        [self.view addSubview:bgImage];
+        
+        UILabel *titleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 100) / 2, 321, 100, 16)];
+        titleLabel2.text = @"暂无邀请记录";
+        titleLabel2.font = UIFontRegularOfSize(16);
+        titleLabel2.textColor = BHHexColor(@"626A75");
+        [self.view addSubview:titleLabel2];
+    }
 }
 
 //获取邀请好友结果
@@ -84,12 +97,7 @@
         NMRemovLoadIng;
         if (IsSafeDictionary(responseObject)) {
             _dataArr = [responseObject objectForKey:@"data"];
-            [weakSelf.setTableView reloadData];
-            NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"您已成功邀请%ld位好友",_dataArr.count]];
-            
-            [str addAttribute:NSForegroundColorAttributeName value:BHHexColor(@"308cdd") range:NSMakeRange(6,str.length - 9)];
-            [str addAttribute:NSFontAttributeName value:UIFontRegularOfSize(20) range:NSMakeRange(6,str.length - 9)];
-            titleLabel1.attributedText = str;
+            [weakSelf creatView];
         }
     } failure:^(NSError *error) {
         NMRemovLoadIng;

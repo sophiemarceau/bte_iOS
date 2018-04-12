@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "available balance_Image.png",
+      "filename" : "prompt.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "available balance_Image@2x.png",
+      "filename" : "prompt@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "available balance_Image@3x.png",
+      "filename" : "prompt@3x.png",
       "scale" : "3x"
     }
   ],

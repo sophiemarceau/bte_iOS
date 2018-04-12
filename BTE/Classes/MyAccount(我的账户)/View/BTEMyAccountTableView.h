@@ -20,6 +20,7 @@
 -(void)jumpToDetails:(NSString *)productId;//
 -(void)jumpToSet;
 -(void)jumpToCharge;
+-(void)jumpToAmount;
 -(void)doTapChange;
 @end
 @interface BTEMyAccountTableView : UIView<UITableViewDelegate,UITableViewDataSource,JumpToDetailDelegate,UIScrollViewDelegate>

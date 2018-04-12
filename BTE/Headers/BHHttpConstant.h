@@ -22,8 +22,8 @@ static NSString * const kDomain = @"http://47.94.217.12:18081/";
 static NSString * const kHeader = @"http://m.bte.top/";
 static NSString * const kChart = @"http://chart.bte.top/";
 #else
-static NSString * const kHeader = @"http://192.168.24.135:3001/";
-//static NSString * const kHeader = @"http://192.168.24.64:3001/";
+//static NSString * const kHeader = @"http://192.168.24.135:3001/";
+static NSString * const kHeader = @"http://192.168.24.64:3001/";
 static NSString * const kChart = @"http://chart.bte.top/";
 #endif
 
@@ -57,7 +57,8 @@ static NSString * const kChart = @"http://chart.bte.top/";
 
 // 投资详情入口地址
 #define kAppStrategyAddress [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/strategy"]
-
+// 充值入口地址
+#define kApprechargeAddress [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/recharge"]
 // 交易详情入口地址
 #define kAppDealAddress [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/deal"]
 

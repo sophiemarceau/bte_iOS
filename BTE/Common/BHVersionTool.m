@@ -17,6 +17,10 @@
     } successBlock:^(id response) {
         NSLog(@"--------%@",response);
         BHVersionItem * appItem = [BHVersionItem yy_modelWithDictionary:response[@"data"]];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:appItem.trade forKey:MobileTradeNum];
+        [defaults synchronize];
+        
         if (appItem && !STRISEMPTY(appItem.update) && [appItem.update integerValue] == 1) {
             BTEUpgradeViewController *alterViewVC = [[BTEUpgradeViewController alloc] init];
             alterViewVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;

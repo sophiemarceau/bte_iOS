@@ -15,6 +15,7 @@
 #import "BTEHomeWebViewController.h"
 #import "BTELoginVC.h"
 #import "BTESetViewController.h"
+#import "BTEAmountViewController.h"
 @interface MyAccountViewController ()<MyAccountTableViewDelegate,UIAlertViewDelegate>
 {
     NSString *amountModel;
@@ -34,7 +35,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 //    self.title = @"我的账户";
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = KBGColor;
 //    self.navigationItem.leftBarButtonItem = [self createLeftBarItem];
     
     if (self.myAccountTableView == nil) {
@@ -108,7 +109,13 @@
     }];
 
 }
-
+-(void)jumpToAmount
+{
+    BTEAmountViewController *amountVc = [[BTEAmountViewController alloc] init];
+    amountVc.balance = btcAccountModel.balance;
+    amountVc.legalBalance = legalAccountModel.legalBalance;
+    [self.navigationController pushViewController:amountVc animated:YES];
+}
 
 //当前跟投 已结束策略 按钮切换事件
 -(void)switchButton:(NSInteger)type//type 1 当前跟投 2 已结束策略
@@ -349,7 +356,11 @@
 
 -(void)jumpToCharge
 {
-    
+    BTEHomeWebViewController *homePageVc= [[BTEHomeWebViewController alloc] init];
+    homePageVc.urlString = kApprechargeAddress;
+    homePageVc.isHiddenLeft = YES;
+    homePageVc.isHiddenBottom = NO;
+    [self.navigationController pushViewController:homePageVc animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated

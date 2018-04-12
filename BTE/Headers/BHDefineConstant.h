@@ -124,7 +124,7 @@ if (error.code != -900000) { \
 
 
 #define MobilePhoneNum @"MOBILEPHONENUM"
-
+#define MobileTradeNum @"MobileTradeNum"
 
 #pragma mark - 颜色相关
 

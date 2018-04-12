@@ -82,7 +82,8 @@
     [headView addSubview:arrowImageView];
     
     UIButton *arrowButton1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    arrowButton1.frame = CGRectMake(SCREEN_WIDTH - 45, 54, 40, 30);
+    arrowButton1.frame = CGRectMake(0, 54, SCREEN_WIDTH, 30);
+//    arrowButton1.backgroundColor = [UIColor redColor];
     [arrowButton1 addTarget:self action:@selector(setButton:) forControlEvents:UIControlEventTouchUpInside];
     [headView addSubview:arrowButton1];
     
@@ -100,14 +101,22 @@
     titleLabel1.textColor = BHHexColor(@"626A75");
     [whiteBgView addSubview:titleLabel1];
     
-    
     UIButton *arrowButton = [UIButton buttonWithType:UIButtonTypeCustom];
     arrowButton.frame = CGRectMake(SCREEN_WIDTH - 58, 10, 48, 30);
     [arrowButton setTitle:@"充值" forState:UIControlStateNormal];
     [arrowButton setTitleColor:BHHexColor(@"308CDD") forState:UIControlStateNormal];
-    [arrowButton addTarget:self action:@selector(switchButton:) forControlEvents:UIControlEventTouchUpInside];
+    [arrowButton addTarget:self action:@selector(jumpToCharge:) forControlEvents:UIControlEventTouchUpInside];
     arrowButton.titleLabel.font = UIFontRegularOfSize(14);
     [whiteBgView addSubview:arrowButton];
+//    if ([defaults objectForKey:MobileTradeNum] && [[defaults objectForKey:MobileTradeNum] integerValue] == 0) {
+//        arrowButton.hidden = YES;
+//    } else
+//    {
+        arrowButton.hidden = NO;
+        UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
+        
+        [whiteBgView addGestureRecognizer:tapGesturRecognizer];
+//    }
     
     _detailLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 57, 100, 14)];
     _detailLabel1.text = @"美元";
@@ -244,7 +253,13 @@
     }
 }
 
-
+#pragma mark - 充值跳转
+- (void)jumpToCharge:(UIButton *)sender
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(jumpToCharge)]) {
+        [self.delegate jumpToCharge];
+    }
+}
 
 #pragma mark - 退出登录
 - (void)commit:(id)sender
@@ -281,6 +296,12 @@
 {
     if (self.delegate && [self.delegate respondsToSelector:@selector(jumpToDetails:)]) {
         [self.delegate jumpToDetails:productId];
+    }
+}
+- (void)tapAction:(UITapGestureRecognizer *)tap
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(jumpToAmount)]) {
+        [self.delegate jumpToAmount];
     }
 }
 
