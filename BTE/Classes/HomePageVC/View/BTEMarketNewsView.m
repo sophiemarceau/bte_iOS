@@ -48,7 +48,7 @@
     bgview3.backgroundColor = KBGCell;
 //    bgview3.layer.masksToBounds = YES;
     bgview3.layer.cornerRadius = 6;
-    bgview3.layer.borderColor = kColorRgba(43, 58, 72, 0.3).CGColor;
+    bgview3.layer.borderColor = kColorRgba(43, 58, 72, 0.1).CGColor;
     bgview3.layer.borderWidth = 1;
     
     bgview3.layer.shadowColor = kColorRgba(43, 58, 72, 0.2).CGColor;
