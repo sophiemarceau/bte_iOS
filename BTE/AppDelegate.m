@@ -160,6 +160,7 @@
     findeNavVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"tab_ic_discover_light"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self selectedTapTabBarItems:findeNavVC.tabBarItem];
     [self unSelectedTapTabBarItems:findeNavVC.tabBarItem];
+    [self setTitleAdjustment:findeNavVC.tabBarItem];
     
     BTEStrategyFollowViewController *strategyFollowPageVc= [[BTEStrategyFollowViewController alloc] init];
 //    BTEHomeWebViewController *strategyFollowPageVc= [[BTEHomeWebViewController alloc] init];
@@ -173,6 +174,7 @@
     strategyFollowNavVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"tab_ic_tactics_light"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self selectedTapTabBarItems:strategyFollowNavVC.tabBarItem];
     [self unSelectedTapTabBarItems:strategyFollowNavVC.tabBarItem];
+    [self setTitleAdjustment:strategyFollowNavVC.tabBarItem];
     
     MyAccountViewController *myAccountPageVc = [[MyAccountViewController alloc] init];
     BHNavigationController *myAccountNavVC = [[BHNavigationController alloc] initWithRootViewController:myAccountPageVc];
@@ -182,7 +184,7 @@
     myAccountNavVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"tab_ic_mine_light"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self selectedTapTabBarItems:myAccountNavVC.tabBarItem];
     [self unSelectedTapTabBarItems:myAccountNavVC.tabBarItem];
-    //    [naviVideo setNavigationBarHidden:YES animated:YES];
+    [self setTitleAdjustment:myAccountNavVC.tabBarItem];
     
     
     //c.添加子控制器到ITabBarController中
@@ -192,6 +194,10 @@
     
     //c.2第二种方式
     tb.viewControllers=@[findeNavVC,strategyFollowNavVC,myAccountNavVC];
+    
+    //修改tabbar边线颜色
+//    [tb.tabBar setShadowImage:[UIImage imageWithColor:[UIColor redColor] size:CGSizeMake(SCREEN_WIDTH,2)]];
+//    tb.tabBar.opaque = NO;
     
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -228,7 +234,7 @@
 }
 
 - (void)setTitleAdjustment:(UITabBarItem *)tabBarItem{
-    UIOffset titleOffset = UIOffsetMake(0, -3);
+    UIOffset titleOffset = UIOffsetMake(0, -2);
     [tabBarItem setTitlePositionAdjustment:titleOffset];
 }
 

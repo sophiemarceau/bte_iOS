@@ -32,6 +32,7 @@
 #import "UIImage+gif.h"
 #import "NSString+category.h"
 #import "UIView+category.h"
+#import "UIImage+category.h"
 #import "UIView+Animation.h"
 
 //// MARK: --------vv---------

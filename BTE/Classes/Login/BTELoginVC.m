@@ -423,5 +423,12 @@ typedef NS_ENUM(NSInteger, LoginType) {
     [self.view endEditing:YES];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    //光标颜色
+    self.accountTextField.tintColor= BHHexColor(@"308CDD");
+    self.codeTextField.tintColor= BHHexColor(@"308CDD");
+}
 
 @end

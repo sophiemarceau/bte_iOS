@@ -29,7 +29,7 @@
         
         _titleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(64, 24, 180, 20)];
         
-        _titleLabel2.font = UIFontRegularOfSize(16);
+        _titleLabel2.font = UIFontMediumOfSize(16);
         _titleLabel2.textColor = BHHexColor(@"626A75");
         [_bgView addSubview:_titleLabel2];
         

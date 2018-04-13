@@ -179,7 +179,9 @@
 //定时器 相关
 - (void)startTimer {
     if (!b_timerRunning) {
+         [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:nil];
         m_timer = [NSTimer scheduledTimerWithTimeInterval:SW_TIMER_INTERVAL target:self selector:@selector(setProgress) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:m_timer forMode:NSRunLoopCommonModes];
         b_timerRunning = YES;
     }
 }
