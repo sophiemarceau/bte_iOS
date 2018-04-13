@@ -72,7 +72,13 @@
     NSString *phoneString = [NSString stringWithFormat:@"%@****%@",[phoneNum substringWithRange:NSMakeRange(0,3)],[phoneNum substringWithRange:NSMakeRange(7,4)]];
     
     UILabel *titleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(57, 56, SCREEN_WIDTH - 100, 17)];
-    titleLabel2.text = phoneString;
+    if (phoneNum) {
+        titleLabel2.text = phoneString;
+    } else
+    {
+        titleLabel2.text = @"*******";
+    }
+    
     titleLabel2.font = UIFontRegularOfSize(17);
     titleLabel2.textColor = BHHexColor(@"ffffff");
     [headView addSubview:titleLabel2];
@@ -108,15 +114,15 @@
     [arrowButton addTarget:self action:@selector(jumpToCharge:) forControlEvents:UIControlEventTouchUpInside];
     arrowButton.titleLabel.font = UIFontRegularOfSize(14);
     [whiteBgView addSubview:arrowButton];
-//    if ([defaults objectForKey:MobileTradeNum] && [[defaults objectForKey:MobileTradeNum] integerValue] == 0) {
-//        arrowButton.hidden = YES;
-//    } else
-//    {
+    if ([defaults objectForKey:MobileTradeNum] && [[defaults objectForKey:MobileTradeNum] integerValue] == 0) {
+        arrowButton.hidden = YES;
+    } else
+    {
         arrowButton.hidden = NO;
         UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
         
         [whiteBgView addGestureRecognizer:tapGesturRecognizer];
-//    }
+    }
     
     _detailLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 57, 100, 14)];
     _detailLabel1.text = @"美元";

@@ -172,6 +172,7 @@
     }];
 }
 - (void)dealloc {
+    NMRemovLoadIng;
     if (self.isAllowTitle) {
         [self.webView removeObserver:self forKeyPath:@"title"];
     }
