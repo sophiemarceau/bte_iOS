@@ -172,7 +172,7 @@
     [headView addSubview:image1];
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(34, 220, 80, 14)];
-    titleLabel.text = @"打开微信,扫一扫";
+    titleLabel.text = @"打开微信扫一扫";
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.centerX = image1.centerX;
     titleLabel.font = UIFontRegularOfSize(10);
@@ -327,17 +327,17 @@
         contentLabel.textColor = BHHexColor(@"626A75");
         [bgView addSubview:contentLabel];
         
-        if (rect.size.height > defaultHeight) {
-            
-            UIImageView *arrowImage = [[UIImageView alloc] initWithFrame:CGRectMake(bgView.width - 10 - 16, bgView.height - 5 - 10, 10, 5)];
-            
-            [bgView addSubview:arrowImage];
-            if (_isShow) {//是否展开
-                arrowImage.image = [UIImage imageNamed:@"home_retract"];
-            }else{
-                arrowImage.image = [UIImage imageNamed:@"home_more"];
-            }
-        }
+//        if (rect.size.height > defaultHeight) {
+//
+//            UIImageView *arrowImage = [[UIImageView alloc] initWithFrame:CGRectMake(bgView.width - 10 - 16, bgView.height - 5 - 10, 10, 5)];
+//
+//            [bgView addSubview:arrowImage];
+//            if (_isShow) {//是否展开
+//                arrowImage.image = [UIImage imageNamed:@"home_retract"];
+//            }else{
+//                arrowImage.image = [UIImage imageNamed:@"home_more"];
+//            }
+//        }
        
         return cell;
     } else if (indexPath.row == [_dataSource count] + 3)
@@ -385,7 +385,7 @@
         [cell.contentView addSubview:titleLabel];
         
         UILabel *titleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 48, SCREEN_WIDTH - 32, 38)];
-        titleLabel1.text = @"通过领先的交易跟随技术，一键跟随专业团队交易策略，投资数字货币更简单。";
+        titleLabel1.text = @"通过领先的策略跟随技术，一键跟随专业交易策略，有效控制风险。";
         titleLabel1.numberOfLines = 0;
         titleLabel1.font = UIFontRegularOfSize(12);
         titleLabel1.textColor = BHHexColor(@"626A75");
@@ -436,10 +436,10 @@
             bgView1.layer.borderColor = BHHexColor(@"A3D97D").CGColor;
         } else if ([productInfoModel.riskLevel integerValue] == 2)
         {
-            bgView1.layer.borderColor = BHHexColor(@"FE413F").CGColor;
+            bgView1.layer.borderColor = BHHexColor(@"FF7C08").CGColor;
         } else
         {
-            bgView1.layer.borderColor = BHHexColor(@"FF6B28").CGColor;
+            bgView1.layer.borderColor = BHHexColor(@"FE413F").CGColor;
         }
         [bgView addSubview:bgView1];
         
@@ -451,10 +451,10 @@
             titleLabel7.textColor = BHHexColor(@"A3D97D");
         } else if ([productInfoModel.riskLevel integerValue] == 2)
         {
-            titleLabel7.textColor = BHHexColor(@"FE413F");
+            titleLabel7.textColor = BHHexColor(@"FF7C08");
         } else
         {
-            titleLabel7.textColor = BHHexColor(@"FF6B28");
+            titleLabel7.textColor = BHHexColor(@"FE413F");
         }
         
         [bgView1 addSubview:titleLabel7];
@@ -490,15 +490,15 @@
         
         if ([productInfoModel.ror integerValue] > 0) {
             titleLabel5.text = [NSString stringWithFormat:@"+%@%%",productInfoModel.ror];
-            titleLabel5.textColor = BHHexColor(@"1BAC75");
+            titleLabel5.textColor = BHHexColor(@"228B22");
         } else if ([productInfoModel.ror integerValue] < 0)
         {
             titleLabel5.text = [NSString stringWithFormat:@"%@%%",productInfoModel.ror];
-            titleLabel5.textColor = BHHexColor(@"FF6B28");
+            titleLabel5.textColor = BHHexColor(@"FF4040");
         } else
         {
             titleLabel5.text = [NSString stringWithFormat:@"%@%%",productInfoModel.ror];
-            titleLabel5.textColor = BHHexColor(@"292C33");
+            titleLabel5.textColor = BHHexColor(@"626A75");
         }
         
 //        UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, bgView.bottom + 16, SCREEN_WIDTH, 16)];

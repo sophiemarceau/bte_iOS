@@ -116,20 +116,20 @@
         _bgView1.layer.borderColor = BHHexColor(@"A3D97D").CGColor;
     } else if ([productInfoModel.riskLevel integerValue] == 2)
     {
-        _bgView1.layer.borderColor = BHHexColor(@"FE413F").CGColor;
+        _bgView1.layer.borderColor = BHHexColor(@"FF7C08").CGColor;
     } else
     {
-        _bgView1.layer.borderColor = BHHexColor(@"FF6B28").CGColor;
+        _bgView1.layer.borderColor = BHHexColor(@"FE413F").CGColor;
     }
     
     if ([productInfoModel.riskLevel integerValue] == 1) {
         _titleLabel7.textColor = BHHexColor(@"A3D97D");
     } else if ([productInfoModel.riskLevel integerValue] == 2)
     {
-        _titleLabel7.textColor = BHHexColor(@"FE413F");
+        _titleLabel7.textColor = BHHexColor(@"FF7C08");
     } else
     {
-        _titleLabel7.textColor = BHHexColor(@"FF6B28");
+        _titleLabel7.textColor = BHHexColor(@"FE413F");
     }
     
     _titleLabel7.text = productInfoModel.riskValue;

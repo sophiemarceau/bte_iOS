@@ -130,7 +130,7 @@
         if (arrowImage == nil) {
             arrowImage = [[UIImageView alloc] initWithFrame:CGRectMake(bgview3.width - 10 - 16, bgview3.height - 5 - 10, 10, 5)];
             
-            [bgview3 addSubview:arrowImage];
+//            [bgview3 addSubview:arrowImage];
         }
         arrowImage.top = bgview3.height - 5 - 10;
         if (model.isShow) {//是否展开
