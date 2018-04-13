@@ -149,17 +149,15 @@
                 flag = YES;//表示至少有一个展开
             }
         }
-//        if (!flag) {
-//            currentHeight = 70 + 80;
-//        }
     }
     
     if (_clickBlcok) _clickBlcok(currentHeight);
-//    imageView.height = currentHeight;
-    self.height = currentHeight;
-    self.scrollView.height = currentHeight;
-    self.scrollView.contentSize = CGSizeMake(view_WIDTH * 3, currentHeight);
-    [imageView setHomeProductModel:tempModel];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.height = currentHeight;
+        self.scrollView.height = currentHeight;
+        self.scrollView.contentSize = CGSizeMake(view_WIDTH * 3, currentHeight);
+        [imageView setHomeProductModel:tempModel];
+    });
 }
 
 
