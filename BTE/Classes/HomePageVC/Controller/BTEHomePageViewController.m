@@ -244,6 +244,11 @@
     }];
 }
 
+- (void)hidden
+{
+    [selectView removeFromSuperview];
+}
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];

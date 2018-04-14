@@ -373,7 +373,6 @@
         label.text = @"投资额";
         label.alpha = 0.6;
         label.textColor = BHHexColor(@"626A75");
-        label.backgroundColor = [UIColor whiteColor];
         [cell.contentView addSubview:label];
         
         UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(label.left, 53, label.width, label.height)];
@@ -395,7 +394,6 @@
         label2.centerX = SCREEN_WIDTH / 2;
         label2.textColor = BHHexColor(@"626A75");
         label2.alpha = 0.6;
-        label2.backgroundColor = [UIColor whiteColor];
         [cell.contentView addSubview:label2];
         
         UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectMake(15, label1.top, label2.width, label2.height)];
@@ -413,7 +411,6 @@
         label4.alpha = 0.6;
         label4.right = SCREEN_WIDTH - 16;
         label4.textAlignment = NSTextAlignmentRight;
-        label4.backgroundColor = [UIColor whiteColor];
         [cell.contentView addSubview:label4];
         
         UILabel *label5 = [[UILabel alloc] initWithFrame:CGRectMake(7, label1.top, label4.width, label4.height)];

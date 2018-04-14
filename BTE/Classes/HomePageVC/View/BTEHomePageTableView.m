@@ -540,5 +540,11 @@
    }
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(hidden)]) {
+        [self.delegate hidden];
+    }
+}
+
 
 @end

@@ -117,6 +117,30 @@
     [commitButton3 addTarget:self action:@selector(shareEnent:) forControlEvents:UIControlEventTouchUpInside];
     [headView addSubview:commitButton3];
     
+    UILabel *labelTitle3 = [[UILabel alloc] initWithFrame:CGRectMake(14, commitButton1.bottom + 8, 60, 13)];
+    labelTitle3.textColor = BHHexColor(@"626A75");
+    labelTitle3.textAlignment = NSTextAlignmentCenter;
+    labelTitle3.centerX = commitButton1.centerX;
+    labelTitle3.text = @"微信";
+    labelTitle3.font = UIFontRegularOfSize(13);
+    [headView addSubview:labelTitle3];
+    
+    UILabel *labelTitle4 = [[UILabel alloc] initWithFrame:CGRectMake(14, labelTitle3.top, 60, 13)];
+    labelTitle4.textColor = BHHexColor(@"626A75");
+    labelTitle4.textAlignment = NSTextAlignmentCenter;
+    labelTitle4.centerX = commitButton2.centerX;
+    labelTitle4.text = @"朋友圈";
+    labelTitle4.font = UIFontRegularOfSize(13);
+    [headView addSubview:labelTitle4];
+    
+    UILabel *labelTitle5 = [[UILabel alloc] initWithFrame:CGRectMake(14, labelTitle3.top, 60, 13)];
+    labelTitle5.textColor = BHHexColor(@"626A75");
+    labelTitle5.textAlignment = NSTextAlignmentCenter;
+    labelTitle5.centerX = commitButton3.centerX;
+    labelTitle5.text = @"微博";
+    labelTitle5.font = UIFontRegularOfSize(13);
+    [headView addSubview:labelTitle5];
+    
     self.setTableView.tableFooterView = headView;
 }
 
