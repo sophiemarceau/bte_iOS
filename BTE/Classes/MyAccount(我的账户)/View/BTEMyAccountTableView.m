@@ -62,7 +62,7 @@
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 12, SCREEN_WIDTH - 100, 20)];
     titleLabel.text = @"我的账户";
     titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.font = UIFontRegularOfSize(18);
+    titleLabel.font = UIFontMediumOfSize(18);
     titleLabel.textColor = BHHexColor(@"ffffff");
     [headView addSubview:titleLabel];
     
@@ -103,7 +103,7 @@
     
     UILabel *titleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 17, SCREEN_WIDTH - 100, 20)];
     titleLabel1.text = @"账户可用余额";
-    titleLabel1.font = UIFontRegularOfSize(14);
+    titleLabel1.font = UIFontMediumOfSize(14);
     titleLabel1.textColor = BHHexColor(@"626A75");
     [whiteBgView addSubview:titleLabel1];
     
@@ -124,7 +124,7 @@
         [whiteBgView addGestureRecognizer:tapGesturRecognizer];
     }
     
-    _detailLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 57, 100, 14)];
+    _detailLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 57, (SCREEN_WIDTH - 40) / 2, 14)];
     _detailLabel1.text = @"美元";
     _detailLabel1.alpha = 0.8;
     _detailLabel1.font = UIFontRegularOfSize(14);
@@ -150,18 +150,18 @@
     {
         _detailLabel3.text = @"0";
     }
-    _detailLabel3.font = [UIFont systemFontOfSize:20];
+    _detailLabel3.font = UIFontDINAlternateOfSize(20);
     _detailLabel3.textColor = BHHexColor(@"308CDD");
     [whiteBgView addSubview:_detailLabel3];
     
     _detailLabel4 = [[UILabel alloc] initWithFrame:CGRectMake(_detailLabel2.left, _detailLabel3.top, _detailLabel1.width, 20)];
     if (btcAccountModel.balance && [btcAccountModel.balance floatValue] != 0) {
-        _detailLabel4.text = [NSString stringWithFormat:@"%@($%@)",btcAccountModel.balance,btcAccountModel.legalBalance];
+        _detailLabel4.text = [NSString stringWithFormat:@"%@",btcAccountModel.balance];
     } else
     {
         _detailLabel4.text = @"0";
     }
-    _detailLabel4.font = [UIFont systemFontOfSize:20];
+    _detailLabel4.font = UIFontDINAlternateOfSize(20);
     _detailLabel4.textColor = BHHexColor(@"308CDD");
     [whiteBgView addSubview:_detailLabel4];
 

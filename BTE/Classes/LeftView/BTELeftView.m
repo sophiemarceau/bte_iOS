@@ -83,7 +83,7 @@
     NSString *phoneNum = [defaults objectForKey:MobilePhoneNum];
     UILabel *_subTitleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(93, 155, 150, 32)];
     if (phoneNum &&phoneNum.length == 11) {
-        phoneNum = [NSString stringWithFormat:@"%@ %@ %@",[phoneNum substringWithRange:NSMakeRange(0,3)],[phoneNum substringWithRange:NSMakeRange(3,4)],[phoneNum substringWithRange:NSMakeRange(7,4)]];
+        phoneNum = [NSString stringWithFormat:@"%@ **** %@",[phoneNum substringWithRange:NSMakeRange(0,3)],[phoneNum substringWithRange:NSMakeRange(7,4)]];
         _subTitleLabel1.text = phoneNum;
     } else
     {
