@@ -9,7 +9,7 @@
 #ifndef BHHttpConstant_h
 #define BHHttpConstant_h
 
-#define ONLION 1
+#define ONLION 0
 
 //数据库接口
 #if ONLION
@@ -22,8 +22,8 @@ static NSString * const kDomain = @"http://47.94.217.12:18081/";
 static NSString * const kHeader = @"http://m.bte.top/";
 static NSString * const kChart = @"http://chart.bte.top/";
 #else
-//static NSString * const kHeader = @"http://192.168.24.135:3001/";
-static NSString * const kHeader = @"http://192.168.24.64:3001/";
+static NSString * const kHeader = @"http://192.168.24.135:3001/";
+//static NSString * const kHeader = @"http://192.168.24.64:3001/";
 static NSString * const kChart = @"http://192.168.24.64:8082/";
 #endif
 

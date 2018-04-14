@@ -29,8 +29,8 @@ __REF = nil;\
 
 //请求错误 提示
 #define RequestError(error) \
-if (error.code != -900000) { \
-[BHToast showMessage:error.domain];\
+if (error.code == -1009) { \
+[BHToast showMessage:@"网络未连接"];\
 }
 //else { \
 //    if (![WYUserRequestManager sharedManager].isNetworkReachable) {\

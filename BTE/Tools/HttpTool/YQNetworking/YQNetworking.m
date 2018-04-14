@@ -122,6 +122,7 @@ static NSTimeInterval   requestTimeout = 20.f;
     
     if (networkStatus == YQNetworkStatusNotReachable) {
         if (failBlock) failBlock(YQ_ERROR);
+        [BHToast showMessage:@"网络未连接"];
         return session;
     }
     
@@ -182,6 +183,7 @@ static NSTimeInterval   requestTimeout = 20.f;
     
     if (networkStatus == YQNetworkStatusNotReachable) {
         if (failBlock) failBlock(YQ_ERROR);
+        [BHToast showMessage:@"网络未连接"];
         return session;
     }
     
