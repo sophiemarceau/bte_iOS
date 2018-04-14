@@ -12,7 +12,7 @@
 - (instancetype)initViewWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        defaultHeight = 70;
+        defaultHeight = 59;
         [self creatUI];
     }
     return self;
@@ -78,6 +78,7 @@
     
     labelTitle1 = [[UILabel alloc] initWithFrame:CGRectMake(14, labelTitle2.bottom + 6, bgview3.width - 32, defaultHeight)];
     labelTitle1.textColor = BHHexColor(@"626A75");
+    labelTitle1.backgroundColor = [UIColor redColor];
     labelTitle1.numberOfLines = 0;
     labelTitle1.text = @"(12月22日 星期五 11:32) 在今天的交易时段，比特币价格最低为14502美元，较12月17日创下的19,783美元历史高点共下跌了约25%。..";
     labelTitle1.font = UIFontRegularOfSize(14);
@@ -111,7 +112,12 @@
         labelTitle1.height = rect.size.height;
     } else
     {
-        labelTitle1.height = defaultHeight;
+        if (rect.size.height > defaultHeight) {
+            labelTitle1.height = defaultHeight;
+        } else
+        {
+            labelTitle1.height = rect.size.height;
+        }
     }
     
     if (rect.size.height > defaultHeight) {
