@@ -34,6 +34,21 @@
     [actView addSubview:bgImage];
     
     
+    UILabel *titleLabel3 = [[UILabel alloc] initWithFrame:CGRectMake((bgImage.width - 100) / 2, bgImage.height - 12 - 40, 100, 12)];
+    titleLabel3.text = [NSString stringWithFormat:@"当前版本 v%@",kCurrentVersion];
+    titleLabel3.font = UIFontRegularOfSize(12);
+    titleLabel3.textColor = BHHexColor(@"9ECDF7");
+    titleLabel3.textAlignment = NSTextAlignmentCenter;
+    [bgImage addSubview:titleLabel3];
+    
+    UILabel *titleLabel4 = [[UILabel alloc] initWithFrame:CGRectMake((bgImage.width - 100) / 2, bgImage.height - 12 - 24, 100, 12)];
+    titleLabel4.text = @"©bte.top";
+    titleLabel4.font = UIFontRegularOfSize(10);
+    titleLabel4.textColor = BHHexColor(@"9AD0FF");
+    titleLabel4.textAlignment = NSTextAlignmentCenter;
+    [bgImage addSubview:titleLabel4];
+    
+    
     //点击手势
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:actView action:@selector(doTapChange)];
     tap.delegate=actView;
