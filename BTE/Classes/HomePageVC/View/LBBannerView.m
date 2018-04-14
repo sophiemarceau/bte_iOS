@@ -125,7 +125,20 @@
         height = 38 + 16;
     } else
     {
-        height = 64 + 16;
+        CGRect rect = [tempModel.title boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 26 * 2 - 32, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:UIFontMediumOfSize(14)} context:nil];
+        
+        if (tempModel.isShow){
+            
+            if (rect.size.height > 20) {
+                height = 64 + 16 - 14 + rect.size.height;
+            } else
+            {
+                height = 64 + 16;
+            }
+        } else
+        {
+            height = 64 + 16;
+        }
     }
     
     
