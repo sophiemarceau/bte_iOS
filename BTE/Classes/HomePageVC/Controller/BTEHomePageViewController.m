@@ -75,9 +75,7 @@
     [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
         NMRemovLoadIng;
         if (IsSafeDictionary(responseObject)) {
-            HomeDescriptionModel *descModel = [[HomeDescriptionModel alloc] init];
-            descModel.desc = responseObject[@"data"][@"description"];
-            descriptionModel = descModel;
+            descriptionModel = [HomeDescriptionModel yy_modelWithDictionary:responseObject[@"data"]];
             detailsList = [NSArray yy_modelArrayWithClass:[HomeDesListModel class] json:responseObject[@"data"][@"list"]];
             //刷新tableview
             [weakSelf.homePageTableView refreshUi:detailsList productList:productList model1:descriptionModel model2:productInfoModel currentCurrencyType:currentCurrencyType];

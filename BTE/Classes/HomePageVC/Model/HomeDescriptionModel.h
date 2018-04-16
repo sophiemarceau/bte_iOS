@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface HomeDescriptionModel : NSObject
-@property(nonatomic,copy)NSString * desc;
+@property(nonatomic,copy)NSString * summary;
+@property(nonatomic,copy)NSString * date;
 @end

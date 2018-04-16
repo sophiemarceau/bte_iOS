@@ -235,7 +235,8 @@
         return 72;
     } else if (indexPath.row == [_dataSource count] + 1)
     {
-        return [self cellHeight];
+//        return [self cellHeight];
+        return 140 + 16;
     }
     else if (indexPath.row == [_dataSource count] + 2)
     {
@@ -256,7 +257,7 @@
 
 - (float)cellHeight
 {
-    NSString * contentStr= descriptionModel.desc;
+    NSString * contentStr= descriptionModel.summary;
     CGRect rect = [contentStr boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 32, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil];
     if (rect.size.height > defaultHeight) {
         if (_isShow) {//是否展开
@@ -294,38 +295,43 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.backgroundColor = KBGCell;
         
-        UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(16, 0, SCREEN_WIDTH - 32, 168)];
-        bgView.height = [self cellHeight];
-        bgView.backgroundColor = BHHexColor(@"fafafa");
-        bgView.layer.masksToBounds = YES;
-        bgView.layer.cornerRadius = 4;
+        UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 16)];
+        bgView.backgroundColor = KBGColor;
         [cell.contentView addSubview:bgView];
         
-        UIImageView *image1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 22, 16, 16)];
+        UIImageView *image1 = [[UIImageView alloc] initWithFrame:CGRectMake(16, 22 + 16, 18, 18)];
         image1.image = [UIImage imageNamed:@"home_market analysis"];
-        [bgView addSubview:image1];
+        [cell.contentView addSubview:image1];
         
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(24, 22, 80, 18)];
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(24 + 16, 22 + 16, 80, 18)];
         titleLabel.text = @"市场分析";
         titleLabel.font = UIFontMediumOfSize(17);
         titleLabel.textColor = BHHexColor(@"626A75");
-        [bgView addSubview:titleLabel];
+        [cell.contentView addSubview:titleLabel];
         
         
-        NSString * contentStr= descriptionModel.desc;
-        CGRect rect = [contentStr boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 32, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil];
-        UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 52, SCREEN_WIDTH - 32, rect.size.height)];
-        contentLabel.text = descriptionModel.desc;
-        if (_isShow) {
-            
-        } else
-        {
-            contentLabel.height = defaultHeight;
-        }
-        contentLabel.font = [UIFont systemFontOfSize:14];
-        contentLabel.numberOfLines = 0;
+        UILabel *contentLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 56 + 16, SCREEN_WIDTH - 16 - 43, 12)];
+        contentLabel1.text = descriptionModel.date;
+        contentLabel1.font = UIFontRegularOfSize(12);
+        contentLabel1.textColor = BHHexColor(@"9CA1A9");
+        [cell.contentView addSubview:contentLabel1];
+        
+        
+        
+//        NSString * contentStr= descriptionModel.desc;
+//        CGRect rect = [contentStr boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 32, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil];
+        UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(16, 78 + 16, SCREEN_WIDTH - 16 - 43, 44)];
+        contentLabel.text = descriptionModel.summary;
+//        if (_isShow) {
+//
+//        } else
+//        {
+//            contentLabel.height = defaultHeight;
+//        }
+        contentLabel.font = UIFontRegularOfSize(14);
+        contentLabel.numberOfLines = 2;
         contentLabel.textColor = BHHexColor(@"626A75");
-        [bgView addSubview:contentLabel];
+        [cell.contentView addSubview:contentLabel];
         
 //        if (rect.size.height > defaultHeight) {
 //
@@ -338,7 +344,11 @@
 //                arrowImage.image = [UIImage imageNamed:@"home_more"];
 //            }
 //        }
-       
+        UIImageView *image2 = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 7 - 16, 71 + 16, 7, 12)];
+        image2.image = [UIImage imageNamed:@"right_arrow_home"];
+        [cell.contentView addSubview:image2];
+        
+        
         return cell;
     } else if (indexPath.row == [_dataSource count] + 3)
     {
@@ -347,7 +357,7 @@
         cell.backgroundColor = KBGCell;
         
         
-        UIImageView *image1 = [[UIImageView alloc] initWithFrame:CGRectMake(17, 18, 16, 18)];
+        UIImageView *image1 = [[UIImageView alloc] initWithFrame:CGRectMake(17, 18, 18, 18)];
         image1.image = [UIImage imageNamed:@"home_Market news"];
         [cell.contentView addSubview:image1];
         
@@ -523,13 +533,13 @@
     
     
     if (indexPath.row == [_dataSource count] + 1) {
-        NSString *contentStr = descriptionModel.desc;
-        CGRect rect = [contentStr boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 64, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil];
-        
-        if (rect.size.height > defaultHeight) {
-            _isShow = !_isShow;
-            [self.homePageTableView reloadData];
-        }
+//        NSString *contentStr = descriptionModel.summary;
+//        CGRect rect = [contentStr boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 64, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil];
+//
+//        if (rect.size.height > defaultHeight) {
+//            _isShow = !_isShow;
+//            [self.homePageTableView reloadData];
+//        }
     }
     
    if (indexPath.row == [_dataSource count] + 5)
