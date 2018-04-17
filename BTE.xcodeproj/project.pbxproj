@@ -38,7 +38,6 @@
 		8176F538207DAD2C0090852A /* WLActivateAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8176F537207DAD2C0090852A /* WLActivateAlertView.m */; };
 		8176F53B207DDBA10090852A /* BTEInviteFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8176F53A207DDBA10090852A /* BTEInviteFriendViewController.m */; };
 		8176F53E207E11290090852A /* BTEFreandCountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8176F53D207E11290090852A /* BTEFreandCountViewController.m */; };
-		8176F541207F34E00090852A /* BTEAmountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8176F540207F34E00090852A /* BTEAmountViewController.m */; };
 		8179AD44200736C4001678D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AD43200736C4001678D2 /* main.m */; };
 		8179AD4E200736C4001678D2 /* BTETests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AD4D200736C4001678D2 /* BTETests.m */; };
 		8179AD59200736C4001678D2 /* BTEUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179AD58200736C4001678D2 /* BTEUITests.m */; };
@@ -236,8 +235,6 @@
 		8176F53A207DDBA10090852A /* BTEInviteFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEInviteFriendViewController.m; sourceTree = "<group>"; };
 		8176F53C207E11290090852A /* BTEFreandCountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEFreandCountViewController.h; sourceTree = "<group>"; };
 		8176F53D207E11290090852A /* BTEFreandCountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEFreandCountViewController.m; sourceTree = "<group>"; };
-		8176F53F207F34E00090852A /* BTEAmountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEAmountViewController.h; sourceTree = "<group>"; };
-		8176F540207F34E00090852A /* BTEAmountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEAmountViewController.m; sourceTree = "<group>"; };
 		8179AD31200736C4001678D2 /* BTE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8179AD34200736C4001678D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8179AD43200736C4001678D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -544,8 +541,6 @@
 			children = (
 				8112E3C9205126F900419BC9 /* MyAccountViewController.h */,
 				8112E3CA205126F900419BC9 /* MyAccountViewController.m */,
-				8176F53F207F34E00090852A /* BTEAmountViewController.h */,
-				8176F540207F34E00090852A /* BTEAmountViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1672,7 +1667,6 @@
 				8179AE3320085DB5001678D2 /* UIViewController+extend.m in Sources */,
 				8179D2EA2021D73600C13447 /* Y_StockChartGlobalVariable.m in Sources */,
 				8179AE2E20085DB5001678D2 /* NSObject+JSONParse.m in Sources */,
-				8176F541207F34E00090852A /* BTEAmountViewController.m in Sources */,
 				8179D2FF2021D73600C13447 /* Y_KLine.m in Sources */,
 				8179AE2320085DB5001678D2 /* NSObject+swizzling.m in Sources */,
 				8179AE3F20085DB5001678D2 /* NSTimer+addition.m in Sources */,

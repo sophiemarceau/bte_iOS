@@ -57,8 +57,7 @@ static NSString * const kChart = @"http://192.168.24.64:8082/";
 
 // 投资详情入口地址
 #define kAppStrategyAddress [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/strategy"]
-// 充值入口地址
-#define kApprechargeAddress [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/recharge"]
+
 // 交易详情入口地址
 #define kAppDealAddress [NSString stringWithFormat:@"%@%@",kHeader,@"wechat/deal"]
 

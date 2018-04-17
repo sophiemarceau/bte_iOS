@@ -28,6 +28,5 @@
 @property (nonatomic, copy) NSString * currentVersion; //版本
 @property (nonatomic, copy) NSString * update; //服务器版本 0 相同 1不同需升级
 @property (nonatomic, copy) NSString * name; //应用名
-@property (nonatomic, copy) NSString * trade; //充值显示隐藏
 @end
 

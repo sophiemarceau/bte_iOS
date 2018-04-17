@@ -107,23 +107,6 @@
     titleLabel1.textColor = BHHexColor(@"626A75");
     [whiteBgView addSubview:titleLabel1];
     
-    UIButton *arrowButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    arrowButton.frame = CGRectMake(SCREEN_WIDTH - 58, 10, 48, 30);
-    [arrowButton setTitle:@"充值" forState:UIControlStateNormal];
-    [arrowButton setTitleColor:BHHexColor(@"308CDD") forState:UIControlStateNormal];
-    [arrowButton addTarget:self action:@selector(jumpToCharge:) forControlEvents:UIControlEventTouchUpInside];
-    arrowButton.titleLabel.font = UIFontRegularOfSize(14);
-    [whiteBgView addSubview:arrowButton];
-    if ([defaults objectForKey:MobileTradeNum] && [[defaults objectForKey:MobileTradeNum] integerValue] == 0) {
-        arrowButton.hidden = YES;
-    } else
-    {
-        arrowButton.hidden = NO;
-        UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
-        
-        [whiteBgView addGestureRecognizer:tapGesturRecognizer];
-    }
-    
     _detailLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 57, (SCREEN_WIDTH - 40) / 2, 14)];
     _detailLabel1.text = @"美元";
     _detailLabel1.alpha = 0.8;
@@ -256,14 +239,6 @@
 {
     if (self.delegate && [self.delegate respondsToSelector:@selector(jumpToSet)]) {
         [self.delegate jumpToSet];
-    }
-}
-
-#pragma mark - 充值跳转
-- (void)jumpToCharge:(UIButton *)sender
-{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(jumpToCharge)]) {
-        [self.delegate jumpToCharge];
     }
 }
 

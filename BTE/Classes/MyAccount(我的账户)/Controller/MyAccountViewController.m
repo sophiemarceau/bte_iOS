@@ -15,7 +15,6 @@
 #import "BTEHomeWebViewController.h"
 #import "BTELoginVC.h"
 #import "BTESetViewController.h"
-#import "BTEAmountViewController.h"
 @interface MyAccountViewController ()<MyAccountTableViewDelegate,UIAlertViewDelegate>
 {
     NSString *amountModel;
@@ -108,13 +107,6 @@
         }
     }];
 
-}
--(void)jumpToAmount
-{
-    BTEAmountViewController *amountVc = [[BTEAmountViewController alloc] init];
-    amountVc.balance = btcAccountModel.balance;
-    amountVc.legalBalance = legalAccountModel.legalBalance;
-    [self.navigationController pushViewController:amountVc animated:YES];
 }
 
 //当前跟投 已结束策略 按钮切换事件
@@ -352,15 +344,6 @@
 {
     BTESetViewController *setVc = [[BTESetViewController alloc] init];
     [self.navigationController pushViewController:setVc animated:YES];
-}
-
--(void)jumpToCharge
-{
-    BTEHomeWebViewController *homePageVc= [[BTEHomeWebViewController alloc] init];
-    homePageVc.urlString = kApprechargeAddress;
-    homePageVc.isHiddenLeft = YES;
-    homePageVc.isHiddenBottom = NO;
-    [self.navigationController pushViewController:homePageVc animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
