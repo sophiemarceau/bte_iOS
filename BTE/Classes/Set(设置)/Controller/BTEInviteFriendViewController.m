@@ -21,7 +21,7 @@
     self.title = @"邀请好友";
     self.shareType = UMS_SHARE_TYPE_WEB_LINK;//web链接
     self.sharetitle = @"我正在用比特易，最专业的数字货币市场分析平台";
-    self.shareDesc = @"比特易，专业数字货币市场分析平台，软银战略投资，玩转比特币，多用比特易";
+    self.shareDesc = @"比特易，专业数字货币市场分析平台，软银中国战略投资，玩转比特币，多用比特易";
     _setTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - NAVIGATION_HEIGHT) style:UITableViewStylePlain];
     _setTableView.backgroundColor = KBGColor;
     _setTableView.separatorStyle = UITableViewCellSeparatorStyleNone;

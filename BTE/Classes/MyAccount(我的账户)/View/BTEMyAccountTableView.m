@@ -108,7 +108,7 @@
     [whiteBgView addSubview:titleLabel1];
     
     _detailLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 57, (SCREEN_WIDTH - 40) / 2, 14)];
-    _detailLabel1.text = @"美元";
+    _detailLabel1.text = @"USDT";
     _detailLabel1.alpha = 0.8;
     _detailLabel1.font = UIFontRegularOfSize(14);
     _detailLabel1.textColor = BHHexColor(@"626A75");
