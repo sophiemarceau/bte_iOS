@@ -11,4 +11,7 @@
 @interface HomeDescriptionModel : NSObject
 @property(nonatomic,copy)NSString * summary;
 @property(nonatomic,copy)NSString * date;
+@property(nonatomic,copy)NSString * content;
+@property(nonatomic,copy)NSString * id;
+@property(nonatomic,copy)NSString * title;
 @end
