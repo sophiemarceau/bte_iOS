@@ -149,6 +149,17 @@
     [self.navigationController pushViewController:homePageVc animated:YES];
 }
 
+- (void)jumpToDetails:(HomeDescriptionModel *)model
+{
+    BTEHomeWebViewController *homePageVc= [[BTEHomeWebViewController alloc] init];
+    
+    homePageVc.urlString = [NSString stringWithFormat:@"%@/%@",kAppDetailDealAddress,model.id];
+    homePageVc.isHiddenLeft = YES;
+    homePageVc.isHiddenBottom = NO;
+    homePageVc.descriptionModel = model;
+    [self.navigationController pushViewController:homePageVc animated:YES];
+}
+
 - (void)jumpToStrategyFollow:(NSString *)productId
 {
     BTEHomeWebViewController *homePageVc= [[BTEHomeWebViewController alloc] init];

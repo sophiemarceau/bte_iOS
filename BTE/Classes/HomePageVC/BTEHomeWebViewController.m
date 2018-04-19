@@ -51,7 +51,7 @@
     // 1.登录
     [self.bridge registerHandler:@"loginApp" handler:^(id data, WVJBResponseCallback responseCallback) {
         if (!STRISEMPTY(data[@"url"])) {
-            [BTELoginVC OpenLogin:self callback:^(BOOL isComplete) {
+            [BTELoginVC OpenLogin:weakSelf callback:^(BOOL isComplete) {
                 if (isComplete) {
                     [weakSelf sendUserToken];
                     [weakSelf reloadWebView:data[@"url"]];
@@ -68,73 +68,90 @@
     }];
     
     
-    //我的账户已登录点击监听
-    [self.bridge registerHandler:@"jumpToAccount" handler:^(id data, WVJBResponseCallback responseCallback) {
-
+    //市场分析详情点击返回首页
+    [self.bridge registerHandler:@"jumpToDiscoverView" handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSLog(@"-----------%@",data);
+        [weakSelf.navigationController popViewControllerAnimated:YES];
     }];
     
-    
+    //市场分析详情点击调起分享
+    [self.bridge registerHandler:@"touchShare" handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSLog(@"-----------%@",data);
+        [weakSelf shareAlert];
+    }];
     
     //标识是否是index页面 隐藏左返回键
     [self.bridge registerHandler:@"oneClass" handler:^(id data, WVJBResponseCallback responseCallback) {
         weakSelf.isHiddenLeft = YES;
         if (data && [data objectForKey:@"title"]) {
             if ([[data objectForKey:@"title"] isEqualToString:@"比特易-玩转比特币 多看比特易"]) {
-                self.navigationItem.title = @"比特易";
-                self.navigationItem.rightBarButtonItem = [self creatRightBarItem];
-                self.shareType = UMS_SHARE_TYPE_WEB_LINK;//web链接
-                self.sharetitle = @"比特易-领先的数字货币市场专业分析平台";
-                self.shareDesc = @"玩转比特币，多看比特易，聪明的投资者都在这里！";
-                self.shareUrl = kAppBTEH5AnalyzeAddress;
+                weakSelf.navigationItem.title = @"比特易";
+                weakSelf.navigationItem.rightBarButtonItem = [self creatRightBarItem];
+                weakSelf.shareType = UMS_SHARE_TYPE_WEB_LINK;//web链接
+                weakSelf.sharetitle = @"比特易-领先的数字货币市场专业分析平台";
+                weakSelf.shareDesc = @"玩转比特币，多看比特易，聪明的投资者都在这里！";
+                weakSelf.shareUrl = kAppBTEH5AnalyzeAddress;
             } else
             {
-               self.navigationItem.title = [data objectForKey:@"title"];
-                self.navigationItem.rightBarButtonItem = nil;
+               weakSelf.navigationItem.title = [data objectForKey:@"title"];
+                weakSelf.navigationItem.rightBarButtonItem = nil;
             }
         }
         // 强制显示tabbar
-        self.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT  - TAB_BAR_HEIGHT);
-        self.view.height = SCREEN_HEIGHT- NAVIGATION_HEIGHT  - TAB_BAR_HEIGHT;
-        self.tabBarController.tabBar.hidden = NO;
+        weakSelf.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT  - TAB_BAR_HEIGHT);
+        weakSelf.view.height = SCREEN_HEIGHT- NAVIGATION_HEIGHT  - TAB_BAR_HEIGHT;
+        weakSelf.tabBarController.tabBar.hidden = NO;
     }];
     //标识是否是index页面 显示左返回键
     [self.bridge registerHandler:@"twoIndex" handler:^(id data, WVJBResponseCallback responseCallback) {
         weakSelf.isHiddenLeft = NO;
         if (data && [data objectForKey:@"title"]) {
-            self.navigationItem.title = [data objectForKey:@"title"];
+            weakSelf.navigationItem.title = [data objectForKey:@"title"];
         }
         
         if (data && [data objectForKey:@"url"]) {
-            self.navigationItem.rightBarButtonItem = [self creatRightBarItem];
-            self.shareType = UMS_SHARE_TYPE_WEB_LINK;//web链接
+            weakSelf.navigationItem.rightBarButtonItem = [self creatRightBarItem];
+            weakSelf.shareType = UMS_SHARE_TYPE_WEB_LINK;//web链接
             if ([[data objectForKey:@"url"] rangeOfString:@"wechat/strategy/"].location != NSNotFound) {
-              self.sharetitle = [NSString stringWithFormat:@"比特易—%@,当前收益%@%%",self.productInfoModel.name,self.productInfoModel.ror];
-              self.shareDesc = [NSString stringWithFormat:@"我跟随了比特易%@，当前收益%@%%，比特易是业界领先的数字货币市场专业分析平台，软银中国资本(SBCVC)、蓝驰创投(BlueRun Ventures)战略投资，玩转比特币，多看比特易。",self.productInfoModel.name,self.productInfoModel.ror];
+              weakSelf.sharetitle = [NSString stringWithFormat:@"比特易—%@,当前收益%@%%",self.productInfoModel.name,self.productInfoModel.ror];
+              weakSelf.shareDesc = [NSString stringWithFormat:@"我跟随了比特易%@，当前收益%@%%，比特易是业界领先的数字货币市场专业分析平台，软银中国资本(SBCVC)、蓝驰创投(BlueRun Ventures)战略投资，玩转比特币，多看比特易。",self.productInfoModel.name,self.productInfoModel.ror];
                 
             }else if ([[data objectForKey:@"url"] rangeOfString:@"wechat/deal/"].location != NSNotFound)
             {
-                self.sharetitle = @"比特易—数字货币分析平台";
+                weakSelf.sharetitle = @"比特易—数字货币分析平台";
                 NSString *price = [NSString positiveFormat:self.desListModel.price];
-                self.shareDesc = [NSString stringWithFormat:@"%@当前价格：$%@\t\n走势分析：%@\t\n操作建议：%@",self.desListModel.symbol,price,self.desListModel.trend,self.desListModel.operation];
+                weakSelf.shareDesc = [NSString stringWithFormat:@"%@当前价格：$%@\t\n走势分析：%@\t\n操作建议：%@",self.desListModel.symbol,price,self.desListModel.trend,self.desListModel.operation];
+            }else if ([[data objectForKey:@"url"] rangeOfString:@"wechat/baza/"].location != NSNotFound)
+            {
+                weakSelf.navigationItem.rightBarButtonItem = [self creatRightBarItemDetail];
+                weakSelf.sharetitle = self.descriptionModel.title;
+                weakSelf.shareDesc = self.descriptionModel.summary;
             }
             
-            self.shareUrl = [data objectForKey:@"url"];
+            
+            weakSelf.shareUrl = [data objectForKey:@"url"];
         } else
         {
-            self.navigationItem.rightBarButtonItem = nil;
+            weakSelf.navigationItem.rightBarButtonItem = nil;
         }
         
         // 强制隐藏tabbar
 //        SCREEN_HEIGHT- NAVIGATION_HEIGHT  -  HOME_INDICATOR_HEIGHT
-        self.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT);
-        self.view.height = SCREEN_HEIGHT- NAVIGATION_HEIGHT;
-        self.tabBarController.tabBar.hidden = YES;
+        weakSelf.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT);
+        weakSelf.view.height = SCREEN_HEIGHT- NAVIGATION_HEIGHT;
+        weakSelf.tabBarController.tabBar.hidden = YES;
     }];
     
 }
 
 - (UIBarButtonItem *)creatRightBarItem {
     UIImage *buttonNormal = [[UIImage imageNamed:@"share_button_image"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIBarButtonItem * leftItem = [[UIBarButtonItem alloc]initWithImage:buttonNormal style:UIBarButtonItemStylePlain target:self action:@selector(shareAlert)];
+    return leftItem;
+}
+
+- (UIBarButtonItem *)creatRightBarItemDetail {
+    UIImage *buttonNormal = [[UIImage imageNamed:@"top_share_detail"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIBarButtonItem * leftItem = [[UIBarButtonItem alloc]initWithImage:buttonNormal style:UIBarButtonItemStylePlain target:self action:@selector(shareAlert)];
     return leftItem;
 }

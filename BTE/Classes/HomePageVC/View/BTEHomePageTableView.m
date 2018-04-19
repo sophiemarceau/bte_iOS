@@ -369,7 +369,9 @@
         [bgView1 addSubview:image2];
         
         UILabel *contentLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(image2.right + 6, 139, 66, 12)];
-        contentLabel2.text = [NSString stringWithFormat:@"%@ 次浏览",descriptionModel.pv];
+        if (descriptionModel.pv) {
+            contentLabel2.text = [NSString stringWithFormat:@"%@次浏览",descriptionModel.pv];
+        }
         contentLabel2.font = UIFontRegularOfSize(12);
         contentLabel2.textColor = BHHexColor(@"626A75");
         [bgView1 addSubview:contentLabel2];
@@ -558,13 +560,9 @@
     
     
     if (indexPath.row == [_dataSource count] + 1) {
-//        NSString *contentStr = descriptionModel.summary;
-//        CGRect rect = [contentStr boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 64, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil];
-//
-//        if (rect.size.height > defaultHeight) {
-//            _isShow = !_isShow;
-//            [self.homePageTableView reloadData];
-//        }
+        if (self.delegate && [self.delegate respondsToSelector:@selector(jumpToDetails:)]) {
+            [self.delegate jumpToDetails:descriptionModel];
+        }
     }
     
    if (indexPath.row == [_dataSource count] + 5)

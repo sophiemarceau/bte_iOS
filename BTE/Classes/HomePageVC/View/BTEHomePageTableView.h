@@ -16,6 +16,7 @@
 //-(void)switchButton:(NSInteger)type;//type 1 当前跟投 2 已结束策略
 - (void)doTapChange:(NSString *)name;//选择币种
 - (void)jumpToDetail:(HomeDesListModel *)model;
+- (void)jumpToDetails:(HomeDescriptionModel *)model;
 - (void)jumpToStrategyFollow:(NSString *)productId;
 - (void)hidden;
 @end
