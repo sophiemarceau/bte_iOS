@@ -53,20 +53,21 @@
     [bgImage addSubview:bgImage1];
     
     UILabel *titleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(81, 46, SCREEN_WIDTH - 150, 13)];
-    titleLabel1.text = @"告诉小伙伴我在用比特易";
-    titleLabel1.font = UIFontRegularOfSize(13);
-    titleLabel1.alpha = 0.5;
+    titleLabel1.text = @"我的邀请码";
+    titleLabel1.font = UIFontMediumOfSize(16);
+//    titleLabel1.alpha = 0.5;
+    titleLabel1.centerY = bgImage1.centerY;
     titleLabel1.textColor = BHHexColor(@"626A75");
     [bgImage addSubview:titleLabel1];
     
     //Base64字符串转UIImage图片：
     if (_dicInvate) {
         
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(81, 26, SCREEN_WIDTH - 150, 14)];
-        titleLabel.text = [NSString stringWithFormat:@"%@的二维码",[_dicInvate objectForKey:@"tel"]];
-        titleLabel.font = UIFontRegularOfSize(14);
-        titleLabel.textColor = BHHexColor(@"626A75");
-        [bgImage addSubview:titleLabel];
+//        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(81, 26, SCREEN_WIDTH - 150, 14)];
+//        titleLabel.text = [NSString stringWithFormat:@"%@的二维码",[_dicInvate objectForKey:@"tel"]];
+//        titleLabel.font = UIFontRegularOfSize(16);
+//        titleLabel.textColor = BHHexColor(@"626A75");
+//        [bgImage addSubview:titleLabel];
         
         
         NSData *decodedImageData = [[NSData alloc] initWithBase64EncodedString:[_dicInvate objectForKey:@"base64"] options:NSDataBase64DecodingIgnoreUnknownCharacters];
