@@ -14,4 +14,6 @@
 @property(nonatomic,copy)NSString * content;
 @property(nonatomic,copy)NSString * id;
 @property(nonatomic,copy)NSString * title;
+@property(nonatomic,copy)NSString * pv;
+@property(nonatomic,copy)NSString * tag;
 @end

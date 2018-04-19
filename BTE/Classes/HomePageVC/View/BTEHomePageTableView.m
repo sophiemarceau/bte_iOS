@@ -235,8 +235,7 @@
         return 72;
     } else if (indexPath.row == [_dataSource count] + 1)
     {
-//        return [self cellHeight];
-        return 140 + 16;
+        return 249 + 16;
     }
     else if (indexPath.row == [_dataSource count] + 2)
     {
@@ -299,6 +298,13 @@
         bgView.backgroundColor = KBGColor;
         [cell.contentView addSubview:bgView];
         
+        
+        UIView *bgView1 = [[UIView alloc] initWithFrame:CGRectMake(16, 56 + 16, (SCREEN_WIDTH - 32), 169)];
+        bgView1.backgroundColor = BHHexColor(@"EDF0F2");
+        bgView1.layer.masksToBounds = YES;
+        bgView1.layer.cornerRadius = 4;
+        [cell.contentView addSubview:bgView1];
+        
         UIImageView *image1 = [[UIImageView alloc] initWithFrame:CGRectMake(16, 22 + 16, 18, 18)];
         image1.image = [UIImage imageNamed:@"home_market analysis"];
         [cell.contentView addSubview:image1];
@@ -309,45 +315,64 @@
         titleLabel.textColor = BHHexColor(@"626A75");
         [cell.contentView addSubview:titleLabel];
         
+        UILabel *contentLabelTitle = [[UILabel alloc] initWithFrame:CGRectMake(16, 16, SCREEN_WIDTH - 16 * 4, 18)];
+        contentLabelTitle.text = descriptionModel.title;
+        contentLabelTitle.font = UIFontMediumOfSize(18);
+        contentLabelTitle.textColor = BHHexColor(@"626A75");
+        [bgView1 addSubview:contentLabelTitle];
         
-        UILabel *contentLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 56 + 16, SCREEN_WIDTH - 16 - 43, 12)];
+        UILabel *contentLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 46, SCREEN_WIDTH - 16 * 4, 12)];
         contentLabel1.text = descriptionModel.date;
-        contentLabel1.font = UIFontRegularOfSize(12);
-        contentLabel1.textColor = BHHexColor(@"9CA1A9");
-        [cell.contentView addSubview:contentLabel1];
+        contentLabel1.font = UIFontLightOfSize(12);
+        contentLabel1.textColor = BHHexColor(@"626A75");
+        [bgView1 addSubview:contentLabel1];
         
-        
-        
-//        NSString * contentStr= descriptionModel.desc;
-//        CGRect rect = [contentStr boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 32, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil];
-        UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(16, 78 + 16, SCREEN_WIDTH - 16 - 43, 44)];
+        UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(16, 78, SCREEN_WIDTH - 16 * 4, 49)];
         contentLabel.text = descriptionModel.summary;
-//        if (_isShow) {
-//
-//        } else
-//        {
-//            contentLabel.height = defaultHeight;
-//        }
         contentLabel.font = UIFontRegularOfSize(14);
         contentLabel.numberOfLines = 2;
         contentLabel.textColor = BHHexColor(@"626A75");
-        [cell.contentView addSubview:contentLabel];
+        [bgView1 addSubview:contentLabel];
+    
+        if (descriptionModel.tag) {
+            NSArray *array = [descriptionModel.tag componentsSeparatedByString:@","];
+            if (array.count > 0) {
+                for (int i = 0; i < array.count; i++)
+                {
+                    UILabel *tagLabel = [[UILabel alloc] initWithFrame:CGRectMake(16 + (28 + 6) * i, 137, 28, 16)];
+                    tagLabel.text = array[i];
+                    tagLabel.font = UIFontMediumOfSize(11);
+                    tagLabel.textAlignment = NSTextAlignmentCenter;
+                    if ([array[i] isEqualToString:@"BTC"]) {
+                       tagLabel.textColor = BHHexColor(@"FF8E00");
+                    } else if ([array[i] isEqualToString:@"LTC"])
+                    {
+                        tagLabel.textColor = BHHexColor(@"CCC6C6");
+                    } else if ([array[i] isEqualToString:@"ETH"])
+                    {
+                        tagLabel.textColor = BHHexColor(@"5A5A5A");
+                    } else if ([array[i] isEqualToString:@"ETC"])
+                    {
+                        tagLabel.textColor = BHHexColor(@"579270");
+                    } else if ([array[i] isEqualToString:@"BCH"])
+                    {
+                        tagLabel.textColor = BHHexColor(@"F08B18");
+                    }
+                    tagLabel.backgroundColor = BHHexColorAlpha(@"CCD4DF",0.2);
+                    [bgView1 addSubview:tagLabel];
+                }
+            }
+        }
+
+        UIImageView *image2 = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 88 - 15 - 32, 140, 15, 10)];
+        image2.image = [UIImage imageNamed:@"eye_icon_home"];
+        [bgView1 addSubview:image2];
         
-//        if (rect.size.height > defaultHeight) {
-//
-//            UIImageView *arrowImage = [[UIImageView alloc] initWithFrame:CGRectMake(bgView.width - 10 - 16, bgView.height - 5 - 10, 10, 5)];
-//
-//            [bgView addSubview:arrowImage];
-//            if (_isShow) {//是否展开
-//                arrowImage.image = [UIImage imageNamed:@"home_retract"];
-//            }else{
-//                arrowImage.image = [UIImage imageNamed:@"home_more"];
-//            }
-//        }
-        UIImageView *image2 = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 7 - 16, 71 + 16, 7, 12)];
-        image2.image = [UIImage imageNamed:@"right_arrow_home"];
-        [cell.contentView addSubview:image2];
-        
+        UILabel *contentLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(image2.right + 6, 139, 66, 12)];
+        contentLabel2.text = [NSString stringWithFormat:@"%@ 次浏览",descriptionModel.pv];
+        contentLabel2.font = UIFontRegularOfSize(12);
+        contentLabel2.textColor = BHHexColor(@"626A75");
+        [bgView1 addSubview:contentLabel2];
         
         return cell;
     } else if (indexPath.row == [_dataSource count] + 3)
