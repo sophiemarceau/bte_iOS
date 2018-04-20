@@ -212,11 +212,15 @@
 #pragma mark - tabbar 代理及属性修改方法
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
-    if (tabBarController.selectedIndex > 0) {
+    if (tabBarController.selectedIndex == 1) {
         
-        
+        if ([viewController isKindOfClass:[BHNavigationController class]]) {
+            BHNavigationController *temNav = (BHNavigationController *)viewController;
+            if (temNav.viewControllers.count > 1) {
+                [temNav popToRootViewControllerAnimated:NO];
+            }
+        }
     }
-    
 }
 
 
