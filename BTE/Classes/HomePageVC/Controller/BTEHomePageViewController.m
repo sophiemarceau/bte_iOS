@@ -258,6 +258,16 @@
     [selectView removeFromSuperview];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"top"]) {
+        [defaults setObject:nil forKey:@"top"];
+        [self.homePageTableView.homePageTableView setContentOffset:CGPointMake(0,0) animated:NO];
+    }
+}
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];

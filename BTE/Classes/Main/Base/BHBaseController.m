@@ -56,5 +56,10 @@
     self.navigationItem.titleView = imageView;
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    NMRemovLoadIng;
+}
 
 @end

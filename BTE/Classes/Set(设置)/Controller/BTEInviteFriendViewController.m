@@ -52,7 +52,7 @@
     bgImage1.image = [UIImage imageNamed:@"icon_bg_invate"];
     [bgImage addSubview:bgImage1];
     
-    UILabel *titleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(81, 46, SCREEN_WIDTH - 150, 13)];
+    UILabel *titleLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(81, 46, SCREEN_WIDTH - 150, 16)];
     titleLabel1.text = @"我的邀请码";
     titleLabel1.font = UIFontMediumOfSize(16);
 //    titleLabel1.alpha = 0.5;

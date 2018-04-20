@@ -70,8 +70,15 @@
     
     //市场分析详情点击返回首页
     [self.bridge registerHandler:@"jumpToDiscoverView" handler:^(id data, WVJBResponseCallback responseCallback) {
-        NSLog(@"-----------%@",data);
-        [weakSelf.navigationController popViewControllerAnimated:YES];
+        if (weakSelf.tabBarController.selectedIndex == 0) {
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        } else
+        {
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:@"top" forKey:@"top"];
+            [defaults synchronize];
+            [weakSelf.tabBarController setSelectedIndex:0];
+        }
     }];
     
     //市场分析详情点击调起分享
@@ -184,6 +191,7 @@
     return YES;
 }
 -(void)dealloc {
+    NMRemovLoadIng;
     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 - (void)didReceiveMemoryWarning {

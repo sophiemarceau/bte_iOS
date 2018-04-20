@@ -315,6 +315,11 @@
         titleLabel.textColor = BHHexColor(@"626A75");
         [cell.contentView addSubview:titleLabel];
         
+        
+        UIImageView *image3 = [[UIImageView alloc] initWithFrame:CGRectMake(bgView1.width - 10 - 17, 16, 10, 18)];
+        image3.image = [UIImage imageNamed:@"home_shichangfenxi_more"];
+        [bgView1 addSubview:image3];
+        
         UILabel *contentLabelTitle = [[UILabel alloc] initWithFrame:CGRectMake(16, 16, SCREEN_WIDTH - 16 * 4, 18)];
         contentLabelTitle.text = descriptionModel.title;
         contentLabelTitle.font = UIFontMediumOfSize(18);
@@ -343,22 +348,22 @@
                     tagLabel.text = array[i];
                     tagLabel.font = UIFontMediumOfSize(11);
                     tagLabel.textAlignment = NSTextAlignmentCenter;
-                    if ([array[i] isEqualToString:@"BTC"]) {
-                       tagLabel.textColor = BHHexColor(@"FF8E00");
-                    } else if ([array[i] isEqualToString:@"LTC"])
-                    {
-                        tagLabel.textColor = BHHexColor(@"CCC6C6");
-                    } else if ([array[i] isEqualToString:@"ETH"])
-                    {
-                        tagLabel.textColor = BHHexColor(@"5A5A5A");
-                    } else if ([array[i] isEqualToString:@"ETC"])
-                    {
-                        tagLabel.textColor = BHHexColor(@"579270");
-                    } else if ([array[i] isEqualToString:@"BCH"])
-                    {
-                        tagLabel.textColor = BHHexColor(@"F08B18");
-                    }
-                    tagLabel.backgroundColor = BHHexColorAlpha(@"CCD4DF",0.2);
+//                    if ([array[i] isEqualToString:@"BTC"]) {
+//                       tagLabel.textColor = BHHexColor(@"FF8E00");
+//                    } else if ([array[i] isEqualToString:@"LTC"])
+//                    {
+//                        tagLabel.textColor = BHHexColor(@"CCC6C6");
+//                    } else if ([array[i] isEqualToString:@"ETH"])
+//                    {
+//                        tagLabel.textColor = BHHexColor(@"5A5A5A");
+//                    } else if ([array[i] isEqualToString:@"ETC"])
+//                    {
+//                        tagLabel.textColor = BHHexColor(@"579270");
+//                    } else if ([array[i] isEqualToString:@"BCH"])
+//                    {
+                        tagLabel.textColor = BHHexColor(@"ffffff");
+//                    }
+                    tagLabel.backgroundColor = BHHexColor(@"308CDD");
                     [bgView1 addSubview:tagLabel];
                 }
             }
