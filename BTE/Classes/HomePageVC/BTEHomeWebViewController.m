@@ -131,7 +131,7 @@
             }else if ([[data objectForKey:@"url"] rangeOfString:@"wechat/baza/"].location != NSNotFound)
             {
                 weakSelf.navigationItem.rightBarButtonItem = [self creatRightBarItemDetail];
-                weakSelf.sharetitle = self.descriptionModel.title;
+                weakSelf.sharetitle = [NSString stringWithFormat:@"%@-比特易市场分析",self.descriptionModel.title];
                 weakSelf.shareDesc = self.descriptionModel.summary;
             }
             
