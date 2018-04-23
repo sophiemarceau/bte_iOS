@@ -68,6 +68,7 @@ typedef NS_ENUM(NSInteger, LoginType) {
  */
 @property (weak, nonatomic) IBOutlet UILabel *resetPwdLabel;
 @property (weak, nonatomic) IBOutlet UILabel *adLabel;//广告文案label
+@property (weak, nonatomic) IBOutlet UIImageView *bottomImageView;
 
 @end
 
@@ -426,6 +427,13 @@ typedef NS_ENUM(NSInteger, LoginType) {
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    NSString *deviceType = [UIDevice currentDevice].model;
+    if ([deviceType isEqualToString:@"iPhone"]) {
+        
+    } else
+    {
+        self.bottomImageView.hidden = YES;
+    }
     //光标颜色
     self.accountTextField.tintColor= BHHexColor(@"308CDD");
     self.codeTextField.tintColor= BHHexColor(@"308CDD");

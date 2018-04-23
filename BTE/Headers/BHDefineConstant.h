@@ -55,9 +55,9 @@ if (error.code == -1009) { \
 
 
 //加载动画
-#define NMShowLoadIng;  [Tools imageWithImage]
+#define NMShowLoadIng  [Tools imageWithImage]
 //删除动画
-#define NMRemovLoadIng; [Tools removeLoadingView]
+#define NMRemovLoadIng [Tools removeLoadingView]
 
 
 #pragma mark - 字符串相关
@@ -170,8 +170,9 @@ if (error.code == -1009) { \
 //数据返回结果是数组
 #define IsSafeArray(_ref)        [_ref isKindOfClass:[NSArray class]]
 
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 
-
+#define IS_PAD (UI_USER_INTERFACE_IDIOM()== UIUserInterfaceIdiomPad)
 
 // MARK: 系统相关
 #define IS_IOS_7 (([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) ? YES : NO)
