@@ -39,6 +39,7 @@
 //#import "BHSeverEnvironment.h"
 //#import "WYCookiesTool.h"
 #import "BHNavigationController.h"
+#import "TTJPushNoticeManager.h"
 #import "BTEUserInfo.h"
 //#import "BHTabBarController.h"
 #import "BHHexColor.h"

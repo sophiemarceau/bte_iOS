@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    NSDictionary * _jPushDic;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, assign) BOOL isEable;

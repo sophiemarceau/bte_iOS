@@ -37,6 +37,13 @@
     // 启动图片延时: 1秒
     //    [NSThread sleepForTimeInterval:3];
     
+    
+//    NSDictionary *resultDic = launchOptions[@"UIApplicationLaunchOptionsRemoteNotificationKey"];
+//    if (resultDic) {//推送进入APP
+//        _jPushDic=resultDic;
+//        [self performSelector:@selector(postNoti) withObject:nil afterDelay:2];
+//    }
+    
     [self setupKeyWindow];
     
     // 引导图
@@ -343,7 +350,7 @@
 }
 #pragma mark- JPUSHRegisterDelegate
 
-// iOS 10 Support
+// iOS 10 Support//前台
 - (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler {
     // Required
     NSDictionary * userInfo = notification.request.content.userInfo;
@@ -359,8 +366,21 @@
     } else {
         // Fallback on earlier versions
     } // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以选择设置
+    
+    
+    if ([userInfo objectForKey:@"type"] && ![[userInfo objectForKey:@"type"] isEqualToString:@""])//前台
+    {
+        _jPushDic=userInfo;
+        NSString *alert = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"比特易"
+                                                            message:[NSString stringWithFormat:@"%@", alert]
+                                                           delegate:self
+                                                  cancelButtonTitle:@"取消"
+                                                  otherButtonTitles:@"查看",nil];
+        [alertView show];
+    }
 }
-// iOS 10 Support
+// iOS 10 Support//后台
 - (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
     // Required
     NSDictionary * userInfo = response.notification.request.content.userInfo;
@@ -372,12 +392,36 @@
         // Fallback on earlier versions
     }
     completionHandler();  // 系统要求执行这个方法
+    if ([userInfo objectForKey:@"type"] && ![[userInfo objectForKey:@"type"] isEqualToString:@""])
+    {
+        _jPushDic=userInfo;
+        [self performSelector:@selector(postNoti) withObject:nil afterDelay:0.3];
+    }
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     // Required, iOS 7 Support
     [JPUSHService handleRemoteNotification:userInfo];
     completionHandler(UIBackgroundFetchResultNewData);
+    
+    if (application.applicationState == UIApplicationStateActive && [userInfo objectForKey:@"type"] && ![[userInfo objectForKey:@"type"] isEqualToString:@""])//前台
+    {
+        _jPushDic=userInfo;
+        NSString *alert = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"比特易"
+                                                            message:[NSString stringWithFormat:@"%@", alert]
+                                                           delegate:self
+                                                  cancelButtonTitle:@"取消"
+                                                  otherButtonTitles:@"查看",nil];
+        [alertView show];
+    }
+    else if ([userInfo objectForKey:@"type"] && ![[userInfo objectForKey:@"type"] isEqualToString:@""])//后台
+    {
+        _jPushDic=userInfo;
+        [self performSelector:@selector(postNoti) withObject:nil afterDelay:0.3];
+    }
+    
+    
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
@@ -392,6 +436,11 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
     /// Required - 注册 DeviceToken
     [JPUSHService registerDeviceToken:deviceToken];
+    NSSet *set;
+    set = [NSSet setWithObjects:@"global",nil];
+    [JPUSHService setTags:set completion:^(NSInteger iResCode, NSSet *iTags, NSInteger seq) {
+        NSLog(@"isrescode=%ld",iResCode);
+    } seq:1];
 }
 
 #pragma mark EAIntroDelegate 版本引导图
@@ -436,6 +485,23 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     EAIntroView *intro = [[EAIntroView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) andPages:pages];
     intro.delegate=self;
     [intro showInView:self.window.rootViewController.view animateDuration:0.0];
+}
+
+#pragma marks -- UIAlertViewDelegate --
+//根据被点击按钮的索引处理点击事件
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"clickButtonAtIndex:%ld",(long)buttonIndex);
+    if (buttonIndex == 1)
+    {
+        [self postNoti];
+    }
+    
+}
+-(void)postNoti
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"JpushNotice" object:_jPushDic];
+    
 }
 
 @end

@@ -26,15 +26,24 @@
     shareView.backgroundColor = kColorRgba(0, 0, 0, 0.6);
     [[UIApplication sharedApplication].keyWindow addSubview:shareView];
     
+    UITapGestureRecognizer *tapShareView = [[UITapGestureRecognizer alloc]initWithTarget:shareView action:@selector(doTapChange)];
+    [shareView addGestureRecognizer:tapShareView];
+    
     
     UIView *bgView1 = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 57 - 128, SCREEN_WIDTH, 128)];
-    bgView1.backgroundColor = kColorRgba(246, 246, 247, 0.66);
+    bgView1.backgroundColor = [UIColor whiteColor];
     [shareView addSubview:bgView1];
+    
+    UITapGestureRecognizer *tapBgView1 = [[UITapGestureRecognizer alloc]initWithTarget:shareView action:@selector(doTapChange1)];
+    [bgView1 addGestureRecognizer:tapBgView1];
     
     UIView *bgView2 = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 57, SCREEN_WIDTH, 57)];
     bgView2.backgroundColor = [UIColor whiteColor];
     [shareView addSubview:bgView2];
     
+    UIView *bgView3 = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 57, SCREEN_WIDTH, 1)];
+    bgView3.backgroundColor = BHHexColor(@"E6EBF0");
+    [shareView addSubview:bgView3];
     
     float width = (SCREEN_WIDTH - 23 * 2 - 48 * 4) / 3;
     
@@ -105,6 +114,16 @@
     [cancelbutton addTarget:shareView action:@selector(cancelbuttondismiss) forControlEvents:UIControlEventTouchUpInside];
     cancelbutton.titleLabel.font = UIFontRegularOfSize(18);
     [bgView2 addSubview:cancelbutton];
+}
+
+- (void)doTapChange
+{
+    [self removeFromSuperview];
+}
+
+- (void)doTapChange1
+{
+
 }
 
 // 取消

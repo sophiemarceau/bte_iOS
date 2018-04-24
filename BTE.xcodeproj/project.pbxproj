@@ -133,6 +133,7 @@
 		8179D30A2021D82800C13447 /* Y_StockChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8179D3072021D82800C13447 /* Y_StockChartViewController.m */; };
 		818B1CCB206382200065B3FA /* BTEHomePageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 818B1CCA206382200065B3FA /* BTEHomePageTableView.m */; };
 		818B1CCE206391860065B3FA /* BTEHomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 818B1CCD206391860065B3FA /* BTEHomePageTableViewCell.m */; };
+		81AE25A6208F326500DABF3A /* TTJPushNoticeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 81AE25A4208F326400DABF3A /* TTJPushNoticeManager.m */; };
 		81FFE180207242FA001AB03D /* BTELeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FFE17F207242FA001AB03D /* BTELeftView.m */; };
 		81FFE183207367BC001AB03D /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FFE181207367BB001AB03D /* Tools.m */; };
 		81FFE1892073680D001AB03D /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FFE1852073680D001AB03D /* FLAnimatedImage.m */; };
@@ -422,6 +423,8 @@
 		818B1CCA206382200065B3FA /* BTEHomePageTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEHomePageTableView.m; sourceTree = "<group>"; };
 		818B1CCC206391860065B3FA /* BTEHomePageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEHomePageTableViewCell.h; sourceTree = "<group>"; };
 		818B1CCD206391860065B3FA /* BTEHomePageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEHomePageTableViewCell.m; sourceTree = "<group>"; };
+		81AE25A4208F326400DABF3A /* TTJPushNoticeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTJPushNoticeManager.m; sourceTree = "<group>"; };
+		81AE25A5208F326400DABF3A /* TTJPushNoticeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTJPushNoticeManager.h; sourceTree = "<group>"; };
 		81FFE17E207242FA001AB03D /* BTELeftView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTELeftView.h; sourceTree = "<group>"; };
 		81FFE17F207242FA001AB03D /* BTELeftView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTELeftView.m; sourceTree = "<group>"; };
 		81FFE181207367BB001AB03D /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
@@ -995,6 +998,8 @@
 				8179AF062008A08C001678D2 /* BHBaseController.m */,
 				B923CFFA20494E39008A9302 /* BHBaseWebVC.h */,
 				B923CFF42048FEAA008A9302 /* BHBaseWebVC.m */,
+				81AE25A5208F326400DABF3A /* TTJPushNoticeManager.h */,
+				81AE25A4208F326400DABF3A /* TTJPushNoticeManager.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1587,6 +1592,7 @@
 				8179AF0B2008A08C001678D2 /* BHGuideVC.m in Sources */,
 				8179AE2B20085DB5001678D2 /* NSDictionary+safe.m in Sources */,
 				8179AE3E20085DB5001678D2 /* NSMutableAttributedString+extension.m in Sources */,
+				81AE25A6208F326500DABF3A /* TTJPushNoticeManager.m in Sources */,
 				81403B452066331A00788F9D /* BTEStrategyFollowViewController.m in Sources */,
 				8112E3D02051352200419BC9 /* BTEMyAccountTableView.m in Sources */,
 				8179AE2720085DB5001678D2 /* NSString+MD5.m in Sources */,

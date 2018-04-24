@@ -56,10 +56,25 @@
     self.navigationItem.titleView = imageView;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(jpush:) name:@"JpushNotice" object:nil];
+}
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"JpushNotice" object:nil];
     NMRemovLoadIng;
+}
+
+-(void)jpush:(NSNotification *)noti
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [[TTJPushNoticeManager shareManger] jpushwithParam:[noti object] WithVC:self];
+    });
 }
 
 @end
