@@ -437,7 +437,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     /// Required - 注册 DeviceToken
     [JPUSHService registerDeviceToken:deviceToken];
     NSSet *set;
-    set = [NSSet setWithObjects:@"global",nil];
+    set = [NSSet setWithObjects:kGlobal,nil];
     [JPUSHService setTags:set completion:^(NSInteger iResCode, NSSet *iTags, NSInteger seq) {
         NSLog(@"isrescode=%ld",iResCode);
     } seq:1];
