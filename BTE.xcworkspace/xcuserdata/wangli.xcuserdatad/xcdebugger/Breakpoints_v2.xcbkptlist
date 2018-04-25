@@ -106,12 +106,12 @@
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wangli/Desktop/BTE/BTE/Kline/BTC_K%E7%BA%BF%E5%9B%BE/KLine/Model/KLineModel/Y_KLineGroupModel.m"
-                  timestampString = "546261635.4139071"
+                  timestampString = "546333037.6786751"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "96">
+                  offsetFromSymbolStart = "71">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -121,12 +121,12 @@
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wangli/Desktop/BTE/BTE/Kline/BTC_K%E7%BA%BF%E5%9B%BE/KLine/Model/KLineModel/Y_KLineGroupModel.m"
-                  timestampString = "546261635.416314"
+                  timestampString = "546333037.681739"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "196">
+                  offsetFromSymbolStart = "160">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -402,7 +402,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/Login/BTELoginVC.m"
-            timestampString = "546261634.854843"
+            timestampString = "546333037.184624"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "224"
@@ -434,7 +434,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/MyAccount(&#x6211;&#x7684;&#x8d26;&#x6237;)/Controller/MyAccountViewController.m"
-            timestampString = "546261634.854952"
+            timestampString = "546333037.184727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "389"
@@ -450,7 +450,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/MyAccount(&#x6211;&#x7684;&#x8d26;&#x6237;)/Controller/MyAccountViewController.m"
-            timestampString = "546261634.8550121"
+            timestampString = "546333037.184782"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "398"
@@ -466,7 +466,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/HomePageVC/BTEHomeWebViewController.m"
-            timestampString = "546261634.855059"
+            timestampString = "546333037.184831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "167"
@@ -482,7 +482,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/Login/BTELoginVC.m"
-            timestampString = "546261634.855132"
+            timestampString = "546333037.185266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "357"
@@ -498,7 +498,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/Login/BTELoginVC.m"
-            timestampString = "546261634.85518"
+            timestampString = "546333037.185321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "359"
@@ -514,7 +514,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/Login/BTELoginVC.m"
-            timestampString = "546261634.8552279"
+            timestampString = "546333037.185371"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "350"
@@ -530,7 +530,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/Login/BTELoginVC.m"
-            timestampString = "546261634.8552769"
+            timestampString = "546333037.185418"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "352"
@@ -546,7 +546,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/Login/BTELoginVC.m"
-            timestampString = "546261634.855323"
+            timestampString = "546333037.1854841"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "238"
@@ -562,7 +562,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/Login/BTELoginVC.m"
-            timestampString = "546261634.855369"
+            timestampString = "546333037.185533"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "326"
@@ -578,11 +578,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/ShareView/BTEShareView.m"
-            timestampString = "546261634.855418"
+            timestampString = "546333037.185582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "434"
-            endingLineNumber = "434"
+            startingLineNumber = "433"
+            endingLineNumber = "433"
             landmarkName = "-alertWithError:"
             landmarkType = "7">
          </BreakpointContent>
@@ -610,7 +610,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/MyAccount(&#x6211;&#x7684;&#x8d26;&#x6237;)/Controller/MyAccountViewController.m"
-            timestampString = "546261634.855785"
+            timestampString = "546333037.1856591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
@@ -626,12 +626,12 @@
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wangli/Desktop/BTE/BTE/Classes/MyAccount(%E6%88%91%E7%9A%84%E8%B4%A6%E6%88%B7)/Controller/MyAccountViewController.m"
-                  timestampString = "546261635.530066"
+                  timestampString = "546333038.345589"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "98"
                   endingLineNumber = "98"
-                  offsetFromSymbolStart = "40">
+                  offsetFromSymbolStart = "36">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -641,7 +641,7 @@
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wangli/Desktop/BTE/BTE/Classes/MyAccount(%E6%88%91%E7%9A%84%E8%B4%A6%E6%88%B7)/Controller/MyAccountViewController.m"
-                  timestampString = "546261635.53281"
+                  timestampString = "546333038.348103"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "99"
@@ -652,16 +652,16 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_.165"
+                  symbolName = "__destroy_helper_block_.167"
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wangli/Desktop/BTE/BTE/Classes/MyAccount(%E6%88%91%E7%9A%84%E8%B4%A6%E6%88%B7)/Controller/MyAccountViewController.m"
-                  timestampString = "546261635.535575"
+                  timestampString = "546333038.350917"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "98"
                   endingLineNumber = "98"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -673,7 +673,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/MyAccount(&#x6211;&#x7684;&#x8d26;&#x6237;)/Controller/MyAccountViewController.m"
-            timestampString = "546261634.855836"
+            timestampString = "546333037.185704"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
@@ -689,7 +689,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/MyAccount(&#x6211;&#x7684;&#x8d26;&#x6237;)/Controller/MyAccountViewController.m"
-            timestampString = "546261634.855882"
+            timestampString = "546333037.185747"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "290"
@@ -721,12 +721,12 @@
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wangli/Desktop/BTE/BTE/Tools/HttpTool/NetRequest/BTERequestTools.m"
-                  timestampString = "546261635.560683"
+                  timestampString = "546333038.36906"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "27"
                   endingLineNumber = "27"
-                  offsetFromSymbolStart = "228">
+                  offsetFromSymbolStart = "254">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -736,12 +736,12 @@
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wangli/Desktop/BTE/BTE/Tools/HttpTool/NetRequest/BTERequestTools.m"
-                  timestampString = "546261635.565269"
+                  timestampString = "546333038.371086"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
                   endingLineNumber = "28"
-                  offsetFromSymbolStart = "64">
+                  offsetFromSymbolStart = "44">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -751,12 +751,12 @@
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wangli/Desktop/BTE/BTE/Tools/HttpTool/NetRequest/BTERequestTools.m"
-                  timestampString = "546261635.569488"
+                  timestampString = "546333038.3742419"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "27"
                   endingLineNumber = "27"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -768,7 +768,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/HomePageVC/View/BTEHomePageTableView.m"
-            timestampString = "546261634.855955"
+            timestampString = "546333037.185812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "575"
@@ -848,7 +848,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/HomePageVC/Controller/BTEHomePageViewController.m"
-            timestampString = "546261634.856403"
+            timestampString = "546333037.185957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "247"
@@ -880,7 +880,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/MyAccount(&#x6211;&#x7684;&#x8d26;&#x6237;)/Controller/MyAccountViewController.m"
-            timestampString = "546261634.856493"
+            timestampString = "546333037.186033"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "195"
@@ -944,7 +944,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/MyAccount(&#x6211;&#x7684;&#x8d26;&#x6237;)/Controller/MyAccountViewController.m"
-            timestampString = "546261634.856612"
+            timestampString = "546333037.186128"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
@@ -960,7 +960,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/MyAccount(&#x6211;&#x7684;&#x8d26;&#x6237;)/Controller/MyAccountViewController.m"
-            timestampString = "546261634.856661"
+            timestampString = "546333037.1861711"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
@@ -976,7 +976,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/Set(&#x8bbe;&#x7f6e;)/Controller/BTEInviteFriendViewController.m"
-            timestampString = "546261634.856708"
+            timestampString = "546333037.186215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
@@ -1024,12 +1024,12 @@
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wangli/Desktop/BTE/BTE/Classes/Set(%E8%AE%BE%E7%BD%AE)/Controller/BTEFreandCountViewController.m"
-                  timestampString = "546261636.062714"
+                  timestampString = "546333038.4735349"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "96"
                   endingLineNumber = "96"
-                  offsetFromSymbolStart = "560">
+                  offsetFromSymbolStart = "606">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1039,12 +1039,12 @@
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wangli/Desktop/BTE/BTE/Classes/Set(%E8%AE%BE%E7%BD%AE)/Controller/BTEFreandCountViewController.m"
-                  timestampString = "546261636.066126"
+                  timestampString = "546333038.475924"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "97"
                   endingLineNumber = "97"
-                  offsetFromSymbolStart = "64">
+                  offsetFromSymbolStart = "44">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1054,12 +1054,12 @@
                   moduleName = "BTE"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wangli/Desktop/BTE/BTE/Classes/Set(%E8%AE%BE%E7%BD%AE)/Controller/BTEFreandCountViewController.m"
-                  timestampString = "546261636.0697449"
+                  timestampString = "546333038.478182"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "96"
                   endingLineNumber = "96"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1087,7 +1087,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/MyAccount(&#x6211;&#x7684;&#x8d26;&#x6237;)/View/BTEMyAccountTableView.m"
-            timestampString = "546261634.8568341"
+            timestampString = "546333037.1863149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "284"
@@ -1199,7 +1199,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/HomePageVC/BTEHomeWebViewController.m"
-            timestampString = "546261634.857018"
+            timestampString = "546333037.1864541"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
@@ -1215,7 +1215,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/HomePageVC/BTEHomeWebViewController.m"
-            timestampString = "546261634.8570859"
+            timestampString = "546333037.1867599"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "149"
@@ -1231,7 +1231,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/AppDelegate.m"
-            timestampString = "546261634.857156"
+            timestampString = "546333037.187043"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "225"
@@ -1247,7 +1247,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/AppDelegate.m"
-            timestampString = "546261634.857512"
+            timestampString = "546333037.187387"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "226"
@@ -1263,7 +1263,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/AppDelegate.m"
-            timestampString = "546261634.857798"
+            timestampString = "546333037.187681"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "404"
@@ -1279,7 +1279,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/AppDelegate.m"
-            timestampString = "546261634.858048"
+            timestampString = "546333037.187937"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "386"
@@ -1295,7 +1295,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/AppDelegate.m"
-            timestampString = "546261634.858287"
+            timestampString = "546333037.188182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "356"
@@ -1310,24 +1310,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BTE/AppDelegate.m"
-            timestampString = "546261634.858523"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "-application:didFinishLaunchingWithOptions:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "BTE/Classes/Main/Base/TTJPushNoticeManager.m"
-            timestampString = "546261634.858754"
+            timestampString = "546333037.188464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -1343,7 +1327,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/Main/Base/TTJPushNoticeManager.m"
-            timestampString = "546261634.8588049"
+            timestampString = "546333037.188514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
@@ -1359,11 +1343,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/ShareView/BTEShareView.m"
-            timestampString = "546261634.858851"
+            timestampString = "546333037.18856"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "-doTapChange"
             landmarkType = "7">
          </BreakpointContent>
@@ -1375,11 +1359,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/ShareView/BTEShareView.m"
-            timestampString = "546261634.859075"
+            timestampString = "546333037.18861"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "-doTapChange1"
             landmarkType = "7">
          </BreakpointContent>
@@ -1391,12 +1375,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BTE/Classes/ShareView/BTEShareView.m"
-            timestampString = "546261634.859286"
+            timestampString = "546333037.188659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "-doTapChange"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Classes/HomePageVC/BTEHomeWebViewController.m"
+            timestampString = "546333037.188707"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "-observeH5BridgeHandler"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BTE/Classes/HomePageVC/BTEHomeWebViewController.m"
+            timestampString = "546333037.18894"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "-observeH5BridgeHandler"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
