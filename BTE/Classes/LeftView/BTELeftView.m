@@ -105,7 +105,7 @@
     [headView addSubview:lineView];
     actView.tableView.tableHeaderView = headView;
     
-    actView.array = @[@"市场分析",@"策略跟随",@"我的账户"];
+    actView.array = @[@"市场分析",@"策略跟随",@"个人中心"];
     actView.arrayImage = @[@"left_cell_image1",@"left_cell_image2",@"left_cell_image3"];
     
     [UIView animateWithDuration:0.1 animations:^{

@@ -89,6 +89,14 @@
         [weakSelf.navigationController pushViewController:invateVc animated:YES];
     }];
     
+    //关于我们官网跳转
+    [self.bridge registerHandler:@"bteTop" handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSLog(@"-----------%@",data);
+        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"http://bte.top"]]) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://bte.top"]];
+        }
+    }];
+    
     //市场分析详情点击返回首页
     [self.bridge registerHandler:@"jumpToDiscoverView" handler:^(id data, WVJBResponseCallback responseCallback) {
         if (weakSelf.tabBarController.selectedIndex == 0) {
@@ -114,18 +122,20 @@
         if (data && [data objectForKey:@"title"]) {
             if ([[data objectForKey:@"title"] isEqualToString:@"个人中心"]) {
                 [self.navigationController setNavigationBarHidden:YES animated:NO];
-                //设置状态栏颜色
-                _statusBarView = [[UIView alloc]   initWithFrame:CGRectMake(0, 0,    self.view.bounds.size.width, 20)];
-                _statusBarView.backgroundColor = [BHHexColor hexColor:@"53AFFF"];
-                
-                
-                CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-                gradientLayer.colors = @[(__bridge id)BHHexColor(@"53AFFF").CGColor, (__bridge id)BHHexColor(@"1389EF").CGColor];
-                gradientLayer.startPoint = CGPointMake(0, 0);
-                gradientLayer.endPoint = CGPointMake(1.0, 0);
-                gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 20);
-                [_statusBarView.layer addSublayer:gradientLayer];
-                [self.view addSubview:_statusBarView];
+                if (_statusBarView == nil) {
+                    //设置状态栏颜色
+                    _statusBarView = [[UIView alloc]   initWithFrame:CGRectMake(0, 0,    self.view.bounds.size.width, 20)];
+//                    _statusBarView.backgroundColor = [BHHexColor hexColor:@"53AFFF"];
+                    
+                    
+                    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+                    gradientLayer.colors = @[(__bridge id)BHHexColor(@"53AFFF").CGColor, (__bridge id)BHHexColor(@"1389EF").CGColor];
+                    gradientLayer.startPoint = CGPointMake(0, 0);
+                    gradientLayer.endPoint = CGPointMake(1.0, 0);
+                    gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 20);
+                    [_statusBarView.layer addSublayer:gradientLayer];
+                    [self.view addSubview:_statusBarView];
+                }
             } else
             {
                weakSelf.navigationItem.title = [data objectForKey:@"title"];
@@ -176,11 +186,11 @@
         weakSelf.view.height = SCREEN_HEIGHT- NAVIGATION_HEIGHT;
         weakSelf.tabBarController.tabBar.hidden = YES;
         
-        
+
         
         [weakSelf.navigationController setNavigationBarHidden:NO animated:NO];
         [_statusBarView removeFromSuperview];
-        
+        _statusBarView = nil;
     }];
     
 }
@@ -229,19 +239,19 @@
 {
     [super viewWillAppear:animated];
     if ([self.urlString isEqualToString:kAppBTEH5MyAccountAddress]) {
-//        [self.navigationController setNavigationBarHidden:YES animated:NO];
-//        //设置状态栏颜色
-//        _statusBarView = [[UIView alloc]   initWithFrame:CGRectMake(0, 0,    self.view.bounds.size.width, 20)];
+        [self.navigationController setNavigationBarHidden:YES animated:NO];
+        //设置状态栏颜色
+        _statusBarView = [[UIView alloc]   initWithFrame:CGRectMake(0, 0,    self.view.bounds.size.width, 20)];
 //        _statusBarView.backgroundColor = [BHHexColor hexColor:@"53AFFF"];
-//
-//
-//        CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-//        gradientLayer.colors = @[(__bridge id)BHHexColor(@"53AFFF").CGColor, (__bridge id)BHHexColor(@"1389EF").CGColor];
-//        gradientLayer.startPoint = CGPointMake(0, 0);
-//        gradientLayer.endPoint = CGPointMake(1.0, 0);
-//        gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 20);
-//        [_statusBarView.layer addSublayer:gradientLayer];
-//        [self.view addSubview:_statusBarView];
+
+
+        CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+        gradientLayer.colors = @[(__bridge id)BHHexColor(@"53AFFF").CGColor, (__bridge id)BHHexColor(@"1389EF").CGColor];
+        gradientLayer.startPoint = CGPointMake(0, 0);
+        gradientLayer.endPoint = CGPointMake(1.0, 0);
+        gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 20);
+        [_statusBarView.layer addSublayer:gradientLayer];
+        [self.view addSubview:_statusBarView];
         if ([self.isloginAndGetMyAccountInfo isEqualToString:@"0"]) {
             //获取登录状态
             [self getMyAccountLoginStatus];
@@ -256,6 +266,7 @@
     
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     [_statusBarView removeFromSuperview];
+    _statusBarView = nil;
 }
 
 
