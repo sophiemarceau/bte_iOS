@@ -18,5 +18,6 @@
 }
 @property (nonatomic,strong) HomeProductInfoModel *productInfoModel;//策略跟随列表model
 @property (nonatomic,strong) HomeDesListModel * desListModel;//市场分析列表model
-@property (nonatomic,strong) HomeDescriptionModel * descriptionModel;//市场详情页model
+//@property (nonatomic,strong) HomeDescriptionModel * descriptionModel;//市场详情页model
+@property (nonatomic,strong) NSString *isloginAndGetMyAccountInfo;//1 登录并且已获取到了用户信息
 @end

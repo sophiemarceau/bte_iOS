@@ -156,7 +156,7 @@
     homePageVc.urlString = [NSString stringWithFormat:@"%@/%@",kAppDetailDealAddress,model.id];
     homePageVc.isHiddenLeft = YES;
     homePageVc.isHiddenBottom = NO;
-    homePageVc.descriptionModel = model;
+//    homePageVc.descriptionModel = model;
     [self.navigationController pushViewController:homePageVc animated:YES];
 }
 

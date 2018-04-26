@@ -10,6 +10,7 @@
 #import "BTELoginVC.h"
 #import "MyAccountViewController.h"
 #import "BTEShareView.h"
+#import "BTEInviteFriendViewController.h"
 @interface BTEHomeWebViewController ()
 //分享需要的参数
 @property (nonatomic, strong) NSString *shareImageUrl;
@@ -33,6 +34,10 @@
 //    btn.frame = CGRectMake(100, 100, 100, 100);
 //    [btn addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
 //    [self.view addSubview:btn];
+    if ([self.urlString isEqualToString:kAppBTEH5MyAccountAddress]) {
+        //初始化为0
+        self.isloginAndGetMyAccountInfo = @"0";
+    }
 }
 - (void)click {
     //    [BTELoginVC OpenLogin:self callback:nil];
@@ -63,10 +68,26 @@
     [self sendUserToken];
     //退出登录
     [self.bridge registerHandler:@"loginOut" handler:^(id data, WVJBResponseCallback responseCallback) {
+        
+        
+        //退出成功删除手机号
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:nil forKey:MobilePhoneNum];
+        //删除本地登录信息
         [User removeLoginData];
-        [weakSelf reloadWebView:self.urlString];
+        //发送通知告诉web token变动
+        [[NSNotificationCenter defaultCenter]postNotificationName:NotificationUserLoginSuccess object:nil];
+        weakSelf.isloginAndGetMyAccountInfo = @"0";
+        [weakSelf update];
+        [weakSelf.tabBarController setSelectedIndex:0];
     }];
     
+    //个人中心点击邀请
+    [self.bridge registerHandler:@"jumpToManageMoney" handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSLog(@"-----------%@",data);
+        BTEInviteFriendViewController *invateVc = [[BTEInviteFriendViewController alloc] init];
+        [weakSelf.navigationController pushViewController:invateVc animated:YES];
+    }];
     
     //市场分析详情点击返回首页
     [self.bridge registerHandler:@"jumpToDiscoverView" handler:^(id data, WVJBResponseCallback responseCallback) {
@@ -77,7 +98,7 @@
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             [defaults setObject:@"top" forKey:@"top"];
             [defaults synchronize];
-            [weakSelf.tabBarController setSelectedIndex:0];
+            
         }
     }];
     
@@ -91,13 +112,20 @@
     [self.bridge registerHandler:@"oneClass" handler:^(id data, WVJBResponseCallback responseCallback) {
         weakSelf.isHiddenLeft = YES;
         if (data && [data objectForKey:@"title"]) {
-            if ([[data objectForKey:@"title"] isEqualToString:@"比特易-玩转比特币 多看比特易"]) {
-                weakSelf.navigationItem.title = @"比特易";
-                weakSelf.navigationItem.rightBarButtonItem = [self creatRightBarItem];
-                weakSelf.shareType = UMS_SHARE_TYPE_WEB_LINK;//web链接
-                weakSelf.sharetitle = @"比特易-领先的数字货币市场专业分析平台";
-                weakSelf.shareDesc = @"玩转比特币，多看比特易，聪明的投资者都在这里！";
-                weakSelf.shareUrl = kAppBTEH5AnalyzeAddress;
+            if ([[data objectForKey:@"title"] isEqualToString:@"个人中心"]) {
+                [self.navigationController setNavigationBarHidden:YES animated:NO];
+                //设置状态栏颜色
+                _statusBarView = [[UIView alloc]   initWithFrame:CGRectMake(0, 0,    self.view.bounds.size.width, 20)];
+                _statusBarView.backgroundColor = [BHHexColor hexColor:@"53AFFF"];
+                
+                
+                CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+                gradientLayer.colors = @[(__bridge id)BHHexColor(@"53AFFF").CGColor, (__bridge id)BHHexColor(@"1389EF").CGColor];
+                gradientLayer.startPoint = CGPointMake(0, 0);
+                gradientLayer.endPoint = CGPointMake(1.0, 0);
+                gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 20);
+                [_statusBarView.layer addSublayer:gradientLayer];
+                [self.view addSubview:_statusBarView];
             } else
             {
                weakSelf.navigationItem.title = [data objectForKey:@"title"];
@@ -105,8 +133,8 @@
             }
         }
         // 强制显示tabbar
-        weakSelf.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT  - TAB_BAR_HEIGHT);
-        weakSelf.view.height = SCREEN_HEIGHT- NAVIGATION_HEIGHT  - TAB_BAR_HEIGHT;
+        weakSelf.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT - TAB_BAR_HEIGHT);
+        weakSelf.view.height = SCREEN_HEIGHT - TAB_BAR_HEIGHT;
         weakSelf.tabBarController.tabBar.hidden = NO;
     }];
     //标识是否是index页面 显示左返回键
@@ -147,6 +175,12 @@
         weakSelf.webView.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT- NAVIGATION_HEIGHT);
         weakSelf.view.height = SCREEN_HEIGHT- NAVIGATION_HEIGHT;
         weakSelf.tabBarController.tabBar.hidden = YES;
+        
+        
+        
+        [weakSelf.navigationController setNavigationBarHidden:NO animated:NO];
+        [_statusBarView removeFromSuperview];
+        
     }];
     
 }
@@ -190,6 +224,82 @@
 
     return YES;
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if ([self.urlString isEqualToString:kAppBTEH5MyAccountAddress]) {
+//        [self.navigationController setNavigationBarHidden:YES animated:NO];
+//        //设置状态栏颜色
+//        _statusBarView = [[UIView alloc]   initWithFrame:CGRectMake(0, 0,    self.view.bounds.size.width, 20)];
+//        _statusBarView.backgroundColor = [BHHexColor hexColor:@"53AFFF"];
+//
+//
+//        CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+//        gradientLayer.colors = @[(__bridge id)BHHexColor(@"53AFFF").CGColor, (__bridge id)BHHexColor(@"1389EF").CGColor];
+//        gradientLayer.startPoint = CGPointMake(0, 0);
+//        gradientLayer.endPoint = CGPointMake(1.0, 0);
+//        gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 20);
+//        [_statusBarView.layer addSublayer:gradientLayer];
+//        [self.view addSubview:_statusBarView];
+        if ([self.isloginAndGetMyAccountInfo isEqualToString:@"0"]) {
+            //获取登录状态
+            [self getMyAccountLoginStatus];
+        }
+    }
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    [_statusBarView removeFromSuperview];
+}
+
+
+- (void)getMyAccountLoginStatus
+{
+    NSMutableDictionary * pramaDic = @{}.mutableCopy;
+    NSString * methodName = @"";
+    if (User.userToken) {
+        [pramaDic setObject:User.userToken forKey:@"bte-token"];
+    }
+    
+    methodName = kGetUserLoginInfo;
+    
+    WS(weakSelf)
+    NMShowLoadIng;
+    [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
+        NMRemovLoadIng;
+        if (IsSafeDictionary(responseObject) && [[responseObject objectForKey:@"data"] integerValue] == 0) {//未登录
+            [BTELoginVC OpenLogin:self callback:^(BOOL isComplete) {
+                if (isComplete) {
+                    //登录成功刷新我的账户页面
+                    //获取账户基本信息
+//                    _islogin = YES;
+                    [weakSelf update];
+                } else
+                {
+                    [weakSelf.tabBarController setSelectedIndex:0];
+                }
+            }];
+            
+        } else if (IsSafeDictionary(responseObject) && [[responseObject objectForKey:@"data"] integerValue] == 1)//已登录
+        {
+            //获取账户基本信息
+//            _islogin = YES;
+//            [weakSelf getMyAccountInfo];
+        }
+    } failure:^(NSError *error) {
+        NMRemovLoadIng;
+        RequestError(error);
+    }];
+}
+
+
+
 -(void)dealloc {
     NMRemovLoadIng;
     [[NSNotificationCenter defaultCenter]removeObserver:self];

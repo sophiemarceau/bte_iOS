@@ -183,10 +183,14 @@
     [self unSelectedTapTabBarItems:strategyFollowNavVC.tabBarItem];
     [self setTitleAdjustment:strategyFollowNavVC.tabBarItem];
     
-    MyAccountViewController *myAccountPageVc = [[MyAccountViewController alloc] init];
-    BHNavigationController *myAccountNavVC = [[BHNavigationController alloc] initWithRootViewController:myAccountPageVc];
+//    MyAccountViewController *myAccountPageVc = [[MyAccountViewController alloc] init];
+    BTEHomeWebViewController *centerPersonVc= [[BTEHomeWebViewController alloc] init];
+    centerPersonVc.urlString = kAppBTEH5MyAccountAddress;
+    centerPersonVc.isHiddenLeft = YES;
+    centerPersonVc.isHiddenBottom = NO;
+    BHNavigationController *myAccountNavVC = [[BHNavigationController alloc] initWithRootViewController:centerPersonVc];
     myAccountNavVC.view.backgroundColor=[UIColor whiteColor];
-    myAccountNavVC.tabBarItem.title=@"我的账户";
+    myAccountNavVC.tabBarItem.title=@"个人中心";
     myAccountNavVC.tabBarItem.image=[[UIImage imageNamed:@"tab_ic_mine"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     myAccountNavVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"tab_ic_mine_light"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [self selectedTapTabBarItems:myAccountNavVC.tabBarItem];
