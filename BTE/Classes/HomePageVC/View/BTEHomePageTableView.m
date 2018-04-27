@@ -235,7 +235,7 @@
         return 72;
     } else if (indexPath.row == [_dataSource count] + 1)
     {
-        return 249 + 16;
+        return 200 + 16 + [self cellHeight];
     }
     else if (indexPath.row == [_dataSource count] + 2)
     {
@@ -257,18 +257,14 @@
 - (float)cellHeight
 {
     NSString * contentStr= descriptionModel.summary;
-    CGRect rect = [contentStr boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 32, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil];
-    if (rect.size.height > defaultHeight) {
-        if (_isShow) {//是否展开
-            return fixedHeight + btnHeight + rect.size.height;
-        }else{
-            return fixedHeight + btnHeight + defaultHeight;
-        }
-    } else {
-        return fixedHeight + rect.size.height;
+    CGRect rect = [contentStr boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - 16 * 4, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:UIFontRegularOfSize(14)} context:nil];
+    if (rect.size.height > 0) {
+        return rect.size.height;
     }
-    
-    return 168;
+    else
+    {
+        return 49;
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -299,7 +295,7 @@
         [cell.contentView addSubview:bgView];
         
         
-        UIView *bgView1 = [[UIView alloc] initWithFrame:CGRectMake(16, 56 + 16, (SCREEN_WIDTH - 32), 169)];
+        UIView *bgView1 = [[UIView alloc] initWithFrame:CGRectMake(16, 56 + 16, (SCREEN_WIDTH - 32), 120 + [self cellHeight])];
         bgView1.backgroundColor = BHHexColor(@"EDF0F2");
         bgView1.layer.masksToBounds = YES;
         bgView1.layer.cornerRadius = 4;
@@ -316,26 +312,26 @@
         [cell.contentView addSubview:titleLabel];
         
         
-        UIImageView *image3 = [[UIImageView alloc] initWithFrame:CGRectMake(bgView1.width - 10 - 17, 16, 10, 18)];
+        UIImageView *image3 = [[UIImageView alloc] initWithFrame:CGRectMake(bgView1.width - 10 - 17, 14, 10, 19)];
         image3.image = [UIImage imageNamed:@"home_shichangfenxi_more"];
         [bgView1 addSubview:image3];
         
         UILabel *contentLabelTitle = [[UILabel alloc] initWithFrame:CGRectMake(16, 16, SCREEN_WIDTH - 16 * 4, 18)];
         contentLabelTitle.text = descriptionModel.title;
-        contentLabelTitle.font = UIFontMediumOfSize(18);
+        contentLabelTitle.font = UIFontMediumOfSize(16);
         contentLabelTitle.textColor = BHHexColor(@"626A75");
         [bgView1 addSubview:contentLabelTitle];
         
-        UILabel *contentLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 46, SCREEN_WIDTH - 16 * 4, 12)];
+        UILabel *contentLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 49, SCREEN_WIDTH - 16 * 4, 12)];
         contentLabel1.text = descriptionModel.date;
         contentLabel1.font = UIFontLightOfSize(12);
         contentLabel1.textColor = BHHexColor(@"626A75");
         [bgView1 addSubview:contentLabel1];
         
-        UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(16, 78, SCREEN_WIDTH - 16 * 4, 49)];
+        UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(16, 78, SCREEN_WIDTH - 16 * 4, [self cellHeight])];
         contentLabel.text = descriptionModel.summary;
         contentLabel.font = UIFontRegularOfSize(14);
-        contentLabel.numberOfLines = 2;
+        contentLabel.numberOfLines = 0;
         contentLabel.textColor = BHHexColor(@"626A75");
         [bgView1 addSubview:contentLabel];
     
@@ -344,7 +340,7 @@
             if (array.count > 0) {
                 for (int i = 0; i < array.count; i++)
                 {
-                    UILabel *tagLabel = [[UILabel alloc] initWithFrame:CGRectMake(16 + (28 + 6) * i, 137, 28, 16)];
+                    UILabel *tagLabel = [[UILabel alloc] initWithFrame:CGRectMake(16 + (28 + 6) * i, contentLabel.bottom + 10, 28, 16)];
                     tagLabel.text = array[i];
                     tagLabel.font = UIFontMediumOfSize(11);
                     tagLabel.textAlignment = NSTextAlignmentCenter;
@@ -369,11 +365,11 @@
             }
         }
 
-        UIImageView *image2 = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 88 - 15 - 32, 140, 15, 10)];
+        UIImageView *image2 = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 88 - 15 - 32, contentLabel.bottom + 13, 15, 10)];
         image2.image = [UIImage imageNamed:@"eye_icon_home"];
         [bgView1 addSubview:image2];
         
-        UILabel *contentLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(image2.right + 6, 139, 66, 12)];
+        UILabel *contentLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(image2.right + 6, contentLabel.bottom + 12, 66, 12)];
         if (descriptionModel.pv) {
             contentLabel2.text = [NSString stringWithFormat:@"%@次浏览",descriptionModel.pv];
         }

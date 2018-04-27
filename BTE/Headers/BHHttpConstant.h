@@ -24,7 +24,7 @@ static NSString * const kChart = @"http://chart.bte.top/";
 static NSString * const kGlobal = @"global";
 #else
 //static NSString * const kHeader = @"http://192.168.24.135:3001/";
-static NSString * const kHeader = @"http://192.168.25.200:3001/";
+static NSString * const kHeader = @"http://192.168.25.215:3001/";
 //static NSString * const kHeader = @"http://192.168.24.64:3001/";
 static NSString * const kChart = @"http://192.168.24.64:8082/";
 static NSString * const kGlobal = @"global_test";

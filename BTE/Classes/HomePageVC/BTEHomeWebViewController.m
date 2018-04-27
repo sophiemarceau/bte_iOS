@@ -124,13 +124,14 @@
                 [weakSelf.navigationController setNavigationBarHidden:YES animated:NO];
                 if (_statusBarView == nil) {
                     //设置状态栏颜色
-                    _statusBarView = [[UIView alloc]   initWithFrame:CGRectMake(0, 0,    weakSelf.view.bounds.size.width, 20)];
-                    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-                    gradientLayer.colors = @[(__bridge id)BHHexColor(@"53AFFF").CGColor, (__bridge id)BHHexColor(@"1389EF").CGColor];
-                    gradientLayer.startPoint = CGPointMake(0, 0);
-                    gradientLayer.endPoint = CGPointMake(1.0, 0);
-                    gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 20);
-                    [_statusBarView.layer addSublayer:gradientLayer];
+                    _statusBarView = [[UIView alloc]   initWithFrame:CGRectMake(0, 0,    weakSelf.view.bounds.size.width, STATUS_BAR_HEIGHT)];
+                    _statusBarView.backgroundColor = BHHexColor(@"168BF0");
+//                    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+//                    gradientLayer.colors = @[(__bridge id)BHHexColor(@"53AFFF").CGColor, (__bridge id)BHHexColor(@"1389EF").CGColor];
+//                    gradientLayer.startPoint = CGPointMake(0, 0);
+//                    gradientLayer.endPoint = CGPointMake(1.0, 0);
+//                    gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 20);
+//                    [_statusBarView.layer addSublayer:gradientLayer];
                     [weakSelf.view addSubview:_statusBarView];
                 }
             } else
@@ -240,13 +241,14 @@
         if (_statusBarView == nil)
         {
             //设置状态栏颜色
-            _statusBarView = [[UIView alloc]   initWithFrame:CGRectMake(0, 0,    self.view.bounds.size.width, 20)];
-            CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-            gradientLayer.colors = @[(__bridge id)BHHexColor(@"53AFFF").CGColor, (__bridge id)BHHexColor(@"1389EF").CGColor];
-            gradientLayer.startPoint = CGPointMake(0, 0);
-            gradientLayer.endPoint = CGPointMake(1.0, 0);
-            gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 20);
-            [_statusBarView.layer addSublayer:gradientLayer];
+            _statusBarView = [[UIView alloc]   initWithFrame:CGRectMake(0, 0,    self.view.bounds.size.width, STATUS_BAR_HEIGHT)];
+            _statusBarView.backgroundColor = BHHexColor(@"168BF0");
+//            CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+//            gradientLayer.colors = @[(__bridge id)BHHexColor(@"53AFFF").CGColor, (__bridge id)BHHexColor(@"1389EF").CGColor];
+//            gradientLayer.startPoint = CGPointMake(0, 0);
+//            gradientLayer.endPoint = CGPointMake(1.0, 0);
+//            gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 20);
+//            [_statusBarView.layer addSublayer:gradientLayer];
             [self.view addSubview:_statusBarView];
         }
 
