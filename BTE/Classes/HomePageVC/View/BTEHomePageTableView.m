@@ -550,7 +550,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    [self hideWebTip];
     if ([_dataSource count] > 0 && indexPath.row >= 1 && indexPath.row <= [_dataSource count])
     {
         if (self.delegate && [self.delegate respondsToSelector:@selector(jumpToDetail:)]) {
@@ -580,6 +580,10 @@
         [self.delegate hidden];
     }
 }
-
+#pragma mark -- 隐藏webview中的显示的数据tip
+- (void)hideWebTip{
+    //    [self.webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('highcharts-label')[0].style.display='none'"];// focus()
+    [self.webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByClassName('highcharts-label')[0].style.visible='hidden'"];// focus()
+}
 
 @end
