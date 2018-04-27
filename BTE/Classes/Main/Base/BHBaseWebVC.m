@@ -88,6 +88,11 @@
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = true;
     NMShowLoadIng;
+    
+    if ([[request.URL absoluteString] rangeOfString:@"tel:"].location != NSNotFound) {
+        NMRemovLoadIng;
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
+    }
     return YES;
 }
 - (void)webViewDidStartLoad:(UIWebView *)webView {

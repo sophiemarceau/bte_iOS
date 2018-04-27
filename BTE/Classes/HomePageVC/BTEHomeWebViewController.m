@@ -121,20 +121,17 @@
         weakSelf.isHiddenLeft = YES;
         if (data && [data objectForKey:@"title"]) {
             if ([[data objectForKey:@"title"] isEqualToString:@"个人中心"]) {
-                [self.navigationController setNavigationBarHidden:YES animated:NO];
+                [weakSelf.navigationController setNavigationBarHidden:YES animated:NO];
                 if (_statusBarView == nil) {
                     //设置状态栏颜色
-                    _statusBarView = [[UIView alloc]   initWithFrame:CGRectMake(0, 0,    self.view.bounds.size.width, 20)];
-//                    _statusBarView.backgroundColor = [BHHexColor hexColor:@"53AFFF"];
-                    
-                    
+                    _statusBarView = [[UIView alloc]   initWithFrame:CGRectMake(0, 0,    weakSelf.view.bounds.size.width, 20)];
                     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
                     gradientLayer.colors = @[(__bridge id)BHHexColor(@"53AFFF").CGColor, (__bridge id)BHHexColor(@"1389EF").CGColor];
                     gradientLayer.startPoint = CGPointMake(0, 0);
                     gradientLayer.endPoint = CGPointMake(1.0, 0);
                     gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 20);
                     [_statusBarView.layer addSublayer:gradientLayer];
-                    [self.view addSubview:_statusBarView];
+                    [weakSelf.view addSubview:_statusBarView];
                 }
             } else
             {
@@ -155,20 +152,20 @@
         }
         
         if (data && [data objectForKey:@"url"]) {
-            weakSelf.navigationItem.rightBarButtonItem = [self creatRightBarItem];
+            weakSelf.navigationItem.rightBarButtonItem = [weakSelf creatRightBarItem];
             weakSelf.shareType = UMS_SHARE_TYPE_WEB_LINK;//web链接
             if ([[data objectForKey:@"url"] rangeOfString:@"wechat/strategy/"].location != NSNotFound) {
-              weakSelf.sharetitle = [NSString stringWithFormat:@"比特易—%@,当前收益%@%%",self.productInfoModel.name,self.productInfoModel.ror];
-              weakSelf.shareDesc = [NSString stringWithFormat:@"我跟随了比特易%@，当前收益%@%%，比特易是业界领先的数字货币市场专业分析平台，软银中国资本(SBCVC)、蓝驰创投(BlueRun Ventures)战略投资，玩转比特币，多看比特易。",self.productInfoModel.name,self.productInfoModel.ror];
+              weakSelf.sharetitle = [NSString stringWithFormat:@"比特易—%@,当前收益%@%%",weakSelf.productInfoModel.name,weakSelf.productInfoModel.ror];
+              weakSelf.shareDesc = [NSString stringWithFormat:@"我跟随了比特易%@，当前收益%@%%，比特易是业界领先的数字货币市场专业分析平台，软银中国资本(SBCVC)、蓝驰创投(BlueRun Ventures)战略投资，玩转比特币，多看比特易。",weakSelf.productInfoModel.name,weakSelf.productInfoModel.ror];
                 
             }else if ([[data objectForKey:@"url"] rangeOfString:@"wechat/deal/"].location != NSNotFound)
             {
                 weakSelf.sharetitle = @"比特易—数字货币分析平台";
-                NSString *price = [NSString positiveFormat:self.desListModel.price];
-                weakSelf.shareDesc = [NSString stringWithFormat:@"%@当前价格：$%@\t\n走势分析：%@\t\n操作建议：%@",self.desListModel.symbol,price,self.desListModel.trend,self.desListModel.operation];
+                NSString *price = [NSString positiveFormat:weakSelf.desListModel.price];
+                weakSelf.shareDesc = [NSString stringWithFormat:@"%@当前价格：$%@\t\n走势分析：%@\t\n操作建议：%@",weakSelf.desListModel.symbol,price,weakSelf.desListModel.trend,weakSelf.desListModel.operation];
             }else if ([[data objectForKey:@"url"] rangeOfString:@"wechat/baza/"].location != NSNotFound)
             {
-                weakSelf.navigationItem.rightBarButtonItem = [self creatRightBarItemDetail];
+                weakSelf.navigationItem.rightBarButtonItem = [weakSelf creatRightBarItemDetail];
                 weakSelf.sharetitle = [NSString stringWithFormat:@"%@-比特易市场分析",[data objectForKey:@"title"]];
                 weakSelf.shareDesc = [data objectForKey:@"summary"];
             }
@@ -240,18 +237,19 @@
     [super viewWillAppear:animated];
     if ([self.urlString isEqualToString:kAppBTEH5MyAccountAddress]) {
         [self.navigationController setNavigationBarHidden:YES animated:NO];
-        //设置状态栏颜色
-        _statusBarView = [[UIView alloc]   initWithFrame:CGRectMake(0, 0,    self.view.bounds.size.width, 20)];
-//        _statusBarView.backgroundColor = [BHHexColor hexColor:@"53AFFF"];
+        if (_statusBarView == nil)
+        {
+            //设置状态栏颜色
+            _statusBarView = [[UIView alloc]   initWithFrame:CGRectMake(0, 0,    self.view.bounds.size.width, 20)];
+            CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+            gradientLayer.colors = @[(__bridge id)BHHexColor(@"53AFFF").CGColor, (__bridge id)BHHexColor(@"1389EF").CGColor];
+            gradientLayer.startPoint = CGPointMake(0, 0);
+            gradientLayer.endPoint = CGPointMake(1.0, 0);
+            gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 20);
+            [_statusBarView.layer addSublayer:gradientLayer];
+            [self.view addSubview:_statusBarView];
+        }
 
-
-        CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-        gradientLayer.colors = @[(__bridge id)BHHexColor(@"53AFFF").CGColor, (__bridge id)BHHexColor(@"1389EF").CGColor];
-        gradientLayer.startPoint = CGPointMake(0, 0);
-        gradientLayer.endPoint = CGPointMake(1.0, 0);
-        gradientLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, 20);
-        [_statusBarView.layer addSublayer:gradientLayer];
-        [self.view addSubview:_statusBarView];
         if ([self.isloginAndGetMyAccountInfo isEqualToString:@"0"]) {
             //获取登录状态
             [self getMyAccountLoginStatus];
@@ -285,7 +283,7 @@
     [BTERequestTools requestWithURLString:methodName parameters:pramaDic type:2 success:^(id responseObject) {
         NMRemovLoadIng;
         if (IsSafeDictionary(responseObject) && [[responseObject objectForKey:@"data"] integerValue] == 0) {//未登录
-            [BTELoginVC OpenLogin:self callback:^(BOOL isComplete) {
+            [BTELoginVC OpenLogin:weakSelf callback:^(BOOL isComplete) {
                 if (isComplete) {
                     //登录成功刷新我的账户页面
                     //获取账户基本信息

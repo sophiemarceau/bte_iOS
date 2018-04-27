@@ -379,7 +379,7 @@
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     [_statusBarView removeFromSuperview];
-
+    _statusBarView = nil;
 }
 
 - (void)didReceiveMemoryWarning {
