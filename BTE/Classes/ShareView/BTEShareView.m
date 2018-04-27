@@ -188,7 +188,8 @@
     }
     
     
-    [shareView removeFromSuperview];
+//    [shareView removeFromSuperview];
+    shareView.hidden = YES;
 }
 
 
@@ -251,6 +252,7 @@
             }
         }
         [self alertWithError:error];
+        [self removeFromSuperview];
     }];
 }
 

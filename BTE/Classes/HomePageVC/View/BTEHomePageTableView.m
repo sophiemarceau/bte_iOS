@@ -333,6 +333,7 @@
         contentLabel.font = UIFontRegularOfSize(14);
         contentLabel.numberOfLines = 0;
         contentLabel.textColor = BHHexColor(@"626A75");
+        [contentLabel sizeToFit];
         [bgView1 addSubview:contentLabel];
     
         if (descriptionModel.tag) {
