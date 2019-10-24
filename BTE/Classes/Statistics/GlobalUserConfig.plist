@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>BTEHomePageTableView</key>
+    <dict>
+        <key>ControlEventIDs</key>
+        <dict>
+            
+            <key>trademoreButton</key>
+            <string>首页点击行情数据</string>
+            
+            <key>gotoDogPage:</key>
+            <dict>
+                <key>1</key>
+                <string>首页点击撸庄狗</string>
+                <key>2</key>
+                <string>首页点击撸庄狗</string>
+                <key>3</key>
+                <string>首页点击撸庄狗</string>
+                <key>4</key>
+                <string>首页点击撸庄狗</string>
+            </dict>
+            
+            
+            
+            <key>gotobandratioDogPage</key>
+            <string>首页点击波段狗</string>
+            <key>moreButton</key>
+            <string>首页点击策略服务更多</string>
+            <key>gotoTradeDataPage:</key>
+            <string>首页点击搜索</string>
+            <key>jumpToDetail</key>
+            <dict>
+                <key>1</key>
+                <string>首页点击币种1</string>
+                <key>2</key>
+                <string>首页点击币种2</string>
+                <key>3</key>
+                <string>首页点击币种3</string>
+                <key>4</key>
+                <string>首页点击币种4</string>
+            </dict>
+           
+            <key>jumpToDetails</key>
+            <string>首页点击市场分析</string>
+            <key>jumpToStrategyFollow</key>
+            <string>首页点击策略服务</string>
+        </dict>
+    </dict>
+    
+	<key>BTEHomePageViewController</key>
+	<dict>
+		<key>PageEventIDs</key>
+		<dict>
+<!--            <key>gotoTradeDataPage</key>-->
+<!--            <string>PAGE_EVENT_HomePage</string>-->
+            <key>Enter</key>
+            <string>PAGE_EVENT_BTEHomePage</string>
+            <key>Leave</key>
+            <string>PAGE_EVENT_BTEHomePage</string>
+		</dict>
+		<key>ControlEventIDs</key>
+		<dict>
+			
+		</dict>
+	</dict>
+	<key>MyAccountViewController</key>
+	<dict>
+		<key>PageEventIDs</key>
+		<dict>
+			<key>Enter</key>
+			<string>PAGE_EVENT_MyAccountPage</string>
+			<key>Leave</key>
+			<string>PAGE_EVENT_MyAccountPage</string>
+		</dict>
+		<key>ControlEventIDs</key>
+		<dict>
+			<key>onShareBtnPressed:</key>
+			<string>CTRL_EVENT_DETAIL_SHARE</string>
+		</dict>
+	</dict>
+	<key>TradeViewController</key>
+	<dict>
+		<key>PageEventIDs</key>
+		<dict>
+			<key>Enter</key>
+			<string>PAGE_EVENT_TradePage</string>
+			<key>Leave</key>
+			<string>PAGE_EVENT_TradePage</string>
+		</dict>
+		<key>ControlEventIDs</key>
+		<dict>
+			<key>onShareBtnPressed:</key>
+			<string>CTRL_EVENT_DETAIL_SHARE</string>
+		</dict>
+	</dict>
+    <key>BTEStrategyFollowViewController</key>
+    <dict>
+        <key>PageEventIDs</key>
+        <dict>
+            <key>Enter</key>
+            <string>PAGE_EVENT_StrategyFollow_Page</string>
+            <key>Leave</key>
+            <string>PAGE_EVENT_StrategyFollow_Page</string>
+        </dict>
+        <key>ControlEventIDs</key>
+        <dict>
+            <key>onShareBtnPressed:</key>
+            <string>CTRL_EVENT_HOME_SHARE</string>
+            <key>onFavBtnPressed:</key>
+            <string>CTRL_EVENT_HOME_FAV</string>
+        </dict>
+    </dict>
+	<key>LuDogViewController</key>
+	<dict>
+		<key>PageEventIDs</key>
+		<dict>
+			<key>Enter</key>
+			<string>PAGE_EVENT_LuDog_Page</string>
+			<key>Leave</key>
+			<string>PAGE_EVENT_LuDog_Page</string>
+		</dict>
+		<key>ControlEventIDs</key>
+		<dict>
+			<key>onShareBtnPressed:</key>
+			<string>CTRL_EVENT_HOME_SHARE</string>
+			<key>onFavBtnPressed:</key>
+			<string>CTRL_EVENT_HOME_FAV</string>
+		</dict>
+	</dict>
+    
+    <key>BTEKlineViewController</key>
+    <dict>
+        <key>PageEventIDs</key>
+        <dict>
+            <key>Enter</key>
+            <string>PAGE_EVENT_K_Page</string>
+            <key>Leave</key>
+            <string>PAGE_EVENT_K_Page</string>
+        </dict>
+        <key>ControlEventIDs</key>
+        <dict>
+            
+        </dict>
+    </dict>
+    <key>BTEStrategyFollowTableView</key>
+    <dict>
+        <key>ControlEventIDs</key>
+        <dict>
+            <key>jumpToStrategyDetail</key>
+            <string>策略列表点击某行</string>
+        </dict>
+    </dict>
+</dict>
+</plist>

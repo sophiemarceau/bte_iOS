@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BTEWebView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyJ-f8-e5b">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </webView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMc-zN-DCF">
+                    <rect key="frame" x="0.0" y="0.0" width="80" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="RpH-Vo-trq"/>
+                        <constraint firstAttribute="height" constant="70" id="tEe-sh-nej"/>
+                    </constraints>
+                    <state key="normal" image="ic_active_closed"/>
+                    <connections>
+                        <action selector="closeBtnClick" destination="iN0-l3-epB" eventType="touchUpInside" id="Xtn-OK-1W2"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="zyJ-f8-e5b" secondAttribute="bottom" id="05c-s9-fiN"/>
+                <constraint firstItem="zyJ-f8-e5b" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="NLO-8m-a7W"/>
+                <constraint firstItem="zyJ-f8-e5b" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZKY-Wa-w6g"/>
+                <constraint firstAttribute="trailing" secondItem="zyJ-f8-e5b" secondAttribute="trailing" id="jfC-Au-2Z4"/>
+                <constraint firstItem="eMc-zN-DCF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nT9-DW-sO0"/>
+                <constraint firstItem="eMc-zN-DCF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wPE-4P-sSf"/>
+            </constraints>
+            <connections>
+                <outlet property="webView" destination="zyJ-f8-e5b" id="X7j-w7-K6M"/>
+            </connections>
+            <point key="canvasLocation" x="19" y="85"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_active_closed" width="22" height="22"/>
+    </resources>
+</document>

@@ -1,0 +1,165 @@
+//
+//  BTEPrefixHeader.pch
+//  BTE
+//
+//  Created by wangli on 2018/1/11.
+//  Copyright © 2018年 wangli. All rights reserved.
+//
+
+#ifndef BTEPrefixHeader_pch
+#define BTEPrefixHeader_pch
+
+
+#ifdef __OBJC__
+
+// MARK: --------Library---------
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <Masonry.h>
+#import <MJRefresh.h>
+#import <YYModel.h>
+#import <AFNetworking.h>
+#import <MBProgressHUD.h>
+#import <UIImageView+WebCache.h>
+#import "BHToast.h"
+#import "Tools.h"
+#import <Hyphenate/Hyphenate.h>
+#import "EaseUI.h"
+// MARK: --------Headers---------
+#import "BHAppConfig.h"
+#import "BHHttpConstant.h"
+#import "BHDefineConstant.h"
+#import "BHNotificationConstant.h"
+#import "BHStaticConstant.h"
+
+//// MARK: --------Category---------
+#import "UIImage+help.h"
+#import "UIImage+gif.h"
+#import "NSString+category.h"
+#import "UIView+category.h"
+#import "UIImage+category.h"
+#import "UIView+Animation.h"
+
+//// MARK: --------vv---------
+//#import "BHSeverEnvironment.h"
+//#import "WYCookiesTool.h"
+#import "BHNavigationController.h"
+#import "TTJPushNoticeManager.h"
+#import "BTEUserInfo.h"
+//#import "BHTabBarController.h"
+#import "BHHexColor.h"
+//#import "BHUser.h"
+//#import "WYRPCRequest.h"
+//#import "WYRequestManager.h"
+#import "BTERequestTools.h"
+#import "YQNetworking.h"
+#import "DSJSONRPCError.h"
+//#import "BHBaseTableController.h"
+//#import "BHBaseWebViewVC.h"
+#import "BHToast.h"
+#import "BHProgressHUD.h"
+#import "BHTextField.h"
+//#import "BHNightModeView.h"
+
+
+#import "Masonry.h"
+#import "ZYWLineModel.h"
+#import "UIBezierPath+Draw.h"
+#import "UIColor+YW.h"
+#import "UIView+Extension.h"
+#import "ZTYBaseChartView.h"
+//#import "ZYWCandleModel.h"
+#import "ZTYChartModel.h"
+
+#define DEVICE_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define DEVICE_WIDTH [UIScreen mainScreen].bounds.size.width
+
+#define widthradio DEVICE_WIDTH/375
+#define heightradio DEVICE_HEIGHT/667
+
+#define DataType 1
+
+#define MinCount 20
+#define MaxCount 240
+#define CandleCount 160
+
+#define BoxborderWidth 0.5
+#define BoxborderColor [UIColor colorWithHexString:@"E5E5EE"]
+#define backBlue [UIColor colorWithHexString:@"308CDD"]
+#define btetextColorGray [UIColor colorWithHexString:@"626A75" alpha:0.6]
+#define btetextColor [UIColor colorWithHexString:@"626A75"]
+#define GradeBGColor [UIColor colorWithHexString:@"E5E5EE"]
+
+///**
+// * 蜡烛图-上涨颜色
+// */
+//#define RoseColor [UIColor colorWithRed:107.0/255.0 green:165.0/255.0 blue:131.0/255.0 alpha:1]
+/**
+ * 蜡烛图-下跌颜色
+ */
+#define RoseColor  [UIColor colorWithHexString:@"29AC4E"] // FF4040  CC1414 green
+#define DropColor  [UIColor colorWithHexString:@"CC1414"]  //  228B22 29AC4E red
+#define KBackGroudColor [UIColor whiteColor]
+#define KLoadStyle UIActivityIndicatorViewStyleGray
+#define ISShowTimeLine 0
+#define KLineWidth 0.5
+
+#define KbtnWidth 49
+#define intalval  5
+
+#define LineBGColor [UIColor colorWithHexString:@"E5E5EE"]
+#define lineBgWidth 0.5
+//#define RoseColor  [UIColor colorWithHexString:@"ff5353"]
+//#define DropColor  [UIColor colorWithHexString:@"00b07c"]
+//#define KBackGroudColor [UIColor colorWithHexString:@"181c20"]
+//#define KLoadStyle UIActivityIndicatorViewStyleWhite
+
+#define ContentOffSet @"contentOffset"
+
+/**
+ * 主图指标的名称，暂时只预置了MACD和BOLL
+ */
+typedef NS_ENUM(NSUInteger, MainViewQuotaName) {
+    MainViewQuotaNameWithMACD = 0,
+    MainViewQuotaNameWithEMA,
+    MainViewQuotaNameWithBOLL,
+    MainViewQuotaNameWithMA,
+    MainViewQuotaNameWithSAR,
+    MainViewQuotaNameWithSTRANCE,
+    MainViewQuotaNameWithNone,
+};
+
+/**
+ * 附图指标的名称
+ */
+typedef NS_ENUM(NSUInteger, FigureViewQuotaName) {
+    FigureViewQuotaNameWithMACD = 0,
+    FigureViewQuotaNameWithRSI,
+    FigureViewQuotaNameWithKDJ,
+    FigureViewQuotaNameWithWR,
+};
+
+//Kline种类
+typedef NS_ENUM(NSInteger, MainChartCenterViewType) {
+    MainChartcenterViewTypeKline= 1, //K线
+    MainChartcenterViewTypeTimeLine,  //分时图
+    MainChartcenterViewTypeOther
+};
+
+/**
+ * 底部大单切换
+ */
+typedef NS_ENUM(NSUInteger, BottomType) {
+    BottomTypeOrderChange = 0,
+    BottomTypeSuperDeep = 1,
+    BottomTypeOrderBreak = 2,
+    BottomTypeFoundFlow = 3,
+    BottomTypeTxs = 4,
+    BottomTypeOrderNone = 5,
+    BottomTypeDesc = 6,
+    BottomTypeChatView = 7,
+};
+
+#endif
+
+#endif /* BTEPrefixHeader_pch */
