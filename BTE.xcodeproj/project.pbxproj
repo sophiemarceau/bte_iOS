@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AD1EA4F5838E189357A2A23 /* Pods_BTE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E235AAA45CF9E604688D5856 /* Pods_BTE.framework */; };
 		7D1610742108A61D005A7E79 /* FirstLevelWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1610732108A61D005A7E79 /* FirstLevelWebViewController.m */; };
 		7D33328C21023639005B7DA5 /* ChatUserCacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D33328B21023639005B7DA5 /* ChatUserCacheUtil.m */; };
 		7D33EE60212C6035005CD2C1 /* ZTGCDTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D33EE4F212C6035005CD2C1 /* ZTGCDTimerManager.m */; };
@@ -286,7 +287,6 @@
 		93F7853720F5F0A600893CE0 /* ZTYVolumCahrtView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F7851D20F5F0A600893CE0 /* ZTYVolumCahrtView.m */; };
 		93F7853A20F6F44500893CE0 /* HookUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F7853920F6F44500893CE0 /* HookUtility.m */; };
 		93F7853D20F74C0600893CE0 /* UITableView+userStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F7853C20F74C0600893CE0 /* UITableView+userStatistics.m */; };
-		A3C2D27DD5C7720F52180047 /* libPods-BTE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A790C91021B35BCE72495255 /* libPods-BTE.a */; };
 		B2005F1C218AEC7D0091A388 /* BTEBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2005F1B218AEC7D0091A388 /* BTEBaseModel.m */; };
 		B2105D7C20DD02E4001EE073 /* ZTYKlineComment.m in Sources */ = {isa = PBXBuildFile; fileRef = B2105D7B20DD02E4001EE073 /* ZTYKlineComment.m */; };
 		B2151D9420D1096A00537D27 /* ExchangeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2151D9320D1096A00537D27 /* ExchangeTableViewCell.m */; };
@@ -1137,7 +1137,6 @@
 		93F7853920F6F44500893CE0 /* HookUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HookUtility.m; sourceTree = "<group>"; };
 		93F7853B20F74C0600893CE0 /* UITableView+userStatistics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+userStatistics.h"; sourceTree = "<group>"; };
 		93F7853C20F74C0600893CE0 /* UITableView+userStatistics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+userStatistics.m"; sourceTree = "<group>"; };
-		A790C91021B35BCE72495255 /* libPods-BTE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BTE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2005F1A218AEC7D0091A388 /* BTEBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTEBaseModel.h; sourceTree = "<group>"; };
 		B2005F1B218AEC7D0091A388 /* BTEBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTEBaseModel.m; sourceTree = "<group>"; };
 		B2105D7A20DD02E4001EE073 /* ZTYKlineComment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTYKlineComment.h; sourceTree = "<group>"; };
@@ -1523,6 +1522,7 @@
 		B9A559772047ED2A009CC3BA /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
 		B9A559782047ED2A009CC3BA /* WKWebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewJavascriptBridge.h; sourceTree = "<group>"; };
 		B9FF2E812047A7A0009A840B /* BTE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BTE.entitlements; sourceTree = "<group>"; };
+		E235AAA45CF9E604688D5856 /* Pods_BTE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BTE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1537,7 +1537,7 @@
 				936A87A7213FB15E00014E3D /* JavaScriptCore.framework in Frameworks */,
 				936A87A1213FB0CB00014E3D /* VerifyCode.framework in Frameworks */,
 				8190F29520A43FFB005A23C1 /* JhtMarquee.framework in Frameworks */,
-				A3C2D27DD5C7720F52180047 /* libPods-BTE.a in Frameworks */,
+				1AD1EA4F5838E189357A2A23 /* Pods_BTE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1566,7 +1566,7 @@
 				936A87A8213FB16500014E3D /* WebKit.framework */,
 				936A87A6213FB15E00014E3D /* JavaScriptCore.framework */,
 				936A87A4213FB15700014E3D /* SystemConfiguration.framework */,
-				A790C91021B35BCE72495255 /* libPods-BTE.a */,
+				E235AAA45CF9E604688D5856 /* Pods_BTE.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -3751,16 +3751,42 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BTE/Pods-BTE-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-BTE/Pods-BTE-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/AliyunOSSiOS/AliyunOSSiOS.framework",
+				"${BUILT_PRODUCTS_DIR}/DACircularProgress/DACircularProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/EaseUI/EaseUI.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${PODS_ROOT}/Hyphenate/iOS_Pods_IMFullSDK_V3.4.3/Hyphenate.framework",
+				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/MWPhotoBrowser/MWPhotoBrowser.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SGQRCode/SGQRCode.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AliyunOSSiOS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DACircularProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EaseUI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hyphenate.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MWPhotoBrowser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SGQRCode.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BTE/Pods-BTE-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BTE/Pods-BTE-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D77BAA7A84F3B1825A227459 /* [CP] Copy Pods Resources */ = {
@@ -3769,24 +3795,16 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BTE/Pods-BTE-resources.sh",
-				"${PODS_ROOT}/EaseUI/EaseUI/resources/EaseUIResource.bundle",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/MWPhotoBrowser/MWPhotoBrowser.bundle",
-				"${PODS_ROOT}/SGQRCode/SGQRCode/SGQRCode.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-BTE/Pods-BTE-resources.sh",
 				"${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EaseUIResource.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MWPhotoBrowser.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SGQRCode.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BTE/Pods-BTE-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BTE/Pods-BTE-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

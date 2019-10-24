@@ -39,7 +39,7 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
-  - SGQRCode (2.1.9)
+  - SGQRCode (3.0.1)
   - UMCAnalytics (5.5.0):
     - UMCCommon
   - UMCCommon (1.5.2)
@@ -78,7 +78,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 0.9)
   - MJRefresh (~> 3.1.15.1)
   - SDWebImage (~> 3.7)
-  - SGQRCode (~> 2.1.8)
+  - SGQRCode (~> 3.0.1)
   - UMCAnalytics
   - UMCErrorCatch
   - UMCShare/Social/ReducedQQ
@@ -90,7 +90,7 @@ DEPENDENCIES:
   - YYModel (~> 1.0.4)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - AliyunOSSiOS
     - Bugly
@@ -105,13 +105,14 @@ SPEC REPOS:
     - MJRefresh
     - MWPhotoBrowser
     - SDWebImage
-    - SGQRCode
     - UMCAnalytics
     - UMCCommon
     - UMCErrorCatch
     - UMCShare
     - WechatOpenSDK
     - YYModel
+  trunk:
+    - SGQRCode
 
 EXTERNAL SOURCES:
   EaseUI:
@@ -138,7 +139,7 @@ SPEC CHECKSUMS:
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  SGQRCode: b13f93b5c0f16f840beff8009e0c129a5f3d4d8f
+  SGQRCode: bf02d60e18d6660a9d75ff1c8b9b467f064f054e
   UMCAnalytics: 4667788559a72f2fa5077117d1b8802a3b6eb6bb
   UMCCommon: 4392868ac47ff1b101663106bb114ba616fabbad
   UMCErrorCatch: 51f1b68f920233e90a3fa6d51f0456174507ec78
@@ -146,6 +147,6 @@ SPEC CHECKSUMS:
   WechatOpenSDK: 676feec516a11173eafd1fe64b10d27babf28701
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: c73df851404d2165bef074e8bba640f0f4c1e20d
+PODFILE CHECKSUM: 8ba1f7f9a69742fa88f01c1eaf55a20dfca0db36
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4
